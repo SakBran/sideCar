@@ -1,5 +1,7 @@
 {
   "name": "sideCar",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }

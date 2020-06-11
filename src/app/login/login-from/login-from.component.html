@@ -1,0 +1,66 @@
+<ion-toolbar color="secondary">
+  <ion-title>
+    <center>Sidecar Delivery Login </center>
+  </ion-title>
+</ion-toolbar>
+<ion-content color="light" padding>
+  <ion-card>
+    <ion-card-content>
+      <ion-grid>
+        <ion-row color="primary" justify-content-center>
+          <ion-col align-self-center size-md="6" size-lg="5" size-xs="12">
+          
+            <div padding>
+              <ion-card >
+                <ion-item >
+                  <ion-avatar slot="start">
+                    <img src='/../assets/person.svg'>
+                  </ion-avatar>
+                  <ion-label>
+                    <ion-input name="email" type="email"  placeholder="Username" ngModel required></ion-input>
+                  </ion-label>
+                </ion-item>
+              </ion-card>
+
+              <ion-card >
+                <ion-item >
+                  <ion-avatar slot="start">
+                    <img src='/../assets/key.svg'>
+                  </ion-avatar>
+                  <ion-label>
+                    <ion-input name="Password" type="{{this.passwordVisibility}}"  placeholder="Password" ngModel required></ion-input>
+                  </ion-label>
+                  <ion-button (click)="passVisible()" color="secondary" >
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </ion-button>
+                </ion-item>
+              </ion-card>
+             
+            </div>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col size="6">
+            <ion-button (click)="onClick()" expand="block" color="danger">
+              Cancel
+            </ion-button>
+          </ion-col>
+          <ion-col size="6">
+            <ion-button (click)="onClick()" expand="block" color="primary">
+              Login
+            </ion-button>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+
+
+    </ion-card-content>
+  </ion-card>
+</ion-content>
+
+<ion-toolbar color="secondary">
+  <center>
+    <p>© Sidecar Delivery Co., Ltd. 2020.<br/> All Rights Reserved. ™ by <a target="_blank" href="https://sakbran.github.io">Sak Bran</a></p>
+  </center>
+  
+</ion-toolbar>

@@ -7,6 +7,11 @@ import { Tab2Page } from './tab2.page';
 import { ExploreContainerComponentModule } from '../explore-container/explore-container.module';
 
 import { Tab2PageRoutingModule } from './tab2-routing.module';
+import { MainPageComponent } from './admin/main-page/main-page.component';
+import { ItemListComponent } from './admin/item-list/item-list.component';
+import { ItemEditComponent } from './admin/item-edit/item-edit.component';
+import { RiderSelectComponent } from './admin/rider-select/rider-select.component';
+
 
 @NgModule({
   imports: [
@@ -16,6 +21,6 @@ import { Tab2PageRoutingModule } from './tab2-routing.module';
     ExploreContainerComponentModule,
     Tab2PageRoutingModule
   ],
-  declarations: [Tab2Page]
+  declarations: [RiderSelectComponent,Tab2Page,MainPageComponent,ItemListComponent,ItemEditComponent]
 })
 export class Tab2PageModule {}

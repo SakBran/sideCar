@@ -1,0 +1,73 @@
+<ion-header translucent>
+  <ion-toolbar color="success">
+    <ion-title>Invoice Management Form</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" slot="fixed">
+  <ion-infinite-scroll>
+    <ion-card *ngFor="let i of list">
+      <ion-item>
+        <ion-avatar slot="start">
+          <img src='/../assets/food.svg'>
+        </ion-avatar>
+        <ion-label>
+          <h2>Fried Chicken</h2>
+          <h3>1000</h3>
+          <p>KFC</p>
+        </ion-label>
+        <ion-button (click)="editInvoice(i)" color="secondary">
+          <ion-icon name="create-outline"></ion-icon>
+        </ion-button>
+      </ion-item>
+    </ion-card>
+
+    <ion-card>
+      <ion-card-content>
+        <ion-item>
+          <ion-avatar slot="start">
+            <img src='/../assets/person.svg'>
+          </ion-avatar>
+          <ion-label>
+            <h2>Customer Information</h2>
+          </ion-label>
+
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">Phone</ion-label>
+          <ion-input type="number"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">Latitude</ion-label>
+          <ion-input type="number"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">Longitude</ion-label>
+          <ion-input type="number"></ion-input>
+        </ion-item>
+      </ion-card-content>
+    </ion-card>
+
+    <ion-card>
+      <ion-card-content>
+        <ion-item>
+          <ion-avatar slot="start">
+            <img src='/../assets/food-delivery.svg'>
+          </ion-avatar>
+          <ion-label>
+            <h2>Delivery Charges</h2>
+          </ion-label>
+
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">Amount</ion-label>
+          <ion-input type="number"></ion-input>
+        </ion-item>
+      </ion-card-content>
+    </ion-card>
+
+    <ion-button (click)="riderSelect()" expand="block" color="primary">
+      Send To Rider & Resturant
+    </ion-button>
+  </ion-infinite-scroll>
+</ion-content>
