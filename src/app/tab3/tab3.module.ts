@@ -8,11 +8,13 @@ import { ExploreContainerComponentModule } from '../explore-container/explore-co
 
 import { Tab3PageRoutingModule } from './tab3-routing.module'
 import { ItemConfirmComponent } from './admin/item-confirm/item-confirm.component';
-import { ResturantComponent } from '../tabs/resturant/resturant.component';
+
 
 import { UserCreateComponent } from './admin/user-create/user-create.component';
 import { UserListComponent } from './admin/user-list/user-list.component';
 import { MainPageComponent } from './admin/main-page/main-page.component';
+import { ResturantCreateComponent } from './admin/resturant-create/resturant-create.component';
+import { ResturantListComponent } from './admin/resturant-list/resturant-list.component';
 
 @NgModule({
   imports: [
@@ -24,6 +26,6 @@ import { MainPageComponent } from './admin/main-page/main-page.component';
     Tab3PageRoutingModule,
   ],
   declarations: [Tab3Page,MainPageComponent,UserListComponent,UserCreateComponent,
-    ResturantComponent,ResturantComponent,ItemConfirmComponent]
+    ResturantListComponent,ResturantCreateComponent,ItemConfirmComponent]
 })
 export class Tab3PageModule {}

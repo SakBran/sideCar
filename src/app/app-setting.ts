@@ -1,3 +1,5 @@
+
+
 export class appSetting{
     /**
      *
@@ -16,4 +18,6 @@ export class appSetting{
 
     public adminTab3Process="";
     public adminTab3ID="";
+
+    
 }

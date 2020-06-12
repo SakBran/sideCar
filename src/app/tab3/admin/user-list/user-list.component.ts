@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { appSetting } from 'src/app/app-setting';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-user-list',
@@ -7,8 +9,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UserListComponent implements OnInit {
 
-  constructor() { }
+  constructor(public appSetting:appSetting,public location:Location) { }
 
   ngOnInit() {}
+  back(){
+    this.location.back();
+  }
 
 }
