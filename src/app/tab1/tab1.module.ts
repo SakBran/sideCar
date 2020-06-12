@@ -7,8 +7,11 @@ import { ExploreContainerComponentModule } from '../explore-container/explore-co
 
 import { Tab1PageRoutingModule } from './tab1-routing.module';
 import { ItemListComponent } from './admin/item-list/item-list.component';
-import { MainPageComponent } from './admin/main-page/main-page.component';
 import { AddToInvoiceComponent } from './admin/add-to-invoice/add-to-invoice.component';
+import { MainPageComponent } from './admin/main-page/main-page.component';
+import { ResturantMainComponent } from './resturant/resturant-main/resturant-main.component';
+import { ResturantIndividualOrderComponent } from './resturant/resturant-individual-order/resturant-individual-order.component';
+import { ResturantCardComponent } from './resturant/resturant-card/resturant-card.component';
 
 @NgModule({
   imports: [
@@ -18,6 +21,6 @@ import { AddToInvoiceComponent } from './admin/add-to-invoice/add-to-invoice.com
     ExploreContainerComponentModule,
     Tab1PageRoutingModule
   ],
-  declarations: [Tab1Page,ItemListComponent,MainPageComponent,AddToInvoiceComponent]
+  declarations: [Tab1Page, ResturantCardComponent,ResturantIndividualOrderComponent, ItemListComponent, MainPageComponent, ResturantMainComponent, AddToInvoiceComponent]
 })
-export class Tab1PageModule {}
+export class Tab1PageModule { }

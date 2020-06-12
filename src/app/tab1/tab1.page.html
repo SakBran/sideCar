@@ -12,6 +12,7 @@
       </ion-header>
     <ion-content>
         <app-main-page *ngIf="this.appSetting.loginType==='admin'"></app-main-page>
+        <app-resturant-main *ngIf="this.appSetting.loginType==='resturant'"></app-resturant-main>
     </ion-content>
 
    

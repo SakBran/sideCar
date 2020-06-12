@@ -8,7 +8,7 @@ export class appSetting{
     
 
     }
-    public loginType="admin";
+    public loginType="resturant";
 
     public adminProcess="";
     public adminID="";

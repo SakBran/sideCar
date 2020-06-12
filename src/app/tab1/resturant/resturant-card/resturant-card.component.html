@@ -1,0 +1,25 @@
+<ion-card>
+  <ion-card-content>
+    <ion-item>
+      <ion-label>
+        <h3>Fried Chicken</h3>
+        <p>Quantity:5</p>
+        <p>Price:5000</p>
+      </ion-label>
+      <ion-checkbox [(ngModel)]="available" ></ion-checkbox>
+   
+    </ion-item>
+    <ng-container *ngIf="this.available===false">
+      <ion-item>
+        <ion-label position="floating">Comment</ion-label>
+        <ion-input type="text" placeholder="eg: Only four item available"></ion-input>
+
+      </ion-item>
+      <ion-button expand="block" color="secondary">
+        Send
+      </ion-button>
+    </ng-container>
+
+
+  </ion-card-content>
+</ion-card>

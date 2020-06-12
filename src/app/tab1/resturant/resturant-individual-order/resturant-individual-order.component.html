@@ -1,0 +1,47 @@
+<ion-card>
+  <ion-card-content>
+    <ion-item>
+      <ion-avatar slot="start">
+        <img src='/../assets/food.svg'>
+      </ion-avatar>
+      <ion-label>
+
+        <h2>Order:12456</h2>
+        <p>Date:20.12.2020</p>
+        <p>Total Amount:7500</p>
+      </ion-label>
+      <ion-button color="secondary" disabled>
+        <ion-icon name="thumbs-up-outline"></ion-icon>
+      </ion-button>
+      <ion-button color="danger" disabled>
+        <ion-icon name="thumbs-down-outline"></ion-icon>
+      </ion-button>
+    </ion-item>
+
+
+    <ion-list-header>
+      <ion-label>Order Detail Descriptions</ion-label>
+      <ion-button (click)="itemVisibleMethod()">
+        <ion-text color="primary">
+          <p *ngIf="this.itemVisible===false">See All</p>
+          <p *ngIf="this.itemVisible===true">Collapse</p>
+        </ion-text>
+      </ion-button>
+    </ion-list-header>
+
+    <ng-container *ngIf="this.itemVisible===true">
+      <app-resturant-card *ngFor="let item of item"></app-resturant-card>
+    </ng-container>
+
+    <ion-list-header *ngIf="this.itemVisible===true">
+      <ion-label></ion-label>
+      <ion-button (click)="itemVisibleMethod()">
+        <ion-text color="primary">
+          <p *ngIf="this.itemVisible===false">See All</p>
+          <p *ngIf="this.itemVisible===true">Collapse</p>
+        </ion-text>
+      </ion-button>
+    </ion-list-header>
+  </ion-card-content>
+
+</ion-card>
