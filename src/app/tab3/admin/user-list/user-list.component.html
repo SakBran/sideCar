@@ -24,17 +24,21 @@
 </ion-header>
 
 <ion-content>
-  <ion-infinite-scroll threshold="25%" [disabled]="true" position="bottom" >
     <ion-card>
-      <ion-card-header>
-        <ion-card-subtitle>Awesome Subtitle</ion-card-subtitle>
-        <ion-card-title>Awesome Title</ion-card-title>
-      </ion-card-header>
+     
       <ion-card-content>
-        Awesome content
+        <ion-item> 
+          <ion-avatar slot="start">
+            <img src='/../assets/person.svg'>
+          </ion-avatar>
+          <ion-label>
+            <p><ion-icon name="person-outline"></ion-icon> U Phyoe Mg</p>
+            <p><ion-icon name="call-outline"></ion-icon> Ph 0943106949</p>
+          </ion-label>
+          <ion-button  color="secondary">
+            <ion-icon name="create-outline"></ion-icon>
+          </ion-button>
+        </ion-item>
       </ion-card-content>
     </ion-card>
-    <ion-infinite-scroll-content loadingSpinner="bubbles" loadingText="Loading more data...">
-    </ion-infinite-scroll-content>
-  </ion-infinite-scroll>
 </ion-content>
