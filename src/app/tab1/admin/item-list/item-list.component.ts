@@ -12,7 +12,6 @@ export class ItemListComponent implements OnInit {
   list:number[]=[1,2,34,5,6,7,8,9,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0];
   searchVisible:boolean=false;
   ngOnInit() {}
-
   searchVisiblity(){
     if(this.searchVisible===true){
       this.searchVisible=false;
