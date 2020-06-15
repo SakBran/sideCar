@@ -7,6 +7,8 @@ import { ResturantListComponent } from './admin/resturant-list/resturant-list.co
 import { ResturantCreateComponent } from './admin/resturant-create/resturant-create.component';
 import { ItemConfirmComponent } from './admin/item-confirm/item-confirm.component';
 import { ItemConfirmDetailComponent } from './admin/item-confirm-detail/item-confirm-detail.component';
+import { LocationListComponent } from './admin/location-list/location-list.component';
+import { LocationCreateComponent } from './admin/location-create/location-create.component';
 
 const routes: Routes = [
   {
@@ -35,6 +37,17 @@ const routes: Routes = [
   , {
     path: 'resturantCreate',
     component: ResturantCreateComponent,
+  },
+  {
+    path: 'locationList',
+    component: LocationListComponent,
+  }, {
+    path: 'locationEdit/:id',
+    component: LocationCreateComponent,
+  }
+  , {
+    path: 'locationCreate',
+    component: LocationCreateComponent,
   },
   {
     path: 'itemConfirm',
