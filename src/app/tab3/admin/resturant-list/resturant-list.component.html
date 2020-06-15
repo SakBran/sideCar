@@ -9,7 +9,7 @@
           </ion-chip>
         </ion-col>
         <ion-col size="5">
-          
+
         </ion-col>
         <ion-col size="3">
           <ion-chip routerLink="/tabs/tab3/resturantCreate">
@@ -24,21 +24,32 @@
 </ion-header>
 
 <ion-content>
-    <ion-card>
-     
-      <ion-card-content>
-        <ion-item> 
-          <ion-avatar slot="start">
-            <img src='/../assets/shop.svg'>
-          </ion-avatar>
-          <ion-label>
-            <p><ion-icon name="business-outline"></ion-icon> KFC</p>
-            <p><ion-icon name="call-outline"></ion-icon> Ph 0943106949</p>
-          </ion-label>
-          <ion-button  color="secondary">
-            <ion-icon name="create-outline"></ion-icon>
-          </ion-button>
-        </ion-item>
-      </ion-card-content>
-    </ion-card>
+  <ion-refresher slot="fixed" (ionRefresh)="refresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+  <ion-card *ngFor="let item of resDataList">
+    <ion-card-content>
+      <ion-item>
+        <ion-avatar slot="start">
+          <img src='/../assets/shop.svg'>
+        </ion-avatar>
+        <ion-label>
+          <p>
+            <ion-icon name="business-outline"></ion-icon> {{item.shopname}}
+          </p>
+          <p>
+            <ion-icon name="call-outline"></ion-icon> Ph {{item.phone}}
+          </p>
+        </ion-label>
+
+        <ion-button (click)="onEdit(item.id)" color="secondary">
+          <ion-icon name="create-outline"></ion-icon>
+        </ion-button>
+
+        <ion-button (click)="onDelete(item.id)" color="danger">
+          <ion-icon name="trash"></ion-icon>
+        </ion-button>
+      </ion-item>
+    </ion-card-content>
+  </ion-card>
 </ion-content>

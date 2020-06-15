@@ -24,7 +24,10 @@
 </ion-header>
 
 <ion-content>
-    <ion-card>
+  <ion-refresher slot="fixed" (ionRefresh)="refresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+    <ion-card *ngFor="let item of userDataList">
      
       <ion-card-content>
         <ion-item> 
@@ -32,11 +35,15 @@
             <img src='/../assets/person.svg'>
           </ion-avatar>
           <ion-label>
-            <p><ion-icon name="person-outline"></ion-icon> U Phyoe Mg</p>
-            <p><ion-icon name="call-outline"></ion-icon> Ph 0943106949</p>
+            <p><ion-icon name="person-outline"></ion-icon>{{item.username}}</p>
+            <p><ion-icon name="call-outline"></ion-icon> Ph {{item.phone}}</p>
           </ion-label>
-          <ion-button  color="secondary">
+          <ion-button (click)="onEdit(item.id)" color="secondary">
             <ion-icon name="create-outline"></ion-icon>
+          </ion-button>
+
+          <ion-button (click)="onDelete(item.id)" color="danger">
+            <ion-icon name="trash"></ion-icon>
           </ion-button>
         </ion-item>
       </ion-card-content>

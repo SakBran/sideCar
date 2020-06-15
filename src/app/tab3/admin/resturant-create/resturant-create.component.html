@@ -9,10 +9,10 @@
           </ion-chip>
         </ion-col>
         <ion-col size="5">
-          
+
         </ion-col>
         <ion-col size="3">
-        
+
         </ion-col>
       </ion-row>
     </ion-grid>
@@ -26,56 +26,74 @@
       <ion-card-subtitle color="primary">User Registration Form</ion-card-subtitle>
     </ion-card-header>
     <ion-card-content>
-      
+
       <ion-card>
         <ion-card-header>
           <ion-card-subtitle>Shop's General Info</ion-card-subtitle>
-         
+
         </ion-card-header>
         <ion-card-content>
-          
-      <ion-item>
-        <ion-label position="floating" color="secondary">
-          <ion-icon name="person-outline"></ion-icon> Please enter Shop's username
-        </ion-label>
-        <ion-input type="text"></ion-input>
-      </ion-item>
-      <ion-item>
-        <ion-label position="floating" color="secondary">
-          <ion-icon name="lock-open-outline"></ion-icon> Please enter password
-        </ion-label>
-        <ion-input type="text"></ion-input>
-      </ion-item>
-      <ion-item>
-        <ion-label position="floating" color="secondary">
-          <ion-icon name="call-outline"></ion-icon> Please enter phone
-        </ion-label>
-        <ion-input type="tel"></ion-input>
-      </ion-item>
+
+          <ion-item>
+            <ion-label position="floating" color="secondary">
+              <ion-icon name="person-outline"></ion-icon> Shop's username<ion-text
+                *ngIf="this.resData.username===''||this.resData.username===null" color="danger">
+                *
+              </ion-text>
+            </ion-label>
+            <ion-input [(ngModel)]="resData.username" type="text"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label position="floating" color="secondary">
+              <ion-icon name="business-outline"></ion-icon> Shop's name<ion-text
+                *ngIf="this.resData.shopname===''||this.resData.shopname===null" color="danger">
+                *
+              </ion-text>
+            </ion-label>
+            <ion-input [(ngModel)]="resData.shopname" type="text"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label position="floating" color="secondary">
+              <ion-icon name="lock-open-outline"></ion-icon> Password<ion-text
+                *ngIf="this.resData.password===''||this.resData.password===null" color="danger">
+                *
+              </ion-text>
+            </ion-label>
+            <ion-input [(ngModel)]="resData.password" type="password"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label position="floating" color="secondary">
+              <ion-icon name="call-outline"></ion-icon> Phone<ion-text
+                *ngIf="this.resData.phone===''||this.resData.phone===null" color="danger">
+                *
+              </ion-text>
+            </ion-label>
+            <ion-input [(ngModel)]="resData.phone" type="tel"></ion-input>
+          </ion-item>
         </ion-card-content>
       </ion-card>
 
       <ion-card>
         <ion-card-header>
           <ion-card-subtitle>Shop's Location</ion-card-subtitle>
-         
+
         </ion-card-header>
         <ion-card-content>
           <ion-item>
             <ion-label position="floating" color="secondary">
-              <ion-icon name="call-outline"></ion-icon> Please enter Longitude
+              <ion-icon name="location-outline"></ion-icon> Longitude
             </ion-label>
-            <ion-input type="number"></ion-input>
+            <ion-input [(ngModel)]="resData.longitude" type="number"></ion-input>
           </ion-item>
           <ion-item>
             <ion-label position="floating" color="secondary">
-              <ion-icon name="call-outline"></ion-icon> Please enter Longitude
+              <ion-icon name="location-outline"></ion-icon> Latitude
             </ion-label>
-            <ion-input type="number"></ion-input>
+            <ion-input [(ngModel)]="resData.latitude" type="number"></ion-input>
           </ion-item>
         </ion-card-content>
       </ion-card>
-      
+
 
       <ion-grid fixed>
         <ion-row>
@@ -85,8 +103,11 @@
             </ion-button>
           </ion-col>
           <ion-col size="6">
-            <ion-button expand="block" color="secondary" shape="round">
+            <ion-button *ngIf="this.id===0" (click)="create()" expand="block" color="secondary" shape="round">
               Save
+            </ion-button>
+            <ion-button *ngIf="this.id!==0" (click)="update()" expand="block" color="secondary" shape="round">
+              Update
             </ion-button>
           </ion-col>
         </ion-row>

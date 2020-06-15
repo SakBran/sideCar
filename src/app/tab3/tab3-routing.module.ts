@@ -20,11 +20,19 @@ const routes: Routes = [
   {
     path: 'userCreate',
     component: UserCreateComponent,
-  },{
+  },
+  {
+    path: 'userEdit/:id',
+    component: UserCreateComponent,
+  },
+  {
     path: 'resturantList',
     component: ResturantListComponent,
+  }, {
+    path: 'resturantEdit/:id',
+    component: ResturantCreateComponent,
   }
-  ,{
+  , {
     path: 'resturantCreate',
     component: ResturantCreateComponent,
   },
@@ -42,4 +50,4 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
-export class Tab3PageRoutingModule {}
+export class Tab3PageRoutingModule { }
