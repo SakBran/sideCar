@@ -20,7 +20,9 @@ export class LocationListComponent implements OnInit {
     private route: Router
   ) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.dataLoading();
+  }
 
   back() {
     this.location.back();
@@ -57,7 +59,7 @@ export class LocationListComponent implements OnInit {
   }
 
   onEdit(id) {
-    this.route.navigateByUrl("tabs/tab3/resturantEdit/" + id);
+    this.route.navigateByUrl("tabs/tab3/locationEdit/" + id);
   }
 
   onDelete(id) {

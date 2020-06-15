@@ -1,54 +1,49 @@
-import { userTypeModel } from './Models/usertypeModel';
-import Swal from 'sweetalert2';
-
+import { userTypeModel } from "./Models/usertypeModel";
+import Swal from "sweetalert2";
 
 export class appSetting {
-    /**
-     *
-     */
-    constructor() {
+  /**
+   *
+   */
+  constructor() {}
+  public loginType = "resturant";
 
+  public adminProcess = "";
+  public adminID = "";
 
-    }
-    public loginType = "admin";
+  public adminTab2Process = "";
+  public adminTab2ID = "";
 
-    public adminProcess = "";
-    public adminID = "";
+  public adminTab3Process = "";
+  public adminTab3ID = "";
 
-    public adminTab2Process = "";
-    public adminTab2ID = "";
+  public apiAddress = "http://localhost/sidecar";
 
-    public adminTab3Process = "";
-    public adminTab3ID = "";
+  public userTypeData: userTypeModel[] = [];
 
-    public apiAddress = "http://localhost/sidecar";
+  public showLoading() {
+    Swal.fire({
+      title: "System Message",
+      html: "Please wait! System is processing..",
+      confirmButtonText: "Done",
+      onBeforeOpen: () => {
+        Swal.showLoading();
+      },
+    });
+  }
 
-    public userTypeData:userTypeModel[]=[];
+  public showSuccess() {
+    Swal.fire("Success", "Data has been saved successfully", "success");
+  }
 
-    public showLoading(){
-        Swal.fire({
-            title: 'System Message',
-            html: 'Please wait! System is processing..',
-            confirmButtonText: 'Done',
-            onBeforeOpen: () => {
-              Swal.showLoading();
-            }
-          });
-    }
+  public showError(msg) {
+    Swal.fire("Error", msg, "error");
+  }
+  public showInvalid() {
+    Swal.fire("Invalid Data", "Please fill invalid data!", "info");
+  }
 
-    public showSuccess(){
-        Swal.fire('Success','Data has been saved successfully','success');
-    }
-
-    public showError(msg){
-        Swal.fire('Error',msg,'error');
-    }
-    public showInvalid(){
-        Swal.fire('Invalid Data','Please fill invalid data!','info');
-    }
-
-    public loadingClose(){
-        Swal.close();
-    }
-
+  public loadingClose() {
+    Swal.close();
+  }
 }
