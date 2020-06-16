@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { appSetting } from 'src/app/app-setting';
+import { Component, OnInit, Input } from '@angular/core';
+import { orderTransationModel } from 'src/app/Models/orderTransationModel';
 
 @Component({
   selector: 'app-resturant-individual-order',
@@ -6,12 +8,30 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./resturant-individual-order.component.scss'],
 })
 export class ResturantIndividualOrderComponent implements OnInit {
-
-  constructor() { }
+  @Input('orderNo') Orderid: number;
   itemVisible:boolean=false;
-  ngOnInit() {}
-  item:number[]=[1,2,3,4,5,6,7,8,9,10,11,12,13];
+  data:orderTransationModel=new orderTransationModel();
+  constructor(private appSetting:appSetting) {
+  
+   }
+  
 
+  ngOnInit() {
+ 
+    this.itemFilter();
+  }
+
+  async itemFilter(){
+    const temp=[...this.appSetting.orderTransationList];
+    temp.forEach(x=>{
+   
+      if(x.orderModel.id===this.Orderid){
+        this.data=x;
+
+      }
+    })
+  }
+  
   itemVisibleMethod(){
     if(this.itemVisible===false){
       this.itemVisible=true;

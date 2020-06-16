@@ -5,13 +5,15 @@ import { userTypeModel } from "./Models/usertypeModel";
 import Swal from "sweetalert2";
 import { foodModel } from "src/app/Models/foodModel";
 import { resturantModel } from "./Models/resturantModel";
+import { locationModel } from './Models/locationModel';
+import { orderTransationModel } from './Models/orderTransationModel';
 
 export class appSetting {
   /**
    *
    */
   constructor() {}
-  public loginType = "admin";
+  public loginType = "resturant";
 
   public adminProcess = "";
   public adminID = "";
@@ -27,15 +29,19 @@ export class appSetting {
   public userTypeData: userTypeModel[] = [];
 
   public resturantID = 5;
+  public sessionUserID=1;
 
   public foodDataList: foodModel[] = [];
   public menuFoodDataList: foodModel[] = [];
   public constFoodDataList: foodModel[] = [];
   public resturandDataList: resturantModel[] = [];
 
+  public locationDataList:locationModel[]=[];
+
   public orderDetailList: orderDetialModel[] = [];
   public orderDetailViewList: orderDetialViewmodel[] = [];
 
+  public orderTransationList:orderTransationModel[]=[];
   public orderData: orderModel = {
     id: 0,
     orderDate: new Date(Date.now()),
@@ -46,9 +52,31 @@ export class appSetting {
     clientAddress: "",
     deliveryCharegs: 0,
     riderID: 0,
+    Township_id:0,
     riderEarning: 0,
-    operatorID: 0,
+    operatorID: this.sessionUserID,
+    status:'pending'
   };
+
+  public orderTransationClear(){
+    this.orderData = {
+      id: 0,
+      orderDate: new Date(Date.now()),
+      deliveryDate: new Date(Date.now()),
+      clientName: "",
+      clitentPhone: "09-",
+      clitentFlatNo: "",
+      clientAddress: "",
+      deliveryCharegs: 0,
+      riderID: 0,
+      Township_id:0,
+      riderEarning: 0,
+      operatorID: this.sessionUserID,
+      status:'pending'
+    };
+    this.orderDetailList=[];
+    this.orderDetailViewList=[];
+  }
   public showLoading() {
     Swal.fire({
       title: "System Message",

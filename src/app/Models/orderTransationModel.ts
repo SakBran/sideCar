@@ -3,5 +3,5 @@ import { orderModel } from './orderModel';
 
 export class orderTransationModel{
     orderModel:orderModel;
-    orderDetialModel:orderDetialModel[];
+    orderDetailModels:orderDetialModel[];
 }

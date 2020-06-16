@@ -2,9 +2,10 @@
   <ion-card-content>
     <ion-item>
       <ion-label>
-        <h3>Fried Chicken</h3>
-        <p>Quantity:5</p>
-        <p>Price:5000</p>
+        <h3>{{this.foodName(orderDetail.itemID).toString()}}</h3>
+        <p>Quantity:{{orderDetail.itemQty}}</p>
+        <p>Price:{{orderDetail.itemFinalPrice}}</p>
+        <p>Remark:{{orderDetail.remark}}</p>
       </ion-label>
       <ion-checkbox [(ngModel)]="available"></ion-checkbox>
     </ion-item>

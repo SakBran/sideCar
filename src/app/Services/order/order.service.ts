@@ -9,7 +9,7 @@ import { orderTransationModel } from 'src/app/Models/orderTransationModel';
   providedIn: 'root'
 })
 export class OrderService {
-  private url = `${this.appSetting.apiAddress}/api/orderTransationModels`;
+  private url = `${this.appSetting.apiAddress}/api/orderModels`;
   private httpOptions = {
     headers: new HttpHeaders({
       'Content-Type': 'application/json'
@@ -20,19 +20,25 @@ export class OrderService {
   get(): Observable<orderTransationModel[]> {
     return this.http.get<orderTransationModel[]>(this.url);
   }
-  getSingle(id: number): Observable<orderTransationModel> {
-    const searchUrl = `${this.url}/${id}`;
-    return this.http.get<orderTransationModel>(searchUrl);
+  getResturantPendings(id: number): Observable<orderTransationModel[]> {
+    const searchUrl = `${this.url}/resturant/pendings?ResturantID=${id}`;
+    return this.http.get<orderTransationModel[]>(searchUrl);
+  }
+
+  getResturantComplete(id: number): Observable<orderTransationModel[]> {
+    const searchUrl = `${this.url}/resturant/complete?ResturantID=${id}`;
+    return this.http.get<orderTransationModel[]>(searchUrl);
   }
   
   post(data: orderTransationModel): void {
     this.http.post(this.url, data, this.httpOptions).subscribe(
       res => {
         console.log(res);
+       this.appSetting.orderTransationClear();
         this.appSetting.showSuccess();
       },
       err => {
-        console.log(err);
+        this.appSetting.showError(err);
       }
     );
   }

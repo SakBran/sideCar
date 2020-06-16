@@ -23,7 +23,9 @@ export class AddToInvoiceComponent implements OnInit {
     discount: 0,
     itemFinalPrice: 0,
     orderID: 0,
+    status:'pending',
     remark: "",
+    comment:""
   };
   constructor(
     public appSetting: appSetting,

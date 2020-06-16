@@ -6,5 +6,7 @@ export class orderDetialModel {
   discount: number;
   itemFinalPrice: number;
   orderID: number;
+  status:string;
   remark:string;
+  comment:string;
 }

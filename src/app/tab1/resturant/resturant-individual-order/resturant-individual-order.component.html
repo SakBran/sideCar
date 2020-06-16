@@ -1,12 +1,12 @@
-<ion-card>
+<ion-card *ngIf="this.data!==null">
   <ion-card-content>
     <ion-item>
       <ion-avatar slot="start">
         <img src="/../assets/food.svg" />
       </ion-avatar>
-      <ion-label>
-        <h2>Order:12456</h2>
-        <p>Date:20.12.2020</p>
+      <ion-label >
+        <h2>Order: {{this.data.orderModel.id}}</h2>
+        <p>Date: {{this.data.orderModel.orderDate|date}}</p>
         <p>Total Amount:7500</p>
       </ion-label>
       <ion-button color="danger" disabled>
@@ -28,7 +28,11 @@
     </ion-list-header>
 
     <ng-container *ngIf="this.itemVisible === true">
-      <app-resturant-card *ngFor="let item of item"></app-resturant-card>
+      <ng-container *ngFor="let item of data.orderDetailModels">
+        <app-resturant-card *ngIf="item" [data]=item></app-resturant-card>
+      </ng-container>
+      
+      
     </ng-container>
 
     <ion-list-header *ngIf="this.itemVisible === true">

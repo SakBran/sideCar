@@ -1,38 +1,9 @@
 <ion-content>
+    <ng-container *ngFor="let x of this.appSetting.orderTransationList">
+        <app-resturant-individual-order *ngIf="x" [orderNo]=x.orderModel.id>
+        </app-resturant-individual-order>
+    </ng-container>
 
-<app-resturant-individual-order></app-resturant-individual-order>
 
-<app-resturant-individual-order></app-resturant-individual-order>
 
-<app-resturant-individual-order></app-resturant-individual-order>
-
-<app-resturant-individual-order></app-resturant-individual-order>
-
-<app-resturant-individual-order></app-resturant-individual-order>
-
-<app-resturant-individual-order></app-resturant-individual-order>
-
-<app-resturant-individual-order></app-resturant-individual-order>
-
-<app-resturant-individual-order></app-resturant-individual-order>
-
-<app-resturant-individual-order></app-resturant-individual-order>
-
-<app-resturant-individual-order></app-resturant-individual-order>
-
-<app-resturant-individual-order></app-resturant-individual-order>
-
-<app-resturant-individual-order></app-resturant-individual-order>
-
-<app-resturant-individual-order></app-resturant-individual-order>
-
-<app-resturant-individual-order></app-resturant-individual-order>
-
-<app-resturant-individual-order></app-resturant-individual-order>
-
-<app-resturant-individual-order></app-resturant-individual-order>
-
-<app-resturant-individual-order></app-resturant-individual-order>
-
-<app-resturant-individual-order></app-resturant-individual-order>
 </ion-content>

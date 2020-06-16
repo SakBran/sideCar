@@ -1,4 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { appSetting } from 'src/app/app-setting';
+
+import { Component, OnInit, Input } from '@angular/core';
+import { orderDetialModel } from 'src/app/Models/orderDetailModel';
+import { resturantModel } from 'src/app/Models/resturantModel';
 
 @Component({
   selector: 'app-resturant-card',
@@ -6,8 +10,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./resturant-card.component.scss'],
 })
 export class ResturantCardComponent implements OnInit {
-
-  constructor() { }
+@Input('data') orderDetail:orderDetialModel;
+  constructor(private appSetting:appSetting) { }
   available:boolean=true;
   ngOnInit() {}
 
@@ -18,4 +22,16 @@ export class ResturantCardComponent implements OnInit {
       this.available=true;
     }
   }
+  foodName(id):string{
+    let result="";
+    const temp=[...this.appSetting.foodDataList];
+    temp.forEach(x=>{
+      
+      if(x.id===id){
+        result=x.itemName;
+      }
+    });
+    return result;
+  }
+  
 }

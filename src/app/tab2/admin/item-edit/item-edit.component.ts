@@ -24,7 +24,9 @@ export class ItemEditComponent implements OnInit {
     discount: 0,
     itemFinalPrice: 0,
     orderID: 0,
+    status:'pending',
     remark: "",
+    comment:""
   };
 
   id=+this.Router.snapshot.paramMap.get("id");
