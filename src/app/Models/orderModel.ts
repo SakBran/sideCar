@@ -3,7 +3,7 @@ export class orderModel {
   orderDate: Date;
   deliveryDate: Date;
   clientName: string;
-  clitent: string;
+  clitentPhone: string;
   clitentFlatNo: string;
   clientAddress: string;
   deliveryCharegs: number;

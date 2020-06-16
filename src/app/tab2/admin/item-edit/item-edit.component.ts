@@ -1,3 +1,4 @@
+import { orderModel } from './../../../Models/orderModel';
 import { itemRest } from './../../../app-setting';
 import { orderDetialViewmodel } from './../../../Models/orderDetailViewmodel';
 import { orderDetialModel } from "./../../../Models/orderDetailModel";
@@ -25,6 +26,7 @@ export class ItemEditComponent implements OnInit {
     orderID: 0,
     remark: "",
   };
+
   id=+this.Router.snapshot.paramMap.get("id");
   constructor(
     public appSetting: appSetting,
