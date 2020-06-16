@@ -10,19 +10,4 @@ export class ItemListComponent implements OnInit {
   constructor(public appSetting: appSetting) {}
 
   ngOnInit() {}
-
-  resName(id): string {
-    let res = "";
-    this.appSetting.resturandDataList.forEach((x) => {
-      if (x.id === id) {
-        res = x.shopname;
-      }
-    });
-    return res;
-  }
-  addToInvoice(e) {
-    this.appSetting.adminProcess = "new";
-    this.appSetting.adminID = e;
-    console.log("Work");
-  }
 }

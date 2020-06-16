@@ -55,4 +55,14 @@ export class appSetting {
   public loadingClose() {
     Swal.close();
   }
+
+  public resName(id): string {
+    let res = "null";
+    this.resturandDataList.forEach((x) => {
+      if (x.id === id) {
+        res = x.shopname;
+      }
+    });
+    return res;
+  }
 }
