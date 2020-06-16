@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { appSetting } from '../app-setting';
+import { Location } from '@angular/common';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-tab2',
@@ -8,6 +10,8 @@ import { appSetting } from '../app-setting';
 })
 export class Tab2Page {
 
-  constructor(public appSetting:appSetting) {}
+  constructor(public appSetting:appSetting,public route:Router) {
+    this.route.navigateByUrl('tabs/tab2');
+  }
 
 }

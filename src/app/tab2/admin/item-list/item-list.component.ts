@@ -24,7 +24,7 @@ export class ItemListComponent implements OnInit {
     }
     const temp=[...this.appSetting.constFoodDataList];
     temp.forEach(x=>{
-      console.log(x.itemName);
+     
       if(x.id===id){
         
         i.itemName=x.itemName;

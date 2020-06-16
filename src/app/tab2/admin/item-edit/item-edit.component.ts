@@ -48,7 +48,7 @@ export class ItemEditComponent implements OnInit {
     const temp=[...this.appSetting.orderDetailList];
     temp.forEach((x) => {
       i=i+1;
-      console.log(x);
+
       if(i===id){
         
         result=this.loadFoodData(x.itemID);
@@ -62,9 +62,7 @@ export class ItemEditComponent implements OnInit {
     let result = new foodModel();
     const temp=[...this.appSetting.constFoodDataList]
     temp.forEach((x) => {
-      console.log('This is counter'+id);
-      console.log('This is id:'+x.id);
-      console.log('work');
+
 
       if (x.id === id) {
         
@@ -113,7 +111,7 @@ export class ItemEditComponent implements OnInit {
         z=z+1;
         if(z===this.id){
           x=temp;
-          console.log(x);
+
         }
       });
       

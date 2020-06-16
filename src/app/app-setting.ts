@@ -41,7 +41,7 @@ export class appSetting {
     orderDate: new Date(Date.now()),
     deliveryDate: new Date(Date.now()),
     clientName: "",
-    clitentPhone: "",
+    clitentPhone: "09-",
     clitentFlatNo: "",
     clientAddress: "",
     deliveryCharegs: 0,
@@ -92,7 +92,6 @@ export class appSetting {
     };
     const temp = [...this.constFoodDataList];
     temp.forEach((x) => {
-      console.log(x.itemName);
       if (x.id === id) {
         i.itemName = x.itemName;
         i.resturant = this.resName(x.resturant_id);
