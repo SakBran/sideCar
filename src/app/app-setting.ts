@@ -7,6 +7,7 @@ import { foodModel } from "src/app/Models/foodModel";
 import { resturantModel } from "./Models/resturantModel";
 import { locationModel } from './Models/locationModel';
 import { orderTransationModel } from './Models/orderTransationModel';
+import { resendModel } from './Models/resendModel';
 
 export class appSetting {
   /**
@@ -42,6 +43,7 @@ export class appSetting {
   public orderDetailViewList: orderDetialViewmodel[] = [];
 
   public orderTransationList:orderTransationModel[]=[];
+  public resendListFromResturant:resendModel[]=[];
   public orderData: orderModel = {
     id: 0,
     orderDate: new Date(Date.now()),
