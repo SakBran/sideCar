@@ -7,11 +7,11 @@ import { FoodService } from "src/app/Services/food/food.service";
 import { foodModel } from "src/app/Models/foodModel";
 
 @Component({
-  selector: "app-item-confirm",
-  templateUrl: "./item-confirm.component.html",
-  styleUrls: ["./item-confirm.component.scss"],
+  selector: "app-food-list",
+  templateUrl: "./food-list.component.html",
+  styleUrls: ["./food-list.component.scss"],
 })
-export class ItemConfirmComponent implements OnInit {
+export class FoodListComponent implements OnInit {
   constructor(
     public location: Location,
     public appSetting: appSetting,
@@ -27,7 +27,7 @@ export class ItemConfirmComponent implements OnInit {
     this.location.back();
   }
   dataLoading() {
-    this.FoodService.getPending().subscribe(
+    this.FoodService.get(this.appSetting.resturantID).subscribe(
       (x) => {
         this.appSetting.showLoading();
         this.appSetting.foodDataList = x;
@@ -40,34 +40,8 @@ export class ItemConfirmComponent implements OnInit {
     );
   }
 
-  acept(id) {
-    this.FoodService.putConfirm(id, "true");
-    this.FoodService.getPending().subscribe(
-      (x) => {
-        this.appSetting.foodDataList = x;
-      },
-      (err) => {
-        this.appSetting.showError(err);
-      },
-
-      () => {}
-    );
-  }
-  reject(id) {
-    this.FoodService.putConfirm(id, "false");
-    this.FoodService.getPending().subscribe(
-      (x) => {
-        this.appSetting.foodDataList = x;
-      },
-      (err) => {
-        this.appSetting.showError(err);
-      },
-
-      () => {}
-    );
-  }
   refresh(event) {
-    this.FoodService.getPending().subscribe(
+    this.FoodService.get(this.appSetting.resturantID).subscribe(
       (x) => {
         this.appSetting.foodDataList = x;
       },
@@ -100,6 +74,7 @@ export class ItemConfirmComponent implements OnInit {
     }).then((result) => {
       if (result.value) {
         this.FoodService.delete(id);
+
         Swal.fire("Deleted!", "Your file has been deleted.", "success");
       }
     });

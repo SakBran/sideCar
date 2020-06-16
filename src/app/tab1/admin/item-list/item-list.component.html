@@ -1,16 +1,15 @@
-
-    <ion-card *ngFor="let i of list">
-      <ion-item> 
-        <ion-avatar slot="start">
-          <img src='/../assets/food.svg'>
-        </ion-avatar>
-        <ion-label>
-          <h2>Fried Chicken</h2>
-          <h3>1000</h3>
-          <p>KFC</p>
-        </ion-label>
-        <ion-button (click)="addToInvoice(i)" color="secondary">
-          <ion-icon name="add-outline"></ion-icon>
-        </ion-button>
-      </ion-item>
-    </ion-card>
+<ion-card *ngFor="let i of this.appSetting.menuFoodDataList">
+  <ion-item>
+    <ion-avatar slot="start">
+      <img src="/../assets/food.svg" />
+    </ion-avatar>
+    <ion-label>
+      <h2>{{ i.itemName }}</h2>
+      <h3>{{ i.price }}</h3>
+      <p>{{ resName(i.resturant_id) }}</p>
+    </ion-label>
+    <ion-button (click)="addToInvoice(i)" color="secondary">
+      <ion-icon name="add-outline"></ion-icon>
+    </ion-button>
+  </ion-item>
+</ion-card>

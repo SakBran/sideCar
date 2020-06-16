@@ -1,12 +1,14 @@
 import { userTypeModel } from "./Models/usertypeModel";
 import Swal from "sweetalert2";
+import { foodModel } from "src/app/Models/foodModel";
+import { resturantModel } from "./Models/resturantModel";
 
 export class appSetting {
   /**
    *
    */
   constructor() {}
-  public loginType = "resturant";
+  public loginType = "admin";
 
   public adminProcess = "";
   public adminID = "";
@@ -20,6 +22,13 @@ export class appSetting {
   public apiAddress = "http://localhost/sidecar";
 
   public userTypeData: userTypeModel[] = [];
+
+  public resturantID = 5;
+
+  public foodDataList: foodModel[] = [];
+  public menuFoodDataList: foodModel[] = [];
+  public constFoodDataList: foodModel[] = [];
+  public resturandDataList: resturantModel[] = [];
 
   public showLoading() {
     Swal.fire({
@@ -36,8 +45,8 @@ export class appSetting {
     Swal.fire("Success", "Data has been saved successfully", "success");
   }
 
-  public showError(msg) {
-    Swal.fire("Error", msg, "error");
+  public showError(msg: JSON) {
+    Swal.fire("Error", JSON.stringify(msg), "error");
   }
   public showInvalid() {
     Swal.fire("Invalid Data", "Please fill invalid data!", "info");
