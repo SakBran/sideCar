@@ -9,10 +9,10 @@
         <p>Date: {{this.data.orderModel.orderDate|date}}</p>
         <p>Total Amount:7500</p>
       </ion-label>
-      <ion-button color="danger" disabled>
+      <ion-button *ngIf="!this.appSetting.resendBtn(this.data.orderModel.id)" color="danger" >
         <ion-icon name="thumbs-down-outline"></ion-icon>
       </ion-button>
-      <ion-button color="secondary" disabled>
+      <ion-button *ngIf="this.appSetting.resendBtn(this.data.orderModel.id)" color="secondary" >
         <ion-icon name="thumbs-up-outline"></ion-icon>
       </ion-button>
     </ion-item>

@@ -11,7 +11,7 @@ export class ResturantIndividualOrderComponent implements OnInit {
   @Input('orderNo') Orderid: number;
   itemVisible:boolean=false;
   data:orderTransationModel=new orderTransationModel();
-  constructor(private appSetting:appSetting) {
+  constructor(public appSetting:appSetting) {
   
    }
   

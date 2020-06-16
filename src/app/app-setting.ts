@@ -8,6 +8,7 @@ import { resturantModel } from "./Models/resturantModel";
 import { locationModel } from './Models/locationModel';
 import { orderTransationModel } from './Models/orderTransationModel';
 import { resendModel } from './Models/resendModel';
+import { TEMPORARY_NAME } from '@angular/compiler/src/render3/view/util';
 
 export class appSetting {
   /**
@@ -114,6 +115,17 @@ export class appSetting {
     });
     return res;
   }
+
+ public resendBtn(orderNo):boolean{
+  let result:boolean=true;
+  const temp=[...this.resendListFromResturant];
+  temp.forEach(x=>{
+    if(x.orderNo===orderNo){
+      result=false;
+    }
+  })
+  return result;
+ }
 
   public itemJoin(id): itemRest {
     let i: itemRest = {
