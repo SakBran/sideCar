@@ -1,3 +1,5 @@
+import { orderDetialViewmodel } from './Models/orderDetailViewmodel';
+import { orderDetialModel } from './Models/orderDetailModel';
 import { userTypeModel } from "./Models/usertypeModel";
 import Swal from "sweetalert2";
 import { foodModel } from "src/app/Models/foodModel";
@@ -30,6 +32,8 @@ export class appSetting {
   public constFoodDataList: foodModel[] = [];
   public resturandDataList: resturantModel[] = [];
 
+  public orderDetailList:orderDetialModel[]=[];
+  public orderDetailViewList:orderDetialViewmodel[]=[];
   public showLoading() {
     Swal.fire({
       title: "System Message",
@@ -65,4 +69,26 @@ export class appSetting {
     });
     return res;
   }
+
+
+  public itemJoin(id):itemRest{
+    let i:itemRest={
+      itemName:'',resturant:''
+    }
+    const temp=[...this.constFoodDataList];
+    temp.forEach(x=>{
+      console.log(x.itemName);
+      if(x.id===id){
+        
+        i.itemName=x.itemName;
+        i.resturant=this.resName(x.resturant_id);
+      }
+    })
+    return i;
+  }
 }
+export class itemRest{
+  itemName:string;
+  resturant:string;
+}
+

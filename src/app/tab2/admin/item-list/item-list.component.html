@@ -1,27 +1,21 @@
-<ion-card *ngFor="let i of list">
+<ion-card *ngFor="let i of this.appSetting.orderDetailViewList;let x=index;">
   <ion-card-content>
     <ion-item>
       <ion-avatar slot="start" >
         <img src='/../assets/food.svg'>
       </ion-avatar>
       <ion-label>
-        <h2>Fried Chicken</h2>
-        <h3>Quantity 5</h3>
-        <h3>Price 1000</h3>
-       
+        <h2>{{i.itemName}}</h2>
+        <h3>Quantity {{i.orderDetialModel.itemQty}}</h3>
+        <h3>Price {{i.orderDetialModel.itemFinalPrice}}</h3>
+        <h3>{{i.resturantName}}</h3>
       </ion-label>
-      <ion-button (click)="editInvoice(i)" color="secondary">
+      <ion-button routerLink='/tabs/tab2/itemEdit/{{x}}' color="secondary">
         <ion-icon name="create-outline"></ion-icon>
       </ion-button>
-      <ion-button (click)="editInvoice(i)" color="danger">
+      <ion-button (click)="deleteInvoice(x)" color="danger">
         <ion-icon name="trash-outline"></ion-icon>
       </ion-button>
-    </ion-item>
-    <ion-item lines="none">
-      <ion-text color="danger" slot="end">
-        <h5>*Only four legs available.*</h5>
-      </ion-text>
-      
     </ion-item>
   </ion-card-content>
 </ion-card>

@@ -17,4 +17,29 @@ export class ItemListComponent implements OnInit {
   riderSelect(){
     this.appSetting.adminTab2Process='riderSelect'
   }
+
+   itemJoin(id):itemRest{
+    let i:itemRest={
+      itemName:'',resturant:''
+    }
+    const temp=[...this.appSetting.constFoodDataList];
+    temp.forEach(x=>{
+      console.log(x.itemName);
+      if(x.id===id){
+        
+        i.itemName=x.itemName;
+        i.resturant=this.appSetting.resName(x.resturant_id);
+      }
+    })
+    return i;
+  }
+
+  deleteInvoice(id){
+    this.appSetting.orderDetailList.splice(id,1);
+    this.appSetting.orderDetailViewList.splice(id,1);
+  }
+}
+export class itemRest{
+  itemName:string;
+  resturant:string;
 }

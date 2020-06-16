@@ -1,97 +1,102 @@
-<ion-card>
-  <ion-item>
-    <ion-avatar slot="start">
-      <img src='/../assets/food.svg'>
-    </ion-avatar>
-    <ion-label>
-      <h2>Fried Chicken</h2>
-      <h3>1000</h3>
-      <p>KFC</p>
-    </ion-label>
-  </ion-item>
-</ion-card>
+<ion-content>
+  <ion-card>
+    <ion-card-content>
+      <ion-item lines="none">
+        <ion-avatar slot="start">
+          <img src="/../assets/food.svg" />
+        </ion-avatar>
+        <ion-label lines="none">
+          <h2>{{ this.foodData.itemName }}</h2>
+          <h3>{{ this.foodData.price }}</h3>
+          <h3>{{ this.appSetting.resName(foodData.resturant_id) }}</h3>
+        </ion-label>
+      </ion-item>
+    </ion-card-content>
+  </ion-card>
 
-<ion-card>
-  <ion-card-content>
-    <ion-item>
-      <ion-avatar slot="start">
-        <img src='/../assets/number.svg'>
-      </ion-avatar>
-      <ion-label>
-        <h2>Please enter the quantity</h2>
-      </ion-label>
+  <ion-card>
+    <ion-card-content>
+      <ion-item lines="none">
+        <ion-avatar slot="start">
+          <img src="/../assets/number.svg" />
+        </ion-avatar>
+        <ion-label>
+          <h2>Please enter the quantity</h2>
+        </ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-label color="tertiary" position="floating">
+          <ion-icon name="calculator-outline"></ion-icon> Quantity <ion-text *ngIf="this.orderDetail.itemQty===0" color="danger">
+            ***
+          </ion-text>
+        </ion-label>
+        <ion-input [(ngModel)]="this.orderDetail.itemQty" type="number"></ion-input>
+      </ion-item>
+    </ion-card-content>
+  </ion-card>
 
-    </ion-item>
-    <ion-item>
-      <ion-label color="tertiary" position="floating">Quantity</ion-label>
-      <ion-input type="number"></ion-input>
-    </ion-item>
-  </ion-card-content>
-</ion-card>
+  <ion-card>
+    <ion-card-content>
+      <ion-item lines="none">
+        <ion-avatar slot="start">
+          <img src="/../assets/sale.svg" />
+        </ion-avatar>
+        <ion-label>
+          <h2 color="primary">Please enter the Discount amount</h2>
+        </ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-label color="tertiary" position="floating">
+          <ion-icon name="cash-outline"></ion-icon> Discount
+        </ion-label>
+        <ion-input [(ngModel)]="this.orderDetail.discount" type="number"></ion-input>
+      </ion-item>
+    </ion-card-content>
+  </ion-card>
 
-<ion-card>
-  <ion-card-content>
+  <ion-card>
+    <ion-card-content>
+      <ion-item lines="none">
+        <ion-avatar slot="start">
+          <img src="/../assets/remark.svg" />
+        </ion-avatar>
+        <ion-label>
+          <h2 color="primary">Please enter remark</h2>
+        </ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-label color="tertiary" position="floating">
+          <ion-icon name="chatbubbles-outline"></ion-icon> Remark
+        </ion-label>
+        <ion-input [(ngModel)]="this.orderDetail.remark" type="text"></ion-input>
+      </ion-item>
+    </ion-card-content>
+  </ion-card>
 
-
-    <ion-item>
-      <ion-avatar slot="start">
-        <img src='/../assets/sale.svg'>
-      </ion-avatar>
-      <ion-label>
-        <h2>Please enter the Discount amount</h2>
-      </ion-label>
-
-    </ion-item>
-    <ion-item>
-      <ion-label color="tertiary" position="floating">Discount</ion-label>
-      <ion-input type="number"></ion-input>
-    </ion-item>
-  </ion-card-content>
-</ion-card>
-
-
-<ion-card>
-  <ion-card-content>
+  <ion-card>
     <ion-item lines="none">
       <ion-avatar slot="start">
-        <img src='/../assets/remark.svg'>
+        <img src="/../assets/money.svg" />
       </ion-avatar>
       <ion-label>
-        <h2 color="primary">Please enter remark</h2>
+        <h2>Total</h2>
+        <h3>{{this.totalAmount()}}</h3>
       </ion-label>
-
     </ion-item>
-    <ion-item>
-      <ion-label color="tertiary" position="floating">Remark</ion-label>
-      <ion-input type="text"></ion-input>
-    </ion-item>
+  </ion-card>
 
-  </ion-card-content>
-</ion-card>
-
-<ion-card>
-  <ion-item lines="none">
-    <ion-avatar slot="start">
-      <img src='/../assets/money.svg'>
-    </ion-avatar>
-    <ion-label>
-      <h2>Total</h2>
-      <h3>1000</h3>
-    </ion-label>
-  </ion-item>
-</ion-card>
-
-<ion-grid fixed>
-  <ion-row>
-    <ion-col size="6">
-      <ion-button expand="block" (click)="this.appSetting.adminTab2Process='list'" color="light">
-        Back
-      </ion-button>
-    </ion-col>
-    <ion-col size="6">
-      <ion-button expand="block" (click)="this.appSetting.adminTab2Process='list'" color="light">
-        Edit this Item
-      </ion-button>
-    </ion-col>
-  </ion-row>
-</ion-grid>
+  <ion-grid fixed>
+    <ion-row>
+      <ion-col size="6">
+        <ion-button expand="block" (click)="this.back()" color="light">
+          Back
+        </ion-button>
+      </ion-col>
+      <ion-col size="6">
+        <ion-button expand="block" (click)="this.addToInvoice()" color="light">
+          Update Invoice
+        </ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
