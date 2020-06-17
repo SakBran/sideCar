@@ -14,6 +14,7 @@ import { AuthGuardService } from './auth/authGuard';
 import { AuthComponent } from './auth/auth.component';
 import { JwtHelperService, JwtModuleOptions, JwtModule } from '@auth0/angular-jwt';
 import { HttpClientModule } from '@angular/common/http';
+import { CommonModule } from '@angular/common';
 
 
 
@@ -21,7 +22,7 @@ import { HttpClientModule } from '@angular/common/http';
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
-  imports: [BrowserModule, IonicModule.forRoot(), HttpClientModule,AppRoutingModule],
+  imports: [BrowserModule,CommonModule, IonicModule.forRoot(), HttpClientModule,AppRoutingModule],
   providers: [
     appSetting,
     StatusBar,

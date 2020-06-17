@@ -1,3 +1,4 @@
+import { DeliveryPendingComponent } from './admin/delivery-pending/delivery-pending.component';
 import { NgModule } from "@angular/core";
 import { RouterModule, Routes } from "@angular/router";
 import { Tab1Page } from "./tab1.page";
@@ -11,6 +12,10 @@ const routes: Routes = [
   {
     path: "add/:id",
     component: AddToInvoiceComponent,
+  },
+  {
+    path: "deliveryPending",
+    component: DeliveryPendingComponent,
   },
 ];
 

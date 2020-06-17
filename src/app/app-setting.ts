@@ -8,14 +8,13 @@ import { resturantModel } from "./Models/resturantModel";
 import { locationModel } from './Models/locationModel';
 import { orderTransationModel } from './Models/orderTransationModel';
 import { resendModel } from './Models/resendModel';
-import { TEMPORARY_NAME } from '@angular/compiler/src/render3/view/util';
 
 export class appSetting {
   /**
    *
    */
   constructor() {}
-  public loginType = "resturant";
+  public loginType = "admin";
 
   public adminProcess = "";
   public adminID = "";

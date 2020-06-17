@@ -4,6 +4,7 @@ import { HttpHeaders, HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import Swal from 'sweetalert2';
 import { orderTransationModel } from 'src/app/Models/orderTransationModel';
+import { resendModel } from 'src/app/Models/resendModel';
 
 @Injectable({
   providedIn: 'root'
@@ -56,6 +57,30 @@ export class OrderService {
       }
     );
   }
+
+  putResend_From_Resturant(orderID,data: resendModel[]): void {
+    const searchUrl = `${this.url}/resturant/resend?id=${orderID}`;
+    this.http.put(searchUrl, data, this.httpOptions).subscribe(
+      res => {
+        console.log(res);
+        let i=-1;
+        const temp=[...this.appSetting.orderTransationList];
+        temp.forEach(x=>{
+        i=i+1;
+        if(x.orderModel.id===orderID){
+          this.appSetting.orderTransationList.splice(i,1);
+        }
+        })
+        this.appSetting.showSuccess();
+      },
+      err => {
+        console.log(err);
+        this.appSetting.showError(err);
+      }
+    );
+  }
+
+  
 
   delete(id: number): void {
     const data = null;

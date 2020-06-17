@@ -4,11 +4,11 @@ import { Component, OnInit } from "@angular/core";
 import { OrderService } from "src/app/Services/order/order.service";
 
 @Component({
-  selector: "app-resturant-main",
-  templateUrl: "./resturant-main.component.html",
-  styleUrls: ["./resturant-main.component.scss"],
+  selector: 'app-delivery-pending',
+  templateUrl: './delivery-pending.component.html',
+  styleUrls: ['./delivery-pending.component.scss'],
 })
-export class ResturantMainComponent implements OnInit {
+export class DeliveryPendingComponent implements OnInit {
   constructor(
     public appSetting: appSetting,
     private FoodService: FoodService,
@@ -16,12 +16,11 @@ export class ResturantMainComponent implements OnInit {
   ) {
     
     this.firstLoad();
+    
   }
 
   firstLoad(){
     this.appSetting.showLoading();
-    if(this.appSetting.loginType==="admin")
-    {
       this.orderService.get().subscribe(
         (x) => {
           this.appSetting.orderTransationList = x;
@@ -29,40 +28,23 @@ export class ResturantMainComponent implements OnInit {
         (err) => this.appSetting.showError(err),
         () => {
           this.loadFoodModel();
+          
         }
       );
-    }
-    else if(this.appSetting.loginType==="resturant"){
-      this.orderService
-      .getResturantPendings(this.appSetting.resturantID)
-      .subscribe(
-        (x) => {
-          this.appSetting.orderTransationList = x;
-        },
-        (err) => this.appSetting.showError(err),
-        () => {
-          this.loadFoodModel();
-        }
-      );
-    }
-    else if(this.appSetting.loginType==="rider"){
-
-    }
+    
 
   }
   loadFoodModel() {
-    this.FoodService.getActive().subscribe(
-      (x) => (this.appSetting.foodDataList = x),
-      (err) => this.appSetting.showError(err),
-      () => this.appSetting.loadingClose()
-    );
+    this.appSetting.foodDataList=this.appSetting.menuFoodDataList;
+    this.appSetting.loadingClose();
   }
-  ngOnInit() {}
+  ngOnInit() {
+   
+  }
 
   refresh(event) {
-    if(this.appSetting.loginType==="admin"){}
     this.orderService
-      .getResturantPendings(this.appSetting.resturantID)
+      .get()
       .subscribe(
         (x) => {
           this.appSetting.orderTransationList = x;
@@ -70,6 +52,7 @@ export class ResturantMainComponent implements OnInit {
         (err) => this.appSetting.showError(err),
         () => {
          event.target.complete();
+         
         }
       );
   }

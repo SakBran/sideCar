@@ -1,17 +1,24 @@
 <ion-card>
+  <ion-card-header>
+    <ion-card-subtitle color="secondary">{{this.foodName(orderDetail.itemID).toString()}} <br/>Quantity: {{orderDetail.itemQty}}</ion-card-subtitle>
+  </ion-card-header>
   <ion-card-content>
     <ion-item>
       <ion-label>
-        <h3>{{this.foodName(orderDetail.itemID).toString()}}</h3>
-        <p>Quantity:{{orderDetail.itemQty}}</p>
+        <p>Discount:{{orderDetail.discount}}</p>
         <p>Price:{{orderDetail.itemFinalPrice}}</p>
-        <p>Remark:{{orderDetail.remark}}</p>
+       
       </ion-label>
       <ion-checkbox [(ngModel)]="available" (ngModelChange)="resendListFun($event)"></ion-checkbox>
     </ion-item>
+    <ion-item>
+      <ion-label color="success">
+        <p>Remark:{{orderDetail.remark}}</p>
+      </ion-label>
+    </ion-item>
     <ng-container *ngIf="this.available === false">
       <ion-item>
-        <ion-label position="floating">Comment</ion-label>
+        <ion-label color="danger" position="floating">Comment</ion-label>
         <ion-input
         [(ngModel)]="this.comment"
         (ngModelChange)="resendListKeyPress($event)"
