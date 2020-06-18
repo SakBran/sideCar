@@ -1,3 +1,4 @@
+import { orderDetialModel } from './../../Models/orderDetailModel';
 import { appSetting } from './../../app-setting';
 import { Injectable } from '@angular/core';
 import { HttpHeaders, HttpClient } from '@angular/common/http';
@@ -19,7 +20,7 @@ export class OrderService {
   constructor(private http: HttpClient,private appSetting:appSetting) { }
 
   get(): Observable<orderTransationModel[]> {
-    return this.http.get<orderTransationModel[]>(this.url);
+    return this.http.get<orderTransationModel[]>(this.url+'/'+this.appSetting.sessionUserID);
   }
   getResturantPendings(id: number): Observable<orderTransationModel[]> {
     const searchUrl = `${this.url}/resturant/pendings?ResturantID=${id}`;
@@ -46,6 +47,20 @@ export class OrderService {
 
   put(data: orderTransationModel): void {
     const searchUrl = `${this.url}/${data.orderModel.id}`;
+    this.http.put(searchUrl, data, this.httpOptions).subscribe(
+      res => {
+        console.log(res);
+        this.appSetting.showSuccess();
+      },
+      err => {
+        console.log(err);
+        this.appSetting.showError(err);
+      }
+    );
+  }
+
+  putOrderDetail(data: orderDetialModel): void {
+    const searchUrl = `${this.appSetting.apiAddress}/api/orderDetailModels/${data.orderDetailID}`;
     this.http.put(searchUrl, data, this.httpOptions).subscribe(
       res => {
         console.log(res);
@@ -109,9 +124,10 @@ export class OrderService {
       }
     });
 
-    xhr.open('DELETE', this.url + '/orderDetail/' + id);
+    xhr.open('DELETE',`${this.appSetting.apiAddress}/api/orderDetailModels/` + id);
 
     xhr.send(data);
+    
   }
 }
 

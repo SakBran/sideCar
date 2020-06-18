@@ -18,6 +18,10 @@ export class DeliveryPendingComponent implements OnInit {
     this.firstLoad();
     
   }
+  ngOnInit() {
+    this.firstLoad();
+  }
+  
 
   firstLoad(){
     this.appSetting.showLoading();
@@ -27,20 +31,15 @@ export class DeliveryPendingComponent implements OnInit {
         },
         (err) => this.appSetting.showError(err),
         () => {
-          this.loadFoodModel();
-          
+          this.loadFoodModel();  
         }
       );
-    
-
   }
   loadFoodModel() {
     this.appSetting.foodDataList=this.appSetting.menuFoodDataList;
     this.appSetting.loadingClose();
   }
-  ngOnInit() {
-   
-  }
+
 
   refresh(event) {
     this.orderService

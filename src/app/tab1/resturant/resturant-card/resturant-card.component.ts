@@ -1,9 +1,11 @@
+import { OrderService } from 'src/app/Services/order/order.service';
 import { appSetting } from 'src/app/app-setting';
 
 import { Component, OnInit, Input } from '@angular/core';
 import { orderDetialModel } from 'src/app/Models/orderDetailModel';
-import { resturantModel } from 'src/app/Models/resturantModel';
 import { resendModel } from 'src/app/Models/resendModel';
+import Swal from 'sweetalert2';
+import { orderTransationModel } from 'src/app/Models/orderTransationModel';
 
 @Component({
   selector: 'app-resturant-card',
@@ -12,12 +14,13 @@ import { resendModel } from 'src/app/Models/resendModel';
 })
 export class ResturantCardComponent implements OnInit {
 @Input('data') orderDetail:orderDetialModel;
-  constructor(private appSetting:appSetting) { 
+comment:string="";
+  constructor(public appSetting:appSetting,private orderService:OrderService) { 
     
   }
   available:boolean=true;
   ngOnInit() {}
-  comment:string="";
+ 
   resendListKeyPress(e){
     let data:resendModel={
       orderDetailID:this.orderDetail.orderDetailID,
@@ -68,6 +71,34 @@ export class ResturantCardComponent implements OnInit {
       }
     });
     return result;
+  }
+
+  onDelete(id){
+    Swal.fire({
+      title: "Are you sure?",
+      text: "You won't be able to revert this!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, delete it!",
+    }).then((result) => {
+      if (result.value) {
+        this.orderService.deleteOrderDetail(id);
+        this.orderService
+      .get()
+      .subscribe(
+        (x) => {
+          this.appSetting.orderTransationList = x;
+        },
+        (err) => this.appSetting.showError(err),
+        () => {
+          Swal.fire("Deleted!", "Your file has been deleted.", "success");
+        }
+      );
+        
+      }
+    });
   }
   
 }

@@ -1,3 +1,4 @@
+import { DeliveryPendingComponent } from './admin/delivery-pending/delivery-pending.component';
 import { IonicModule } from '@ionic/angular';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
@@ -11,6 +12,7 @@ import { MainPageComponent } from './admin/main-page/main-page.component';
 import { ResturantMainComponent } from './resturant/resturant-main/resturant-main.component';
 import { ResturantIndividualOrderComponent } from './resturant/resturant-individual-order/resturant-individual-order.component';
 import { ResturantCardComponent } from './resturant/resturant-card/resturant-card.component';
+import { PendingItemEditComponent } from './admin/pending-item-edit/pending-item-edit.component';
 
 @NgModule({
   imports: [
@@ -20,6 +22,6 @@ import { ResturantCardComponent } from './resturant/resturant-card/resturant-car
     ExploreContainerComponentModule,
     Tab1PageRoutingModule
   ],
-  declarations: [Tab1Page, ResturantCardComponent,ResturantIndividualOrderComponent, ItemListComponent, MainPageComponent, ResturantMainComponent, AddToInvoiceComponent]
+  declarations: [Tab1Page,PendingItemEditComponent,DeliveryPendingComponent, ResturantCardComponent,ResturantIndividualOrderComponent, ItemListComponent, MainPageComponent, ResturantMainComponent, AddToInvoiceComponent]
 })
 export class Tab1PageModule { }

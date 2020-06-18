@@ -1,30 +1,57 @@
 <ion-card>
   <ion-card-header>
-    <ion-card-subtitle color="secondary">{{this.foodName(orderDetail.itemID).toString()}} <br/>Quantity: {{orderDetail.itemQty}}</ion-card-subtitle>
+    <ion-card-subtitle color="secondary">{{this.foodName(orderDetail.itemID).toString()}} <br />Quantity:
+      {{orderDetail.itemQty}}
+      <ng-container *ngIf="this.orderDetail.status==='no'">
+        <ion-label color="danger">
+          Rejected
+        </ion-label>
+      </ng-container>
+
+      <ng-container *ngIf="this.orderDetail.status==='yes'">
+        <ion-label color="success">
+          Acepted
+        </ion-label>
+      </ng-container>
+    </ion-card-subtitle>
   </ion-card-header>
   <ion-card-content>
     <ion-item>
       <ion-label>
         <p>Discount:{{orderDetail.discount}}</p>
         <p>Price:{{orderDetail.itemFinalPrice}}</p>
-       
+
       </ion-label>
-      <ion-checkbox [(ngModel)]="available" (ngModelChange)="resendListFun($event)"></ion-checkbox>
+      <ng-container *ngIf="this.orderDetail.status==='pending'">
+        <ion-checkbox [(ngModel)]="available" (ngModelChange)="resendListFun($event)"></ion-checkbox>
+      </ng-container>
+
+      <ng-container *ngIf="this.orderDetail.status==='no'">
+        <ion-button routerLink="/tabs/tab1/pendingEdit/{{orderDetail.orderDetailID}}" color="secondary">
+          <ion-icon name="create-outline"></ion-icon>
+        </ion-button>
+        <ion-button  (click)="this.onDelete(orderDetail.orderDetailID)" color="danger">
+          <ion-icon name="trash-outline"></ion-icon>
+        </ion-button>
+      </ng-container>
+
     </ion-item>
     <ion-item>
       <ion-label color="success">
         <p>Remark:{{orderDetail.remark}}</p>
       </ion-label>
     </ion-item>
-    <ng-container *ngIf="this.available === false">
+    <ng-container *ngIf="this.available === false && this.appSetting.loginType==='resturant'">
       <ion-item>
         <ion-label color="danger" position="floating">Comment</ion-label>
-        <ion-input
-        [(ngModel)]="this.comment"
-        (ngModelChange)="resendListKeyPress($event)"
-          type="text"
-          placeholder="eg: Only four item available"
-        ></ion-input>
+        <ion-input [(ngModel)]="this.comment" (ngModelChange)="resendListKeyPress($event)" type="text"
+          placeholder="eg: Only four item available"></ion-input>
+      </ion-item>
+    </ng-container>
+    <ng-container *ngIf="orderDetail.status==='no' && this.appSetting.loginType==='admin'">
+      <ion-item>
+        <ion-label color="danger" position="floating">Comment</ion-label>
+        <ion-input value='{{orderDetail.comment}}' type="text" placeholder="eg: Only four item available" readonly></ion-input>
       </ion-item>
     </ng-container>
   </ion-card-content>
