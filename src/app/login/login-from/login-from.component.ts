@@ -1,27 +1,75 @@
-import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { appSetting } from "src/app/app-setting";
+import { Component, OnInit } from "@angular/core";
+import { Router } from "@angular/router";
+import { UserModelService } from "src/app/Services/userModel/user-model.service";
+import { UserTypeService } from "src/app/Services/userType/user-type.service";
+import { userModel } from "src/app/Models/userModel";
 
 @Component({
-  selector: 'app-login-from',
-  templateUrl: './login-from.component.html',
-  styleUrls: ['./login-from.component.scss'],
+  selector: "app-login-from",
+  templateUrl: "./login-from.component.html",
+  styleUrls: ["./login-from.component.scss"],
 })
 export class LoginFromComponent implements OnInit {
-
-  constructor(private router: Router) { }
+  constructor(
+    private router: Router,
+    private userService: UserModelService,
+    private appSetting: appSetting,
+    private userTypeService: UserTypeService
+  ) {}
 
   ngOnInit() {}
-  passwordVisibility='password';
-  passVisible(){
-    if(this.passwordVisibility==='password'){
-      this.passwordVisibility='text'
-    }
-    else{
-      this.passwordVisibility='password';
+  username: string = "";
+  password: string = "";
+  passwordVisibility = "password";
+  passVisible() {
+    if (this.passwordVisibility === "password") {
+      this.passwordVisibility = "text";
+    } else {
+      this.passwordVisibility = "password";
     }
   }
-  onClick(){
-    this.router.navigateByUrl('/tabs');
-  }
+ 
+  userData: userModel = {
+    id: 0,
+    username: "",
+    password: "",
+    usertype: 0,
+    phone: "",
+    latitude: "",
+    longitude: "",
+  };
+  onClick() {
+    this.appSetting.showLoading();
+    console.log(this.username);
+    console.log(this.password);
 
+    this.userService.getLogin(this.username, this.password).subscribe(
+      (x) => {
+        console.log(x);
+        this.appSetting.sessionUserID = x.id;
+        this.userData = x;
+      },
+      (err) => this.appSetting.showError(err),
+      () => {
+        if (this.appSetting.sessionUserID === 0) {
+          this.appSetting.loginFail();
+        } else {
+          this.userTypeService.getSingle(this.userData.usertype).subscribe(
+            (y) => {
+              this.appSetting.loginType = y.usertypeName.toLocaleLowerCase();
+            },
+            (err) => this.appSetting.showError(err),
+            () => {
+              if (this.appSetting.loginType === "resturant") {
+                this.appSetting.resturantID = this.appSetting.sessionUserID;
+              }
+              this.appSetting.loginSuccess();
+              this.router.navigateByUrl("/tabs");
+            }
+          );
+        }
+      }
+    );
+  }
 }

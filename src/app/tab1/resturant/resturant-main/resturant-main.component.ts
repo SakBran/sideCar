@@ -1,7 +1,9 @@
+import { DeliveryRecordService } from './../../../Services/deliveryRecord/delivery-record.service';
 import { FoodService } from "./../../../Services/food/food.service";
 import { appSetting } from "src/app/app-setting";
 import { Component, OnInit } from "@angular/core";
 import { OrderService } from "src/app/Services/order/order.service";
+import { deliveryRecordModel } from 'src/app/Models/deliveryRecordModel';
 
 @Component({
   selector: "app-resturant-main",
@@ -13,6 +15,7 @@ export class ResturantMainComponent implements OnInit {
     public appSetting: appSetting,
     private FoodService: FoodService,
     private orderService: OrderService
+    
   ) {
     
     this.firstLoad();
@@ -59,8 +62,10 @@ export class ResturantMainComponent implements OnInit {
   }
   ngOnInit() {}
 
+ 
+
   refresh(event) {
-    if(this.appSetting.loginType==="admin"){}
+   if(this.appSetting.displaySetting==='pending'){
     this.orderService
       .getResturantPendings(this.appSetting.resturantID)
       .subscribe(
@@ -72,5 +77,18 @@ export class ResturantMainComponent implements OnInit {
          event.target.complete();
         }
       );
-  }
+  }else if(this.appSetting.displaySetting==='delivering'){
+    this.orderService
+    .getResturantOrder()
+    .subscribe(
+      (x) => {
+        this.appSetting.orderTransationList = x;
+      },
+      (err) => this.appSetting.showError(err),
+      () => {
+        console.log(this.appSetting.orderTransationList);
+       event.target.complete();
+      }
+    );
+  }}
 }

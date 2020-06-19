@@ -5,9 +5,9 @@
       <ion-label (click)="onClick()" >Menu</ion-label>
     </ion-tab-button>
 
-    <ion-tab-button tab="tab2">
-      <ion-icon name="print-outline"></ion-icon>
-      <ion-label>Invoice</ion-label>
+    <ion-tab-button (click)="navigateTab2()"tab="tab2">
+      <ion-icon (click)="navigateTab2()" name="print-outline"></ion-icon>
+      <ion-label (click)="navigateTab2()" >Invoice</ion-label>
     </ion-tab-button>
 
     <ion-tab-button tab="tab3">

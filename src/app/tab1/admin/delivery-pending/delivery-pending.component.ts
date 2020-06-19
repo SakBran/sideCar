@@ -22,6 +22,7 @@ export class DeliveryPendingComponent implements OnInit {
     this.firstLoad();
   }
   
+  
 
   firstLoad(){
     this.appSetting.showLoading();

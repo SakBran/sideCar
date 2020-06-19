@@ -13,6 +13,7 @@ import { ResturantMainComponent } from './resturant/resturant-main/resturant-mai
 import { ResturantIndividualOrderComponent } from './resturant/resturant-individual-order/resturant-individual-order.component';
 import { ResturantCardComponent } from './resturant/resturant-card/resturant-card.component';
 import { PendingItemEditComponent } from './admin/pending-item-edit/pending-item-edit.component';
+import { RiderMainPageComponent } from './rider/rider-main-page/rider-main-page.component';
 
 @NgModule({
   imports: [
@@ -22,6 +23,6 @@ import { PendingItemEditComponent } from './admin/pending-item-edit/pending-item
     ExploreContainerComponentModule,
     Tab1PageRoutingModule
   ],
-  declarations: [Tab1Page,PendingItemEditComponent,DeliveryPendingComponent, ResturantCardComponent,ResturantIndividualOrderComponent, ItemListComponent, MainPageComponent, ResturantMainComponent, AddToInvoiceComponent]
+  declarations: [Tab1Page,RiderMainPageComponent,PendingItemEditComponent,DeliveryPendingComponent, ResturantCardComponent,ResturantIndividualOrderComponent, ItemListComponent, MainPageComponent, ResturantMainComponent, AddToInvoiceComponent]
 })
 export class Tab1PageModule { }

@@ -6,6 +6,7 @@ import { Observable } from 'rxjs';
 import Swal from 'sweetalert2';
 import { orderTransationModel } from 'src/app/Models/orderTransationModel';
 import { resendModel } from 'src/app/Models/resendModel';
+import { orderModel } from 'src/app/Models/orderModel';
 
 @Injectable({
   providedIn: 'root'
@@ -22,6 +23,11 @@ export class OrderService {
   get(): Observable<orderTransationModel[]> {
     return this.http.get<orderTransationModel[]>(this.url+'/'+this.appSetting.sessionUserID);
   }
+
+  getResturantOrder(): Observable<orderTransationModel[]> {
+    console.log(this.url+'/resturant/orderTracking?id='+this.appSetting.resturantID);
+    return this.http.get<orderTransationModel[]>(this.url+'/resturant/orderTracking?id='+this.appSetting.resturantID);
+  }
   getResturantPendings(id: number): Observable<orderTransationModel[]> {
     const searchUrl = `${this.url}/resturant/pendings?ResturantID=${id}`;
     return this.http.get<orderTransationModel[]>(searchUrl);
@@ -31,6 +37,17 @@ export class OrderService {
     const searchUrl = `${this.url}/resturant/complete?ResturantID=${id}`;
     return this.http.get<orderTransationModel[]>(searchUrl);
   }
+
+  getRiderComplete(): Observable<orderTransationModel[]> {
+    const searchUrl = `${this.url}/rider/complete?id=${this.appSetting.sessionUserID}`;
+    return this.http.get<orderTransationModel[]>(searchUrl);
+  }
+
+  getRiderPending(): Observable<orderTransationModel[]> {
+    const searchUrl = `${this.url}/rider/pending?id=${this.appSetting.sessionUserID}`;
+    return this.http.get<orderTransationModel[]>(searchUrl);
+  }
+  
   
   post(data: orderTransationModel): void {
     this.http.post(this.url, data, this.httpOptions).subscribe(
@@ -45,8 +62,8 @@ export class OrderService {
     );
   }
 
-  put(data: orderTransationModel): void {
-    const searchUrl = `${this.url}/${data.orderModel.id}`;
+  put(data: orderModel): void {
+    const searchUrl = `${this.url}/${data.id}`;
     this.http.put(searchUrl, data, this.httpOptions).subscribe(
       res => {
         console.log(res);
@@ -74,7 +91,7 @@ export class OrderService {
   }
 
   putResend_From_Resturant(orderID,data: resendModel[]): void {
-    const searchUrl = `${this.url}/resturant/resend?id=${orderID}`;
+    const searchUrl = `${this.url}/resturant/resend?id=${orderID}&ResturantID=${this.appSetting.resturantID}`;
     this.http.put(searchUrl, data, this.httpOptions).subscribe(
       res => {
         console.log(res);
@@ -87,6 +104,7 @@ export class OrderService {
         }
         })
         this.appSetting.showSuccess();
+        this.appSetting.resendListFromResturant=[];
       },
       err => {
         console.log(err);

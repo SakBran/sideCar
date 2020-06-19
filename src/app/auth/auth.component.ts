@@ -1,3 +1,5 @@
+
+import { appSetting } from 'src/app/app-setting';
 import { Component, OnInit } from '@angular/core';
 
 import { Router } from '@angular/router';
@@ -9,12 +11,21 @@ import { Router } from '@angular/router';
 export class AuthComponent  {
 
 
-  constructor(public router: Router) {}
+  constructor(public router: Router,private appSetting:appSetting) {}
   // ...
   public isAuthenticated(): boolean {
+    let token='no';
+    let result=false;
     //const token = localStorage.getItem('token');
-    let token='yes';
-    let result=true;
+    if(this.appSetting.loginType===''){
+      token='no';
+      result=false;
+    }else{
+      token='yes';
+      result=true;
+    }
+    
+    
     if(token==='' || token===null || token===undefined){
       result=false;
     }

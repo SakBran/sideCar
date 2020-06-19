@@ -5,16 +5,20 @@ import { userTypeModel } from "./Models/usertypeModel";
 import Swal from "sweetalert2";
 import { foodModel } from "src/app/Models/foodModel";
 import { resturantModel } from "./Models/resturantModel";
-import { locationModel } from './Models/locationModel';
-import { orderTransationModel } from './Models/orderTransationModel';
-import { resendModel } from './Models/resendModel';
+import { locationModel } from "./Models/locationModel";
+import { orderTransationModel } from "./Models/orderTransationModel";
+import { resendModel } from "./Models/resendModel";
 
 export class appSetting {
   /**
    *
    */
   constructor() {}
-  public loginType = "admin";
+  public loginType = "";
+
+  public displaySetting="pending";
+
+
 
   public adminProcess = "";
   public adminID = "";
@@ -30,20 +34,20 @@ export class appSetting {
   public userTypeData: userTypeModel[] = [];
 
   public resturantID = 5;
-  public sessionUserID=1;
+  public sessionUserID = 1;
 
   public foodDataList: foodModel[] = [];
   public menuFoodDataList: foodModel[] = [];
   public constFoodDataList: foodModel[] = [];
   public resturandDataList: resturantModel[] = [];
 
-  public locationDataList:locationModel[]=[];
+  public locationDataList: locationModel[] = [];
 
   public orderDetailList: orderDetialModel[] = [];
   public orderDetailViewList: orderDetialViewmodel[] = [];
 
-  public orderTransationList:orderTransationModel[]=[];
-  public resendListFromResturant:resendModel[]=[];
+  public orderTransationList: orderTransationModel[] = [];
+  public resendListFromResturant: resendModel[] = [];
   public orderData: orderModel = {
     id: 0,
     orderDate: new Date(Date.now()),
@@ -54,13 +58,13 @@ export class appSetting {
     clientAddress: "",
     deliveryCharegs: 0,
     riderID: 0,
-    Township_id:0,
+    Township_id: 0,
     riderEarning: 0,
     operatorID: this.sessionUserID,
-    status:'pending'
+    status: "pending",
   };
 
-  public orderTransationClear(){
+  public orderTransationClear() {
     this.orderData = {
       id: 0,
       orderDate: new Date(Date.now()),
@@ -71,13 +75,13 @@ export class appSetting {
       clientAddress: "",
       deliveryCharegs: 0,
       riderID: 0,
-      Township_id:0,
+      Township_id: 0,
       riderEarning: 0,
       operatorID: this.sessionUserID,
-      status:'pending'
+      status: "pending",
     };
-    this.orderDetailList=[];
-    this.orderDetailViewList=[];
+    this.orderDetailList = [];
+    this.orderDetailViewList = [];
   }
   public showLoading() {
     Swal.fire({
@@ -88,6 +92,14 @@ export class appSetting {
         Swal.showLoading();
       },
     });
+  }
+
+  public loginSuccess() {
+    Swal.fire("Success", "Login successful", "success");
+  }
+
+  public loginFail() {
+    Swal.fire("Opps", "Failed to login", "warning");
   }
 
   public showSuccess() {
@@ -115,17 +127,21 @@ export class appSetting {
     return res;
   }
 
- public resendBtn(orderNo):boolean{
-  let result:boolean=true;
-  const temp=[...this.resendListFromResturant];
-  temp.forEach(x=>{
-    if(x.orderNo===orderNo){
-      result=false;
-    }
-  })
-  return result;
- }
+  public resendBtn(orderNo): boolean {
+    let result: boolean = true;
+    const temp = [...this.resendListFromResturant];
+    temp.forEach((x) => {
+      if (x.orderNo === orderNo) {
+        result = false;
+      }
+    });
+    return result;
+  }
 
+  public riderEarning(amount):number{
+    return 0;
+
+  }
   public itemJoin(id): itemRest {
     let i: itemRest = {
       itemName: "",
@@ -139,6 +155,10 @@ export class appSetting {
       }
     });
     return i;
+  }
+
+  public displayFunction(x:string){
+    this.displaySetting=x;
   }
 }
 export class itemRest {

@@ -14,4 +14,7 @@ export class AdminComponent implements OnInit {
   onClick() {
     this.router.navigateByUrl("/tabs/tab1");
   }
+  navigateTab2() {
+    this.router.navigateByUrl("/tabs/tab2");
+  }
 }

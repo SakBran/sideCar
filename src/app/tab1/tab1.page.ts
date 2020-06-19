@@ -14,9 +14,12 @@ export class Tab1Page {
     private FoodService: FoodService,
     private ResturantModelService: ResturantModelService
   ) {
-    if (this.appSetting.loginType === "admin") {
-      this.loadData();
+
+    if(this.appSetting.loginType==="rider"){
+      this.appSetting.displaySetting === "delivering";
+
     }
+    this.loadData();
   }
 
   loadData() {

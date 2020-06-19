@@ -20,6 +20,19 @@ export class UserModelService {
   get(): Observable<userModel[]> {
     return this.http.get<userModel[]>(this.url);
   }
+
+  getLogin(username:string,password:string): Observable<userModel>{
+    console.log(this.url+`/login?user=${username}&password=${password}`);
+    return this.http.get<userModel>(this.url+`/login?user=${username}&password=${password}`);
+  }
+  getAvailableRider(): Observable<userModel[]> {
+    return this.http.get<userModel[]>(this.url+`/availableRider`);
+  }
+  
+  getDeliveringRider(): Observable<userModel[]> {
+    return this.http.get<userModel[]>(this.url+`/deliveringRider`);
+  }
+  
   getSingle(id: number): Observable<userModel> {
     const searchUrl = `${this.url}/${id}`;
     return this.http.get<userModel>(searchUrl);

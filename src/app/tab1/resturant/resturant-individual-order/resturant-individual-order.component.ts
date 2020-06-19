@@ -1,10 +1,12 @@
-import { orderDetialModel } from './../../../Models/orderDetailModel';
+import { orderDetialModel } from "./../../../Models/orderDetailModel";
 import { appSetting } from "src/app/app-setting";
 import { Component, OnInit, Input } from "@angular/core";
 import { orderTransationModel } from "src/app/Models/orderTransationModel";
 import { resendModel } from "src/app/Models/resendModel";
 import { OrderService } from "src/app/Services/order/order.service";
-import Swal from 'sweetalert2';
+import Swal from "sweetalert2";
+import { DeliveryRecordService } from "src/app/Services/deliveryRecord/delivery-record.service";
+import { deliveryRecordModel } from "src/app/Models/deliveryRecordModel";
 
 @Component({
   selector: "app-resturant-individual-order",
@@ -18,7 +20,8 @@ export class ResturantIndividualOrderComponent implements OnInit {
   invoiceNo = 0;
   constructor(
     public appSetting: appSetting,
-    private orderService: OrderService
+    private orderService: OrderService,
+    private DeliveryRecordService: DeliveryRecordService
   ) {}
 
   ngOnInit() {
@@ -51,20 +54,35 @@ export class ResturantIndividualOrderComponent implements OnInit {
     }
   }
 
-  status():string{
-    let result='yes';
-    const temp:orderTransationModel=this.data;
-    temp.orderDetailModels.forEach(x => {
-      if(x.status==='pending')
-      {
-        result=x.status;
-      }
-      else if(x.status==='no')
-      {
-        result=x.status;
+  status(): string {
+    let result = "yes";
+    const temp: orderTransationModel = this.data;
+    temp.orderDetailModels.forEach((x) => {
+      if (x.status === "pending") {
+        result = x.status;
+      } else if (x.status === "no") {
+        result = x.status;
       }
     });
     return result;
+  }
+  recordData: deliveryRecordModel = {
+    id: 0,
+    orderID: 0,
+    resturant: false,
+    resurant_date: new Date(),
+    customer: false,
+    customer_date: new Date(),
+  };
+
+  delivryRecordSave(id) {
+    this.recordData.orderID = id;
+    this.recordData.resturant = true;
+    this.appSetting.showLoading();
+
+    this.DeliveryRecordService.put(this.recordData);
+
+    
   }
   sendToServer() {
     if (this.appSetting.loginType === "resturant") {
@@ -90,9 +108,15 @@ export class ResturantIndividualOrderComponent implements OnInit {
       //this.orderService.putResend_From_Resturant(this.invoiceNo, dataList);
       //Resend function from Admin to resturant
     }
+    else if (this.appSetting.loginType === "rider") {
+      this.appSetting.showLoading();
+      this.DeliveryRecordService.putRider(this.Orderid);
+      //this.orderService.putResend_From_Resturant(this.invoiceNo, dataList);
+      //Resend function from Admin to resturant
+    }
   }
 
-  onDelete(id){
+  onDelete(id) {
     Swal.fire({
       title: "Are you sure?",
       text: "You won't be able to revert this!",
@@ -104,14 +128,15 @@ export class ResturantIndividualOrderComponent implements OnInit {
     }).then((result) => {
       if (result.value) {
         this.orderService.delete(id);
-        const temp:orderTransationModel[]=[...this.appSetting.orderTransationList];
-        let i=-1;
-        temp.forEach(x=>{
-          i=i+1;
-          if(x.orderModel.id===id){
-            this.appSetting.orderTransationList.splice(i,1);
+        const temp: orderTransationModel[] = [
+          ...this.appSetting.orderTransationList,
+        ];
+        let i = -1;
+        temp.forEach((x) => {
+          i = i + 1;
+          if (x.orderModel.id === id) {
+            this.appSetting.orderTransationList.splice(i, 1);
           }
-
         });
         Swal.fire("Deleted!", "Your file has been deleted.", "success");
       }
