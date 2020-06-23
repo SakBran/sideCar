@@ -11,6 +11,8 @@ import { LocationListComponent } from "./admin/location-list/location-list.compo
 import { LocationCreateComponent } from "./admin/location-create/location-create.component";
 import { FoodListComponent } from "./resturant/food-list/food-list.component";
 import { FoodCreateComponent } from "./resturant/food-create/food-create.component";
+import { RiderEarningCreateComponent } from './admin/rider-earning-create/rider-earning-create.component';
+import { RiderEarningListComponent } from './admin/rider-earning-list/rider-earning-list.component';
 
 const routes: Routes = [
   {
@@ -76,6 +78,18 @@ const routes: Routes = [
   {
     path: "itemConfirmDetail",
     component: ItemConfirmDetailComponent,
+  },
+  {
+    path: "riderEarning",
+    component: RiderEarningListComponent,
+  },
+  {
+    path: "riderEarningCreate",
+    component: RiderEarningCreateComponent,
+  },
+  {
+    path: "riderEarningEdit/:id",
+    component: RiderEarningCreateComponent,
   },
 ];
 

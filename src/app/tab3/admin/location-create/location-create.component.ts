@@ -50,8 +50,7 @@ export class LocationCreateComponent implements OnInit {
   formValidation(): boolean {
     if (
       this.locationData.TownShip === "" ||
-      this.locationData.deliveryCharges === 0 ||
-      this.locationData.riderEarning === 0
+      this.locationData.deliveryCharges === 0 
     ) {
       return false;
     }

@@ -19,6 +19,8 @@ import { LocationCreateComponent } from "./admin/location-create/location-create
 import { ResMainPageComponent } from "./resturant/res-main-page/res-main-page.component";
 import { FoodCreateComponent } from "./resturant/food-create/food-create.component";
 import { FoodListComponent } from "./resturant/food-list/food-list.component";
+import { RiderEarningListComponent } from './admin/rider-earning-list/rider-earning-list.component';
+import { RiderEarningCreateComponent } from './admin/rider-earning-create/rider-earning-create.component';
 
 @NgModule({
   imports: [
@@ -31,6 +33,8 @@ import { FoodListComponent } from "./resturant/food-list/food-list.component";
   ],
   declarations: [
     Tab3Page,
+    RiderEarningListComponent,
+    RiderEarningCreateComponent,
     MainPageComponent,
     UserListComponent,
     UserCreateComponent,
