@@ -1,3 +1,4 @@
+import { appSetting } from 'src/app/app-setting';
 import { Router } from "@angular/router";
 import { Component, OnInit } from "@angular/core";
 
@@ -7,7 +8,7 @@ import { Component, OnInit } from "@angular/core";
   styleUrls: ["./admin.component.scss"],
 })
 export class AdminComponent implements OnInit {
-  constructor(private router: Router) {}
+  constructor(private router: Router,public appSetting:appSetting) {}
 
   ngOnInit() {}
 

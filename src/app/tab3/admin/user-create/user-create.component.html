@@ -75,8 +75,12 @@
               </ion-text>
             </ion-label>
             <ion-select [(ngModel)]="userData.usertype" placeholder="Select one">
-              <ion-select-option *ngFor="let item of this.appSetting.userTypeData;let i=index;" [value]="item.id">
-                {{i+1}}.{{item.usertypeName}}</ion-select-option>
+              <ng-container *ngFor="let item of this.userTypeData;let i=index;">
+                <ion-select-option   [value]="item.id">
+                  {{i+1}}.{{item.usertypeName}}</ion-select-option>
+              </ng-container>
+              
+             
             </ion-select>
 
           </ion-item>

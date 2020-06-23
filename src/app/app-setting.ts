@@ -16,9 +16,7 @@ export class appSetting {
   constructor() {}
   public loginType = "";
 
-  public displaySetting="pending";
-
-
+  public displaySetting = "pending";
 
   public adminProcess = "";
   public adminID = "";
@@ -33,8 +31,8 @@ export class appSetting {
 
   public userTypeData: userTypeModel[] = [];
 
-  public resturantID = 5;
-  public sessionUserID = 1;
+  public resturantID = 0;
+  public sessionUserID = 0;
 
   public foodDataList: foodModel[] = [];
   public menuFoodDataList: foodModel[] = [];
@@ -138,9 +136,8 @@ export class appSetting {
     return result;
   }
 
-  public riderEarning(amount):number{
+  public riderEarning(amount): number {
     return 0;
-
   }
   public itemJoin(id): itemRest {
     let i: itemRest = {
@@ -157,8 +154,56 @@ export class appSetting {
     return i;
   }
 
-  public displayFunction(x:string){
-    this.displaySetting=x;
+  public displayFunction(x: string) {
+    this.displaySetting = x;
+  }
+
+  public logout() {
+    this.loginType = "";
+
+    this.displaySetting = "pending";
+
+    this.adminProcess = "";
+    this.adminID = "";
+
+    this.adminTab2Process = "";
+    this.adminTab2ID = "";
+
+    this.adminTab3Process = "";
+    this.adminTab3ID = "";
+
+    this.userTypeData = [];
+
+    this.resturantID = 0;
+    this.sessionUserID = 0;
+
+    this.foodDataList = [];
+    this.menuFoodDataList = [];
+    this.constFoodDataList = [];
+    this.resturandDataList = [];
+
+    this.locationDataList = [];
+
+    this.orderDetailList = [];
+    this.orderDetailViewList = [];
+
+    this.orderTransationList = [];
+    this.resendListFromResturant = [];
+    this.orderData = {
+      id: 0,
+      orderDate: new Date(Date.now()),
+      deliveryDate: new Date(Date.now()),
+      clientName: "",
+      clitentPhone: "09-",
+      clitentFlatNo: "",
+      clientAddress: "",
+      deliveryCharegs: 0,
+      riderID: 0,
+      Township_id: 0,
+      riderEarning: 0,
+      operatorID: this.sessionUserID,
+      status: "pending",
+    };
   }
 }
 export class itemRest {

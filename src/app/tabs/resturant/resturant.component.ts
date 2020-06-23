@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { appSetting } from 'src/app/app-setting';
 
 @Component({
   selector: 'app-resturant',
@@ -7,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ResturantComponent implements OnInit {
 
-  constructor() { }
+  constructor(public appSetting:appSetting) { }
 
   ngOnInit() {}
 

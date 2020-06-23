@@ -6,6 +6,7 @@ import { Component, OnInit } from "@angular/core";
 import { Location } from "@angular/common";
 import { userModel } from "src/app/Models/userModel";
 import Swal from "sweetalert2";
+import { userTypeModel } from 'src/app/Models/usertypeModel';
 
 @Component({
   selector: "app-user-create",
@@ -14,6 +15,7 @@ import Swal from "sweetalert2";
 })
 export class UserCreateComponent implements OnInit {
   id = +this.Router.snapshot.paramMap.get("id");
+  userTypeData:userTypeModel[]=[];
   constructor(
     public location: Location,
     public appSetting: appSetting,
@@ -29,7 +31,17 @@ export class UserCreateComponent implements OnInit {
         (err) => console.log(err),
         () => {
           console.log("ok");
+          
+          this.userTypeData=[...this.appSetting.userTypeData];
+          let i=-1;
+          this.appSetting.userTypeData.forEach(x=>{
+            i=i+1;
+            if(x.usertypeName==='Resturant'){
+              this.userTypeData.splice(i,1);
+            }
+          });
           this.appSetting.loadingClose();
+          
         }
       );
     }
@@ -38,6 +50,8 @@ export class UserCreateComponent implements OnInit {
       this.editLoad(this.id);
     }
   }
+  
+
   userData: userModel = {
     id: 0,
     username: "",

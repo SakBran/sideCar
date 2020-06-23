@@ -1,6 +1,11 @@
 <ion-toolbar color="light">
-  <ion-title color="secondary">
-    Sidecar Delivery Login 
+  <ion-title>
+    
+  </ion-title>
+</ion-toolbar>
+<ion-toolbar color="light">
+  <ion-title>
+    
   </ion-title>
 </ion-toolbar>
 <ion-content color="light" padding>
@@ -30,8 +35,9 @@
                   <ion-label>
                     <ion-input  [(ngModel)]="this.password" type="{{this.passwordVisibility}}"  placeholder="Password" ></ion-input>
                   </ion-label>
-                  <ion-button (click)="passVisible()" color="secondary" >
-                    <ion-icon name="eye-outline"></ion-icon>
+                  <ion-button (click)="passVisible()" color="light" >
+                    <ion-icon *ngIf="this.passwordVisibility === 'password'" name="eye-outline"></ion-icon>
+                    <ion-icon *ngIf="this.passwordVisibility === 'text'" name="eye-off-outline"></ion-icon>
                   </ion-button>
                 </ion-item>
               </ion-card>
@@ -41,12 +47,12 @@
         </ion-row>
         <ion-row>
           <ion-col size="6">
-            <ion-button (click)="onClick()" expand="block" color="secondary">
+            <ion-button (click)="onClick()" expand="block" color="primary">
               Cancel
             </ion-button>
           </ion-col>
           <ion-col size="6">
-            <ion-button (click)="onClick()" expand="block" color="secondary">
+            <ion-button (click)="onClick()" expand="block" color="primary">
               Login
             </ion-button>
           </ion-col>
@@ -58,10 +64,10 @@
   </ion-card>
 </ion-content>
 
-<ion-toolbar color="secondary">
+<ion-toolbar color="light">
   
-   <ion-text color="light" class="ion-align-items-center">
-     <p>All Rights Reserved. ™ by <a target="_blank" color="light" href="https://sakbran.github.io">Sak Bran</a></p>
+   <ion-text color="" class="ion-align-items-center">
+    <div style="text-align: center;"><p>All Rights Reserved. ™ by <a target="_blank" color="light" href="https://sakbran.github.io">Sak Bran</a></p></div>
    </ion-text>
   
   
