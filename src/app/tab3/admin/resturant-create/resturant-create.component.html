@@ -70,6 +70,21 @@
             </ion-label>
             <ion-input [(ngModel)]="resData.phone" type="tel"></ion-input>
           </ion-item>
+
+          <ion-item>
+            <ion-label position="floating" color="secondary">
+              <ion-icon name="call-outline"></ion-icon> Select Type<ion-text
+                *ngIf="this.resData.resturantType===''||this.resData.resturantType===null" color="danger">
+                *
+              </ion-text>
+            </ion-label>
+   
+              <ion-select  [(ngModel)]="this.resData.resturantType">
+                <ion-select-option [value]='this.credit'>Credit</ion-select-option>
+                <ion-select-option [value]='this.debit'>Debit</ion-select-option>
+              </ion-select>
+           
+          </ion-item>
         </ion-card-content>
       </ion-card>
 

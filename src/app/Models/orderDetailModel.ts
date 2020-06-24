@@ -9,4 +9,6 @@ export class orderDetialModel {
   status:string;
   remark:string;
   comment:string;
+  isPickUpResturant:boolean;
+  isPickUpRider:boolean;
 }

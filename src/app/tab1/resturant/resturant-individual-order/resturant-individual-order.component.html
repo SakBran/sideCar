@@ -44,9 +44,10 @@
         <ng-container *ngIf="this.appSetting.loginType==='admin'">
           <ng-container *ngIf="this.data.orderModel.status!=='delivering'">
             <ng-container>
-              <ion-button *ngIf="this.status()==='no'" (click)="sendToServer()" color="secondary">
+              <ion-button *ngIf="this.status()==='no'" (click)="sendToServer()" color="warning">
                 <ion-icon name="cloud-upload-outline"></ion-icon>
               </ion-button>
+
 
               <ion-button *ngIf="this.status()==='yes'" routerLink="/tabs/tab2/riderSelect/{{Orderid}}" color="success">
                 <ion-icon name="bicycle-outline"></ion-icon>
@@ -145,7 +146,7 @@
 
         <ng-container *ngIf="this.appSetting.loginType==='resturant' && this.data.orderModel.status==='delivering'">
           <ng-container>
-            <ion-button (click)="delivryRecordSave(this.data.orderModel.id)"  color="success">
+            <ion-button (click)="delivryRecordSave(this.data.orderModel.id)" color="success">
               <ion-icon name="bicycle-outline"></ion-icon>
             </ion-button>
           </ng-container>
@@ -172,9 +173,13 @@
 
         </ng-container>
 
-        <ng-container>
-          <ion-button *ngIf="this.appSetting.loginType==='rider'" (click)="sendToServer()" color="secondary">
-            <ion-icon name="cloud-upload-outline"></ion-icon>
+        <ng-container *ngIf="this.appSetting.loginType==='rider'">
+          <ion-button (click)="sendToServer()" color="success">
+            <ion-icon name="golf-outline"></ion-icon>
+          </ion-button>
+
+          <ion-button (click)="sendToServer()" color="danger">
+            <ion-icon name="location-outline"></ion-icon>
           </ion-button>
         </ng-container>
       </ion-item>
@@ -211,8 +216,7 @@
 </ng-container>
 
 
-<ng-container
-  *ngIf="this.data!==null && this.data.orderModel.status==='delivered'">
+<ng-container *ngIf="this.data!==null && this.data.orderModel.status==='delivered'">
   <ion-card *ngIf="this.data!==null &&  this.data.orderModel.status==='delivered' ">
     <ion-card-content>
       <ion-item>
@@ -233,21 +237,21 @@
               </ng-container>
             </ng-container>
 
-           
 
-    
+
+
 
           </h2>
           <p>Date: {{this.data.orderModel.orderDate|date}}</p>
           <p>Total Amount: {{this.total()}}</p>
         </ion-label>
-       
 
-       
 
-     
 
-        
+
+
+
+
       </ion-item>
 
       <ion-list-header>

@@ -25,7 +25,9 @@ export class AddToInvoiceComponent implements OnInit {
     orderID: 0,
     status:'pending',
     remark: "",
-    comment:""
+    comment:"",
+    isPickUpResturant:false,
+    isPickUpRider:false
   };
   constructor(
     public appSetting: appSetting,

@@ -85,7 +85,11 @@ export class ItemListComponent implements OnInit {
     console.log(data);
     this.orderService.post(data);
   }
+
+  revceiveOpt:string[]=['All','COD','Epayment'];
+  
 }
+
 export class itemRest {
   itemName: string;
   resturant: string;

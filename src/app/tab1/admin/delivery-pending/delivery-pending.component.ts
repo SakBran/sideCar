@@ -16,6 +16,7 @@ export class DeliveryPendingComponent implements OnInit {
   ) {
     
     this.firstLoad();
+    console.log(this.appSetting.orderTransationList);
     
   }
   ngOnInit() {
@@ -33,6 +34,7 @@ export class DeliveryPendingComponent implements OnInit {
         (err) => this.appSetting.showError(err),
         () => {
           this.loadFoodModel();  
+          console.log("This work");
         }
       );
   }

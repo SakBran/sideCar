@@ -1,3 +1,4 @@
+import { OrderService } from 'src/app/Services/order/order.service';
 import { Component } from "@angular/core";
 import { appSetting } from "../app-setting";
 import { ResturantModelService } from "src/app/Services/resturantModel/resturant-model.service";
@@ -12,6 +13,7 @@ export class Tab1Page {
   constructor(
     public appSetting: appSetting,
     private FoodService: FoodService,
+    private orderService:OrderService,
     private ResturantModelService: ResturantModelService
   ) {
 
@@ -71,6 +73,45 @@ export class Tab1Page {
         (x) => (this.appSetting.resturandDataList = x),
         (err) => this.appSetting.showError(err),
         () => {
+          this.appSetting.loadingClose();
+        }
+      );
+    }
+  }
+
+  riderRefresh() {
+    this.appSetting.showLoading();
+    if (this.appSetting.displaySetting === "delivering") {
+      this.orderService.getRiderPending().subscribe(
+        (x) => {
+          this.appSetting.orderTransationList = x;
+        },
+        (err) => this.appSetting.showError(err),
+        () => {
+         console.log(this.appSetting.orderTransationList);
+          this.appSetting.loadingClose();
+        }
+      );
+    } else if (this.appSetting.displaySetting === "delivered") {
+      this.orderService.getRiderComplete().subscribe(
+        (x) => {
+          this.appSetting.orderTransationList = x;
+        },
+        (err) => this.appSetting.showError(err),
+        () => {
+          console.log(this.appSetting.orderTransationList);
+          this.appSetting.loadingClose();
+        }
+      );
+    }
+    else{
+      this.orderService.getRiderPending().subscribe(
+        (x) => {
+          this.appSetting.orderTransationList = x;
+        },
+        (err) => this.appSetting.showError(err),
+        () => {
+         
           this.appSetting.loadingClose();
         }
       );

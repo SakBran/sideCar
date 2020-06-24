@@ -31,6 +31,8 @@ export class ResturantCreateComponent implements OnInit {
     this.location.back();
   }
 
+  credit:string="credit";
+  debit:string="debit";
   resData: resturantModel = {
     id: 0,
     username: "",
@@ -39,7 +41,8 @@ export class ResturantCreateComponent implements OnInit {
     usertype: 2,
     latitude: "0",
     longitude: "0",
-    shopname: ""
+    shopname: "",
+    resturantType:"debit"
   };
   editLoad(id) {
     this.appSetting.showLoading();

@@ -16,7 +16,9 @@ export class LoginFromComponent implements OnInit {
     private userService: UserModelService,
     private appSetting: appSetting,
     private userTypeService: UserTypeService
-  ) {}
+  ) {
+   
+  }
 
   ngOnInit() {}
   username: string = "";
@@ -29,7 +31,7 @@ export class LoginFromComponent implements OnInit {
       this.passwordVisibility = "password";
     }
   }
- 
+
   userData: userModel = {
     id: 0,
     username: "",
@@ -64,8 +66,16 @@ export class LoginFromComponent implements OnInit {
               if (this.appSetting.loginType === "resturant") {
                 this.appSetting.resturantID = this.appSetting.sessionUserID;
               }
+              console.log("Type" + this.appSetting.loginType);
+              if (this.appSetting.loginType === "rider") {
+                setInterval(() => {
+                  //Location Update Service Here
+                  console.log("Interval running");
+                }, 30000);
+              }
               this.appSetting.loginSuccess();
               this.router.navigateByUrl("/tabs");
+
             }
           );
         }

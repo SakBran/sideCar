@@ -27,7 +27,9 @@ export class PendingItemEditComponent implements OnInit {
     orderID: 0,
     status:'pending',
     remark: "",
-    comment:""
+    comment:"",
+    isPickUpResturant:false,
+    isPickUpRider:false
   };
 
   id=+this.Router.snapshot.paramMap.get("id");

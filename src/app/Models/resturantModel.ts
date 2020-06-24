@@ -7,4 +7,5 @@ export class resturantModel {
     latitude: string;
     longitude: string;
     shopname: string;
+    resturantType:string;
 }

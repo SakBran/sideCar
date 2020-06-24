@@ -30,7 +30,7 @@
         <ion-avatar slot="start">
           <img src='/../assets/person.svg'>
         </ion-avatar>
-        <ion-label>
+        <ion-label color="primary">
           <h2>Customer Information</h2>
         </ion-label>
 
@@ -70,7 +70,7 @@
         <ion-avatar slot="start">
           <img src='/../assets/food-delivery.svg'>
         </ion-avatar>
-        <ion-label>
+        <ion-label color="primary">
           <h2>Delivery Information</h2>
         </ion-label>
 
@@ -86,9 +86,39 @@
         <ion-datetime [(ngModel)]="this.appSetting.orderData.deliveryDate" display-format="h:mm A"
           picker-format="h:mm A" value="1990-02-19T07:43Z"></ion-datetime>
       </ion-item>
+
+      <ion-item>
+        <ion-label position="floating">Date for Pickup</ion-label>
+        <ion-datetime ionCancel [(ngModel)]="this.appSetting.orderData.pickupDate"></ion-datetime>
+        <ion-label position="floating">Time for Pickup</ion-label>
+        <ion-datetime [(ngModel)]="this.appSetting.orderData.pickupDate" display-format="h:mm A"
+          picker-format="h:mm A" value="1990-02-19T07:43Z"></ion-datetime>
+      </ion-item>
     </ion-card-content>
   </ion-card>
 
+  <ion-card>
+    <ion-card-content>
+      <ion-item>
+        <ion-avatar slot="start">
+          <img src='/../assets/agreement.svg'>
+        </ion-avatar>
+        <ion-label color="primary">
+          <h2>Cash Receive Information</h2>
+        </ion-label>
+
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Cash Receive Options</ion-label>
+          <ion-select [(ngModel)]="this.appSetting.orderData.riderTakeOption">
+            <ion-select-option [value]="revceiveOpt[0]">{{revceiveOpt[0]}}</ion-select-option>
+            <ion-select-option [value]="revceiveOpt[1]">{{revceiveOpt[1]}}</ion-select-option>
+            <ion-select-option [value]="revceiveOpt[2]">{{revceiveOpt[2]}}</ion-select-option>
+          </ion-select>
+      </ion-item>
+   
+    </ion-card-content>
+  </ion-card>
   <ion-grid fixed>
     <ion-row>
       <ion-col size="6">

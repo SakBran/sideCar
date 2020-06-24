@@ -26,6 +26,7 @@ export class ResturantIndividualOrderComponent implements OnInit {
 
   ngOnInit() {
     this.itemFilter();
+    
   }
 
   async itemFilter() {

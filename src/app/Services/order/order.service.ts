@@ -50,6 +50,7 @@ export class OrderService {
   
   
   post(data: orderTransationModel): void {
+    data.orderModel.operatorID=this.appSetting.sessionUserID;
     this.http.post(this.url, data, this.httpOptions).subscribe(
       res => {
         console.log(res);
