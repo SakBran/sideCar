@@ -22,6 +22,14 @@
 
   </ion-toolbar>
 </ion-header>
+
+<ion-header [translucent]="true" *ngIf="this.appSetting.loginType==='rider'">
+  <ion-toolbar>
+    <ion-title>Today Sumary</ion-title>
+    <ion-progress-bar value="1" buffer="0.5"></ion-progress-bar>
+  </ion-toolbar>
+</ion-header>
 <ion-content>
   <app-main-page *ngIf="this.appSetting.loginType==='admin'"></app-main-page>
+  <app-main-rider-page *ngIf="this.appSetting.loginType==='rider'"></app-main-rider-page>
 </ion-content>
