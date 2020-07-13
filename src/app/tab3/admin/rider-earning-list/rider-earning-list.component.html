@@ -12,7 +12,7 @@
 
         </ion-col>
         <ion-col size="3">
-          <ion-chip routerLink="/tabs/tab3/locationCreate">
+          <ion-chip routerLink="/tabs/tab3/riderEarningCreate">
             <ion-icon name="person-add-outline"></ion-icon>
             <ion-label>New</ion-label>
           </ion-chip>
@@ -27,7 +27,7 @@
   <ion-refresher slot="fixed" (ionRefresh)="refresh($event)">
     <ion-refresher-content></ion-refresher-content>
   </ion-refresher>
-  <ion-card *ngFor="let item of locationDataList">
+  <ion-card *ngFor="let item of DataList">
     <ion-card-content>
       <ion-item>
         <ion-avatar slot="start">
@@ -35,7 +35,7 @@
         </ion-avatar>
         <ion-label>
           <p>
-            <ion-icon name="business-outline"></ion-icon> {{item.TownShip}}
+            <ion-icon name="business-outline"></ion-icon> Rider Earnging {{item.riderEarning}}
           </p>
           <p>
             <ion-icon name="card-outline"></ion-icon> Delivery Charges {{item.deliveryCharges}}

@@ -2,9 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import Swal from 'sweetalert2';
 import { appSetting } from 'src/app/app-setting';
 import { Router } from '@angular/router';
-import { locationModel } from 'src/app/Models/locationModel';
-import { LocationService } from 'src/app/Services/location/location.service';
 import { Location } from '@angular/common';
+import { RiderEarningService } from 'src/app/Services/riderEarning/rider-earning.service';
+import { riderEarningModel } from 'src/app/Models/riderEarningModel';
 
 @Component({
   selector: 'app-rider-earning-list',
@@ -12,11 +12,11 @@ import { Location } from '@angular/common';
   styleUrls: ['./rider-earning-list.component.scss'],
 })
 export class RiderEarningListComponent implements OnInit {
-  locationDataList: locationModel[] = [];
+  DataList: riderEarningModel[] = [];
   constructor(
     public location: Location,
     public appSetting: appSetting,
-    public LocationService: LocationService,
+    public riderEarningService: RiderEarningService,
     private route: Router
   ) {}
 
@@ -28,10 +28,10 @@ export class RiderEarningListComponent implements OnInit {
     this.location.back();
   }
   dataLoading() {
-    this.LocationService.get().subscribe(
+    this.riderEarningService.get().subscribe(
       (x) => {
         this.appSetting.showLoading();
-        this.locationDataList = x;
+        this.DataList = x;
       },
       (err) => this.appSetting.showError(err),
 
@@ -41,9 +41,9 @@ export class RiderEarningListComponent implements OnInit {
     );
   }
   refresh(event) {
-    this.LocationService.get().subscribe(
+    this.riderEarningService.get().subscribe(
       (x) => {
-        this.locationDataList = x;
+        this.DataList = x;
       },
       (err) => {
         this.appSetting.showError(err);
@@ -59,7 +59,7 @@ export class RiderEarningListComponent implements OnInit {
   }
 
   onEdit(id) {
-    this.route.navigateByUrl("tabs/tab3/locationEdit/" + id);
+    this.route.navigateByUrl("tabs/tab3/riderEarningEdit/" + id);
   }
 
   onDelete(id) {
@@ -73,8 +73,8 @@ export class RiderEarningListComponent implements OnInit {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.value) {
-        this.LocationService.delete(id);
-        this.locationDataList.splice(id, 1);
+        this.riderEarningService.delete(id);
+        this.DataList.splice(id, 1);
         Swal.fire("Deleted!", "Your file has been deleted.", "success");
       }
     });
