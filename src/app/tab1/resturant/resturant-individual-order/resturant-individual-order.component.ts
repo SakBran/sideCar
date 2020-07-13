@@ -7,6 +7,7 @@ import { OrderService } from "src/app/Services/order/order.service";
 import Swal from "sweetalert2";
 import { DeliveryRecordService } from "src/app/Services/deliveryRecord/delivery-record.service";
 import { deliveryRecordModel } from "src/app/Models/deliveryRecordModel";
+import { orderModel } from "src/app/Models/orderModel";
 
 @Component({
   selector: "app-resturant-individual-order",
@@ -26,7 +27,6 @@ export class ResturantIndividualOrderComponent implements OnInit {
 
   ngOnInit() {
     this.itemFilter();
-    
   }
 
   async itemFilter() {
@@ -43,6 +43,11 @@ export class ResturantIndividualOrderComponent implements OnInit {
     this.data.orderDetailModels.forEach((x) => {
       this.invoiceNo = x.orderID;
       total = total + x.itemFinalPrice;
+    });
+    this.appSetting.orderTransationList.forEach((x) => {
+      if (x.orderModel.id === this.Orderid) {
+        total = total + x.orderModel.deliveryCharegs;
+      }
     });
 
     return total;
@@ -82,8 +87,6 @@ export class ResturantIndividualOrderComponent implements OnInit {
     this.appSetting.showLoading();
 
     this.DeliveryRecordService.put(this.recordData);
-
-    
   }
   sendToServer() {
     if (this.appSetting.loginType === "resturant") {
@@ -108,8 +111,7 @@ export class ResturantIndividualOrderComponent implements OnInit {
       });
       //this.orderService.putResend_From_Resturant(this.invoiceNo, dataList);
       //Resend function from Admin to resturant
-    }
-    else if (this.appSetting.loginType === "rider") {
+    } else if (this.appSetting.loginType === "rider") {
       this.appSetting.showLoading();
       this.DeliveryRecordService.putRider(this.Orderid);
       //this.orderService.putResend_From_Resturant(this.invoiceNo, dataList);

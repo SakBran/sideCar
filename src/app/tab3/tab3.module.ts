@@ -1,3 +1,5 @@
+import { OpeningListComponent } from './admin/opening-list/opening-list.component';
+import { OpeningCreateComponent } from './admin/opening-create/opening-create.component';
 import { IonicModule } from "@ionic/angular";
 import { RouterModule } from "@angular/router";
 import { NgModule } from "@angular/core";
@@ -46,6 +48,8 @@ import { RiderEarningCreateComponent } from './admin/rider-earning-create/rider-
     ResMainPageComponent,
     FoodCreateComponent,
     FoodListComponent,
+    OpeningCreateComponent,
+    OpeningListComponent
   ],
 })
 export class Tab3PageModule {}

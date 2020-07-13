@@ -3,7 +3,8 @@
     <ion-card-subtitle color="dark">Summary Report
       <ion-item>
         <ion-label position="floating">Date</ion-label>
-        <ion-datetime value="1990-02-19" placeholder="Select Date"></ion-datetime>
+        <ion-datetime  ionCancel [(ngModel)]="this.dateData"></ion-datetime>
+       
       </ion-item>
       <ion-item>
         <ion-label position="floating">Status</ion-label>
@@ -15,13 +16,14 @@
    
   </ion-card-header>
   <ion-card-content>
+  
     <ion-item>
       <ion-avatar slot="end">
         <img src="/../assets/agreement.svg">
       </ion-avatar>
       <ion-label>
-        <h3>Total</h3>
-        <p>1000 Kyats</p>
+        <h3>Rider Earning</h3>
+        <p>{{this.data.riderEarning}} Kyats</p>
       </ion-label>
     </ion-item>
     <ion-item>
@@ -29,21 +31,12 @@
         <img src="/../assets/agreement.svg">
       </ion-avatar>
       <ion-label>
-        <h3>Take</h3>
-        <p>1000 Kyats</p>
-      </ion-label>
-    </ion-item>
-    <ion-item>
-      <ion-avatar slot="end">
-        <img src="/../assets/agreement.svg">
-      </ion-avatar>
-      <ion-label>
-        <h3>Give</h3>
-        <p>1000 Kyats</p>
+        <h3>ပြန်အပ်ရန်ငွေ</h3>
+        <p>{{this.data.dailyReturnAmount}} Kyats</p>
       </ion-label>
     </ion-item>
 
-    <ion-button (click)="this.refresh()" expand="block">
+    <ion-button (click)="this.search()" expand="block">
       Refresh Data
     </ion-button>
   </ion-card-content>

@@ -3,7 +3,26 @@
     <ion-grid fixed>
       <ion-row>
         <ion-col size="12">
-          <ion-searchbar [(ngModel)]="searchTxt" (ngModelChange)="onSearch($event)"></ion-searchbar>
+          <ion-select
+            (ngModelChange)="onSearchResturant($event)"
+            [(ngModel)]="searchResturant"
+            placeholder="Resturant"
+          >
+            <ion-select-option
+              *ngFor="let item of this.appSetting.resturandDataList"
+              [value]="item.id"
+              >{{item.shopname}}</ion-select-option
+            >
+          </ion-select>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col size="12">
+          <ion-searchbar
+            [(ngModel)]="searchTxt"
+            (ngModelChange)="onSearch($event)"
+          ></ion-searchbar>
         </ion-col>
       </ion-row>
     </ion-grid>
@@ -13,11 +32,17 @@
 <ion-header *ngIf="this.appSetting.loginType==='resturant'" translucent>
   <ion-toolbar>
     <ion-segment value="all">
-      <ion-segment-button (click)="this.appSetting.displayFunction('pending')" value="Pending">
+      <ion-segment-button
+        (click)="this.appSetting.displayFunction('pending')"
+        value="Pending"
+      >
         <ion-label>Available?</ion-label>
       </ion-segment-button>
 
-      <ion-segment-button (click)="this.appSetting.displayFunction('delivering')" value="Delivering">
+      <ion-segment-button
+        (click)="this.appSetting.displayFunction('delivering')"
+        value="Delivering"
+      >
         <ion-label>Order</ion-label>
       </ion-segment-button>
     </ion-segment>
@@ -27,11 +52,16 @@
 <ion-header *ngIf="this.appSetting.loginType==='rider'" translucent>
   <ion-toolbar>
     <ion-segment value="all">
-
-      <ion-segment-button (click)="this.appSetting.displayFunction('delivering');this.riderRefresh()" value="delivering">
+      <ion-segment-button
+        (click)="this.appSetting.displayFunction('delivering');this.riderRefresh()"
+        value="delivering"
+      >
         <ion-label>Objectives</ion-label>
       </ion-segment-button>
-      <ion-segment-button (click)="this.appSetting.displayFunction('delivered');this.riderRefresh()" value="delivered">
+      <ion-segment-button
+        (click)="this.appSetting.displayFunction('delivered');this.riderRefresh()"
+        value="delivered"
+      >
         <ion-label>Delivered</ion-label>
       </ion-segment-button>
     </ion-segment>
@@ -40,6 +70,10 @@
 
 <ion-content>
   <app-main-page *ngIf="this.appSetting.loginType==='admin'"></app-main-page>
-  <app-resturant-main *ngIf="this.appSetting.loginType==='resturant'"></app-resturant-main>
-  <app-rider-main-page *ngIf="this.appSetting.loginType==='rider'"></app-rider-main-page>
+  <app-resturant-main
+    *ngIf="this.appSetting.loginType==='resturant'"
+  ></app-resturant-main>
+  <app-rider-main-page
+    *ngIf="this.appSetting.loginType==='rider'"
+  ></app-rider-main-page>
 </ion-content>

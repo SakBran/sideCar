@@ -1,3 +1,5 @@
+import { OpeningCreateComponent } from './admin/opening-create/opening-create.component';
+import { OpeningListComponent } from './admin/opening-list/opening-list.component';
 import { NgModule } from "@angular/core";
 import { RouterModule, Routes } from "@angular/router";
 import { Tab3Page } from "./tab3.page";
@@ -90,6 +92,18 @@ const routes: Routes = [
   {
     path: "riderEarningEdit/:id",
     component: RiderEarningCreateComponent,
+  },
+  {
+    path: "openingBalance",
+    component: OpeningListComponent,
+  },
+  {
+    path: "openingBalanceCreate",
+    component: OpeningCreateComponent,
+  },
+  {
+    path: "openingBalanceEdit/:id",
+    component: OpeningCreateComponent,
   },
 ];
 

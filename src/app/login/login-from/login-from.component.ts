@@ -1,9 +1,9 @@
+import { userModel } from './../../Models/userModel';
 import { appSetting } from "src/app/app-setting";
 import { Component, OnInit } from "@angular/core";
 import { Router } from "@angular/router";
 import { UserModelService } from "src/app/Services/userModel/user-model.service";
 import { UserTypeService } from "src/app/Services/userType/user-type.service";
-import { userModel } from "src/app/Models/userModel";
 
 @Component({
   selector: "app-login-from",
@@ -12,6 +12,7 @@ import { userModel } from "src/app/Models/userModel";
 })
 export class LoginFromComponent implements OnInit {
   constructor(
+
     private router: Router,
     private userService: UserModelService,
     private appSetting: appSetting,
@@ -41,6 +42,15 @@ export class LoginFromComponent implements OnInit {
     latitude: "",
     longitude: "",
   };
+  locationUpdate(){
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(position => {
+        this.userData.latitude = position.coords.latitude.toString();
+        this.userData.longitude = position.coords.longitude.toString();
+        this.userService.putLocation(this.userData);
+      });
+    }
+  }
   onClick() {
     this.appSetting.showLoading();
     console.log(this.username);
@@ -60,6 +70,7 @@ export class LoginFromComponent implements OnInit {
           this.userTypeService.getSingle(this.userData.usertype).subscribe(
             (y) => {
               this.appSetting.loginType = y.usertypeName.toLocaleLowerCase();
+              
             },
             (err) => this.appSetting.showError(err),
             () => {
@@ -69,7 +80,8 @@ export class LoginFromComponent implements OnInit {
               console.log("Type" + this.appSetting.loginType);
               if (this.appSetting.loginType === "rider") {
                 setInterval(() => {
-                  //Location Update Service Here
+                  //this.locationUpdate();
+               this.locationUpdate();
                   console.log("Interval running");
                 }, 30000);
               }

@@ -1,15 +1,15 @@
-import { userModel } from './../../Models/userModel';
 import { appSetting } from './../../app-setting';
 import { Injectable } from '@angular/core';
 import { HttpHeaders, HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import Swal from 'sweetalert2';
+import { OpeningBalanceModel } from 'src/app/Models/openingBalanceModel';
 
 @Injectable({
   providedIn: 'root'
 })
-export class UserModelService {
-  private url = `${this.appSetting.apiAddress}/api/userModels`;
+export class OpeningBalanceService {
+  private url = `${this.appSetting.apiAddress}/api/OpeningBalanceModels`;
   private httpOptions = {
     headers: new HttpHeaders({
       'Content-Type': 'application/json'
@@ -17,27 +17,27 @@ export class UserModelService {
   };
   constructor(private http: HttpClient,private appSetting:appSetting) { }
 
-  get(): Observable<userModel[]> {
-    return this.http.get<userModel[]>(this.url);
+  get(): Observable<OpeningBalanceModel[]> {
+    return this.http.get<OpeningBalanceModel[]>(this.url);
   }
 
-  getLogin(username:string,password:string): Observable<userModel>{
+  getLogin(username:string,password:string): Observable<OpeningBalanceModel>{
     console.log(this.url+`/login?user=${username}&password=${password}`);
-    return this.http.get<userModel>(this.url+`/login?user=${username}&password=${password}`);
+    return this.http.get<OpeningBalanceModel>(this.url+`/login?user=${username}&password=${password}`);
   }
-  getAvailableRider(): Observable<userModel[]> {
-    return this.http.get<userModel[]>(this.url+`/availableRider`);
-  }
-  
-  getDeliveringRider(): Observable<userModel[]> {
-    return this.http.get<userModel[]>(this.url+`/deliveringRider`);
+  getAvailableRider(): Observable<OpeningBalanceModel[]> {
+    return this.http.get<OpeningBalanceModel[]>(this.url+`/availableRider`);
   }
   
-  getSingle(id: number): Observable<userModel> {
+  getDeliveringRider(): Observable<OpeningBalanceModel[]> {
+    return this.http.get<OpeningBalanceModel[]>(this.url+`/deliveringRider`);
+  }
+  
+  getSingle(id: number): Observable<OpeningBalanceModel> {
     const searchUrl = `${this.url}/${id}`;
-    return this.http.get<userModel>(searchUrl);
+    return this.http.get<OpeningBalanceModel>(searchUrl);
   }
-  post(data: userModel): void {
+  post(data: OpeningBalanceModel): void {
     this.http.post(this.url, data, this.httpOptions).subscribe(
       res => {
         console.log(res);
@@ -49,7 +49,7 @@ export class UserModelService {
     );
   }
 
-  put(data: userModel): void {
+  put(data: OpeningBalanceModel): void {
     const searchUrl = `${this.url}/${data.id}`;
     this.http.put(searchUrl, data, this.httpOptions).subscribe(
       res => {
@@ -59,20 +59,6 @@ export class UserModelService {
       err => {
         console.log(err);
         this.appSetting.showError(err);
-      }
-    );
-  }
-
-  putLocation(data: userModel): void {
-    const searchUrl = `${this.url}/${data.id}`;
-    this.http.put(searchUrl, data, this.httpOptions).subscribe(
-      res => {
-        console.log(res);
-        
-      },
-      err => {
-        console.log(err);
-       
       }
     );
   }

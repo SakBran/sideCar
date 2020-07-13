@@ -1,4 +1,4 @@
-import { OrderService } from 'src/app/Services/order/order.service';
+import { OrderService } from "src/app/Services/order/order.service";
 import { Component } from "@angular/core";
 import { appSetting } from "../app-setting";
 import { ResturantModelService } from "src/app/Services/resturantModel/resturant-model.service";
@@ -13,13 +13,11 @@ export class Tab1Page {
   constructor(
     public appSetting: appSetting,
     private FoodService: FoodService,
-    private orderService:OrderService,
+    private orderService: OrderService,
     private ResturantModelService: ResturantModelService
   ) {
-
-    if(this.appSetting.loginType==="rider"){
+    if (this.appSetting.loginType === "rider") {
       this.appSetting.displaySetting === "delivering";
-
     }
     this.loadData();
   }
@@ -42,18 +40,30 @@ export class Tab1Page {
     const temp: foodModel[] = [...this.appSetting.constFoodDataList];
     let z: foodModel[] = [];
     temp.forEach((x) => {
-      if (
-        x.itemName.toLowerCase().includes(this.searchTxt.toLowerCase()) ||
-        this.resName(x.resturant_id)
-          .toLowerCase()
-          .includes(this.searchTxt.toLowerCase())
-      ) {
+      if (x.itemName.toLowerCase().includes(this.searchTxt.toLowerCase())) {
         z.push(x);
       }
 
       this.appSetting.menuFoodDataList = z;
     });
     if (this.searchTxt === "") {
+      this.appSetting.menuFoodDataList = temp;
+    }
+  }
+  searchResturant = 0;
+  onSearchResturant(val) {
+    console.log(val);
+    this.searchResturant = val;
+    const temp: foodModel[] = [...this.appSetting.constFoodDataList];
+    let z: foodModel[] = [];
+    temp.forEach((x) => {
+      if (x.resturant_id === this.searchResturant) {
+        console.log(x);
+        z.push(x);
+      }
+      this.appSetting.menuFoodDataList = z;
+    });
+    if (this.searchResturant === 0) {
       this.appSetting.menuFoodDataList = temp;
     }
   }
@@ -88,7 +98,7 @@ export class Tab1Page {
         },
         (err) => this.appSetting.showError(err),
         () => {
-         console.log(this.appSetting.orderTransationList);
+          console.log(this.appSetting.orderTransationList);
           this.appSetting.loadingClose();
         }
       );
@@ -103,15 +113,13 @@ export class Tab1Page {
           this.appSetting.loadingClose();
         }
       );
-    }
-    else{
+    } else {
       this.orderService.getRiderPending().subscribe(
         (x) => {
           this.appSetting.orderTransationList = x;
         },
         (err) => this.appSetting.showError(err),
         () => {
-         
           this.appSetting.loadingClose();
         }
       );

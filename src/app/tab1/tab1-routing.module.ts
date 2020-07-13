@@ -1,9 +1,10 @@
-import { PendingItemEditComponent } from './admin/pending-item-edit/pending-item-edit.component';
-import { DeliveryPendingComponent } from './admin/delivery-pending/delivery-pending.component';
+import { PendingItemEditComponent } from "./admin/pending-item-edit/pending-item-edit.component";
+import { DeliveryPendingComponent } from "./admin/delivery-pending/delivery-pending.component";
 import { NgModule } from "@angular/core";
 import { RouterModule, Routes } from "@angular/router";
 import { Tab1Page } from "./tab1.page";
 import { AddToInvoiceComponent } from "./admin/add-to-invoice/add-to-invoice.component";
+import { CustomerInfoComponent } from "./rider/customer-info/customer-info.component";
 
 const routes: Routes = [
   {
@@ -21,6 +22,10 @@ const routes: Routes = [
   {
     path: "pendingEdit/:id",
     component: PendingItemEditComponent,
+  },
+  {
+    path: "customerInfo/:id",
+    component: CustomerInfoComponent,
   },
 ];
 
