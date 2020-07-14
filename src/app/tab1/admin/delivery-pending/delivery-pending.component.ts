@@ -4,9 +4,9 @@ import { Component, OnInit } from "@angular/core";
 import { OrderService } from "src/app/Services/order/order.service";
 
 @Component({
-  selector: 'app-delivery-pending',
-  templateUrl: './delivery-pending.component.html',
-  styleUrls: ['./delivery-pending.component.scss'],
+  selector: "app-delivery-pending",
+  templateUrl: "./delivery-pending.component.html",
+  styleUrls: ["./delivery-pending.component.scss"],
 })
 export class DeliveryPendingComponent implements OnInit {
   constructor(
@@ -14,48 +14,40 @@ export class DeliveryPendingComponent implements OnInit {
     private FoodService: FoodService,
     private orderService: OrderService
   ) {
-    
     this.firstLoad();
     console.log(this.appSetting.orderTransationList);
-    
   }
   ngOnInit() {
     this.firstLoad();
   }
-  
-  
 
-  firstLoad(){
+  firstLoad() {
     this.appSetting.showLoading();
-      this.orderService.get().subscribe(
-        (x) => {
-          this.appSetting.orderTransationList = x;
-        },
-        (err) => this.appSetting.showError(err),
-        () => {
-          this.loadFoodModel();  
-          console.log("This work");
-        }
-      );
+    this.orderService.get().subscribe(
+      (x) => {
+        this.appSetting.orderTransationList = x;
+      },
+      (err) => this.appSetting.showError(err),
+      () => {
+        this.loadFoodModel();
+        console.log("This work");
+      }
+    );
   }
   loadFoodModel() {
-    this.appSetting.foodDataList=this.appSetting.menuFoodDataList;
+    this.appSetting.foodDataList = this.appSetting.menuFoodDataList;
     this.appSetting.loadingClose();
   }
 
-
   refresh(event) {
-    this.orderService
-      .get()
-      .subscribe(
-        (x) => {
-          this.appSetting.orderTransationList = x;
-        },
-        (err) => this.appSetting.showError(err),
-        () => {
-         event.target.complete();
-         
-        }
-      );
+    this.orderService.get().subscribe(
+      (x) => {
+        this.appSetting.orderTransationList = x;
+      },
+      (err) => this.appSetting.showError(err),
+      () => {
+        event.target.complete();
+      }
+    );
   }
 }

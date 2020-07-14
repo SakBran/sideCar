@@ -212,7 +212,7 @@ export class appSetting {
     };
   }
 
-  public distanceCal(lat1, lat2, lon2, lon1): number {
+  public distanceCal(lat1, lon1, lat2, lon2): number {
     const R = 6371e3; // metres
     const φ1 = (lat1 * Math.PI) / 180; // φ, λ in radians
     const φ2 = (lat2 * Math.PI) / 180;
@@ -226,6 +226,7 @@ export class appSetting {
 
     const d = R * c; // in metres
     let result = d;
+
     return result;
   }
 }

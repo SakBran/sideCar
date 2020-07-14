@@ -11,46 +11,50 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content *ngIf="this.riderSelection==='available'" >
+<ion-content *ngIf="this.riderSelection === 'available'">
   <ion-refresher slot="fixed" (ionRefresh)="refresh($event)">
     <ion-refresher-content></ion-refresher-content>
   </ion-refresher>
   <ion-card *ngFor="let i of rider">
     <ion-item>
       <ion-avatar slot="start">
-        <img src='/../assets/food-delivery.svg'>
+        <img src="/../assets/food-delivery.svg" />
       </ion-avatar>
       <ion-label>
-        <h2>{{i.username}}</h2>
-        <h3>Estimate distance in KM:1000</h3>
-        <p>Ph:{{i.phone}}</p>
-
-
+        <h2>{{ i.username }}</h2>
+        <h3>
+          ETD KM:{{ locationCalculate(i.longitude, i.latitude).toFixed(2) }}
+          Kilometer
+        </h3>
+        <p>Ph:{{ i.phone }}</p>
       </ion-label>
 
-      <ion-button  (click)="onSelect(i.id)"  color="secondary">
+      <ion-button (click)="onSelect(i.id)" color="secondary">
         Select
       </ion-button>
     </ion-item>
-
   </ion-card>
 </ion-content>
 
-<ion-content *ngIf="this.riderSelection==='inProgress'" >
+<ion-content *ngIf="this.riderSelection === 'inProgress'">
   <ion-refresher slot="fixed" (ionRefresh)="refreshDelivering($event)">
     <ion-refresher-content></ion-refresher-content>
   </ion-refresher>
   <ion-card *ngFor="let i of progressRider">
     <ion-item>
       <ion-avatar slot="start">
-        <img src='/../assets/food-delivery.svg'>
+        <img src="/../assets/food-delivery.svg" />
       </ion-avatar>
       <ion-label>
-        <h2>{{i.username}}</h2>
-        <h3>Estimate distance in KM:1000</h3>
-        <p>Ph:{{i.phone}}</p>
+        <h2>{{ i.username }}</h2>
+        <h3>
+          ETD KM:{{
+            locationCalculate(i.longitude, i.latitude).toFixed(2)
+          }}
+          Kilometer
+        </h3>
 
-
+        <p>Ph:{{ i.phone }}</p>
       </ion-label>
 
       <ion-button (click)="onSelect(i.id)" color="secondary">
@@ -62,6 +66,5 @@
       <ion-checkbox color="danger" slot="start"></ion-checkbox>
       <ion-label color="danger" checked readonnly>Emegency</ion-label>
     </ion-item>
-
   </ion-card>
 </ion-content>
