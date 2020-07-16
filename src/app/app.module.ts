@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { RouteReuseStrategy } from '@angular/router';
 
 
+import { InAppBrowser } from '@ionic-native/in-app-browser/ngx';
 import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
@@ -28,6 +29,7 @@ import { CommonModule } from '@angular/common';
     StatusBar,
     SplashScreen,
     AuthComponent,
+    InAppBrowser,
     AuthGuardService,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
   ],

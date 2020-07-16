@@ -4,7 +4,10 @@ import { Router, ActivatedRoute } from "@angular/router";
 import { orderTransationModel } from "src/app/Models/orderTransationModel";
 import { orderModel } from "src/app/Models/orderModel";
 import { Location } from "@angular/common";
-
+import { InAppBrowserOptions } from '@ionic-native/in-app-browser/ngx';
+import {
+  InAppBrowser
+} from "@ionic-native/in-app-browser/ngx";
 @Component({
   selector: "app-customer-info",
   templateUrl: "./customer-info.component.html",
@@ -14,11 +17,18 @@ export class CustomerInfoComponent implements OnInit {
   constructor(
     public appSetting: appSetting,
     public location: Location,
+    private iab: InAppBrowser,
     private route: ActivatedRoute
   ) {
     this.id = +this.route.snapshot.paramMap.get("id");
   }
   id = 0;
+  options: InAppBrowserOptions = {
+    location: "yes", //Or 'no'
+    hidden: "no", //Or  'yes'
+    zoom: "no", //Android only ,shows browser zoom controls
+    hideurlbar: "yes", //Or 'no'
+  };
   ngOnInit() {
     this.getCustomerInfo();
   }
@@ -26,7 +36,26 @@ export class CustomerInfoComponent implements OnInit {
   back() {
     this.location.back();
   }
-  onClick() {}
+
+  googleMap(meltd, melng, clientLtd, clientLng) {
+    const url = `https://www.google.com/maps/dir/${meltd},${melng}/${clientLtd},${clientLng}/@${clientLtd},${clientLng}`;
+    let target = "_blank";
+    const browser = this.iab.create(url, target, this.options);
+
+    browser.on("loadstop").subscribe((event) => {
+      browser.insertCSS({ code: "body{color: red;" });
+    });
+  }
+  onClick() {
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(position => {
+       let latitude = position.coords.latitude.toString();
+       let  longitude = position.coords.longitude.toString();
+        this.googleMap(latitude,longitude,latitude,longitude);
+      });
+    }
+   
+  }
   getCustomerInfo() {
     const temp: orderTransationModel[] = this.appSetting.orderTransationList;
     temp.forEach((x) => {
