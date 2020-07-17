@@ -8,6 +8,7 @@ import { InAppBrowserOptions } from '@ionic-native/in-app-browser/ngx';
 import {
   InAppBrowser
 } from "@ionic-native/in-app-browser/ngx";
+import { LocationDBService } from 'src/app/Services/locationDB/location-db.service';
 @Component({
   selector: "app-customer-info",
   templateUrl: "./customer-info.component.html",
@@ -18,7 +19,8 @@ export class CustomerInfoComponent implements OnInit {
     public appSetting: appSetting,
     public location: Location,
     private iab: InAppBrowser,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private locationDBSvs:LocationDBService
   ) {
     this.id = +this.route.snapshot.paramMap.get("id");
   }
@@ -47,15 +49,36 @@ export class CustomerInfoComponent implements OnInit {
     });
   }
   onClick() {
+    let userLatitude='';
+    let userLongitude='';
+    this.locationDBSvs.getSingle(
+      +this.orderData.clitentFlatNo,
+      this.orderData.Township_id).subscribe(x=>{
+        userLatitude=x.latitude;
+        userLongitude=x.longitude;
+      },
+      err=>(this.appSetting.showError(err)),
+      ()=>{
+        if(userLongitude==='' || userLatitude===''){
+          this.appSetting.showError(JSON.parse("No record in the database!"))
+        }
+        else{
+        this.geolocation(userLatitude,userLongitude);
+        }
+      }
+      );
+  }
+
+  geolocation(lat,long){
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(position => {
        let latitude = position.coords.latitude.toString();
        let  longitude = position.coords.longitude.toString();
-        this.googleMap(latitude,longitude,latitude,longitude);
+        this.googleMap(latitude,longitude,lat,long);
       });
     }
-   
   }
+  
   getCustomerInfo() {
     const temp: orderTransationModel[] = this.appSetting.orderTransationList;
     temp.forEach((x) => {
