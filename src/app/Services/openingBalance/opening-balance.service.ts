@@ -10,6 +10,7 @@ import { OpeningBalanceModel } from 'src/app/Models/openingBalanceModel';
 })
 export class OpeningBalanceService {
   private url = `${this.appSetting.apiAddress}/api/OpeningBalanceModels`;
+  private date_url = `${this.appSetting.apiAddress}/api/OpeningBalanceModels/today`;
   private httpOptions = {
     headers: new HttpHeaders({
       'Content-Type': 'application/json'
@@ -37,6 +38,13 @@ export class OpeningBalanceService {
     const searchUrl = `${this.url}/${id}`;
     return this.http.get<OpeningBalanceModel>(searchUrl);
   }
+
+  getDate(date: Date): Observable<OpeningBalanceModel[]> {
+    const tempDate=date.toString().substring(0,10);
+    const searchUrl = `${this.date_url}/?date=${tempDate}`;
+    return this.http.get<OpeningBalanceModel[]>(searchUrl);
+  }
+
   post(data: OpeningBalanceModel): void {
     this.http.post(this.url, data, this.httpOptions).subscribe(
       res => {

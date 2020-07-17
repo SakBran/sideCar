@@ -83,6 +83,7 @@ export class LoginFromComponent implements OnInit {
                   //this.locationUpdate();
                this.locationUpdate();
                   console.log("Interval running");
+                 
                 }, 30000);
               }
               this.appSetting.loginSuccess();
