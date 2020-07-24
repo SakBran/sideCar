@@ -32,6 +32,7 @@ export class RiderEarningService {
       },
       err => {
         console.log(err);
+        this.appSetting.showError(err);
       }
     );
   }

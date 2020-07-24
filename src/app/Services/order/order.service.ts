@@ -92,6 +92,7 @@ export class OrderService {
   }
 
   putResend_From_Resturant(orderID,data: resendModel[]): void {
+    console.log(data);
     const searchUrl = `${this.url}/resturant/resend?id=${orderID}&ResturantID=${this.appSetting.resturantID}`;
     this.http.put(searchUrl, data, this.httpOptions).subscribe(
       res => {
