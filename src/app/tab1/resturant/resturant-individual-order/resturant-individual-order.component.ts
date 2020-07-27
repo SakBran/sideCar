@@ -75,7 +75,7 @@ export class ResturantIndividualOrderComponent implements OnInit {
   recordData: deliveryRecordModel = {
     id: 0,
     orderID: 0,
-    resturant: false,
+    resturant: 0,
     resurant_date: new Date(),
     customer: false,
     customer_date: new Date(),
@@ -83,7 +83,7 @@ export class ResturantIndividualOrderComponent implements OnInit {
 
   delivryRecordSave(id) {
     this.recordData.orderID = id;
-    this.recordData.resturant = true;
+    this.recordData.resturant = 0;
     this.appSetting.showLoading();
 
     this.DeliveryRecordService.put(this.recordData);
