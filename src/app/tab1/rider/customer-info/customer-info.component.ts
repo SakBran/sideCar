@@ -49,6 +49,7 @@ export class CustomerInfoComponent implements OnInit {
     });
   }
   onClick() {
+    this.appSetting.showLoading();
     let userLatitude='';
     let userLongitude='';
     this.locationDBSvs.getSingle(
@@ -59,11 +60,13 @@ export class CustomerInfoComponent implements OnInit {
       },
       err=>(this.appSetting.showError(err)),
       ()=>{
+       
         if(userLongitude==='' || userLatitude===''){
-          this.appSetting.showError(JSON.parse("No record in the database!"))
+          console.log("Error");
         }
         else{
-        this.geolocation(userLatitude,userLongitude);
+          this.appSetting.loadingClose();
+          this.geolocation(userLatitude,userLongitude);
         }
       }
       );
