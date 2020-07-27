@@ -27,7 +27,8 @@ export class appSetting {
   public adminTab3Process = "";
   public adminTab3ID = "";
 
-  public apiAddress = "http://localhost/sidecar";
+  //public apiAddress = "http://localhost/sidecar";
+  public apiAddress ="https://www.npt-easy-delivery.com";
 
   public userTypeData: userTypeModel[] = [];
 
@@ -115,6 +116,7 @@ export class appSetting {
     Swal.fire("Invalid Data", "Please fill invalid data!", "info");
   }
 
+  
   public loadingClose() {
     Swal.close();
   }

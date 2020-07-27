@@ -334,8 +334,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         this.adminTab2Process = "";
         this.adminTab2ID = "";
         this.adminTab3Process = "";
-        this.adminTab3ID = "";
-        this.apiAddress = "http://localhost/sidecar";
+        this.adminTab3ID = ""; //public apiAddress = "http://localhost/sidecar";
+
+        this.apiAddress = "https://www.npt-easy-delivery.com";
         this.userTypeData = [];
         this.resturantID = 0;
         this.sessionUserID = 0;

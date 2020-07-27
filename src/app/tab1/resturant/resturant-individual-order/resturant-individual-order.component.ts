@@ -15,9 +15,9 @@ import { orderModel } from "src/app/Models/orderModel";
   styleUrls: ["./resturant-individual-order.component.scss"],
 })
 export class ResturantIndividualOrderComponent implements OnInit {
-  @Input("orderNo") Orderid: number;
-  itemVisible: boolean = false;
-  data: orderTransationModel = new orderTransationModel();
+  @Input("orderNo")public Orderid: number;
+  public itemVisible: boolean = false;
+  public data: orderTransationModel = new orderTransationModel();
   invoiceNo = 0;
   constructor(
     public appSetting: appSetting,
