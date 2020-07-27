@@ -436,7 +436,7 @@ module.exports = webpackAsyncContext;
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<ion-app>\n  <ion-router-outlet></ion-router-outlet>\n</ion-app>\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<ion-app>\r\n  <ion-router-outlet></ion-router-outlet>\r\n</ion-app>\r\n");
 
 /***/ }),
 
@@ -449,7 +449,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<p>\n  auth works!\n</p>\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<p>\r\n  auth works!\r\n</p>\r\n");
 
 /***/ }),
 
@@ -474,7 +474,7 @@ __webpack_require__.r(__webpack_exports__);
 const routes = [
     {
         path: '',
-        loadChildren: () => __webpack_require__.e(/*! import() | login-login-module */ "login-login-module").then(__webpack_require__.bind(null, /*! ./login/login.module */ "./src/app/login/login.module.ts")).then(m => m.LoginModule)
+        loadChildren: () => Promise.all(/*! import() | login-login-module */[__webpack_require__.e("common"), __webpack_require__.e("login-login-module")]).then(__webpack_require__.bind(null, /*! ./login/login.module */ "./src/app/login/login.module.ts")).then(m => m.LoginModule)
     },
     {
         path: 'tabs',
@@ -501,25 +501,202 @@ AppRoutingModule = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
 /*!********************************!*\
   !*** ./src/app/app-setting.ts ***!
   \********************************/
-/*! exports provided: appSetting */
+/*! exports provided: appSetting, itemRest */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "appSetting", function() { return appSetting; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "itemRest", function() { return itemRest; });
+/* harmony import */ var sweetalert2__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! sweetalert2 */ "./node_modules/sweetalert2/dist/sweetalert2.all.js");
+/* harmony import */ var sweetalert2__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(sweetalert2__WEBPACK_IMPORTED_MODULE_0__);
+
 class appSetting {
     /**
      *
      */
     constructor() {
-        this.loginType = "admin";
+        this.loginType = "";
+        this.displaySetting = "pending";
         this.adminProcess = "";
         this.adminID = "";
         this.adminTab2Process = "";
         this.adminTab2ID = "";
         this.adminTab3Process = "";
         this.adminTab3ID = "";
+        this.apiAddress = "http://localhost/sidecar";
+        this.userTypeData = [];
+        this.resturantID = 0;
+        this.sessionUserID = 0;
+        this.foodDataList = [];
+        this.menuFoodDataList = [];
+        this.constFoodDataList = [];
+        this.resturandDataList = [];
+        this.locationDataList = [];
+        this.orderDetailList = [];
+        this.orderDetailViewList = [];
+        this.orderTransationList = [];
+        this.resendListFromResturant = [];
+        this.orderData = {
+            id: 0,
+            orderDate: new Date(Date.now()),
+            deliveryDate: new Date(Date.now()),
+            pickupDate: new Date(Date.now()),
+            clientName: "",
+            clitentPhone: "09-",
+            clitentFlatNo: "",
+            clientAddress: "",
+            deliveryCharegs: 0,
+            riderID: 0,
+            Township_id: 0,
+            riderEarning: 0,
+            operatorID: this.sessionUserID,
+            status: "pending",
+            riderTakeOption: "all",
+        };
     }
+    orderTransationClear() {
+        this.orderData = {
+            id: 0,
+            orderDate: new Date(Date.now()),
+            deliveryDate: new Date(Date.now()),
+            pickupDate: new Date(Date.now()),
+            clientName: "",
+            clitentPhone: "09-",
+            clitentFlatNo: "",
+            clientAddress: "",
+            deliveryCharegs: 0,
+            riderID: 0,
+            Township_id: 0,
+            riderEarning: 0,
+            operatorID: this.sessionUserID,
+            status: "pending",
+            riderTakeOption: "all",
+        };
+        this.orderDetailList = [];
+        this.orderDetailViewList = [];
+    }
+    showLoading() {
+        sweetalert2__WEBPACK_IMPORTED_MODULE_0___default.a.fire({
+            title: "System Message",
+            html: "Please wait! System is processing..",
+            confirmButtonText: "Done",
+            onBeforeOpen: () => {
+                sweetalert2__WEBPACK_IMPORTED_MODULE_0___default.a.showLoading();
+            },
+        });
+    }
+    loginSuccess() {
+        sweetalert2__WEBPACK_IMPORTED_MODULE_0___default.a.fire("Success", "Login successful", "success");
+    }
+    loginFail() {
+        sweetalert2__WEBPACK_IMPORTED_MODULE_0___default.a.fire("Opps", "Failed to login", "warning");
+    }
+    showSuccess() {
+        sweetalert2__WEBPACK_IMPORTED_MODULE_0___default.a.fire("Success", "Data has been saved successfully", "success");
+    }
+    showError(msg) {
+        sweetalert2__WEBPACK_IMPORTED_MODULE_0___default.a.fire("Error", JSON.stringify(msg), "error");
+    }
+    showInvalid() {
+        sweetalert2__WEBPACK_IMPORTED_MODULE_0___default.a.fire("Invalid Data", "Please fill invalid data!", "info");
+    }
+    loadingClose() {
+        sweetalert2__WEBPACK_IMPORTED_MODULE_0___default.a.close();
+    }
+    resName(id) {
+        let res = "null";
+        this.resturandDataList.forEach((x) => {
+            if (x.id === id) {
+                res = x.shopname;
+            }
+        });
+        return res;
+    }
+    resendBtn(orderNo) {
+        let result = true;
+        const temp = [...this.resendListFromResturant];
+        temp.forEach((x) => {
+            if (x.orderNo === orderNo) {
+                result = false;
+            }
+        });
+        return result;
+    }
+    riderEarning(amount) {
+        return 0;
+    }
+    itemJoin(id) {
+        let i = {
+            itemName: "",
+            resturant: "",
+        };
+        const temp = [...this.constFoodDataList];
+        temp.forEach((x) => {
+            if (x.id === id) {
+                i.itemName = x.itemName;
+                i.resturant = this.resName(x.resturant_id);
+            }
+        });
+        return i;
+    }
+    displayFunction(x) {
+        this.displaySetting = x;
+    }
+    logout() {
+        this.loginType = "";
+        this.displaySetting = "pending";
+        this.adminProcess = "";
+        this.adminID = "";
+        this.adminTab2Process = "";
+        this.adminTab2ID = "";
+        this.adminTab3Process = "";
+        this.adminTab3ID = "";
+        this.userTypeData = [];
+        this.resturantID = 0;
+        this.sessionUserID = 0;
+        this.foodDataList = [];
+        this.menuFoodDataList = [];
+        this.constFoodDataList = [];
+        this.resturandDataList = [];
+        this.locationDataList = [];
+        this.orderDetailList = [];
+        this.orderDetailViewList = [];
+        this.orderTransationList = [];
+        this.resendListFromResturant = [];
+        this.orderData = {
+            id: 0,
+            orderDate: new Date(Date.now()),
+            deliveryDate: new Date(Date.now()),
+            pickupDate: new Date(Date.now()),
+            clientName: "",
+            clitentPhone: "09-",
+            clitentFlatNo: "",
+            clientAddress: "",
+            deliveryCharegs: 0,
+            riderID: 0,
+            Township_id: 0,
+            riderEarning: 0,
+            operatorID: this.sessionUserID,
+            status: "pending",
+            riderTakeOption: "all",
+        };
+    }
+    distanceCal(lat1, lon1, lat2, lon2) {
+        const R = 6371e3; // metres
+        const φ1 = (lat1 * Math.PI) / 180; // φ, λ in radians
+        const φ2 = (lat2 * Math.PI) / 180;
+        const Δφ = ((lat2 - lat1) * Math.PI) / 180;
+        const Δλ = ((lon2 - lon1) * Math.PI) / 180;
+        const a = Math.sin(Δφ / 2) * Math.sin(Δφ / 2) +
+            Math.cos(φ1) * Math.cos(φ2) * Math.sin(Δλ / 2) * Math.sin(Δλ / 2);
+        const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+        const d = R * c; // in metres
+        let result = d;
+        return result;
+    }
+}
+class itemRest {
 }
 
 
@@ -534,7 +711,7 @@ class appSetting {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("ion-content,\nion-content {\n  padding-bottom: 0px !important;\n}\n\ninner-scroll scroll-y overscroll {\n  padding-bottom: 0px !important;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9tZWRpYS9zYWsvUHJvamVjdHMvc2lkZWNhckFwcC9zaWRlQ2FyL3NyYy9hcHAvYXBwLmNvbXBvbmVudC5zY3NzIiwic3JjL2FwcC9hcHAuY29tcG9uZW50LnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7O0VBR0ksOEJBQUE7QUNBSjs7QURJQTtFQUNJLDhCQUFBO0FDREoiLCJmaWxlIjoic3JjL2FwcC9hcHAuY29tcG9uZW50LnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyJpb24tY29udGVudCxcbmlvbi1jb250ZW50e1xuXG4gICAgcGFkZGluZy1ib3R0b206IDBweCAhaW1wb3J0YW50O1xuXG59XG5cbmlubmVyLXNjcm9sbCBzY3JvbGwteSBvdmVyc2Nyb2xse1xuICAgIHBhZGRpbmctYm90dG9tOiAwcHggIWltcG9ydGFudDtcblxufSIsImlvbi1jb250ZW50LFxuaW9uLWNvbnRlbnQge1xuICBwYWRkaW5nLWJvdHRvbTogMHB4ICFpbXBvcnRhbnQ7XG59XG5cbmlubmVyLXNjcm9sbCBzY3JvbGwteSBvdmVyc2Nyb2xsIHtcbiAgcGFkZGluZy1ib3R0b206IDBweCAhaW1wb3J0YW50O1xufSJdfQ== */");
+/* harmony default export */ __webpack_exports__["default"] = ("ion-content,\nion-content {\n  padding-bottom: 0px !important;\n}\n\ninner-scroll scroll-y overscroll {\n  padding-bottom: 0px !important;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvRDpcXHNpZGVDYXIvc3JjXFxhcHBcXGFwcC5jb21wb25lbnQuc2NzcyIsInNyYy9hcHAvYXBwLmNvbXBvbmVudC5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBOztFQUdJLDhCQUFBO0FDQUo7O0FESUE7RUFDSSw4QkFBQTtBQ0RKIiwiZmlsZSI6InNyYy9hcHAvYXBwLmNvbXBvbmVudC5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiaW9uLWNvbnRlbnQsXHJcbmlvbi1jb250ZW50e1xyXG5cclxuICAgIHBhZGRpbmctYm90dG9tOiAwcHggIWltcG9ydGFudDtcclxuXHJcbn1cclxuXHJcbmlubmVyLXNjcm9sbCBzY3JvbGwteSBvdmVyc2Nyb2xse1xyXG4gICAgcGFkZGluZy1ib3R0b206IDBweCAhaW1wb3J0YW50O1xyXG5cclxufSIsImlvbi1jb250ZW50LFxuaW9uLWNvbnRlbnQge1xuICBwYWRkaW5nLWJvdHRvbTogMHB4ICFpbXBvcnRhbnQ7XG59XG5cbmlubmVyLXNjcm9sbCBzY3JvbGwteSBvdmVyc2Nyb2xsIHtcbiAgcGFkZGluZy1ib3R0b206IDBweCAhaW1wb3J0YW50O1xufSJdfQ== */");
 
 /***/ }),
 
@@ -571,6 +748,8 @@ let AppComponent = class AppComponent {
             this.splashScreen.hide();
         });
     }
+    interval() {
+    }
 };
 AppComponent.ctorParameters = () => [
     { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_2__["Platform"] },
@@ -603,14 +782,20 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
 /* harmony import */ var _angular_platform_browser__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/platform-browser */ "./node_modules/@angular/platform-browser/__ivy_ngcc__/fesm2015/platform-browser.js");
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/__ivy_ngcc__/fesm2015/router.js");
-/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @ionic/angular */ "./node_modules/@ionic/angular/__ivy_ngcc__/fesm2015/ionic-angular.js");
-/* harmony import */ var _ionic_native_splash_screen_ngx__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @ionic-native/splash-screen/ngx */ "./node_modules/@ionic-native/splash-screen/__ivy_ngcc__/ngx/index.js");
-/* harmony import */ var _ionic_native_status_bar_ngx__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @ionic-native/status-bar/ngx */ "./node_modules/@ionic-native/status-bar/__ivy_ngcc__/ngx/index.js");
-/* harmony import */ var _app_routing_module__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./app-routing.module */ "./src/app/app-routing.module.ts");
-/* harmony import */ var _app_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./app.component */ "./src/app/app.component.ts");
-/* harmony import */ var _app_setting__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./app-setting */ "./src/app/app-setting.ts");
-/* harmony import */ var _auth_authGuard__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./auth/authGuard */ "./src/app/auth/authGuard.ts");
-/* harmony import */ var _auth_auth_component__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./auth/auth.component */ "./src/app/auth/auth.component.ts");
+/* harmony import */ var _ionic_native_in_app_browser_ngx__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @ionic-native/in-app-browser/ngx */ "./node_modules/@ionic-native/in-app-browser/__ivy_ngcc__/ngx/index.js");
+/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @ionic/angular */ "./node_modules/@ionic/angular/__ivy_ngcc__/fesm2015/ionic-angular.js");
+/* harmony import */ var _ionic_native_splash_screen_ngx__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @ionic-native/splash-screen/ngx */ "./node_modules/@ionic-native/splash-screen/__ivy_ngcc__/ngx/index.js");
+/* harmony import */ var _ionic_native_status_bar_ngx__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @ionic-native/status-bar/ngx */ "./node_modules/@ionic-native/status-bar/__ivy_ngcc__/ngx/index.js");
+/* harmony import */ var _app_routing_module__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./app-routing.module */ "./src/app/app-routing.module.ts");
+/* harmony import */ var _app_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./app.component */ "./src/app/app.component.ts");
+/* harmony import */ var _app_setting__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./app-setting */ "./src/app/app-setting.ts");
+/* harmony import */ var _auth_authGuard__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./auth/authGuard */ "./src/app/auth/authGuard.ts");
+/* harmony import */ var _auth_auth_component__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./auth/auth.component */ "./src/app/auth/auth.component.ts");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/__ivy_ngcc__/fesm2015/http.js");
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/__ivy_ngcc__/fesm2015/common.js");
+
+
+
 
 
 
@@ -627,18 +812,19 @@ let AppModule = class AppModule {
 };
 AppModule = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"])({
-        declarations: [_app_component__WEBPACK_IMPORTED_MODULE_8__["AppComponent"]],
+        declarations: [_app_component__WEBPACK_IMPORTED_MODULE_9__["AppComponent"]],
         entryComponents: [],
-        imports: [_angular_platform_browser__WEBPACK_IMPORTED_MODULE_2__["BrowserModule"], _ionic_angular__WEBPACK_IMPORTED_MODULE_4__["IonicModule"].forRoot(), _app_routing_module__WEBPACK_IMPORTED_MODULE_7__["AppRoutingModule"]],
+        imports: [_angular_platform_browser__WEBPACK_IMPORTED_MODULE_2__["BrowserModule"], _angular_common__WEBPACK_IMPORTED_MODULE_14__["CommonModule"], _ionic_angular__WEBPACK_IMPORTED_MODULE_5__["IonicModule"].forRoot(), _angular_common_http__WEBPACK_IMPORTED_MODULE_13__["HttpClientModule"], _app_routing_module__WEBPACK_IMPORTED_MODULE_8__["AppRoutingModule"]],
         providers: [
-            _app_setting__WEBPACK_IMPORTED_MODULE_9__["appSetting"],
-            _ionic_native_status_bar_ngx__WEBPACK_IMPORTED_MODULE_6__["StatusBar"],
-            _ionic_native_splash_screen_ngx__WEBPACK_IMPORTED_MODULE_5__["SplashScreen"],
-            _auth_auth_component__WEBPACK_IMPORTED_MODULE_11__["AuthComponent"],
-            _auth_authGuard__WEBPACK_IMPORTED_MODULE_10__["AuthGuardService"],
-            { provide: _angular_router__WEBPACK_IMPORTED_MODULE_3__["RouteReuseStrategy"], useClass: _ionic_angular__WEBPACK_IMPORTED_MODULE_4__["IonicRouteStrategy"] }
+            _app_setting__WEBPACK_IMPORTED_MODULE_10__["appSetting"],
+            _ionic_native_status_bar_ngx__WEBPACK_IMPORTED_MODULE_7__["StatusBar"],
+            _ionic_native_splash_screen_ngx__WEBPACK_IMPORTED_MODULE_6__["SplashScreen"],
+            _auth_auth_component__WEBPACK_IMPORTED_MODULE_12__["AuthComponent"],
+            _ionic_native_in_app_browser_ngx__WEBPACK_IMPORTED_MODULE_4__["InAppBrowser"],
+            _auth_authGuard__WEBPACK_IMPORTED_MODULE_11__["AuthGuardService"],
+            { provide: _angular_router__WEBPACK_IMPORTED_MODULE_3__["RouteReuseStrategy"], useClass: _ionic_angular__WEBPACK_IMPORTED_MODULE_5__["IonicRouteStrategy"] }
         ],
-        bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_8__["AppComponent"]]
+        bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_9__["AppComponent"]]
     })
 ], AppModule);
 
@@ -670,20 +856,31 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AuthComponent", function() { return AuthComponent; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/__ivy_ngcc__/fesm2015/router.js");
+/* harmony import */ var src_app_app_setting__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! src/app/app-setting */ "./src/app/app-setting.ts");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/__ivy_ngcc__/fesm2015/router.js");
+
 
 
 
 let AuthComponent = class AuthComponent {
-    constructor(router) {
+    constructor(router, appSetting) {
         this.router = router;
+        this.appSetting = appSetting;
     }
     // ...
     isAuthenticated() {
+        let token = 'no';
+        let result = false;
         //const token = localStorage.getItem('token');
-        let token = 'yes';
-        let result = true;
+        if (this.appSetting.loginType === '') {
+            token = 'no';
+            result = false;
+        }
+        else {
+            token = 'yes';
+            result = true;
+        }
         if (token === '' || token === null || token === undefined) {
             result = false;
         }
@@ -693,10 +890,11 @@ let AuthComponent = class AuthComponent {
     }
 };
 AuthComponent.ctorParameters = () => [
-    { type: _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"] }
+    { type: _angular_router__WEBPACK_IMPORTED_MODULE_3__["Router"] },
+    { type: src_app_app_setting__WEBPACK_IMPORTED_MODULE_1__["appSetting"] }
 ];
 AuthComponent = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
-    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_2__["Component"])({
         selector: 'app-auth',
         template: Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"])(__webpack_require__(/*! raw-loader!./auth.component.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/auth/auth.component.html")).default,
         styles: [Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"])(__webpack_require__(/*! ./auth.component.scss */ "./src/app/auth/auth.component.scss")).default]
@@ -718,32 +916,36 @@ AuthComponent = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AuthGuardService", function() { return AuthGuardService; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/__ivy_ngcc__/fesm2015/router.js");
-/* harmony import */ var _auth_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./auth.component */ "./src/app/auth/auth.component.ts");
+/* harmony import */ var src_app_app_setting__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! src/app/app-setting */ "./src/app/app-setting.ts");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/__ivy_ngcc__/fesm2015/router.js");
+/* harmony import */ var _auth_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./auth.component */ "./src/app/auth/auth.component.ts");
+
 
 
 
 
 let AuthGuardService = class AuthGuardService {
-    constructor(auth, router) {
+    constructor(auth, router, appSetting) {
         this.auth = auth;
         this.router = router;
+        this.appSetting = appSetting;
     }
     canActivate() {
         if (!this.auth.isAuthenticated()) {
-            this.router.navigateByUrl('');
+            this.router.navigateByUrl('/');
             return false;
         }
         return true;
     }
 };
 AuthGuardService.ctorParameters = () => [
-    { type: _auth_component__WEBPACK_IMPORTED_MODULE_3__["AuthComponent"] },
-    { type: _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"] }
+    { type: _auth_component__WEBPACK_IMPORTED_MODULE_4__["AuthComponent"] },
+    { type: _angular_router__WEBPACK_IMPORTED_MODULE_3__["Router"] },
+    { type: src_app_app_setting__WEBPACK_IMPORTED_MODULE_1__["appSetting"] }
 ];
 AuthGuardService = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
-    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])()
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_2__["Injectable"])()
 ], AuthGuardService);
 
 
@@ -811,7 +1013,7 @@ Object(_angular_platform_browser_dynamic__WEBPACK_IMPORTED_MODULE_1__["platformB
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /media/sak/Projects/sidecarApp/sideCar/src/main.ts */"./src/main.ts");
+module.exports = __webpack_require__(/*! D:\sideCar\src\main.ts */"./src/main.ts");
 
 
 /***/ })

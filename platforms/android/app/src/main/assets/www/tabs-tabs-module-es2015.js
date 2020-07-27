@@ -9,7 +9,7 @@
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<ion-tabs>\n  <ion-tab-bar slot=\"bottom\" color=\"secondary\">\n    <ion-tab-button tab=\"tab1\">\n      <ion-icon name=\"reader-outline\"></ion-icon>\n      <ion-label>Menu</ion-label>\n    </ion-tab-button>\n\n    <ion-tab-button tab=\"tab2\">\n      <ion-icon name=\"print-outline\"></ion-icon>\n      <ion-label>Invoice</ion-label>\n    </ion-tab-button>\n\n    <ion-tab-button tab=\"tab3\">\n      <ion-icon name=\"file-tray-full-outline\"></ion-icon>\n      <ion-label>Report</ion-label>\n    </ion-tab-button>\n  </ion-tab-bar>\n\n</ion-tabs>");
+/* harmony default export */ __webpack_exports__["default"] = ("<ion-tabs>\r\n  <ion-tab-bar slot=\"bottom\" color=\"secondary\">\r\n    <ion-tab-button (click)=\"onClick()\" tab=\"tab1\">\r\n      <ion-icon (click)=\"onClick()\" name=\"reader-outline\"></ion-icon>\r\n      <ion-label (click)=\"onClick()\" >Menu</ion-label>\r\n    </ion-tab-button>\r\n\r\n    <ion-tab-button (click)=\"navigateTab2()\"tab=\"tab2\">\r\n      <ion-icon (click)=\"navigateTab2()\" name=\"print-outline\"></ion-icon>\r\n      <ion-label (click)=\"navigateTab2()\" >Invoice</ion-label>\r\n    </ion-tab-button>\r\n\r\n    <ion-tab-button tab=\"tab3\">\r\n      <ion-icon name=\"file-tray-full-outline\"></ion-icon>\r\n      <ion-label>Configurations</ion-label>\r\n    </ion-tab-button>\r\n\r\n    <ion-tab-button (click)=\"this.appSetting.logout()\" routerLink=\"\" >\r\n      <ion-icon name=\"log-out-outline\"></ion-icon>\r\n      <ion-label>Logout</ion-label>\r\n    </ion-tab-button>\r\n  </ion-tab-bar>\r\n\r\n</ion-tabs>");
 
 /***/ }),
 
@@ -22,7 +22,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<ion-tabs>\n\n  <ion-tab-bar slot=\"bottom\">\n    <ion-tab-button tab=\"tab1\">\n      <ion-icon name=\"triangle\"></ion-icon>\n      <ion-label>Tab 1</ion-label>\n    </ion-tab-button>\n\n    <ion-tab-button tab=\"tab2\">\n      <ion-icon name=\"ellipse\"></ion-icon>\n      <ion-label>Tab 2</ion-label>\n    </ion-tab-button>\n\n    <ion-tab-button tab=\"tab3\">\n      <ion-icon name=\"square\"></ion-icon>\n      <ion-label>Tab 3</ion-label>\n    </ion-tab-button>\n  </ion-tab-bar>\n\n</ion-tabs>");
+/* harmony default export */ __webpack_exports__["default"] = ("<ion-tabs>\r\n\r\n  <ion-tab-bar slot=\"bottom\">\r\n    <ion-tab-button tab=\"tab1\">\r\n      <ion-icon name=\"reader-outline\"></ion-icon>\r\n      <ion-label>Tasks</ion-label>\r\n    </ion-tab-button>\r\n\r\n   <ion-tab-button tab=\"tab2\">\r\n      <ion-icon name=\"trophy-outline\"></ion-icon>\r\n      <ion-label>Today</ion-label>\r\n    </ion-tab-button>\r\n\r\n    <ion-tab-button tab=\"tab3\">\r\n      <ion-icon name=\"server-outline\"></ion-icon>\r\n      <ion-label>Records</ion-label>\r\n    </ion-tab-button>\r\n\r\n    <ion-tab-button (click)=\"this.appSetting.logout()\" routerLink=\"\" >\r\n      <ion-icon name=\"log-out-outline\"></ion-icon>\r\n      <ion-label>Logout</ion-label>\r\n    </ion-tab-button>\r\n  </ion-tab-bar>\r\n\r\n</ion-tabs>");
 
 /***/ }),
 
@@ -35,7 +35,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<ion-tabs>\n\n  <ion-tab-bar slot=\"bottom\">\n    <ion-tab-button tab=\"tab1\">\n      <ion-icon name=\"triangle\"></ion-icon>\n      <ion-label>Tab 1</ion-label>\n    </ion-tab-button>\n\n    <ion-tab-button tab=\"tab2\">\n      <ion-icon name=\"ellipse\"></ion-icon>\n      <ion-label>Tab 2</ion-label>\n    </ion-tab-button>\n\n    <ion-tab-button tab=\"tab3\">\n      <ion-icon name=\"square\"></ion-icon>\n      <ion-label>Tab 3</ion-label>\n    </ion-tab-button>\n  </ion-tab-bar>\n\n</ion-tabs>");
+/* harmony default export */ __webpack_exports__["default"] = ("<ion-tabs>\r\n  <ion-tab-bar slot=\"bottom\" color=\"secondary\">\r\n    <ion-tab-button tab=\"tab1\">\r\n      <ion-icon name=\"reader-outline\"></ion-icon>\r\n      <ion-label>Order</ion-label>\r\n    </ion-tab-button>\r\n\r\n    <ion-tab-button tab=\"tab2\">\r\n      <ion-icon name=\"print-outline\"></ion-icon>\r\n      <ion-label>Complete</ion-label>\r\n    </ion-tab-button>\r\n\r\n    <ion-tab-button tab=\"tab3\">\r\n      <ion-icon name=\"file-tray-full-outline\"></ion-icon>\r\n      <ion-label>Configurations</ion-label>\r\n    </ion-tab-button>\r\n\r\n    <ion-tab-button (click)=\"this.appSetting.logout()\" routerLink=\"\" >\r\n      <ion-icon name=\"log-out-outline\"></ion-icon>\r\n      <ion-label>Logout</ion-label>\r\n    </ion-tab-button>\r\n  </ion-tab-bar>\r\n\r\n</ion-tabs>");
 
 /***/ }),
 
@@ -48,7 +48,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("\n  <app-admin *ngIf=\"this.appsetting.loginType==='admin'\"></app-admin>\n\n  <app-delivery *ngIf=\"this.appsetting.loginType==='delivery'\"></app-delivery>\n\n  <app-resturant *ngIf=\"this.appsetting.loginType==='resturant'\"></app-resturant>\n");
+/* harmony default export */ __webpack_exports__["default"] = ("\r\n  <app-admin *ngIf=\"this.appsetting.loginType==='admin'\"></app-admin>\r\n\r\n  <app-delivery *ngIf=\"this.appsetting.loginType==='rider'\"></app-delivery>\r\n\r\n  <app-resturant *ngIf=\"this.appsetting.loginType==='resturant'\"></app-resturant>\r\n");
 
 /***/ }),
 
@@ -76,16 +76,33 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AdminComponent", function() { return AdminComponent; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
+/* harmony import */ var src_app_app_setting__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! src/app/app-setting */ "./src/app/app-setting.ts");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/__ivy_ngcc__/fesm2015/router.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
+
+
 
 
 let AdminComponent = class AdminComponent {
-    constructor() { }
+    constructor(router, appSetting) {
+        this.router = router;
+        this.appSetting = appSetting;
+    }
     ngOnInit() { }
+    onClick() {
+        this.router.navigateByUrl("/tabs/tab1");
+    }
+    navigateTab2() {
+        this.router.navigateByUrl("/tabs/tab2");
+    }
 };
+AdminComponent.ctorParameters = () => [
+    { type: _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"] },
+    { type: src_app_app_setting__WEBPACK_IMPORTED_MODULE_1__["appSetting"] }
+];
 AdminComponent = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
-    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
-        selector: 'app-admin',
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_3__["Component"])({
+        selector: "app-admin",
         template: Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"])(__webpack_require__(/*! raw-loader!./admin.component.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/tabs/admin/admin.component.html")).default,
         styles: [Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"])(__webpack_require__(/*! ./admin.component.scss */ "./src/app/tabs/admin/admin.component.scss")).default]
     })
@@ -120,12 +137,19 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DeliveryComponent", function() { return DeliveryComponent; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
+/* harmony import */ var src_app_app_setting__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! src/app/app-setting */ "./src/app/app-setting.ts");
+
 
 
 let DeliveryComponent = class DeliveryComponent {
-    constructor() { }
+    constructor(appSetting) {
+        this.appSetting = appSetting;
+    }
     ngOnInit() { }
 };
+DeliveryComponent.ctorParameters = () => [
+    { type: src_app_app_setting__WEBPACK_IMPORTED_MODULE_2__["appSetting"] }
+];
 DeliveryComponent = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
         selector: 'app-delivery',
@@ -163,12 +187,19 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ResturantComponent", function() { return ResturantComponent; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
+/* harmony import */ var src_app_app_setting__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! src/app/app-setting */ "./src/app/app-setting.ts");
+
 
 
 let ResturantComponent = class ResturantComponent {
-    constructor() { }
+    constructor(appSetting) {
+        this.appSetting = appSetting;
+    }
     ngOnInit() { }
 };
+ResturantComponent.ctorParameters = () => [
+    { type: src_app_app_setting__WEBPACK_IMPORTED_MODULE_2__["appSetting"] }
+];
 ResturantComponent = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
         selector: 'app-resturant',

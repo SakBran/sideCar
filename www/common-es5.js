@@ -1,8 +1,20 @@
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread(); }
+
+function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _iterableToArray(iter) { if (typeof Symbol !== "undefined" && Symbol.iterator in Object(iter)) return Array.from(iter); }
+
+function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) return _arrayLikeToArray(arr); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
 
 function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
 
 function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
@@ -556,7 +568,1013 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = "<div id=\"container\">\n  <strong>{{ name }}</strong>\n  <p>Explore <a target=\"_blank\" rel=\"noopener noreferrer\" href=\"https://ionicframework.com/docs/components\">UI Components</a></p>\n</div>";
+    __webpack_exports__["default"] = "<div id=\"container\">\r\n  <strong>{{ name }}</strong>\r\n  <p>Explore <a target=\"_blank\" rel=\"noopener noreferrer\" href=\"https://ionicframework.com/docs/components\">UI Components</a></p>\r\n</div>";
+    /***/
+  },
+
+  /***/
+  "./src/app/Models/foodModel.ts":
+  /*!*************************************!*\
+    !*** ./src/app/Models/foodModel.ts ***!
+    \*************************************/
+
+  /*! exports provided: foodModel */
+
+  /***/
+  function srcAppModelsFoodModelTs(module, __webpack_exports__, __webpack_require__) {
+    "use strict";
+
+    __webpack_require__.r(__webpack_exports__);
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "foodModel", function () {
+      return foodModel;
+    });
+
+    var foodModel = function foodModel() {
+      _classCallCheck(this, foodModel);
+    };
+    /***/
+
+  },
+
+  /***/
+  "./src/app/Models/orderModel.ts":
+  /*!**************************************!*\
+    !*** ./src/app/Models/orderModel.ts ***!
+    \**************************************/
+
+  /*! exports provided: orderModel */
+
+  /***/
+  function srcAppModelsOrderModelTs(module, __webpack_exports__, __webpack_require__) {
+    "use strict";
+
+    __webpack_require__.r(__webpack_exports__);
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "orderModel", function () {
+      return orderModel;
+    });
+
+    var orderModel = function orderModel() {
+      _classCallCheck(this, orderModel);
+    };
+    /***/
+
+  },
+
+  /***/
+  "./src/app/Services/food/food.service.ts":
+  /*!***********************************************!*\
+    !*** ./src/app/Services/food/food.service.ts ***!
+    \***********************************************/
+
+  /*! exports provided: FoodService */
+
+  /***/
+  function srcAppServicesFoodFoodServiceTs(module, __webpack_exports__, __webpack_require__) {
+    "use strict";
+
+    __webpack_require__.r(__webpack_exports__);
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "FoodService", function () {
+      return FoodService;
+    });
+    /* harmony import */
+
+
+    var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
+    /*! tslib */
+    "./node_modules/tslib/tslib.es6.js");
+    /* harmony import */
+
+
+    var _app_setting__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+    /*! ./../../app-setting */
+    "./src/app/app-setting.ts");
+    /* harmony import */
+
+
+    var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
+    /*! @angular/core */
+    "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
+    /* harmony import */
+
+
+    var _angular_common_http__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
+    /*! @angular/common/http */
+    "./node_modules/@angular/common/__ivy_ngcc__/fesm2015/http.js");
+    /* harmony import */
+
+
+    var src_app_Models_foodModel__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
+    /*! src/app/Models/foodModel */
+    "./src/app/Models/foodModel.ts");
+
+    var FoodService = /*#__PURE__*/function () {
+      function FoodService(http, appSetting) {
+        _classCallCheck(this, FoodService);
+
+        this.http = http;
+        this.appSetting = appSetting;
+        this.url = "".concat(this.appSetting.apiAddress, "/api/foodModels");
+        this.httpOptions = {
+          headers: new _angular_common_http__WEBPACK_IMPORTED_MODULE_3__["HttpHeaders"]({
+            "Content-Type": "application/json"
+          })
+        };
+      }
+
+      _createClass(FoodService, [{
+        key: "get",
+        value: function get(id) {
+          return this.http.get(this.url + "/resturant?ResturantID=".concat(id));
+        }
+      }, {
+        key: "getPending",
+        value: function getPending() {
+          return this.http.get(this.url + "/pending");
+        }
+      }, {
+        key: "getActive",
+        value: function getActive() {
+          return this.http.get(this.url + "/active");
+        }
+      }, {
+        key: "getSingle",
+        value: function getSingle(id) {
+          var searchUrl = "".concat(this.url, "/").concat(id);
+          return this.http.get(searchUrl);
+        }
+      }, {
+        key: "post",
+        value: function post(data) {
+          var _this = this;
+
+          var temp = new src_app_Models_foodModel__WEBPACK_IMPORTED_MODULE_4__["foodModel"]();
+          this.http.post(this.url, data, this.httpOptions).subscribe(function (res) {
+            temp = Object.assign(res);
+
+            _this.appSetting.foodDataList.push(temp);
+
+            _this.appSetting.showSuccess();
+          }, function (err) {
+            console.log(err);
+          });
+        }
+      }, {
+        key: "put",
+        value: function put(data) {
+          var _this2 = this;
+
+          var temp = new src_app_Models_foodModel__WEBPACK_IMPORTED_MODULE_4__["foodModel"]();
+          var searchUrl = "".concat(this.url, "/").concat(data.id);
+          this.http.put(searchUrl, data, this.httpOptions).subscribe(function () {
+            _this2.refreshArray(data.id, data);
+
+            _this2.appSetting.showSuccess();
+          }, function (err) {
+            console.log(err);
+
+            _this2.appSetting.showError(err);
+          });
+        }
+      }, {
+        key: "putConfirm",
+        value: function putConfirm(id, result) {
+          var _this3 = this;
+
+          this.appSetting.showLoading();
+          var searchUrl = "".concat(this.url, "/confirm?keyID=").concat(id, "&result=").concat(result);
+          var data = new src_app_Models_foodModel__WEBPACK_IMPORTED_MODULE_4__["foodModel"]();
+          this.http.put(searchUrl, data, this.httpOptions).subscribe(function (res) {
+            _this3.refreshArray(id);
+
+            _this3.appSetting.showSuccess();
+          }, function (err) {
+            console.log(err);
+
+            _this3.appSetting.showError(err);
+          });
+        }
+      }, {
+        key: "delete",
+        value: function _delete(id) {
+          var data = null;
+          var xhr = new XMLHttpRequest();
+          xhr.withCredentials = false;
+          xhr.addEventListener("readystatechange", function () {
+            if (this.readyState === this.DONE) {
+              console.log(this.responseText);
+            }
+          });
+          xhr.open("DELETE", this.url + "/" + id);
+          xhr.send(data);
+          this.refreshArray(id);
+        }
+      }, {
+        key: "refreshArray",
+        value: function refreshArray(id, data) {
+          var i = -1;
+          this.appSetting.foodDataList.forEach(function (x) {
+            i++;
+
+            if (x.id === id) {
+              x.status = "delete";
+              console.log(data);
+
+              try {
+                if (data !== null || data !== undefined) {
+                  x.itemName = data.itemName;
+                  x.price = data.price;
+                  x.itemNameTemp = data.itemNameTemp;
+                  x.priceTemp = data.priceTemp;
+                }
+              } catch (ex) {
+                console.log(JSON.stringify(ex));
+              }
+            }
+          });
+        }
+      }]);
+
+      return FoodService;
+    }();
+
+    FoodService.ctorParameters = function () {
+      return [{
+        type: _angular_common_http__WEBPACK_IMPORTED_MODULE_3__["HttpClient"]
+      }, {
+        type: _app_setting__WEBPACK_IMPORTED_MODULE_1__["appSetting"]
+      }];
+    };
+
+    FoodService = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([Object(_angular_core__WEBPACK_IMPORTED_MODULE_2__["Injectable"])({
+      providedIn: "root"
+    })], FoodService);
+    /***/
+  },
+
+  /***/
+  "./src/app/Services/location/location.service.ts":
+  /*!*******************************************************!*\
+    !*** ./src/app/Services/location/location.service.ts ***!
+    \*******************************************************/
+
+  /*! exports provided: LocationService */
+
+  /***/
+  function srcAppServicesLocationLocationServiceTs(module, __webpack_exports__, __webpack_require__) {
+    "use strict";
+
+    __webpack_require__.r(__webpack_exports__);
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "LocationService", function () {
+      return LocationService;
+    });
+    /* harmony import */
+
+
+    var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
+    /*! tslib */
+    "./node_modules/tslib/tslib.es6.js");
+    /* harmony import */
+
+
+    var _app_setting__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+    /*! ./../../app-setting */
+    "./src/app/app-setting.ts");
+    /* harmony import */
+
+
+    var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
+    /*! @angular/core */
+    "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
+    /* harmony import */
+
+
+    var _angular_common_http__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
+    /*! @angular/common/http */
+    "./node_modules/@angular/common/__ivy_ngcc__/fesm2015/http.js");
+
+    var LocationService = /*#__PURE__*/function () {
+      function LocationService(http, appSetting) {
+        _classCallCheck(this, LocationService);
+
+        this.http = http;
+        this.appSetting = appSetting;
+        this.url = "".concat(this.appSetting.apiAddress, "/api/locationModels");
+        this.httpOptions = {
+          headers: new _angular_common_http__WEBPACK_IMPORTED_MODULE_3__["HttpHeaders"]({
+            "Content-Type": "application/json"
+          })
+        };
+      }
+
+      _createClass(LocationService, [{
+        key: "get",
+        value: function get() {
+          return this.http.get(this.url);
+        }
+      }, {
+        key: "getSingle",
+        value: function getSingle(id) {
+          var searchUrl = "".concat(this.url, "/").concat(id);
+          return this.http.get(searchUrl);
+        }
+      }, {
+        key: "post",
+        value: function post(data) {
+          var _this4 = this;
+
+          this.http.post(this.url, data, this.httpOptions).subscribe(function (res) {
+            console.log(res);
+
+            _this4.appSetting.showSuccess();
+          }, function (err) {
+            console.log(err);
+          });
+        }
+      }, {
+        key: "put",
+        value: function put(data) {
+          var _this5 = this;
+
+          var searchUrl = "".concat(this.url, "/").concat(data.id);
+          this.http.put(searchUrl, data, this.httpOptions).subscribe(function (res) {
+            console.log(res);
+
+            _this5.appSetting.showSuccess();
+          }, function (err) {
+            console.log(err);
+
+            _this5.appSetting.showError(err);
+          });
+        }
+      }, {
+        key: "delete",
+        value: function _delete(id) {
+          var data = null;
+          var xhr = new XMLHttpRequest();
+          xhr.withCredentials = false;
+          xhr.addEventListener("readystatechange", function () {
+            if (this.readyState === this.DONE) {
+              console.log(this.responseText);
+            }
+          });
+          xhr.open("DELETE", this.url + "/" + id);
+          xhr.send(data);
+        }
+      }]);
+
+      return LocationService;
+    }();
+
+    LocationService.ctorParameters = function () {
+      return [{
+        type: _angular_common_http__WEBPACK_IMPORTED_MODULE_3__["HttpClient"]
+      }, {
+        type: _app_setting__WEBPACK_IMPORTED_MODULE_1__["appSetting"]
+      }];
+    };
+
+    LocationService = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([Object(_angular_core__WEBPACK_IMPORTED_MODULE_2__["Injectable"])({
+      providedIn: "root"
+    })], LocationService);
+    /***/
+  },
+
+  /***/
+  "./src/app/Services/order/order.service.ts":
+  /*!*************************************************!*\
+    !*** ./src/app/Services/order/order.service.ts ***!
+    \*************************************************/
+
+  /*! exports provided: OrderService */
+
+  /***/
+  function srcAppServicesOrderOrderServiceTs(module, __webpack_exports__, __webpack_require__) {
+    "use strict";
+
+    __webpack_require__.r(__webpack_exports__);
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "OrderService", function () {
+      return OrderService;
+    });
+    /* harmony import */
+
+
+    var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
+    /*! tslib */
+    "./node_modules/tslib/tslib.es6.js");
+    /* harmony import */
+
+
+    var _app_setting__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+    /*! ./../../app-setting */
+    "./src/app/app-setting.ts");
+    /* harmony import */
+
+
+    var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
+    /*! @angular/core */
+    "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
+    /* harmony import */
+
+
+    var _angular_common_http__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
+    /*! @angular/common/http */
+    "./node_modules/@angular/common/__ivy_ngcc__/fesm2015/http.js");
+
+    var OrderService = /*#__PURE__*/function () {
+      function OrderService(http, appSetting) {
+        _classCallCheck(this, OrderService);
+
+        this.http = http;
+        this.appSetting = appSetting;
+        this.url = "".concat(this.appSetting.apiAddress, "/api/orderModels");
+        this.httpOptions = {
+          headers: new _angular_common_http__WEBPACK_IMPORTED_MODULE_3__["HttpHeaders"]({
+            'Content-Type': 'application/json'
+          })
+        };
+      }
+
+      _createClass(OrderService, [{
+        key: "get",
+        value: function get() {
+          return this.http.get(this.url + '/' + this.appSetting.sessionUserID);
+        }
+      }, {
+        key: "getResturantOrder",
+        value: function getResturantOrder() {
+          console.log(this.url + '/resturant/orderTracking?id=' + this.appSetting.resturantID);
+          return this.http.get(this.url + '/resturant/orderTracking?id=' + this.appSetting.resturantID);
+        }
+      }, {
+        key: "getResturantPendings",
+        value: function getResturantPendings(id) {
+          var searchUrl = "".concat(this.url, "/resturant/pendings?ResturantID=").concat(id);
+          return this.http.get(searchUrl);
+        }
+      }, {
+        key: "getResturantComplete",
+        value: function getResturantComplete(id) {
+          var searchUrl = "".concat(this.url, "/resturant/complete?ResturantID=").concat(id);
+          return this.http.get(searchUrl);
+        }
+      }, {
+        key: "getRiderComplete",
+        value: function getRiderComplete() {
+          var searchUrl = "".concat(this.url, "/rider/complete?id=").concat(this.appSetting.sessionUserID);
+          return this.http.get(searchUrl);
+        }
+      }, {
+        key: "getRiderPending",
+        value: function getRiderPending() {
+          var searchUrl = "".concat(this.url, "/rider/pending?id=").concat(this.appSetting.sessionUserID);
+          return this.http.get(searchUrl);
+        }
+      }, {
+        key: "post",
+        value: function post(data) {
+          var _this6 = this;
+
+          data.orderModel.operatorID = this.appSetting.sessionUserID;
+          this.http.post(this.url, data, this.httpOptions).subscribe(function (res) {
+            console.log(res);
+
+            _this6.appSetting.orderTransationClear();
+
+            _this6.appSetting.showSuccess();
+          }, function (err) {
+            _this6.appSetting.showError(err);
+          });
+        }
+      }, {
+        key: "put",
+        value: function put(data) {
+          var _this7 = this;
+
+          var searchUrl = "".concat(this.url, "/").concat(data.id);
+          this.http.put(searchUrl, data, this.httpOptions).subscribe(function (res) {
+            console.log(res);
+
+            _this7.appSetting.showSuccess();
+          }, function (err) {
+            console.log(err);
+
+            _this7.appSetting.showError(err);
+          });
+        }
+      }, {
+        key: "putOrderDetail",
+        value: function putOrderDetail(data) {
+          var _this8 = this;
+
+          var searchUrl = "".concat(this.appSetting.apiAddress, "/api/orderDetailModels/").concat(data.orderDetailID);
+          this.http.put(searchUrl, data, this.httpOptions).subscribe(function (res) {
+            console.log(res);
+
+            _this8.appSetting.showSuccess();
+          }, function (err) {
+            console.log(err);
+
+            _this8.appSetting.showError(err);
+          });
+        }
+      }, {
+        key: "putResend_From_Resturant",
+        value: function putResend_From_Resturant(orderID, data) {
+          var _this9 = this;
+
+          console.log(data);
+          var searchUrl = "".concat(this.url, "/resturant/resend?id=").concat(orderID, "&ResturantID=").concat(this.appSetting.resturantID);
+          this.http.put(searchUrl, data, this.httpOptions).subscribe(function (res) {
+            console.log(res);
+            var i = -1;
+
+            var temp = _toConsumableArray(_this9.appSetting.orderTransationList);
+
+            temp.forEach(function (x) {
+              i = i + 1;
+
+              if (x.orderModel.id === orderID) {
+                _this9.appSetting.orderTransationList.splice(i, 1);
+              }
+            });
+
+            _this9.appSetting.showSuccess();
+
+            _this9.appSetting.resendListFromResturant = [];
+          }, function (err) {
+            console.log(err);
+
+            _this9.appSetting.showError(err);
+          });
+        }
+      }, {
+        key: "delete",
+        value: function _delete(id) {
+          var data = null;
+          var xhr = new XMLHttpRequest();
+          xhr.withCredentials = false;
+          xhr.addEventListener('readystatechange', function () {
+            if (this.readyState === this.DONE) {
+              console.log(this.responseText);
+            }
+          });
+          xhr.open('DELETE', this.url + '/' + id);
+          xhr.send(data);
+        }
+      }, {
+        key: "deleteOrderDetail",
+        value: function deleteOrderDetail(id) {
+          var data = null;
+          var xhr = new XMLHttpRequest();
+          xhr.withCredentials = false;
+          xhr.addEventListener('readystatechange', function () {
+            if (this.readyState === this.DONE) {
+              console.log(this.responseText);
+            }
+          });
+          xhr.open('DELETE', "".concat(this.appSetting.apiAddress, "/api/orderDetailModels/") + id);
+          xhr.send(data);
+        }
+      }]);
+
+      return OrderService;
+    }();
+
+    OrderService.ctorParameters = function () {
+      return [{
+        type: _angular_common_http__WEBPACK_IMPORTED_MODULE_3__["HttpClient"]
+      }, {
+        type: _app_setting__WEBPACK_IMPORTED_MODULE_1__["appSetting"]
+      }];
+    };
+
+    OrderService = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([Object(_angular_core__WEBPACK_IMPORTED_MODULE_2__["Injectable"])({
+      providedIn: 'root'
+    })], OrderService);
+    /***/
+  },
+
+  /***/
+  "./src/app/Services/resturantModel/resturant-model.service.ts":
+  /*!********************************************************************!*\
+    !*** ./src/app/Services/resturantModel/resturant-model.service.ts ***!
+    \********************************************************************/
+
+  /*! exports provided: ResturantModelService */
+
+  /***/
+  function srcAppServicesResturantModelResturantModelServiceTs(module, __webpack_exports__, __webpack_require__) {
+    "use strict";
+
+    __webpack_require__.r(__webpack_exports__);
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "ResturantModelService", function () {
+      return ResturantModelService;
+    });
+    /* harmony import */
+
+
+    var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
+    /*! tslib */
+    "./node_modules/tslib/tslib.es6.js");
+    /* harmony import */
+
+
+    var _app_setting__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+    /*! ./../../app-setting */
+    "./src/app/app-setting.ts");
+    /* harmony import */
+
+
+    var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
+    /*! @angular/core */
+    "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
+    /* harmony import */
+
+
+    var _angular_common_http__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
+    /*! @angular/common/http */
+    "./node_modules/@angular/common/__ivy_ngcc__/fesm2015/http.js");
+
+    var ResturantModelService = /*#__PURE__*/function () {
+      function ResturantModelService(http, appSetting) {
+        _classCallCheck(this, ResturantModelService);
+
+        this.http = http;
+        this.appSetting = appSetting;
+        this.url = "".concat(this.appSetting.apiAddress, "/api/resturantModels");
+        this.httpOptions = {
+          headers: new _angular_common_http__WEBPACK_IMPORTED_MODULE_3__["HttpHeaders"]({
+            'Content-Type': 'application/json'
+          })
+        };
+      }
+
+      _createClass(ResturantModelService, [{
+        key: "get",
+        value: function get() {
+          return this.http.get(this.url);
+        }
+      }, {
+        key: "getSingle",
+        value: function getSingle(id) {
+          var searchUrl = "".concat(this.url, "/").concat(id);
+          return this.http.get(searchUrl);
+        }
+      }, {
+        key: "post",
+        value: function post(data) {
+          var _this10 = this;
+
+          this.http.post(this.url, data, this.httpOptions).subscribe(function (res) {
+            console.log(res);
+
+            _this10.appSetting.showSuccess();
+          }, function (err) {
+            console.log(err);
+          });
+        }
+      }, {
+        key: "put",
+        value: function put(data) {
+          var _this11 = this;
+
+          var searchUrl = "".concat(this.url, "/").concat(data.id);
+          this.http.put(searchUrl, data, this.httpOptions).subscribe(function (res) {
+            console.log(res);
+
+            _this11.appSetting.showSuccess();
+          }, function (err) {
+            console.log(err);
+
+            _this11.appSetting.showError(err);
+          });
+        }
+      }, {
+        key: "delete",
+        value: function _delete(id) {
+          var data = null;
+          var xhr = new XMLHttpRequest();
+          xhr.withCredentials = false;
+          xhr.addEventListener('readystatechange', function () {
+            if (this.readyState === this.DONE) {
+              console.log(this.responseText);
+            }
+          });
+          xhr.open('DELETE', this.url + '/' + id);
+          xhr.send(data);
+        }
+      }]);
+
+      return ResturantModelService;
+    }();
+
+    ResturantModelService.ctorParameters = function () {
+      return [{
+        type: _angular_common_http__WEBPACK_IMPORTED_MODULE_3__["HttpClient"]
+      }, {
+        type: _app_setting__WEBPACK_IMPORTED_MODULE_1__["appSetting"]
+      }];
+    };
+
+    ResturantModelService = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([Object(_angular_core__WEBPACK_IMPORTED_MODULE_2__["Injectable"])({
+      providedIn: 'root'
+    })], ResturantModelService);
+    /***/
+  },
+
+  /***/
+  "./src/app/Services/userModel/user-model.service.ts":
+  /*!**********************************************************!*\
+    !*** ./src/app/Services/userModel/user-model.service.ts ***!
+    \**********************************************************/
+
+  /*! exports provided: UserModelService */
+
+  /***/
+  function srcAppServicesUserModelUserModelServiceTs(module, __webpack_exports__, __webpack_require__) {
+    "use strict";
+
+    __webpack_require__.r(__webpack_exports__);
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "UserModelService", function () {
+      return UserModelService;
+    });
+    /* harmony import */
+
+
+    var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
+    /*! tslib */
+    "./node_modules/tslib/tslib.es6.js");
+    /* harmony import */
+
+
+    var _app_setting__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+    /*! ./../../app-setting */
+    "./src/app/app-setting.ts");
+    /* harmony import */
+
+
+    var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
+    /*! @angular/core */
+    "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
+    /* harmony import */
+
+
+    var _angular_common_http__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
+    /*! @angular/common/http */
+    "./node_modules/@angular/common/__ivy_ngcc__/fesm2015/http.js");
+
+    var UserModelService = /*#__PURE__*/function () {
+      function UserModelService(http, appSetting) {
+        _classCallCheck(this, UserModelService);
+
+        this.http = http;
+        this.appSetting = appSetting;
+        this.url = "".concat(this.appSetting.apiAddress, "/api/userModels");
+        this.httpOptions = {
+          headers: new _angular_common_http__WEBPACK_IMPORTED_MODULE_3__["HttpHeaders"]({
+            'Content-Type': 'application/json'
+          })
+        };
+      }
+
+      _createClass(UserModelService, [{
+        key: "get",
+        value: function get() {
+          return this.http.get(this.url);
+        }
+      }, {
+        key: "getLogin",
+        value: function getLogin(username, password) {
+          console.log(this.url + "/login?user=".concat(username, "&password=").concat(password));
+          return this.http.get(this.url + "/login?user=".concat(username, "&password=").concat(password));
+        }
+      }, {
+        key: "getAvailableRider",
+        value: function getAvailableRider() {
+          return this.http.get(this.url + "/availableRider");
+        }
+      }, {
+        key: "getDeliveringRider",
+        value: function getDeliveringRider() {
+          return this.http.get(this.url + "/deliveringRider");
+        }
+      }, {
+        key: "getSingle",
+        value: function getSingle(id) {
+          var searchUrl = "".concat(this.url, "/").concat(id);
+          return this.http.get(searchUrl);
+        }
+      }, {
+        key: "post",
+        value: function post(data) {
+          var _this12 = this;
+
+          this.http.post(this.url, data, this.httpOptions).subscribe(function (res) {
+            console.log(res);
+
+            _this12.appSetting.showSuccess();
+          }, function (err) {
+            console.log(err);
+          });
+        }
+      }, {
+        key: "put",
+        value: function put(data) {
+          var _this13 = this;
+
+          var searchUrl = "".concat(this.url, "/").concat(data.id);
+          this.http.put(searchUrl, data, this.httpOptions).subscribe(function (res) {
+            console.log(res);
+
+            _this13.appSetting.showSuccess();
+          }, function (err) {
+            console.log(err);
+
+            _this13.appSetting.showError(err);
+          });
+        }
+      }, {
+        key: "putLocation",
+        value: function putLocation(data) {
+          var searchUrl = "".concat(this.url, "/").concat(data.id);
+          this.http.put(searchUrl, data, this.httpOptions).subscribe(function (res) {
+            console.log(res);
+          }, function (err) {
+            console.log(err);
+          });
+        }
+      }, {
+        key: "delete",
+        value: function _delete(id) {
+          var data = null;
+          var xhr = new XMLHttpRequest();
+          xhr.withCredentials = false;
+          xhr.addEventListener('readystatechange', function () {
+            if (this.readyState === this.DONE) {
+              console.log(this.responseText);
+            }
+          });
+          xhr.open('DELETE', this.url + '/' + id);
+          xhr.send(data);
+        }
+      }]);
+
+      return UserModelService;
+    }();
+
+    UserModelService.ctorParameters = function () {
+      return [{
+        type: _angular_common_http__WEBPACK_IMPORTED_MODULE_3__["HttpClient"]
+      }, {
+        type: _app_setting__WEBPACK_IMPORTED_MODULE_1__["appSetting"]
+      }];
+    };
+
+    UserModelService = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([Object(_angular_core__WEBPACK_IMPORTED_MODULE_2__["Injectable"])({
+      providedIn: 'root'
+    })], UserModelService);
+    /***/
+  },
+
+  /***/
+  "./src/app/Services/userType/user-type.service.ts":
+  /*!********************************************************!*\
+    !*** ./src/app/Services/userType/user-type.service.ts ***!
+    \********************************************************/
+
+  /*! exports provided: UserTypeService */
+
+  /***/
+  function srcAppServicesUserTypeUserTypeServiceTs(module, __webpack_exports__, __webpack_require__) {
+    "use strict";
+
+    __webpack_require__.r(__webpack_exports__);
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "UserTypeService", function () {
+      return UserTypeService;
+    });
+    /* harmony import */
+
+
+    var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
+    /*! tslib */
+    "./node_modules/tslib/tslib.es6.js");
+    /* harmony import */
+
+
+    var _app_setting__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+    /*! ./../../app-setting */
+    "./src/app/app-setting.ts");
+    /* harmony import */
+
+
+    var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
+    /*! @angular/core */
+    "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
+    /* harmony import */
+
+
+    var _angular_common_http__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
+    /*! @angular/common/http */
+    "./node_modules/@angular/common/__ivy_ngcc__/fesm2015/http.js");
+
+    var UserTypeService = /*#__PURE__*/function () {
+      function UserTypeService(http, appSetting) {
+        _classCallCheck(this, UserTypeService);
+
+        this.http = http;
+        this.appSetting = appSetting;
+        this.url = "".concat(this.appSetting.apiAddress, "/api/userTypeModels");
+        this.httpOptions = {
+          headers: new _angular_common_http__WEBPACK_IMPORTED_MODULE_3__["HttpHeaders"]({
+            'Content-Type': 'application/json'
+          })
+        };
+      }
+
+      _createClass(UserTypeService, [{
+        key: "get",
+        value: function get() {
+          return this.http.get(this.url);
+        }
+      }, {
+        key: "getSingle",
+        value: function getSingle(id) {
+          var searchUrl = "".concat(this.url, "/").concat(id);
+          return this.http.get(searchUrl);
+        }
+      }, {
+        key: "post",
+        value: function post(data) {
+          this.http.post(this.url, data, this.httpOptions).subscribe(function (res) {
+            console.log(res);
+          }, function (err) {
+            console.log(err);
+          });
+        }
+      }, {
+        key: "put",
+        value: function put(data) {
+          var searchUrl = "".concat(this.url, "/").concat(data.id);
+          this.http.put(searchUrl, data, this.httpOptions).subscribe(function (res) {
+            console.log(res);
+          }, function (err) {
+            console.log(err);
+          });
+        }
+      }, {
+        key: "delete",
+        value: function _delete(id) {
+          var data = null;
+          var xhr = new XMLHttpRequest();
+          xhr.withCredentials = false;
+          xhr.addEventListener('readystatechange', function () {
+            if (this.readyState === this.DONE) {
+              console.log(this.responseText);
+            }
+          });
+          xhr.open('DELETE', this.url + '/' + id);
+          xhr.send(data);
+        }
+      }]);
+
+      return UserTypeService;
+    }();
+
+    UserTypeService.ctorParameters = function () {
+      return [{
+        type: _angular_common_http__WEBPACK_IMPORTED_MODULE_3__["HttpClient"]
+      }, {
+        type: _app_setting__WEBPACK_IMPORTED_MODULE_1__["appSetting"]
+      }];
+    };
+
+    UserTypeService = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([Object(_angular_core__WEBPACK_IMPORTED_MODULE_2__["Injectable"])({
+      providedIn: 'root'
+    })], UserTypeService);
     /***/
   },
 
@@ -576,7 +1594,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = "#container {\n  text-align: center;\n  position: absolute;\n  left: 0;\n  right: 0;\n  top: 50%;\n  transform: translateY(-50%);\n}\n\n#container strong {\n  font-size: 20px;\n  line-height: 26px;\n}\n\n#container p {\n  font-size: 16px;\n  line-height: 22px;\n  color: #8c8c8c;\n  margin: 0;\n}\n\n#container a {\n  text-decoration: none;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9tZWRpYS9zYWsvUHJvamVjdHMvc2lkZWNhckFwcC9zaWRlQ2FyL3NyYy9hcHAvZXhwbG9yZS1jb250YWluZXIvZXhwbG9yZS1jb250YWluZXIuY29tcG9uZW50LnNjc3MiLCJzcmMvYXBwL2V4cGxvcmUtY29udGFpbmVyL2V4cGxvcmUtY29udGFpbmVyLmNvbXBvbmVudC5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0Usa0JBQUE7RUFFQSxrQkFBQTtFQUNBLE9BQUE7RUFDQSxRQUFBO0VBQ0EsUUFBQTtFQUNBLDJCQUFBO0FDQUY7O0FER0E7RUFDRSxlQUFBO0VBQ0EsaUJBQUE7QUNBRjs7QURHQTtFQUNFLGVBQUE7RUFDQSxpQkFBQTtFQUVBLGNBQUE7RUFFQSxTQUFBO0FDRkY7O0FES0E7RUFDRSxxQkFBQTtBQ0ZGIiwiZmlsZSI6InNyYy9hcHAvZXhwbG9yZS1jb250YWluZXIvZXhwbG9yZS1jb250YWluZXIuY29tcG9uZW50LnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyIjY29udGFpbmVyIHtcbiAgdGV4dC1hbGlnbjogY2VudGVyO1xuXG4gIHBvc2l0aW9uOiBhYnNvbHV0ZTtcbiAgbGVmdDogMDtcbiAgcmlnaHQ6IDA7XG4gIHRvcDogNTAlO1xuICB0cmFuc2Zvcm06IHRyYW5zbGF0ZVkoLTUwJSk7XG59XG5cbiNjb250YWluZXIgc3Ryb25nIHtcbiAgZm9udC1zaXplOiAyMHB4O1xuICBsaW5lLWhlaWdodDogMjZweDtcbn1cblxuI2NvbnRhaW5lciBwIHtcbiAgZm9udC1zaXplOiAxNnB4O1xuICBsaW5lLWhlaWdodDogMjJweDtcblxuICBjb2xvcjogIzhjOGM4YztcblxuICBtYXJnaW46IDA7XG59XG5cbiNjb250YWluZXIgYSB7XG4gIHRleHQtZGVjb3JhdGlvbjogbm9uZTtcbn0iLCIjY29udGFpbmVyIHtcbiAgdGV4dC1hbGlnbjogY2VudGVyO1xuICBwb3NpdGlvbjogYWJzb2x1dGU7XG4gIGxlZnQ6IDA7XG4gIHJpZ2h0OiAwO1xuICB0b3A6IDUwJTtcbiAgdHJhbnNmb3JtOiB0cmFuc2xhdGVZKC01MCUpO1xufVxuXG4jY29udGFpbmVyIHN0cm9uZyB7XG4gIGZvbnQtc2l6ZTogMjBweDtcbiAgbGluZS1oZWlnaHQ6IDI2cHg7XG59XG5cbiNjb250YWluZXIgcCB7XG4gIGZvbnQtc2l6ZTogMTZweDtcbiAgbGluZS1oZWlnaHQ6IDIycHg7XG4gIGNvbG9yOiAjOGM4YzhjO1xuICBtYXJnaW46IDA7XG59XG5cbiNjb250YWluZXIgYSB7XG4gIHRleHQtZGVjb3JhdGlvbjogbm9uZTtcbn0iXX0= */";
+    __webpack_exports__["default"] = "#container {\n  text-align: center;\n  position: absolute;\n  left: 0;\n  right: 0;\n  top: 50%;\n  transform: translateY(-50%);\n}\n\n#container strong {\n  font-size: 20px;\n  line-height: 26px;\n}\n\n#container p {\n  font-size: 16px;\n  line-height: 22px;\n  color: #8c8c8c;\n  margin: 0;\n}\n\n#container a {\n  text-decoration: none;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvZXhwbG9yZS1jb250YWluZXIvRDpcXHNpZGVDYXIvc3JjXFxhcHBcXGV4cGxvcmUtY29udGFpbmVyXFxleHBsb3JlLWNvbnRhaW5lci5jb21wb25lbnQuc2NzcyIsInNyYy9hcHAvZXhwbG9yZS1jb250YWluZXIvZXhwbG9yZS1jb250YWluZXIuY29tcG9uZW50LnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDRSxrQkFBQTtFQUVBLGtCQUFBO0VBQ0EsT0FBQTtFQUNBLFFBQUE7RUFDQSxRQUFBO0VBQ0EsMkJBQUE7QUNBRjs7QURHQTtFQUNFLGVBQUE7RUFDQSxpQkFBQTtBQ0FGOztBREdBO0VBQ0UsZUFBQTtFQUNBLGlCQUFBO0VBRUEsY0FBQTtFQUVBLFNBQUE7QUNGRjs7QURLQTtFQUNFLHFCQUFBO0FDRkYiLCJmaWxlIjoic3JjL2FwcC9leHBsb3JlLWNvbnRhaW5lci9leHBsb3JlLWNvbnRhaW5lci5jb21wb25lbnQuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIiNjb250YWluZXIge1xyXG4gIHRleHQtYWxpZ246IGNlbnRlcjtcclxuXHJcbiAgcG9zaXRpb246IGFic29sdXRlO1xyXG4gIGxlZnQ6IDA7XHJcbiAgcmlnaHQ6IDA7XHJcbiAgdG9wOiA1MCU7XHJcbiAgdHJhbnNmb3JtOiB0cmFuc2xhdGVZKC01MCUpO1xyXG59XHJcblxyXG4jY29udGFpbmVyIHN0cm9uZyB7XHJcbiAgZm9udC1zaXplOiAyMHB4O1xyXG4gIGxpbmUtaGVpZ2h0OiAyNnB4O1xyXG59XHJcblxyXG4jY29udGFpbmVyIHAge1xyXG4gIGZvbnQtc2l6ZTogMTZweDtcclxuICBsaW5lLWhlaWdodDogMjJweDtcclxuXHJcbiAgY29sb3I6ICM4YzhjOGM7XHJcblxyXG4gIG1hcmdpbjogMDtcclxufVxyXG5cclxuI2NvbnRhaW5lciBhIHtcclxuICB0ZXh0LWRlY29yYXRpb246IG5vbmU7XHJcbn0iLCIjY29udGFpbmVyIHtcbiAgdGV4dC1hbGlnbjogY2VudGVyO1xuICBwb3NpdGlvbjogYWJzb2x1dGU7XG4gIGxlZnQ6IDA7XG4gIHJpZ2h0OiAwO1xuICB0b3A6IDUwJTtcbiAgdHJhbnNmb3JtOiB0cmFuc2xhdGVZKC01MCUpO1xufVxuXG4jY29udGFpbmVyIHN0cm9uZyB7XG4gIGZvbnQtc2l6ZTogMjBweDtcbiAgbGluZS1oZWlnaHQ6IDI2cHg7XG59XG5cbiNjb250YWluZXIgcCB7XG4gIGZvbnQtc2l6ZTogMTZweDtcbiAgbGluZS1oZWlnaHQ6IDIycHg7XG4gIGNvbG9yOiAjOGM4YzhjO1xuICBtYXJnaW46IDA7XG59XG5cbiNjb250YWluZXIgYSB7XG4gIHRleHQtZGVjb3JhdGlvbjogbm9uZTtcbn0iXX0= */";
     /***/
   },
 
