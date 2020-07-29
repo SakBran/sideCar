@@ -27,6 +27,8 @@ export class appSetting {
   public adminTab3Process = "";
   public adminTab3ID = "";
 
+  public device="";
+  public customerSearch="";
   //public apiAddress = "http://localhost/sidecar";
   public apiAddress ="https://www.npt-easy-delivery.com";
 
