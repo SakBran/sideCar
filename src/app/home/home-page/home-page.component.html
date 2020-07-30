@@ -1,15 +1,15 @@
 <ion-toolbar color="dark">
   <ion-buttons slot="start">
     <ion-button>
-      <ion-icon color="warning" name="person-circle-outline"></ion-icon>
+      <ion-icon class="title" name="person-circle-outline"></ion-icon>
     </ion-button>
   </ion-buttons>
   <ion-buttons slot="end">
-    <ion-button>
-      <ion-icon color="warning" name="basket-outline"></ion-icon>
+    <ion-button (click)="shopCart()">
+      <ion-icon class="title" name="basket-outline"></ion-icon>
     </ion-button>
   </ion-buttons>
-  <ion-title color="warning" (click)="reset()">Sidecar</ion-title>
+  <ion-title class="title" (click)="reset()">Sidecar</ion-title>
 </ion-toolbar>
 
 <ion-content *ngIf="this.appSetting.customerSearch===''" >

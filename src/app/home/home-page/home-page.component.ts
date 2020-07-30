@@ -1,6 +1,7 @@
+import { ClientShopcartComponent } from './../client-shopcart/client-shopcart.component';
 import { appSetting } from 'src/app/app-setting';
 import { Component, OnInit } from '@angular/core';
-import { Platform } from '@ionic/angular';
+import { Platform, ModalController } from '@ionic/angular';
 
 @Component({
   selector: 'app-home-page',
@@ -9,7 +10,7 @@ import { Platform } from '@ionic/angular';
 })
 export class HomePageComponent implements OnInit {
 
-  constructor(public plt: Platform,public appSetting:appSetting) {
+  constructor(public plt: Platform,public modalController: ModalController,public appSetting:appSetting) {
     if (this.plt.is('ios')) {
       // This will only print when on iOS
       this.appSetting.device="mobile";
@@ -33,5 +34,13 @@ export class HomePageComponent implements OnInit {
   }
   reset(){
     this.appSetting.customerSearch='';
+  }
+
+  async shopCart() {
+    const modal = await this.modalController.create({
+      component: ClientShopcartComponent
+      //,cssClass: 'my-custom-class'
+    });
+    return await modal.present();
   }
 }
