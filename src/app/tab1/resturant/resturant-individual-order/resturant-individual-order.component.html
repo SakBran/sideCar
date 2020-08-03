@@ -3,7 +3,7 @@
     this.data !== null &&
     this.status() === this.appSetting.displaySetting &&
     this.appSetting.displaySetting !== 'delivering' &&
-    this.data.orderModel.status !== 'delivering'
+    this.data.orderModel.status !== 'delivering' && this.data.orderModel.status !== 'delivered' 
   "
 >
   <ion-card
@@ -119,6 +119,7 @@
     </ion-card-content>
   </ion-card>
 </ng-container>
+
 
 <ng-container
   *ngIf="
@@ -285,6 +286,7 @@
     </ion-card-content>
   </ion-card>
 </ng-container>
+
 
 <ng-container
   *ngIf="this.data !== null && this.data.orderModel.status === 'delivered'"

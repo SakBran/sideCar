@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { ClientShopcartComponent } from './../client-shopcart/client-shopcart.component';
 import { appSetting } from 'src/app/app-setting';
 import { Component, OnInit } from '@angular/core';
@@ -10,7 +11,7 @@ import { Platform, ModalController } from '@ionic/angular';
 })
 export class HomePageComponent implements OnInit {
 
-  constructor(public plt: Platform,public modalController: ModalController,public appSetting:appSetting) {
+  constructor(public plt: Platform,private router:Router,public modalController: ModalController,public appSetting:appSetting) {
     if (this.plt.is('ios')) {
       // This will only print when on iOS
       this.appSetting.device="mobile";
@@ -36,6 +37,9 @@ export class HomePageComponent implements OnInit {
     this.appSetting.customerSearch='';
   }
 
+  login(){
+    this.router.navigateByUrl("/login");
+  }
   async shopCart() {
     const modal = await this.modalController.create({
       component: ClientShopcartComponent
