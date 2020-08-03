@@ -59,7 +59,7 @@ export class FoodListComponent implements OnInit {
   }
 
   onEdit(id) {
-    this.route.navigateByUrl("tabs/tab3/foodEdit/" + id);
+    this.route.navigateByUrl("managmenet/tabs/tab3/foodEdit/" + id);
   }
 
   onDelete(id) {

@@ -59,7 +59,7 @@ export class RiderEarningListComponent implements OnInit {
   }
 
   onEdit(id) {
-    this.route.navigateByUrl("tabs/tab3/riderEarningEdit/" + id);
+    this.route.navigateByUrl("managmenet/tabs/tab3/riderEarningEdit/" + id);
   }
 
   onDelete(id) {

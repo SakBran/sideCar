@@ -29,8 +29,8 @@ export class appSetting {
 
   public device="";
   public customerSearch="";
-  //public apiAddress = "http://localhost/sidecar";
-  public apiAddress ="https://www.npt-easy-delivery.com";
+  public apiAddress = "http://localhost/sidecar";
+  //public apiAddress ="https://www.npt-easy-delivery.com";
 
   public userTypeData: userTypeModel[] = [];
 

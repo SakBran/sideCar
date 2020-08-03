@@ -56,7 +56,7 @@ export class ResturantListComponent implements OnInit {
   }
 
   onEdit(id) {
-    this.route.navigateByUrl("tabs/tab3/resturantEdit/" + id);
+    this.route.navigateByUrl("managmenet/tabs/tab3/resturantEdit/" + id);
   }
 
   onDelete(id) {

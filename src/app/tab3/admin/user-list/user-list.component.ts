@@ -57,7 +57,7 @@ export class UserListComponent implements OnInit {
   }
 
   onEdit(id) {
-    this.route.navigateByUrl("tabs/tab3/userEdit/" + id);
+    this.route.navigateByUrl("managmenet/tabs/tab3/userEdit/" + id);
   }
 
   onDelete(id) {

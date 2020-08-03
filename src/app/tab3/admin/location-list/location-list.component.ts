@@ -59,7 +59,7 @@ export class LocationListComponent implements OnInit {
   }
 
   onEdit(id) {
-    this.route.navigateByUrl("tabs/tab3/locationEdit/" + id);
+    this.route.navigateByUrl("managmenet/tabs/tab3/locationEdit/" + id);
   }
 
   onDelete(id) {

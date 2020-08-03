@@ -13,9 +13,9 @@ export class AdminComponent implements OnInit {
   ngOnInit() {}
 
   onClick() {
-    this.router.navigateByUrl("/tabs/tab1");
+   // this.router.navigateByUrl("/tabs/tab1");
   }
   navigateTab2() {
-    this.router.navigateByUrl("/tabs/tab2");
+   // this.router.navigateByUrl("/tabs/tab2");
   }
 }

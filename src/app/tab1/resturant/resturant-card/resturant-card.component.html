@@ -50,7 +50,7 @@
       </ng-container>
 
       <ng-container *ngIf="this.orderDetail.status==='no'">
-        <ion-button routerLink="/tabs/tab1/pendingEdit/{{orderDetail.orderDetailID}}" color="secondary">
+        <ion-button routerLink="/managmenet/tabs/tab1/pendingEdit/{{orderDetail.orderDetailID}}" color="secondary">
           <ion-icon name="create-outline"></ion-icon>
         </ion-button>
         <ion-button (click)="this.onDelete(orderDetail.orderDetailID)" color="danger">

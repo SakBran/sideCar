@@ -87,7 +87,7 @@ export class LoginFromComponent implements OnInit {
                 }, 30000);
               }
               this.appSetting.loginSuccess();
-              this.router.navigateByUrl("/tabs");
+              this.router.navigateByUrl("/managmenet");
 
             }
           );

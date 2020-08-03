@@ -11,7 +11,7 @@ import { Router } from '@angular/router';
 export class Tab2Page {
 
   constructor(public appSetting:appSetting,public route:Router) {
-    this.route.navigateByUrl('tabs/tab2');
+    //this.route.navigateByUrl('tabs/tab2');
   }
 
 }
