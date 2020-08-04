@@ -37,6 +37,8 @@ export class FoodCreateComponent implements OnInit {
     price: 0,
     priceTemp: 0,
     status: "pending",
+    categoryType_ID:0,
+    imageURI:""
   };
   editLoad(id) {
     this.appSetting.showLoading();

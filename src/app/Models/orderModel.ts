@@ -14,4 +14,6 @@ export class orderModel {
   operatorID: number;
   status:string;
   riderTakeOption:string;
+  longitude:string;
+  latitude:String;
 }

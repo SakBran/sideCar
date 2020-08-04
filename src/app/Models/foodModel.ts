@@ -6,4 +6,6 @@ export class foodModel {
   price: number;
   priceTemp: number;
   status: string;
+  imageURI:string;
+  categoryType_ID:number;
 }

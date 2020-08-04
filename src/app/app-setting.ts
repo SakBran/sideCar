@@ -65,6 +65,8 @@ export class appSetting {
     operatorID: this.sessionUserID,
     status: "pending",
     riderTakeOption: "all",
+    longitude:"",
+    latitude:""
   };
 
   public orderTransationClear() {
@@ -84,6 +86,8 @@ export class appSetting {
       operatorID: this.sessionUserID,
       status: "pending",
       riderTakeOption: "all",
+      longitude:"",
+      latitude:""
     };
     this.orderDetailList = [];
     this.orderDetailViewList = [];
@@ -213,6 +217,8 @@ export class appSetting {
       operatorID: this.sessionUserID,
       status: "pending",
       riderTakeOption: "all",
+      longitude:"",
+      latitude:""
     };
   }
 
