@@ -1,3 +1,4 @@
+import { OrderManagementCreateComponent } from './admin/order-management-create/order-management-create.component';
 import { OpeningCreateComponent } from './admin/opening-create/opening-create.component';
 import { OpeningListComponent } from './admin/opening-list/opening-list.component';
 import { NgModule } from "@angular/core";
@@ -15,6 +16,7 @@ import { FoodListComponent } from "./resturant/food-list/food-list.component";
 import { FoodCreateComponent } from "./resturant/food-create/food-create.component";
 import { RiderEarningCreateComponent } from './admin/rider-earning-create/rider-earning-create.component';
 import { RiderEarningListComponent } from './admin/rider-earning-list/rider-earning-list.component';
+import { OrderManagementListComponent } from './admin/order-management-list/order-management-list.component';
 
 const routes: Routes = [
   {
@@ -104,6 +106,18 @@ const routes: Routes = [
   {
     path: "openingBalanceEdit/:id",
     component: OpeningCreateComponent,
+  },
+  {
+    path: "orderManagement",
+    component: OrderManagementListComponent,
+  },
+  {
+    path: "orderManagementCreate",
+    component: OrderManagementCreateComponent,
+  },
+  {
+    path: "orderManagementEdit/:id",
+    component: OrderManagementCreateComponent,
   },
 ];
 
