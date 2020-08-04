@@ -61,15 +61,12 @@ export class ResturantIndividualOrderComponent implements OnInit {
   }
 
   status(): string {
-    let result = "";
+    let result = "yes";
     const temp: orderTransationModel = this.data;
     temp.orderDetailModels.forEach((x) => {
       if (x.status === "pending") {
         result = x.status;
       } else if (x.status === "no") {
-        result = x.status;
-      }
-      else if (x.status === "yes") {
         result = x.status;
       }
     });

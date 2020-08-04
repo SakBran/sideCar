@@ -125,7 +125,7 @@
   *ngIf="
     this.data !== null &&
     this.appSetting.displaySetting === 'delivering' &&
-    this.data.orderModel.status === 'delivering'
+    this.data.orderModel.status === 'delivering' && this.data.orderModel.status !== 'delivered'
   "
 >
   <ion-card
@@ -211,7 +211,6 @@
             </ion-button>
           </ng-container>
         </ng-container>
-
         <ng-container *ngIf="this.appSetting.loginType === 'admin'">
           <ng-container *ngIf="this.data.orderModel.status !== 'delivering'">
             <ng-container>
@@ -288,8 +287,9 @@
 </ng-container>
 
 
+
 <ng-container
-  *ngIf="this.data !== null && this.data.orderModel.status === 'delivered'"
+  *ngIf="this.data !== null  && this.appSetting.displaySetting === 'delivered' && this.data.orderModel.status === 'delivered'"
 >
   <ion-card
     *ngIf="this.data !== null && this.data.orderModel.status === 'delivered'"
