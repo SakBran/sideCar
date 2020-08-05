@@ -87,13 +87,14 @@ export class FoodCreateComponent implements OnInit {
   //Image
   imageChangedEvent: any = '';
   croppedImage: any = '';
+  selectedFile:File;
 
   fileChangeEvent(event: any): void {
       this.imageChangedEvent = event;
   }
   imageCropped(event: ImageCroppedEvent) {
       this.croppedImage = event.base64;  
-    
+      this.selectedFile=this.croppedImage;
   }
   imageLoaded() {
       // show cropper

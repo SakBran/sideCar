@@ -3,6 +3,7 @@ import { Injectable } from "@angular/core";
 import { HttpHeaders, HttpClient } from "@angular/common/http";
 import { Observable } from "rxjs";
 import Swal from "sweetalert2";
+import { encode } from 'punycode';
 @Injectable({
   providedIn: "root",
 })
@@ -17,7 +18,11 @@ export class UploadService {
 
   post(data, filename): void {
     this.url = this.url + `?filename=${filename}`;
-    this.http.post(this.url, data, this.httpOptions).subscribe(
+   
+    
+    const formData: FormData = new FormData();
+    formData.append("fileKey", data, filename);
+    this.http.post(this.url, FormData, this.httpOptions).subscribe(
       (x) => console.log(x),
       (err) => this.appSetting.showError(err),
       () => {
@@ -25,4 +30,6 @@ export class UploadService {
       }
     );
   }
+
+  
 }
