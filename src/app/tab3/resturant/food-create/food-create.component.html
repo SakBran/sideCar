@@ -53,6 +53,26 @@
             </ion-label>
             <ion-input [(ngModel)]="foodData.price" type="text"></ion-input>
           </ion-item>
+
+          <ion-item>
+            <ion-label position="floating" color="secondary">
+              <ion-icon name="cash-outline"></ion-icon> Category Type
+              <ion-text *ngIf="this.foodData.price === 0" color="danger">
+                *
+              </ion-text>
+            </ion-label>
+            <ion-input [(ngModel)]="foodData.price" type="text"></ion-input>
+          </ion-item>
+
+          <ion-item>
+            <ion-label position="floating" color="secondary">
+              <ion-icon name="cash-outline"></ion-icon> Image
+              Price<ion-text *ngIf="this.foodData.price === 0" color="danger">
+                *
+              </ion-text>
+            </ion-label>
+            <ion-input [(ngModel)]="foodData.price" type="text"></ion-input>
+          </ion-item>
         </ion-card-content>
       </ion-card>
 
