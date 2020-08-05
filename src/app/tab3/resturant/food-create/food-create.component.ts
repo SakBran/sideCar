@@ -67,7 +67,7 @@ export class FoodCreateComponent implements OnInit {
   create() {
     this.appSetting.showLoading();
     if (this.formValidation() === true) {
-      this.FoodService.post(this.foodData);
+      this.FoodService.post(this.foodData,this.croppedImage);
     } else {
       this.appSetting.showInvalid();
     }
@@ -92,7 +92,8 @@ export class FoodCreateComponent implements OnInit {
       this.imageChangedEvent = event;
   }
   imageCropped(event: ImageCroppedEvent) {
-      this.croppedImage = event.base64;
+      this.croppedImage = event.base64;  
+    
   }
   imageLoaded() {
       // show cropper

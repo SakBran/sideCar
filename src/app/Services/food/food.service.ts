@@ -4,6 +4,7 @@ import { HttpHeaders, HttpClient } from "@angular/common/http";
 import { Observable } from "rxjs";
 import Swal from "sweetalert2";
 import { foodModel } from "src/app/Models/foodModel";
+import { UploadService } from "../upload/upload.service";
 
 @Injectable({
   providedIn: "root",
@@ -15,7 +16,11 @@ export class FoodService {
       "Content-Type": "application/json",
     }),
   };
-  constructor(private http: HttpClient, private appSetting: appSetting) {}
+  constructor(
+    private http: HttpClient,
+    private uploadService: UploadService,
+    private appSetting: appSetting
+  ) {}
 
   get(id: number): Observable<foodModel[]> {
     return this.http.get<foodModel[]>(
@@ -35,13 +40,13 @@ export class FoodService {
     const searchUrl = `${this.url}/${id}`;
     return this.http.get<foodModel>(searchUrl);
   }
-  post(data: foodModel): void {
+  post(data: foodModel,imageData): void {
     let temp: foodModel = new foodModel();
     this.http.post(this.url, data, this.httpOptions).subscribe(
       (res) => {
         temp = Object.assign(res);
-        this.appSetting.foodDataList.push(temp);
-        this.appSetting.showSuccess();
+        this.uploadService.post(imageData,temp.imageURI);
+      
       },
       (err) => {
         console.log(err);
