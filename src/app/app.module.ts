@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouteReuseStrategy } from '@angular/router';
-
+import { ImageCropperModule } from 'ngx-image-cropper';
 
 import { InAppBrowser } from '@ionic-native/in-app-browser/ngx';
 import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
@@ -23,7 +23,7 @@ import { CommonModule } from '@angular/common';
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
-  imports: [BrowserModule,CommonModule, IonicModule.forRoot(), HttpClientModule,AppRoutingModule],
+  imports: [BrowserModule, ImageCropperModule, CommonModule, IonicModule.forRoot(), HttpClientModule, AppRoutingModule],
   providers: [
     appSetting,
     StatusBar,
@@ -35,4 +35,4 @@ import { CommonModule } from '@angular/common';
   ],
   bootstrap: [AppComponent]
 })
-export class AppModule {}
+export class AppModule { }

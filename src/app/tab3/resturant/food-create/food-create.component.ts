@@ -4,6 +4,7 @@ import { Router, ActivatedRoute } from "@angular/router";
 import { Location } from "@angular/common";
 import { FoodService } from "src/app/Services/food/food.service";
 import { foodModel } from "src/app/Models/foodModel";
+import { ImageCroppedEvent } from 'ngx-image-cropper';
 
 @Component({
   selector: "app-food-create",
@@ -82,4 +83,25 @@ export class FoodCreateComponent implements OnInit {
       this.appSetting.showInvalid();
     }
   }
+
+  //Image
+  imageChangedEvent: any = '';
+  croppedImage: any = '';
+
+  fileChangeEvent(event: any): void {
+      this.imageChangedEvent = event;
+  }
+  imageCropped(event: ImageCroppedEvent) {
+      this.croppedImage = event.base64;
+  }
+  imageLoaded() {
+      // show cropper
+  }
+  cropperReady() {
+      // cropper ready
+  }
+  loadImageFailed() {
+      // show message
+  }
+  //Image
 }

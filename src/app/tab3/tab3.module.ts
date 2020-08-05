@@ -1,3 +1,4 @@
+import { ImageCropperModule } from 'ngx-image-cropper';
 import { OpeningListComponent } from './admin/opening-list/opening-list.component';
 import { OpeningCreateComponent } from './admin/opening-create/opening-create.component';
 import { IonicModule } from "@ionic/angular";
@@ -27,6 +28,7 @@ import { RiderEarningCreateComponent } from './admin/rider-earning-create/rider-
 @NgModule({
   imports: [
     IonicModule,
+    ImageCropperModule,
     CommonModule,
     FormsModule,
     ExploreContainerComponentModule,
