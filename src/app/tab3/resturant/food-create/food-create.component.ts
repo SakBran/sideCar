@@ -4,7 +4,7 @@ import { Router, ActivatedRoute } from "@angular/router";
 import { Location } from "@angular/common";
 import { FoodService } from "src/app/Services/food/food.service";
 import { foodModel } from "src/app/Models/foodModel";
-import { ImageCroppedEvent } from 'ngx-image-cropper';
+import { ImageCroppedEvent } from "ngx-image-cropper";
 
 @Component({
   selector: "app-food-create",
@@ -38,8 +38,8 @@ export class FoodCreateComponent implements OnInit {
     price: 0,
     priceTemp: 0,
     status: "pending",
-    categoryType_ID:0,
-    imageURI:""
+    categoryType_ID: 0,
+    imageURI: "",
   };
   editLoad(id) {
     this.appSetting.showLoading();
@@ -67,7 +67,7 @@ export class FoodCreateComponent implements OnInit {
   create() {
     this.appSetting.showLoading();
     if (this.formValidation() === true) {
-      this.FoodService.post(this.foodData,this.croppedImage);
+      this.FoodService.post(this.foodData, this.croppedImage);
     } else {
       this.appSetting.showInvalid();
     }
@@ -83,27 +83,11 @@ export class FoodCreateComponent implements OnInit {
       this.appSetting.showInvalid();
     }
   }
-
+  croppedImage:File=null;
   //Image
-  imageChangedEvent: any = '';
-  croppedImage: any = '';
-  selectedFile:File;
+  handleFileInput(files: FileList) {
+    this.croppedImage = files.item(0);
+}
 
-  fileChangeEvent(event: any): void {
-      this.imageChangedEvent = event;
-  }
-  imageCropped(event: ImageCroppedEvent) {
-      this.croppedImage = event.base64;  
-      this.selectedFile=this.croppedImage;
-  }
-  imageLoaded() {
-      // show cropper
-  }
-  cropperReady() {
-      // cropper ready
-  }
-  loadImageFailed() {
-      // show message
-  }
   //Image
 }

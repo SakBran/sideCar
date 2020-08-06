@@ -24,11 +24,12 @@ import { FoodCreateComponent } from "./resturant/food-create/food-create.compone
 import { FoodListComponent } from "./resturant/food-list/food-list.component";
 import { RiderEarningListComponent } from './admin/rider-earning-list/rider-earning-list.component';
 import { RiderEarningCreateComponent } from './admin/rider-earning-create/rider-earning-create.component';
-
+import { FileUploadModule } from 'ng2-file-upload';
 @NgModule({
   imports: [
     IonicModule,
     ImageCropperModule,
+    FileUploadModule,
     CommonModule,
     FormsModule,
     ExploreContainerComponentModule,

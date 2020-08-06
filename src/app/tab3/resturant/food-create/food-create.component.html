@@ -18,7 +18,9 @@
 <ion-content>
   <ion-card>
     <ion-card-header>
-      <ion-card-subtitle color="primary">Foods & Drink Registration Form</ion-card-subtitle>
+      <ion-card-subtitle color="primary"
+        >Foods & Drink Registration Form</ion-card-subtitle
+      >
     </ion-card-header>
     <ion-card-content>
       <ion-card>
@@ -29,10 +31,13 @@
           <ion-item>
             <ion-label position="floating" color="secondary">
               <ion-icon name="fast-food-outline"></ion-icon> Food/Drink's
-              Name<ion-text *ngIf="
+              Name<ion-text
+                *ngIf="
                   this.foodData.itemName === '' ||
                   this.foodData.itemName === null
-                " color="danger">
+                "
+                color="danger"
+              >
                 *
               </ion-text>
             </ion-label>
@@ -66,13 +71,11 @@
                 *
               </ion-text>
             </ion-label>----->
-            <input type="file" (change)="fileChangeEvent($event)" />
+            <input type="file"
+           id="file"
+           (change)="handleFileInput($event.target.files)">
           </ion-item>
-          <ion-item>
-            <image-cropper [imageChangedEvent]="imageChangedEvent" [maintainAspectRatio]="true" [aspectRatio]="1 / 1"
-              format="png" (imageCropped)="imageCropped($event)" (imageLoaded)="imageLoaded()"
-              (cropperReady)="cropperReady()" (loadImageFailed)="loadImageFailed()"></image-cropper>
-          </ion-item>
+          
           <ion-item>
             <img [src]="croppedImage" />
           </ion-item>
@@ -87,10 +90,22 @@
             </ion-button>
           </ion-col>
           <ion-col size="6">
-            <ion-button *ngIf="this.id === 0" (click)="create()" expand="block" color="secondary" shape="round">
+            <ion-button
+              *ngIf="this.id === 0"
+              (click)="create()"
+              expand="block"
+              color="secondary"
+              shape="round"
+            >
               Save
             </ion-button>
-            <ion-button *ngIf="this.id !== 0" (click)="update()" expand="block" color="secondary" shape="round">
+            <ion-button
+              *ngIf="this.id !== 0"
+              (click)="update()"
+              expand="block"
+              color="secondary"
+              shape="round"
+            >
               Update
             </ion-button>
           </ion-col>
