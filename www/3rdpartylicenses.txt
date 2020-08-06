@@ -129,6 +129,8 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 ionic-loader
 
+ng2-file-upload
+
 ngx-image-cropper
 MIT
 MIT License
