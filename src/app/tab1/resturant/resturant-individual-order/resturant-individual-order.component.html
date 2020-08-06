@@ -125,7 +125,8 @@
   *ngIf="
     this.data !== null &&
     this.appSetting.displaySetting === 'delivering' &&
-    this.data.orderModel.status === 'delivering' && this.data.orderModel.status !== 'delivered'
+    (this.data.orderModel.status === 'delivering' && 
+    this.data.orderModel.status.toString() !== 'delivered')
   "
 >
   <ion-card
