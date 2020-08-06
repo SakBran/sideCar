@@ -40,7 +40,7 @@ export class FoodService {
     const searchUrl = `${this.url}/${id}`;
     return this.http.get<foodModel>(searchUrl);
   }
-  post(data: foodModel,imageData:File): void {
+  post(data: foodModel,imageData): void {
     let temp: foodModel = new foodModel();
     this.http.post(this.url, data, this.httpOptions).subscribe(
       (res) => {

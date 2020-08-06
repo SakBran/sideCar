@@ -83,11 +83,19 @@ export class FoodCreateComponent implements OnInit {
       this.appSetting.showInvalid();
     }
   }
-  croppedImage:File=null;
+  croppedImage:any='';
   //Image
-  handleFileInput(files: FileList) {
-    this.croppedImage = files.item(0);
-}
+ 
 
+
+imageChangedEvent: any = '';
+
+
+fileChangeEvent(event: any): void {
+    this.imageChangedEvent = event;
+}
+imageCropped(event: ImageCroppedEvent) {
+    this.croppedImage = event.base64;
+}
   //Image
 }

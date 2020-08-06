@@ -65,15 +65,23 @@
           </ion-item>
 
           <ion-item>
+            <input type="file" (change)="fileChangeEvent($event)" />
+          </ion-item>
+          <ion-item>
             <!-----  <ion-label position="floating" color="secondary">
               <ion-icon name="cash-outline"></ion-icon> Image
               Price<ion-text *ngIf="this.foodData.price === 0" color="danger">
                 *
               </ion-text>
             </ion-label>----->
-            <input type="file"
-           id="file"
-           (change)="handleFileInput($event.target.files)">
+            <image-cropper
+            [imageChangedEvent]="imageChangedEvent"
+            [maintainAspectRatio]="true"
+            [aspectRatio]="1 / 1"
+            format="png"
+            (imageCropped)="imageCropped($event)"
+           
+        ></image-cropper>
           </ion-item>
           
           <ion-item>
