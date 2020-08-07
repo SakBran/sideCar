@@ -1,3 +1,4 @@
+import { CategoryService } from './../../../Services/category/category.service';
 import { Component, OnInit } from "@angular/core";
 import { appSetting } from "src/app/app-setting";
 import { Router, ActivatedRoute } from "@angular/router";
@@ -18,13 +19,22 @@ export class FoodCreateComponent implements OnInit {
     public appSetting: appSetting,
     private FoodService: FoodService,
     private route: Router,
-    private Router: ActivatedRoute
-  ) {}
+    private Router: ActivatedRoute,
+    private categoryService:CategoryService
+  ) {
+    this.getCategory();
+  }
 
   ngOnInit() {
     if (this.id !== null || this.id !== undefined || this.id !== 0) {
       this.editLoad(this.id);
     }
+  }
+
+  getCategory(){
+    this.categoryService.get().subscribe(x=>{
+      this.appSetting.categoryList=x;
+    });
   }
   back() {
     this.location.back();

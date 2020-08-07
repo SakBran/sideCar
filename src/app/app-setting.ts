@@ -1,3 +1,4 @@
+import { CategoryModel } from './Models/categoryModel';
 import { orderModel } from "./Models/orderModel";
 import { orderDetialViewmodel } from "./Models/orderDetailViewmodel";
 import { orderDetialModel } from "./Models/orderDetailModel";
@@ -41,6 +42,8 @@ export class appSetting {
   public menuFoodDataList: foodModel[] = [];
   public constFoodDataList: foodModel[] = [];
   public resturandDataList: resturantModel[] = [];
+
+  public categoryList:CategoryModel[]=[];
 
   public locationDataList: locationModel[] = [];
 

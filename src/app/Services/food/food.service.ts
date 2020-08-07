@@ -45,6 +45,7 @@ export class FoodService {
     this.http.post(this.url, data, this.httpOptions).subscribe(
       (res) => {
         temp = Object.assign(res);
+        console.log("Image"+temp.id)
         this.uploadService.post(imageData, "Image" + temp.id);
       },
       (err) => {

@@ -61,7 +61,14 @@
                 *
               </ion-text>
             </ion-label>
-            <ion-input [(ngModel)]="foodData.price" type="text"></ion-input>
+
+            <ion-select [(ngModel)]="foodData.categoryType_ID">
+              <ion-select-option
+                *ngFor="let item of this.appSetting.categoryList"
+                [value]="item.id"
+                >{{ item.categoryName }}</ion-select-option
+              >
+            </ion-select>
           </ion-item>
 
           <ion-item>
@@ -75,15 +82,14 @@
               </ion-text>
             </ion-label>----->
             <image-cropper
-            [imageChangedEvent]="imageChangedEvent"
-            [maintainAspectRatio]="true"
-            [aspectRatio]="1 / 1"
-            format="png"
-            (imageCropped)="imageCropped($event)"
-           
-        ></image-cropper>
+              [imageChangedEvent]="imageChangedEvent"
+              [maintainAspectRatio]="true"
+              [aspectRatio]="1 / 1"
+              format="png"
+              (imageCropped)="imageCropped($event)"
+            ></image-cropper>
           </ion-item>
-          
+
           <ion-item>
             <img [src]="croppedImage" />
           </ion-item>
