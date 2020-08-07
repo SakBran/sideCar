@@ -8,4 +8,5 @@ export class foodModel {
   status: string;
   imageURI:string;
   categoryType_ID:number;
+  Descriptions:string;
 }
