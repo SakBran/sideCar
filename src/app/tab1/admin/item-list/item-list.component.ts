@@ -1,3 +1,4 @@
+import { CategoryService } from './../../../Services/category/category.service';
 import { Component, OnInit } from "@angular/core";
 import { appSetting } from "src/app/app-setting";
 import { FoodService } from 'src/app/Services/food/food.service';
@@ -20,8 +21,8 @@ export class ItemListComponent implements OnInit {
   }
 
   
+  
   loadData(e) {
-    
 
       this.FoodService.getActive().subscribe(
         (x) => (this.appSetting.menuFoodDataList = x),
@@ -31,6 +32,7 @@ export class ItemListComponent implements OnInit {
           e.target.complete();
         }
       );
+    
     
   }
  
