@@ -30,7 +30,7 @@ export class OpeningListComponent implements OnInit {
   dateChange(e) {
     this.searchDate=e;
     this.appSetting.showLoading();
-    console.log(e);
+   
     this.OpeningBalanceService.getDate(e).subscribe(
       (x) => {this.resDataList=x},
       (err) => this.appSetting.showError(err),

@@ -52,13 +52,13 @@ export class Tab1Page {
   }
   searchResturant = 0;
   onSearchResturant(val) {
-    console.log(val);
+   
     this.searchResturant = val;
     const temp: foodModel[] = [...this.appSetting.constFoodDataList];
     let z: foodModel[] = [];
     temp.forEach((x) => {
       if (x.resturant_id === this.searchResturant) {
-        console.log(x);
+    
         z.push(x);
       }
       this.appSetting.menuFoodDataList = z;
@@ -98,7 +98,7 @@ export class Tab1Page {
         },
         (err) => this.appSetting.showError(err),
         () => {
-          console.log(this.appSetting.orderTransationList);
+       
           this.appSetting.loadingClose();
         }
       );
@@ -109,7 +109,7 @@ export class Tab1Page {
         },
         (err) => this.appSetting.showError(err),
         () => {
-          console.log(this.appSetting.orderTransationList);
+       
           this.appSetting.loadingClose();
         }
       );

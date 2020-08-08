@@ -61,7 +61,7 @@ export class CustomerInfoComponent implements OnInit {
       err=>(console.log(err)),
       ()=>{
         if(userLongitude==='' || userLatitude===''){
-          console.log("Error");
+     
           this.appSetting.showInvalid();
         }
         else{

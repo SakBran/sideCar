@@ -53,12 +53,11 @@ export class LoginFromComponent implements OnInit {
   }
   onClick() {
     this.appSetting.showLoading();
-    console.log(this.username);
-    console.log(this.password);
+  
 
     this.userService.getLogin(this.username, this.password).subscribe(
       (x) => {
-        console.log(x);
+    
         this.appSetting.sessionUserID = x.id;
         this.userData = x;
       },
@@ -77,12 +76,12 @@ export class LoginFromComponent implements OnInit {
               if (this.appSetting.loginType === "resturant") {
                 this.appSetting.resturantID = this.appSetting.sessionUserID;
               }
-              console.log("Type" + this.appSetting.loginType);
+          
               if (this.appSetting.loginType === "rider") {
                 setInterval(() => {
                   //this.locationUpdate();
                this.locationUpdate();
-                  console.log("Interval running");
+              
                  
                 }, 30000);
               }
@@ -92,6 +91,7 @@ export class LoginFromComponent implements OnInit {
             }
           );
         }
+        this.appSetting.loginSuccess();
       }
     );
   }

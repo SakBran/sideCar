@@ -77,12 +77,12 @@ export class ItemListComponent implements OnInit {
 
   sendToResturant(){
     this.appSetting.showLoading();
-    console.log(this.appSetting.orderData.deliveryDate);
+   
     let data:orderTransationModel={
       orderModel:this.appSetting.orderData,
       orderDetailModels:this.appSetting.orderDetailList
     }
-    console.log(data);
+  
     this.orderService.post(data);
   }
 

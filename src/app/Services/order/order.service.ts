@@ -1,32 +1,43 @@
-import { orderDetialModel } from './../../Models/orderDetailModel';
-import { appSetting } from './../../app-setting';
-import { Injectable } from '@angular/core';
-import { HttpHeaders, HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
-import Swal from 'sweetalert2';
-import { orderTransationModel } from 'src/app/Models/orderTransationModel';
-import { resendModel } from 'src/app/Models/resendModel';
-import { orderModel } from 'src/app/Models/orderModel';
+import { orderDetialModel } from "./../../Models/orderDetailModel";
+import { appSetting } from "./../../app-setting";
+import { Injectable } from "@angular/core";
+import { HttpHeaders, HttpClient } from "@angular/common/http";
+import { Observable } from "rxjs";
+import Swal from "sweetalert2";
+import { orderTransationModel } from "src/app/Models/orderTransationModel";
+import { resendModel } from "src/app/Models/resendModel";
+import { orderModel } from "src/app/Models/orderModel";
+import { ModalController } from "@ionic/angular";
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: "root",
 })
 export class OrderService {
   private url = `${this.appSetting.apiAddress}/api/orderModels`;
   private httpOptions = {
     headers: new HttpHeaders({
-      'Content-Type': 'application/json'
-    })
+      "Content-Type": "application/json",
+    }),
   };
-  constructor(private http: HttpClient,private appSetting:appSetting) { }
+  constructor(
+    public modalCtrl: ModalController,
+    private http: HttpClient,
+    private appSetting: appSetting
+  ) {}
 
   get(): Observable<orderTransationModel[]> {
-    return this.http.get<orderTransationModel[]>(this.url+'/'+this.appSetting.sessionUserID);
+    return this.http.get<orderTransationModel[]>(
+      this.url + "/" + this.appSetting.sessionUserID
+    );
   }
 
   getResturantOrder(): Observable<orderTransationModel[]> {
-    console.log(this.url+'/resturant/orderTracking?id='+this.appSetting.resturantID);
-    return this.http.get<orderTransationModel[]>(this.url+'/resturant/orderTracking?id='+this.appSetting.resturantID);
+    console.log(
+      this.url + "/resturant/orderTracking?id=" + this.appSetting.resturantID
+    );
+    return this.http.get<orderTransationModel[]>(
+      this.url + "/resturant/orderTracking?id=" + this.appSetting.resturantID
+    );
   }
   getResturantPendings(id: number): Observable<orderTransationModel[]> {
     const searchUrl = `${this.url}/resturant/pendings?ResturantID=${id}`;
@@ -47,17 +58,23 @@ export class OrderService {
     const searchUrl = `${this.url}/rider/pending?id=${this.appSetting.sessionUserID}`;
     return this.http.get<orderTransationModel[]>(searchUrl);
   }
-  
-  
+
   post(data: orderTransationModel): void {
-    data.orderModel.operatorID=this.appSetting.sessionUserID;
+    data.orderModel.operatorID = this.appSetting.sessionUserID;
     this.http.post(this.url, data, this.httpOptions).subscribe(
-      res => {
+      (res) => {
         console.log(res);
-       this.appSetting.orderTransationClear();
+        this.appSetting.orderTransationClear();
+        this.modalCtrl.dismiss({
+          dismissed: true,
+        });
+
         this.appSetting.showSuccess();
+        this.modalCtrl.dismiss({
+          dismissed: true,
+        });
       },
-      err => {
+      (err) => {
         this.appSetting.showError(err);
       }
     );
@@ -66,11 +83,11 @@ export class OrderService {
   put(data: orderModel): void {
     const searchUrl = `${this.url}/${data.id}`;
     this.http.put(searchUrl, data, this.httpOptions).subscribe(
-      res => {
+      (res) => {
         console.log(res);
         this.appSetting.showSuccess();
       },
-      err => {
+      (err) => {
         console.log(err);
         this.appSetting.showError(err);
       }
@@ -80,55 +97,53 @@ export class OrderService {
   putOrderDetail(data: orderDetialModel): void {
     const searchUrl = `${this.appSetting.apiAddress}/api/orderDetailModels/${data.orderDetailID}`;
     this.http.put(searchUrl, data, this.httpOptions).subscribe(
-      res => {
+      (res) => {
         console.log(res);
         this.appSetting.showSuccess();
       },
-      err => {
+      (err) => {
         console.log(err);
         this.appSetting.showError(err);
       }
     );
   }
 
-  putResend_From_Resturant(orderID,data: resendModel[]): void {
+  putResend_From_Resturant(orderID, data: resendModel[]): void {
     console.log(data);
     const searchUrl = `${this.url}/resturant/resend?id=${orderID}&ResturantID=${this.appSetting.resturantID}`;
     this.http.put(searchUrl, data, this.httpOptions).subscribe(
-      res => {
+      (res) => {
         console.log(res);
-        let i=-1;
-        const temp=[...this.appSetting.orderTransationList];
-        temp.forEach(x=>{
-        i=i+1;
-        if(x.orderModel.id===orderID){
-          this.appSetting.orderTransationList.splice(i,1);
-        }
-        })
+        let i = -1;
+        const temp = [...this.appSetting.orderTransationList];
+        temp.forEach((x) => {
+          i = i + 1;
+          if (x.orderModel.id === orderID) {
+            this.appSetting.orderTransationList.splice(i, 1);
+          }
+        });
         this.appSetting.showSuccess();
-        this.appSetting.resendListFromResturant=[];
+        this.appSetting.resendListFromResturant = [];
       },
-      err => {
+      (err) => {
         console.log(err);
         this.appSetting.showError(err);
       }
     );
   }
-
-  
 
   delete(id: number): void {
     const data = null;
     const xhr = new XMLHttpRequest();
     xhr.withCredentials = false;
 
-    xhr.addEventListener('readystatechange', function() {
+    xhr.addEventListener("readystatechange", function () {
       if (this.readyState === this.DONE) {
         console.log(this.responseText);
       }
     });
 
-    xhr.open('DELETE', this.url + '/' + id);
+    xhr.open("DELETE", this.url + "/" + id);
 
     xhr.send(data);
   }
@@ -138,16 +153,17 @@ export class OrderService {
     const xhr = new XMLHttpRequest();
     xhr.withCredentials = false;
 
-    xhr.addEventListener('readystatechange', function() {
+    xhr.addEventListener("readystatechange", function () {
       if (this.readyState === this.DONE) {
         console.log(this.responseText);
       }
     });
 
-    xhr.open('DELETE',`${this.appSetting.apiAddress}/api/orderDetailModels/` + id);
+    xhr.open(
+      "DELETE",
+      `${this.appSetting.apiAddress}/api/orderDetailModels/` + id
+    );
 
     xhr.send(data);
-    
   }
 }
-

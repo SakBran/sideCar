@@ -44,7 +44,7 @@ export class ResturantMainComponent implements OnInit {
         },
         (err) => this.appSetting.showError(err),
         () => {
-          console.log(this.appSetting.orderTransationList);
+      
           this.loadFoodModel();
         }
       );
@@ -87,7 +87,7 @@ export class ResturantMainComponent implements OnInit {
       },
       (err) => this.appSetting.showError(err),
       () => {
-        console.log(this.appSetting.orderTransationList);
+      
        event.target.complete();
       }
     );

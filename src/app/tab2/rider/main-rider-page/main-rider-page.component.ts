@@ -13,12 +13,12 @@ export class MainRiderPageComponent implements OnInit {
     private appSetting: appSetting,
     private datilyReturnService: DailyReturnService
   ) {
-    console.log(this.appSetting.loginType);
+    
   }
 
   ngOnInit() {}
   refresh() {
-    console.log(this.appSetting.loginType);
+   
   }
   dateData = new Date().toISOString();
   search() {
@@ -32,7 +32,7 @@ export class MainRiderPageComponent implements OnInit {
           (x) => (this.data = x),
           (err) => this.appSetting.showError(err),
           () => {
-            console.log(this.data);
+          
             this.appSetting.loadingClose();
           }
         );

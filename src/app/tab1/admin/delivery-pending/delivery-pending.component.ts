@@ -15,7 +15,7 @@ export class DeliveryPendingComponent implements OnInit {
     private orderService: OrderService
   ) {
     this.firstLoad();
-    console.log(this.appSetting.orderTransationList);
+   
   }
   ngOnInit() {
     this.firstLoad();
@@ -30,7 +30,7 @@ export class DeliveryPendingComponent implements OnInit {
       (err) => this.appSetting.showError(err),
       () => {
         this.loadFoodModel();
-        console.log("This work");
+       
       }
     );
   }

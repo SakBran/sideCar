@@ -35,7 +35,15 @@ export class HomePageComponent implements OnInit {
     this.resturantLoaddata();
   }
 
-  ngOnInit() {}
+  ngOnInit() {
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(position => {
+        this.appSetting.orderData.latitude = position.coords.latitude.toString();
+        this.appSetting.orderData.longitude = position.coords.longitude.toString();
+       
+      });
+    }
+  }
   search() {
     this.appSetting.customerSearch = "Search";
   }

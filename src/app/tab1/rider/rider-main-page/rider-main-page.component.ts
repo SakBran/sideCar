@@ -31,7 +31,7 @@ export class RiderMainPageComponent implements OnInit {
         },
         (err) => this.appSetting.showError(err),
         () => {
-          console.log(this.appSetting.orderTransationList);
+       
           this.appSetting.loadingClose();
         }
       );
@@ -42,7 +42,7 @@ export class RiderMainPageComponent implements OnInit {
         },
         (err) => this.appSetting.showError(err),
         () => {
-          console.log(this.appSetting.orderTransationList);
+        
           this.appSetting.loadingClose();
         }
       );
@@ -70,7 +70,7 @@ export class RiderMainPageComponent implements OnInit {
         },
         (err) => this.appSetting.showError(err),
         () => {
-         console.log(this.appSetting.orderTransationList);
+        
           event.target.complete();
         }
       );
@@ -81,7 +81,7 @@ export class RiderMainPageComponent implements OnInit {
         },
         (err) => this.appSetting.showError(err),
         () => {
-          console.log(this.appSetting.orderTransationList);
+       
           event.target.complete();
         }
       );

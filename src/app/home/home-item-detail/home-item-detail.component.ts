@@ -22,6 +22,13 @@ export class HomeItemDetailComponent implements OnInit {
   ngOnInit() {
     this.orderDetail.itemOrgPrice=this.foodData.price;
     this.orderDetail.itemFinalPrice=this.foodData.price;
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(position => {
+        this.appSetting.orderData.latitude = position.coords.latitude.toString();
+        this.appSetting.orderData.longitude = position.coords.longitude.toString();
+    
+      });
+    }
   }
 
   orderDetail: orderDetialModel = {
@@ -32,7 +39,7 @@ export class HomeItemDetailComponent implements OnInit {
     discount: 0,
     itemFinalPrice: this.foodData.price,
     orderID: 0,
-    status: "delivering",
+    status: "pending",
     remark: "",
     comment: "",
     isPickUpResturant: false,

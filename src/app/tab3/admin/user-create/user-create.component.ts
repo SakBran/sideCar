@@ -30,7 +30,7 @@ export class UserCreateComponent implements OnInit {
         (x) => (this.appSetting.userTypeData = x),
         (err) => console.log(err),
         () => {
-          console.log("ok");
+        
           
           this.userTypeData=[...this.appSetting.userTypeData];
           let i=-1;

@@ -51,7 +51,7 @@ export class ClientShopcartComponent implements OnInit {
       i = i + 1;
       if (i === id) {
         this.appSetting.orderDetailViewList.splice(i,1);
-        console.log(this.appSetting.orderDetailViewList);
+    
       }
     });
   }
@@ -81,6 +81,7 @@ export class ClientShopcartComponent implements OnInit {
       component: ClientInfoComponent,
       //,cssClass: 'my-custom-class'
     });
+    
     return await modal.present();
   }
 }

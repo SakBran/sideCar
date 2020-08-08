@@ -64,7 +64,7 @@ export class RiderSelectComponent implements OnInit {
 
     const foodDB: foodModel[] = [...this.appSetting.menuFoodDataList];
     let tempRes: number[] = this.tempResMethod(foodDB, tempDetial);
-    console.log(tempDetial);
+   
     let resIDlist: number[] = this.getUnique(tempRes);
     let locationDB: resturantModel[] = this.locationDBMethod(
       tempLocation,
@@ -117,7 +117,7 @@ export class RiderSelectComponent implements OnInit {
     let tempRes: number[] = [];
     foodDB.forEach((x) => {
       tempDetial.forEach((y) => {
-        console.log("Item Y ID=" + y.itemID + " and " + x.id);
+      
         if (y.itemID === x.id) {
           tempRes.push(x.resturant_id);
         } else {
