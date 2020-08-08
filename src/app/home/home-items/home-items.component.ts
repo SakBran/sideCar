@@ -1,8 +1,11 @@
-import { CategoryService } from './../../Services/category/category.service';
-import { foodModel } from './../../Models/foodModel';
+import { HomeItemDetailComponent } from "./../home-item-detail/home-item-detail.component";
+import { CategoryService } from "./../../Services/category/category.service";
+import { foodModel } from "./../../Models/foodModel";
 import { appSetting } from "src/app/app-setting";
 import { FoodService } from "./../../Services/food/food.service";
 import { Component, OnInit } from "@angular/core";
+import { ModalController } from "@ionic/angular";
+import { LocationService } from 'src/app/Services/location/location.service';
 
 @Component({
   selector: "app-home-items",
@@ -12,55 +15,66 @@ import { Component, OnInit } from "@angular/core";
 export class HomeItemsComponent implements OnInit {
   constructor(
     private FoodService: FoodService,
-    public appSetting: appSetting
-    
+    public appSetting: appSetting,
+    private LocationService:LocationService,
+    public modalController: ModalController
   ) {
-    console.log(this.appSetting.menuFoodDataList)
+    console.log(this.appSetting.menuFoodDataList);
     this.FoodService.getActive().subscribe(
       (x) => (this.appSetting.menuFoodDataList = x),
       (err) => this.appSetting.showError(err),
       () => {
         this.appSetting.constFoodDataList = this.appSetting.menuFoodDataList;
+        
       }
     );
-    
+    this.locationReload();
   }
 
   ngOnInit() {}
 
-  cardClick(cardID) {}
+  locationReload() {
+    if (this.appSetting.locationDataList.length === 0) {
+      this.LocationService.get().subscribe(
+        (x) => (this.appSetting.locationDataList = x)
+      );
+    }
+  }
+  cardClick(cardID) {
+    this.itemDetail(cardID.toString());
+  }
 
-  searchResturant=0;
-  Filter(e){
+  searchResturant = 0;
+  Filter(e) {
     console.log(e);
-    const temp=[...this.appSetting.constFoodDataList];
-    let res:foodModel[]=[];
-    temp.forEach(x=>{
-      if(x.resturant_id===e){
+    const temp = [...this.appSetting.constFoodDataList];
+    let res: foodModel[] = [];
+    temp.forEach((x) => {
+      if (x.resturant_id === e) {
         res.push(x);
       }
     });
-    this.appSetting.menuFoodDataList=res;
+    this.appSetting.menuFoodDataList = res;
   }
 
-  searchCategory=0;
-  FilterCategory(e){
+  searchCategory = 0;
+  FilterCategory(e) {
     console.log(e);
-    const temp=[...this.appSetting.constFoodDataList];
-    let res:foodModel[]=[];
-    temp.forEach(x=>{
-      if(x.categoryType_ID===e){
+    const temp = [...this.appSetting.constFoodDataList];
+    let res: foodModel[] = [];
+    temp.forEach((x) => {
+      if (x.categoryType_ID === e) {
         res.push(x);
       }
     });
-    this.appSetting.menuFoodDataList=res;
+    this.appSetting.menuFoodDataList = res;
   }
-  resturantChoose(){
-    let a=document.getElementById("select")
+  resturantChoose() {
+    let a = document.getElementById("select");
     a.click();
   }
-  categoryChoose(){
-    let a=document.getElementById("selectCategory")
+  categoryChoose() {
+    let a = document.getElementById("selectCategory");
     a.click();
   }
   refresh() {
@@ -69,13 +83,11 @@ export class HomeItemsComponent implements OnInit {
       (err) => this.appSetting.showError(err),
       () => {
         this.appSetting.constFoodDataList = this.appSetting.menuFoodDataList;
-       
       }
     );
-  
-}
+  }
 
-searchTxt="";
+  searchTxt = "";
   onSearch(val) {
     const temp: foodModel[] = [...this.appSetting.constFoodDataList];
     let z: foodModel[] = [];
@@ -89,5 +101,15 @@ searchTxt="";
     if (this.searchTxt === "") {
       this.appSetting.menuFoodDataList = temp;
     }
+  }
+
+  async itemDetail(id: String) {
+    this.appSetting.detailID=+id;
+    const modal = await this.modalController.create({
+      component: HomeItemDetailComponent,
+     
+      //,cssClass: 'my-custom-class'
+    });
+    return await modal.present();
   }
 }

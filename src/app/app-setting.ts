@@ -38,6 +38,7 @@ export class appSetting {
   public resturantID = 0;
   public sessionUserID = 0;
 
+  public detailID=0;
   public foodDataList: foodModel[] = [];
   public menuFoodDataList: foodModel[] = [];
   public constFoodDataList: foodModel[] = [];
