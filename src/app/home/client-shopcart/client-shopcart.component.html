@@ -1,6 +1,6 @@
 <ion-header translucent>
   <ion-toolbar>
-    <ion-title>Modal Content</ion-title>
+    <ion-title>Goods Informations</ion-title>
     <ion-buttons slot="end">
       <ion-button (click)="dismissModal()">Close</ion-button>
     </ion-buttons>
@@ -53,6 +53,18 @@
         <h2>Total</h2>
       </ion-label>
       <p>{{ total() }}</p>
+    </ion-item>
+    <ion-item>
+      <ion-label>
+        <h2>Tax</h2>
+      </ion-label>
+      <p>{{ total()*0.05 }}</p>
+    </ion-item>
+    <ion-item>
+      <ion-label>
+        <h2>Grand Total</h2>
+      </ion-label>
+      <p>{{ total()+(total()*0.05) }}</p>
     </ion-item>
   </ion-list>
   <ion-button *ngIf="this.appSetting.orderDetailViewList.length>0"  (click)="clientInfo()" expand="block" color="primary" shape="round">

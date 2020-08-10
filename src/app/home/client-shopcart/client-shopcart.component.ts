@@ -67,13 +67,13 @@ export class ClientShopcartComponent implements OnInit {
     return res;
   }
 
-  total():string{
+  total():number{
     let total=0;
     const temp=[...this.appSetting.orderDetailViewList];
     temp.forEach(x=>{
       total=total+x.orderDetialModel.itemFinalPrice;
     });
-    return total.toString();
+    return total;
   }
 
   async clientInfo() {
