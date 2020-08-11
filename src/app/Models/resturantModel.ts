@@ -4,6 +4,7 @@ export class resturantModel {
     password: string;
     phone: string;
     usertype: number;
+    locationID:number;
     latitude: string;
     longitude: string;
     shopname: string;

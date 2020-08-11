@@ -46,6 +46,16 @@
 
           <ion-item>
             <ion-label position="floating" color="secondary">
+              <ion-icon name="business-outline"></ion-icon> Zone<ion-text
+                *ngIf="this.locationData.Zone===null" color="danger">
+                *
+              </ion-text>
+            </ion-label>
+            <ion-input [(ngModel)]="locationData.Zone" type="text"></ion-input>
+          </ion-item>
+
+          <ion-item>
+            <ion-label position="floating" color="secondary">
               <ion-icon name="card-outline"></ion-icon> Delivery Charges<ion-text
                 *ngIf="this.locationData.deliveryCharges===0" color="danger">
                 *

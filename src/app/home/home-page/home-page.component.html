@@ -9,7 +9,8 @@
       <ion-icon class="title" name="basket-outline"></ion-icon>
     </ion-button>
   </ion-buttons>
-  <ion-title class="title" (click)="reset()">Sidecar</ion-title>
+  <ion-title class="title" (click)="reset()">
+   <ion-img class="icon" src="/../assets/icon/favicon.svg"></ion-img>  Sidecar</ion-title>
 </ion-toolbar>
 
 <ion-content *ngIf="this.appSetting.customerSearch === ''">
@@ -26,7 +27,7 @@
   </ion-card>
 
   <ion-slides
-    *ngIf="this.appSetting.device === 'mobile'"
+    *ngIf="this.appSetting.device === '12'"
     class="foot"
     pager="true"
     [options]="true"
@@ -78,7 +79,7 @@
     </ion-slide>
   </ion-slides>
 
-  <ion-grid *ngIf="this.appSetting.device === 'tablet'">
+  <ion-grid *ngIf="this.appSetting.device === '2'">
     <ion-row>
       <ion-col size-md="3">
         <div>

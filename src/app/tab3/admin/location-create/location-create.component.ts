@@ -32,6 +32,7 @@ export class LocationCreateComponent implements OnInit {
   locationData: locationModel = {
     id: 0,
     TownShip: "",
+    Zone: "",
     deliveryCharges: 0,
     riderEarning: 0,
   };

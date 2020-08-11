@@ -1,48 +1,66 @@
-import { Component, OnInit } from '@angular/core';
-import { Location } from '@angular/common';
-import { appSetting } from 'src/app/app-setting';
-import { Router } from '@angular/router';
-import { ActivatedRoute } from '@angular/router';
-import { resturantModel } from 'src/app/Models/resturantModel';
-import { ResturantModelService } from './../../../Services/resturantModel/resturant-model.service';
-
+import { LocationService } from "./../../../Services/location/location.service";
+import { Component, OnInit } from "@angular/core";
+import { Location } from "@angular/common";
+import { appSetting } from "src/app/app-setting";
+import { Router } from "@angular/router";
+import { ActivatedRoute } from "@angular/router";
+import { resturantModel } from "src/app/Models/resturantModel";
+import { ResturantModelService } from "./../../../Services/resturantModel/resturant-model.service";
+import { locationModel } from "src/app/Models/locationModel";
 
 @Component({
-  selector: 'app-resturant-create',
-  templateUrl: './resturant-create.component.html',
-  styleUrls: ['./resturant-create.component.scss'],
+  selector: "app-resturant-create",
+  templateUrl: "./resturant-create.component.html",
+  styleUrls: ["./resturant-create.component.scss"],
 })
 export class ResturantCreateComponent implements OnInit {
   id = +this.Router.snapshot.paramMap.get("id");
-  constructor(public location: Location,
+  constructor(
+    public location: Location,
     public appSetting: appSetting,
     private ResturantModelService: ResturantModelService,
     private route: Router,
-    private Router: ActivatedRoute) { }
-
+    private LocationService: LocationService,
+    private Router: ActivatedRoute
+  ) {}
 
   ngOnInit() {
-
+    this.locationCharges();
     if (this.id !== null || this.id !== undefined || this.id !== 0) {
       this.editLoad(this.id);
     }
+  }
+
+  locationData: locationModel[] = [];
+  locationCharges() {
+    this.appSetting.showLoading();
+    this.LocationService.get().subscribe(
+      (x) => {
+        this.locationData = x;
+      },
+      (err) => console.log(err),
+      () => {
+        this.appSetting.loadingClose();
+      }
+    );
   }
   back() {
     this.location.back();
   }
 
-  credit:string="credit";
-  debit:string="debit";
+  credit: string = "credit";
+  debit: string = "debit";
   resData: resturantModel = {
     id: 0,
     username: "",
     password: "",
     phone: "",
     usertype: 2,
+    locationID: 0,
     latitude: "0",
     longitude: "0",
     shopname: "",
-    resturantType:"debit"
+    resturantType: "debit",
   };
   editLoad(id) {
     this.appSetting.showLoading();
@@ -52,8 +70,7 @@ export class ResturantCreateComponent implements OnInit {
         (err) => this.appSetting.showError(err),
         () => this.appSetting.loadingClose()
       );
-    }
-    else {
+    } else {
       this.appSetting.loadingClose();
     }
   }
@@ -64,7 +81,6 @@ export class ResturantCreateComponent implements OnInit {
       this.resData.username === "" ||
       this.resData.usertype === 0 ||
       this.resData.shopname === ""
-
     ) {
       return false;
     }
