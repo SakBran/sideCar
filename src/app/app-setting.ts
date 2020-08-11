@@ -28,6 +28,8 @@ export class appSetting {
   public adminTab3Process = "";
   public adminTab3ID = "";
 
+  public zone:String[]=[];
+
   public device="";
   public customerSearch="";
   //public apiAddress = "http://localhost/sidecar";
@@ -136,6 +138,16 @@ export class appSetting {
     this.resturandDataList.forEach((x) => {
       if (x.id === id) {
         res = x.shopname;
+      }
+    });
+    return res;
+  }
+
+  public resZone(id): string {
+    let res = "null";
+    this.resturandDataList.forEach((x) => {
+      if (x.id === id) {
+        res = x.locationID.toString();
       }
     });
     return res;

@@ -34,7 +34,7 @@ ion-card-content.searchContent{
 
     ion-card-content.searchContent{
         border-radius: 20px;
-        background-color: rgb(242, 186, 10);
+        background-color: #FFE400;
         margin-top: 200px;
         margin-left: 20px;
         min-height: auto;
@@ -57,6 +57,9 @@ ion-title,ion-icon.title{
 }
 
 ion-img.icon{
-    max-width: 10px;
-    max-height: 10px;
+    max-width: 30px;
+    max-height: 30px;
+    background-color: #FFE400;
+    border-radius: 25px;
+    cursor: pointer;
 }

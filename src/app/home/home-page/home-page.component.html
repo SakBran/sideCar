@@ -1,16 +1,30 @@
 <ion-toolbar color="dark">
-  <ion-buttons slot="start">
+<!----- <ion-buttons slot="start">
     <ion-button (click)="login()">
       <ion-icon class="title" name="person-circle-outline"></ion-icon>
     </ion-button>
-  </ion-buttons>
+  </ion-buttons>----->
   <ion-buttons slot="end">
     <ion-button (click)="shopCart()">
+      <ion-badge
+        *ngIf="this.appSetting.orderDetailViewList.length > 0"
+        color="warning"
+        slot="end"
+        >{{ this.appSetting.orderDetailViewList.length }}</ion-badge
+      >
       <ion-icon class="title" name="basket-outline"></ion-icon>
     </ion-button>
   </ion-buttons>
   <ion-title class="title" (click)="reset()">
-   <ion-img class="icon" src="/../assets/icon/favicon.svg"></ion-img>  Sidecar</ion-title>
+    <table>
+      <tr>
+        <td>
+          <ion-img class="icon" src="/../assets/icon/favicon.png"></ion-img>
+        </td>
+        <td>&nbsp;Sidecar</td>
+      </tr>
+    </table></ion-title
+  >
 </ion-toolbar>
 
 <ion-content *ngIf="this.appSetting.customerSearch === ''">

@@ -85,21 +85,14 @@
 
           <ion-item>
             <ion-label position="floating" color="secondary">
-              <ion-icon name="map-outline"></ion-icon> Select Zone<ion-text
-                *ngIf="this.resData.locationID === 0"
+              <ion-icon name="call-outline"></ion-icon> Zone<ion-text
+                *ngIf=" this.resData.locationID === null"
                 color="danger"
               >
                 *
               </ion-text>
             </ion-label>
-
-            <ion-select [(ngModel)]="this.resData.locationID">
-              <ion-select-option
-                *ngFor="let item of this.locationData"
-                [value]="item.id"
-                >{{item.TownShip}} | {{item.Zone}} | {{item.deliveryCharges}}</ion-select-option
-              >
-            </ion-select>
+            <ion-input [(ngModel)]="resData.locationID" type="number"></ion-input>
           </ion-item>
           <ion-item>
             <ion-label position="floating" color="secondary">
