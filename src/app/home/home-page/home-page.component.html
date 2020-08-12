@@ -12,6 +12,16 @@
         slot="end"
         >{{ this.appSetting.orderDetailViewList.length }}</ion-badge
       >
+      <ion-icon name="file-tray-full-outline"></ion-icon>
+    </ion-button>
+
+    <ion-button (click)="shopCart()">
+      <ion-badge
+        *ngIf="this.appSetting.orderDetailViewList.length > 0"
+        color="warning"
+        slot="end"
+        >{{ this.appSetting.orderDetailViewList.length }}</ion-badge
+      >
       <ion-icon class="title" name="basket-outline"></ion-icon>
     </ion-button>
   </ion-buttons>

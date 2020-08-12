@@ -41,20 +41,22 @@ export class ClientInfoComponent implements OnInit {
       });
     });
 
+    
     const arr = [...this.appSetting.zone];
     let unique = arr.filter(function (elem, index, self) {
       return index === self.indexOf(elem);
     });
+    this.appSetting.orderData.Township_id = 0;
     if(unique.length===1){
     temp.forEach((x) => {
+      console.log(unique[0]);
+      
       if (x.TownShip === e && x.Zone === unique[0]) {
         this.appSetting.orderData.deliveryCharegs = x.deliveryCharges;
         this.appSetting.orderData.Township_id = x.id;
-      } else {
-        this.appSetting.orderData.Township_id = null;
       }
     });}else{
-      this.appSetting.orderData.Township_id = null;
+      this.appSetting.orderData.Township_id = 0;
     }
   }
 

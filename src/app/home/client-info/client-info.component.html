@@ -92,8 +92,8 @@
 
       <ion-item>
         <ion-label>Estimate!</ion-label>
-        <p *ngIf="this.appSetting.orderData.Township_id!==null" >{{ this.appSetting.orderData.deliveryCharegs }}</p>
-        <p *ngIf="this.appSetting.orderData.Township_id===null">Sorry System can't calculate delivery charges.</p>
+        <p *ngIf="this.appSetting.orderData.Township_id!==0" >{{ this.appSetting.orderData.deliveryCharegs }}</p>
+        <p *ngIf="this.appSetting.orderData.Township_id===0">........</p>
       </ion-item>
     </ion-item-group>
   </ion-list>
