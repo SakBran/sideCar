@@ -24,7 +24,7 @@
   <ion-refresher slot="fixed" (ionRefresh)="refresh($event)">
     <ion-refresher-content></ion-refresher-content>
   </ion-refresher>
-  <ion-card *ngFor="let item of this.appSetting.foodDataList">
+  <ion-card *ngFor="let item of this.appSetting.mainItemDataList">
     <ion-card-content>
       <ion-item>
         <ion-avatar slot="start">
@@ -32,10 +32,10 @@
         </ion-avatar>
         <ion-label>
           <p>
-            <ion-icon name="fast-food-outline"></ion-icon> {{ item.itemName }}
+            <ion-icon name="fast-food-outline"></ion-icon> {{ item.name }}
           </p>
           <p>
-            <ion-icon name="card-outline"></ion-icon> Price {{ item.price }}
+            <ion-icon name="card-outline"></ion-icon> Resturant {{ this.appSetting.resName(item.resturant_id) }}
           </p>
         </ion-label>
 

@@ -50,7 +50,7 @@ export class MainItemCreateComponent implements OnInit {
     resturant_id: 0,
     category_id: 0,
     imageURI: "",
-    status: "Active"
+    status: "active"
   };
   editLoad(id) {
     this.appSetting.showLoading();
