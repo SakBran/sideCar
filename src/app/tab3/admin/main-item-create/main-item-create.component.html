@@ -19,7 +19,7 @@
   <ion-card>
     <ion-card-header>
       <ion-card-subtitle color="primary"
-        >Foods & Drink Registration Form</ion-card-subtitle
+        >Main Foods & Drink Registration Form</ion-card-subtitle
       >
     </ion-card-header>
     <ion-card-content>
@@ -66,11 +66,11 @@
               </ion-text>
             </ion-label>
 
-            <ion-select [(ngModel)]="foodData.category_id">
+            <ion-select [(ngModel)]="foodData.resturant_id">
               <ion-select-option
-                *ngFor="let item of this.appSetting.categoryList"
+                *ngFor="let item of this.appSetting.resturandDataList"
                 [value]="item.id"
-                >{{ item.categoryName }}</ion-select-option
+                >{{ item.shopname }}</ion-select-option
               >
             </ion-select>
           </ion-item>
@@ -83,7 +83,7 @@
               </ion-text>
             </ion-label>
 
-            <ion-select [(ngModel)]="foodData.category_id">
+            <ion-select  [(ngModel)]="foodData.category_id">
               <ion-select-option
                 *ngFor="let item of this.appSetting.categoryList"
                 [value]="item.id"
