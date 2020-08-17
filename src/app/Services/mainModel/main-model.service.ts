@@ -3,10 +3,11 @@ import { Injectable } from "@angular/core";
 import { HttpHeaders, HttpClient } from "@angular/common/http";
 import { Observable } from "rxjs";
 import Swal from "sweetalert2";
-import { mainModel } from 'src/app/Models/mainModel';
+import { mainModel } from "src/app/Models/mainModel";
+import { UploadService } from "../upload/upload.service";
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: "root",
 })
 export class MainModelService {
   private url = `${this.appSetting.apiAddress}/api/mainModels`;
@@ -15,7 +16,11 @@ export class MainModelService {
       "Content-Type": "application/json",
     }),
   };
-  constructor(private http: HttpClient, private appSetting: appSetting) {}
+  constructor(
+    private uploadService: UploadService,
+    private http: HttpClient,
+    private appSetting: appSetting
+  ) {}
 
   get(): Observable<mainModel[]> {
     return this.http.get<mainModel[]>(`${this.url}`);
@@ -24,11 +29,13 @@ export class MainModelService {
     const searchUrl = `${this.url}/${id}`;
     return this.http.get<mainModel>(searchUrl);
   }
-  post(data: mainModel): void {
+  post(data: mainModel, imageData): void {
+    let temp: mainModel = new mainModel();
     this.http.post(this.url, data, this.httpOptions).subscribe(
       (res) => {
-        console.log(res);
-        this.appSetting.showSuccess();
+        temp = Object.assign(res);
+
+        this.uploadService.post(imageData, "MainImage" + temp.id);
       },
       (err) => {
         console.log(err);

@@ -33,48 +33,57 @@
               <ion-icon name="fast-food-outline"></ion-icon> Food/Drink's
               Name<ion-text
                 *ngIf="
-                  this.foodData.itemName === '' ||
-                  this.foodData.itemName === null
+                  this.foodData.name === '' ||
+                  this.foodData.name === null
                 "
                 color="danger"
               >
                 *
               </ion-text>
             </ion-label>
-            <ion-input [(ngModel)]="foodData.itemName" type="text"></ion-input>
+            <ion-input [(ngModel)]="foodData.name" type="text"></ion-input>
           </ion-item>
 
-          <ion-item>
-            <ion-label position="floating" color="secondary">
-              <ion-icon name="cash-outline"></ion-icon> Food/Drink's
-              Price<ion-text *ngIf="this.foodData.price === 0" color="danger">
-                *
-              </ion-text>
-            </ion-label>
-            <ion-input [(ngModel)]="foodData.price" type="text"></ion-input>
-          </ion-item>
+    
 
           <ion-item>
             <ion-label position="floating" color="secondary">
               <ion-icon name="cash-outline"></ion-icon> Descriptions<ion-text
-                *ngIf="this.foodData.Descriptions === ''"
+                *ngIf="this.foodData.description === ''"
                 color="danger"
               >
                 *
               </ion-text>
             </ion-label>
-            <ion-input [(ngModel)]="foodData.Descriptions" type="text"></ion-input>
+            <ion-input [(ngModel)]="foodData.description" type="text"></ion-input>
+          </ion-item>
+
+          <ion-item>
+            <ion-label position="floating" color="secondary">
+              <ion-icon name="cash-outline"></ion-icon> Resturant
+              <ion-text *ngIf="this.foodData.resturant_id === 0" color="danger">
+                *
+              </ion-text>
+            </ion-label>
+
+            <ion-select [(ngModel)]="foodData.category_id">
+              <ion-select-option
+                *ngFor="let item of this.appSetting.categoryList"
+                [value]="item.id"
+                >{{ item.categoryName }}</ion-select-option
+              >
+            </ion-select>
           </ion-item>
 
           <ion-item>
             <ion-label position="floating" color="secondary">
               <ion-icon name="cash-outline"></ion-icon> Category Type
-              <ion-text *ngIf="this.foodData.price === 0" color="danger">
+              <ion-text *ngIf="this.foodData.category_id === 0" color="danger">
                 *
               </ion-text>
             </ion-label>
 
-            <ion-select [(ngModel)]="foodData.categoryType_ID">
+            <ion-select [(ngModel)]="foodData.category_id">
               <ion-select-option
                 *ngFor="let item of this.appSetting.categoryList"
                 [value]="item.id"

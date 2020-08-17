@@ -1,3 +1,4 @@
+import { MainModelService } from './../../../Services/mainModel/main-model.service';
 import { CategoryService } from './../../../Services/category/category.service';
 import { Component, OnInit } from "@angular/core";
 import { appSetting } from "src/app/app-setting";
@@ -6,6 +7,7 @@ import { Location } from "@angular/common";
 import { FoodService } from "src/app/Services/food/food.service";
 import { foodModel } from "src/app/Models/foodModel";
 import { ImageCroppedEvent } from "ngx-image-cropper";
+import { mainModel } from 'src/app/Models/mainModel';
 
 @Component({
   selector: 'app-main-item-create',
@@ -17,7 +19,7 @@ export class MainItemCreateComponent implements OnInit {
   constructor(
     public location: Location,
     public appSetting: appSetting,
-    private FoodService: FoodService,
+    private FoodService: MainModelService,
     private route: Router,
     private Router: ActivatedRoute,
     private categoryService:CategoryService
@@ -40,19 +42,15 @@ export class MainItemCreateComponent implements OnInit {
     this.location.back();
   }
 
-  foodData: foodModel = {
+  foodData: mainModel = {
     id: 0,
-    itemName: "",
-    itemNameTemp: "",
-    resturant_id: this.appSetting.resturantID,
-    mainitem_id:0,
-    price: 0,
-    priceTemp: 0,
-    //change it to status: 'pending' if Resturant want to Confirm
-    status: "active",
-    categoryType_ID: 0,
+    name: "",
+    description: "",
+    resturant: "",
+    resturant_id: 0,
+    category_id: 0,
     imageURI: "",
-    Descriptions:""
+    status: "Active"
   };
   editLoad(id) {
     this.appSetting.showLoading();
@@ -61,8 +59,7 @@ export class MainItemCreateComponent implements OnInit {
         (x) => (this.foodData = x),
         (err) => this.appSetting.showError(err),
         () => {
-          this.foodData.itemNameTemp = this.foodData.itemName;
-          this.foodData.priceTemp = this.foodData.price;
+         
           this.appSetting.loadingClose();
         }
       );
@@ -71,7 +68,7 @@ export class MainItemCreateComponent implements OnInit {
     }
   }
   formValidation(): boolean {
-    if (this.foodData.itemName === "" || this.foodData.price === 0) {
+    if (this.foodData.name === "" || this.foodData.resturant_id === 0) {
       return false;
     }
     return true;
