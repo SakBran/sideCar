@@ -18,7 +18,7 @@ export class MainModelService {
   constructor(private http: HttpClient, private appSetting: appSetting) {}
 
   get(): Observable<mainModel[]> {
-    return this.http.get<mainModel[]>(this.url);
+    return this.http.get<mainModel[]>(`${this.url}`);
   }
   getSingle(id: number): Observable<mainModel> {
     const searchUrl = `${this.url}/${id}`;

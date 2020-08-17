@@ -9,6 +9,7 @@ import { resturantModel } from "./Models/resturantModel";
 import { locationModel } from "./Models/locationModel";
 import { orderTransationModel } from "./Models/orderTransationModel";
 import { resendModel } from "./Models/resendModel";
+import { mainModel } from './Models/mainModel';
 
 export class appSetting {
   /**
@@ -32,8 +33,8 @@ export class appSetting {
 
   public device="";
   public customerSearch="";
-  //public apiAddress = "http://localhost/sidecar";
-  public apiAddress ="http://www.myanmatrishaw.asia";
+  public apiAddress = "http://localhost/sidecar";
+  //public apiAddress ="http://www.myanmatrishaw.asia";
 
   public userTypeData: userTypeModel[] = [];
 
@@ -41,6 +42,7 @@ export class appSetting {
   public sessionUserID = 0;
 
   public detailID=0;
+  public mainItemDataList: mainModel[] = [];
   public foodDataList: foodModel[] = [];
   public menuFoodDataList: foodModel[] = [];
   public constFoodDataList: foodModel[] = [];
