@@ -45,6 +45,7 @@ export class FoodCreateComponent implements OnInit {
     itemName: "",
     itemNameTemp: "",
     resturant_id: this.appSetting.resturantID,
+    mainitem_id:0,
     price: 0,
     priceTemp: 0,
     //change it to status: 'pending' if Resturant want to Confirm

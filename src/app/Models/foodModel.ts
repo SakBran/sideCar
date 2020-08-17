@@ -2,6 +2,7 @@ export class foodModel {
   id: number;
   itemName: string;
   itemNameTemp: string;
+  mainitem_id:number;
   resturant_id: number;
   price: number;
   priceTemp: number;
