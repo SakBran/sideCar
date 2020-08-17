@@ -1,3 +1,4 @@
+import { MainItemCreateComponent } from './admin/main-item-create/main-item-create.component';
 import { ImageCropperModule } from 'ngx-image-cropper';
 import { OpeningListComponent } from './admin/opening-list/opening-list.component';
 import { OpeningCreateComponent } from './admin/opening-create/opening-create.component';
@@ -25,6 +26,7 @@ import { FoodListComponent } from "./resturant/food-list/food-list.component";
 import { RiderEarningListComponent } from './admin/rider-earning-list/rider-earning-list.component';
 import { RiderEarningCreateComponent } from './admin/rider-earning-create/rider-earning-create.component';
 import { FileUploadModule } from 'ng2-file-upload';
+import { MainItemListComponent } from './admin/main-item-list/main-item-list.component';
 @NgModule({
   imports: [
     IonicModule,
@@ -40,6 +42,8 @@ import { FileUploadModule } from 'ng2-file-upload';
     Tab3Page,
     RiderEarningListComponent,
     RiderEarningCreateComponent,
+    MainItemCreateComponent,
+    MainItemListComponent,
     MainPageComponent,
     UserListComponent,
     UserCreateComponent,

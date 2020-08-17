@@ -17,6 +17,8 @@ import { FoodCreateComponent } from "./resturant/food-create/food-create.compone
 import { RiderEarningCreateComponent } from './admin/rider-earning-create/rider-earning-create.component';
 import { RiderEarningListComponent } from './admin/rider-earning-list/rider-earning-list.component';
 import { OrderManagementListComponent } from './admin/order-management-list/order-management-list.component';
+import { MainItemCreateComponent } from './admin/main-item-create/main-item-create.component';
+import { MainItemListComponent } from './admin/main-item-list/main-item-list.component';
 
 const routes: Routes = [
   {
@@ -118,6 +120,18 @@ const routes: Routes = [
   {
     path: "orderManagementEdit/:id",
     component: OrderManagementCreateComponent,
+  },
+  {
+    path: "mainItem",
+    component: MainItemListComponent,
+  },
+  {
+    path: "mainItemCreate",
+    component: MainItemCreateComponent,
+  },
+  {
+    path: "mainItemEdit/:id",
+    component: MainItemCreateComponent,
   },
 ];
 
