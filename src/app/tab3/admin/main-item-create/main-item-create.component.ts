@@ -49,6 +49,7 @@ export class MainItemCreateComponent implements OnInit {
     resturant: "",
     resturant_id: 0,
     category_id: 0,
+    mainitem_id:0,
     imageURI: "",
     status: "active"
   };

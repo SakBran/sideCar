@@ -5,6 +5,7 @@ export class mainModel{
     resturant: string;
     resturant_id: number;
     category_id: number;
+    mainitem_id:number;
     imageURI: string;
     status: string;
   }

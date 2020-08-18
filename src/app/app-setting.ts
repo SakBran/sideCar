@@ -47,6 +47,7 @@ export class appSetting {
   public menuFoodDataList: foodModel[] = [];
   public constFoodDataList: foodModel[] = [];
   public resturandDataList: resturantModel[] = [];
+ 
 
   public categoryList:CategoryModel[]=[];
 

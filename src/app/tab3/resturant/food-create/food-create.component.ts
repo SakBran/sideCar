@@ -1,4 +1,4 @@
-import { CategoryService } from './../../../Services/category/category.service';
+import { CategoryService } from "./../../../Services/category/category.service";
 import { Component, OnInit } from "@angular/core";
 import { appSetting } from "src/app/app-setting";
 import { Router, ActivatedRoute } from "@angular/router";
@@ -6,6 +6,7 @@ import { Location } from "@angular/common";
 import { FoodService } from "src/app/Services/food/food.service";
 import { foodModel } from "src/app/Models/foodModel";
 import { ImageCroppedEvent } from "ngx-image-cropper";
+import { MainModelService } from "src/app/Services/mainModel/main-model.service";
 
 @Component({
   selector: "app-food-create",
@@ -20,8 +21,10 @@ export class FoodCreateComponent implements OnInit {
     private FoodService: FoodService,
     private route: Router,
     private Router: ActivatedRoute,
-    private categoryService:CategoryService
+    private mainModelService: MainModelService,
+    private categoryService: CategoryService
   ) {
+    this.appSetting.showLoading();
     this.getCategory();
   }
 
@@ -31,11 +34,29 @@ export class FoodCreateComponent implements OnInit {
     }
   }
 
-  getCategory(){
-    this.categoryService.get().subscribe(x=>{
-      this.appSetting.categoryList=x;
-    });
+  getMainModel() {
+    this.mainModelService.get().subscribe(
+      (x) => {
+        this.appSetting.mainItemDataList = x;
+      },
+      (err) => console.log(err),
+      () => {
+        this.appSetting.loadingClose();
+      }
+    );
   }
+  getCategory() {
+    this.categoryService.get().subscribe(
+      (x) => {
+        this.appSetting.categoryList = x;
+      },
+      (err) => console.log(err),
+      () => {
+        this.getMainModel();
+      }
+    );
+  }
+
   back() {
     this.location.back();
   }
@@ -45,15 +66,16 @@ export class FoodCreateComponent implements OnInit {
     itemName: "",
     itemNameTemp: "",
     resturant_id: this.appSetting.resturantID,
-    mainitem_id:0,
+    mainitem_id: 0,
     price: 0,
     priceTemp: 0,
     //change it to status: 'pending' if Resturant want to Confirm
     status: "active",
     categoryType_ID: 0,
     imageURI: "",
-    Descriptions:""
+    Descriptions: "",
   };
+
   editLoad(id) {
     this.appSetting.showLoading();
     if (id !== 0) {
@@ -70,6 +92,7 @@ export class FoodCreateComponent implements OnInit {
       this.appSetting.loadingClose();
     }
   }
+
   formValidation(): boolean {
     if (this.foodData.itemName === "" || this.foodData.price === 0) {
       return false;
@@ -96,19 +119,17 @@ export class FoodCreateComponent implements OnInit {
       this.appSetting.showInvalid();
     }
   }
-  croppedImage:any='';
+  croppedImage: any = "";
   //Image
- 
 
+  imageChangedEvent: any = "";
 
-imageChangedEvent: any = '';
-
-
-fileChangeEvent(event: any): void {
+  fileChangeEvent(event: any): void {
     this.imageChangedEvent = event;
-}
-imageCropped(event: ImageCroppedEvent) {
+  }
+
+  imageCropped(event: ImageCroppedEvent) {
     this.croppedImage = event.base64;
-}
+  }
   //Image
 }
