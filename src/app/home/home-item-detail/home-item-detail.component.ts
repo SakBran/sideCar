@@ -12,11 +12,13 @@ import { orderDetialViewmodel } from "src/app/Models/orderDetailViewmodel";
 })
 export class HomeItemDetailComponent implements OnInit {
   foodData: foodModel = new foodModel();
+  
   foodList:foodModel[]=[];
   constructor(
     public modalCtrl: ModalController,
     public appSetting: appSetting
   ) {
+    this.foodData.id=0;
     this.editOnload(this.appSetting.detailID);
   }
 
@@ -82,6 +84,7 @@ export class HomeItemDetailComponent implements OnInit {
     temp.forEach(x=>{
       if(x.id===id){
         this.foodData=x;
+        this.orderDetail.itemFinalPrice=this.foodData.price*this.orderDetail.itemQty;
       }
     })
   }
