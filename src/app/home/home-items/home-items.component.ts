@@ -1,11 +1,10 @@
+import { mainModel } from 'src/app/Models/mainModel';
 import { HomeItemDetailComponent } from "./../home-item-detail/home-item-detail.component";
-import { CategoryService } from "./../../Services/category/category.service";
-import { foodModel } from "./../../Models/foodModel";
 import { appSetting } from "src/app/app-setting";
-import { FoodService } from "./../../Services/food/food.service";
 import { Component, OnInit } from "@angular/core";
 import { ModalController } from "@ionic/angular";
 import { LocationService } from "src/app/Services/location/location.service";
+import { MainModelService } from 'src/app/Services/mainModel/main-model.service';
 
 @Component({
   selector: "app-home-items",
@@ -14,17 +13,18 @@ import { LocationService } from "src/app/Services/location/location.service";
 })
 export class HomeItemsComponent implements OnInit {
   constructor(
-    private FoodService: FoodService,
+
     public appSetting: appSetting,
     private LocationService: LocationService,
+    private mainItemService:MainModelService,
     public modalController: ModalController
   ) {
    
-    this.FoodService.getActive().subscribe(
-      (x) => (this.appSetting.menuFoodDataList = x),
+    this.mainItemService.get().subscribe(
+      (x) => (this.appSetting.mainItemDataList = x),
       (err) => this.appSetting.showError(err),
       () => {
-        this.appSetting.constFoodDataList = this.appSetting.menuFoodDataList;
+        this.appSetting.constmainItemDataList = this.appSetting.mainItemDataList;
       }
     );
     this.locationReload();
@@ -50,27 +50,27 @@ export class HomeItemsComponent implements OnInit {
   searchResturant = 0;
   Filter(e) {
  
-    const temp = [...this.appSetting.constFoodDataList];
-    let res: foodModel[] = [];
+    const temp = [...this.appSetting.constmainItemDataList];
+    let res: mainModel[] = [];
     temp.forEach((x) => {
       if (x.resturant_id === e) {
         res.push(x);
       }
     });
-    this.appSetting.menuFoodDataList = res;
+    this.appSetting.mainItemDataList = res;
   }
 
   searchCategory = 0;
   FilterCategory(e) {
 
-    const temp = [...this.appSetting.constFoodDataList];
-    let res: foodModel[] = [];
+    const temp = [...this.appSetting.constmainItemDataList];
+    let res: mainModel[] = [];
     temp.forEach((x) => {
-      if (x.categoryType_ID === e) {
+      if (x.category_id === e) {
         res.push(x);
       }
     });
-    this.appSetting.menuFoodDataList = res;
+    this.appSetting.mainItemDataList = res;
   }
   resturantChoose() {
     let a = document.getElementById("select");
@@ -81,28 +81,28 @@ export class HomeItemsComponent implements OnInit {
     a.click();
   }
   refresh() {
-    this.FoodService.getActive().subscribe(
-      (x) => (this.appSetting.menuFoodDataList = x),
+    this.mainItemService.get().subscribe(
+      (x) => (this.appSetting.mainItemDataList = x),
       (err) => this.appSetting.showError(err),
       () => {
-        this.appSetting.constFoodDataList = this.appSetting.menuFoodDataList;
+        this.appSetting.constmainItemDataList = this.appSetting.mainItemDataList;
       }
     );
   }
 
   searchTxt = "";
   onSearch(val) {
-    const temp: foodModel[] = [...this.appSetting.constFoodDataList];
-    let z: foodModel[] = [];
+    const temp: mainModel[] = [...this.appSetting.constmainItemDataList];
+    let z: mainModel[] = [];
     temp.forEach((x) => {
-      if (x.itemName.toLowerCase().includes(this.searchTxt.toLowerCase())) {
+      if (x.name.toLowerCase().includes(this.searchTxt.toLowerCase())) {
         z.push(x);
       }
 
-      this.appSetting.menuFoodDataList = z;
+      this.appSetting.mainItemDataList = z;
     });
     if (this.searchTxt === "") {
-      this.appSetting.menuFoodDataList = temp;
+      this.appSetting.mainItemDataList = temp;
     }
   }
 
