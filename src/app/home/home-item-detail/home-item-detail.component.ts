@@ -12,6 +12,7 @@ import { orderDetialViewmodel } from "src/app/Models/orderDetailViewmodel";
 })
 export class HomeItemDetailComponent implements OnInit {
   foodData: foodModel = new foodModel();
+  foodList:foodModel[]=[];
   constructor(
     public modalCtrl: ModalController,
     public appSetting: appSetting
@@ -70,10 +71,19 @@ export class HomeItemDetailComponent implements OnInit {
 
   editOnload(id) {
     this.appSetting.menuFoodDataList.forEach((x) => {
-      if (x.id === id) {
-        this.foodData = x;
+      if (x.mainitem_id === id) {
+        this.foodList.push(x);
       }
     });
+  }
+
+  changeModel(id){
+    const temp:foodModel[]=[...this.foodList];
+    temp.forEach(x=>{
+      if(x.id===id){
+        this.foodData=x;
+      }
+    })
   }
   dismissModal() {
     // using the injected ModalController this page

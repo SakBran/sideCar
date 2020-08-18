@@ -5,9 +5,26 @@
       <ion-button (click)="dismissModal()">Close</ion-button>
     </ion-buttons>
   </ion-toolbar>
+  <ion-progress-bar type="indeterminate"></ion-progress-bar>
 </ion-header>
 <ion-content fullscreen>
   <ion-list>
+    <ion-item>
+      <ion-label position="floating" color="secondary">
+        <ion-icon name="cash-outline"></ion-icon> Select One
+        <ion-text *ngIf="this.foodData.id === 0" color="danger">
+          *
+        </ion-text>
+      </ion-label>
+
+      <ion-select (ngModelChange)="changeModel($event)" [(ngModel)]="foodData.id">
+        <ion-select-option
+          *ngFor="let item of this.foodList"
+          [value]="item.id"
+          >{{ item.itemName }}</ion-select-option
+        >
+      </ion-select>
+    </ion-item>
     <ion-item>
       <ion-avatar slot="start">
         <ion-img

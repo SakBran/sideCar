@@ -1,3 +1,4 @@
+import { FoodService } from './../../Services/food/food.service';
 import { CategoryService } from "./../../Services/category/category.service";
 import { Router } from "@angular/router";
 import { ClientShopcartComponent } from "./../client-shopcart/client-shopcart.component";
@@ -16,6 +17,7 @@ export class HomePageComponent implements OnInit {
     public plt: Platform,
     private ResturantModelService: ResturantModelService,
     private router: Router,
+    private foodService:FoodService,
     public modalController: ModalController,
     private CategoryService: CategoryService,
     public appSetting: appSetting
@@ -43,6 +45,7 @@ export class HomePageComponent implements OnInit {
        
       });
     }
+    this.foodService.getActive().subscribe(x=>this.appSetting.menuFoodDataList=x);
   }
   search() {
     this.appSetting.customerSearch = "Search";

@@ -58,9 +58,9 @@
 </ion-toolbar>
 
 <ion-grid>
-  <ion-row *ngIf="this.appSetting.menuFoodDataList.length !== 0">
+  <ion-row *ngIf="this.appSetting.mainItemDataList.length !== 0">
     <ion-col
-      *ngFor="let item of this.appSetting.menuFoodDataList"
+      *ngFor="let item of this.appSetting.mainItemDataList"
       size="{{ this.appSetting.device }}"
     >
       <div>
@@ -68,7 +68,7 @@
           <img
             class="center"
             src="{{
-              this.appSetting.apiAddress + '/images/Image' + item.id + '.jpg'
+              this.appSetting.apiAddress + '/images/MainImage' + item.id + '.jpg'
             }}"
           />
           <ion-card-header>
@@ -77,10 +77,10 @@
                 this.appSetting.resName(item.resturant_id)
               }}</ion-card-subtitle
             >
-            <ion-card-title>{{ item.itemName }}</ion-card-title>
+            <ion-card-title>{{ item.name }}</ion-card-title>
           </ion-card-header>
           <ion-card-content>
-            {{ item.price }}
+        <!-----   {{ this.appSetting.resName(item.resturant_id) }}---->
        <!-----     <br />{{ item.Descriptions }}------>
           </ion-card-content>
         </ion-card>
@@ -88,7 +88,7 @@
     </ion-col>
   </ion-row>
 
-  <ion-row *ngIf="this.appSetting.menuFoodDataList.length === 0">
+  <ion-row *ngIf="this.appSetting.mainItemDataList.length === 0">
     <ion-col size="{{ this.appSetting.device }}">
       <div>
         <ion-card button (click)="cardClick('cardID')">
