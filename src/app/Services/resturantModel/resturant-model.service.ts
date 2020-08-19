@@ -27,7 +27,7 @@ export class ResturantModelService {
   post(data: resturantModel): void {
     this.http.post(this.url, data, this.httpOptions).subscribe(
       res => {
-        console.log(res);
+        
         this.appSetting.showSuccess();
       },
       err => {
@@ -40,7 +40,7 @@ export class ResturantModelService {
     const searchUrl = `${this.url}/${data.id}`;
     this.http.put(searchUrl, data, this.httpOptions).subscribe(
       res => {
-        console.log(res);
+        
         this.appSetting.showSuccess();
       },
       err => {
@@ -57,7 +57,7 @@ export class ResturantModelService {
 
     xhr.addEventListener('readystatechange', function() {
       if (this.readyState === this.DONE) {
-        console.log(this.responseText);
+        
       }
     });
 

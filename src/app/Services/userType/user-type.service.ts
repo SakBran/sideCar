@@ -26,7 +26,7 @@ export class UserTypeService {
   post(data: userTypeModel): void {
     this.http.post(this.url, data, this.httpOptions).subscribe(
       res => {
-        console.log(res);
+        
       },
       err => {
         console.log(err);
@@ -38,7 +38,7 @@ export class UserTypeService {
     const searchUrl = `${this.url}/${data.id}`;
     this.http.put(searchUrl, data, this.httpOptions).subscribe(
       res => {
-        console.log(res);
+        
       },
       err => {
         console.log(err);
@@ -53,7 +53,7 @@ export class UserTypeService {
 
     xhr.addEventListener('readystatechange', function() {
       if (this.readyState === this.DONE) {
-        console.log(this.responseText);
+        
       }
     });
 

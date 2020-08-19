@@ -92,7 +92,7 @@ export class FoodService {
 
     xhr.addEventListener("readystatechange", function () {
       if (this.readyState === this.DONE) {
-        console.log(this.responseText);
+        
       }
     });
 

@@ -28,7 +28,7 @@ export class LocationDBService {
   post(data: locationDBModel): void {
     this.http.post(this.url, data, this.httpOptions).subscribe(
       (res) => {
-        console.log(res);
+        
         this.appSetting.showSuccess();
       },
       (err) => {
@@ -41,7 +41,7 @@ export class LocationDBService {
     const searchUrl = `${this.url}/${data.id}`;
     this.http.put(searchUrl, data, this.httpOptions).subscribe(
       (res) => {
-        console.log(res);
+        
         this.appSetting.showSuccess();
       },
       (err) => {
@@ -58,7 +58,7 @@ export class LocationDBService {
 
     xhr.addEventListener("readystatechange", function () {
       if (this.readyState === this.DONE) {
-        console.log(this.responseText);
+        
       }
     });
 

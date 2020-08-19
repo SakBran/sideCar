@@ -27,7 +27,7 @@ export class ClientInfoComponent implements OnInit {
     });
   }
   deliverChange(e) {
-    console.log(e);
+    
 
     const temp: locationModel[] = [...this.appSetting.locationDataList];
     let calculationID = 0;
@@ -49,7 +49,7 @@ export class ClientInfoComponent implements OnInit {
     this.appSetting.orderData.Township_id = 0;
     if(unique.length===1){
     temp.forEach((x) => {
-      console.log(unique[0]);
+     
       
       if (x.TownShip === e && x.Zone === unique[0]) {
         this.appSetting.orderData.deliveryCharegs = x.deliveryCharges;

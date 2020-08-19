@@ -100,6 +100,16 @@
         </ion-label>
         <p>{{ displayTotal + displayTotal * 0.05 }}</p>
       </ion-item>
+
+      <ion-item>
+        <ion-label>
+          <h2>Status</h2>
+        </ion-label>
+        <p>{{this.status}}</p>
+      </ion-item>
+      <ion-button *ngIf="this.status==='delivering'"  (click)="showMap()" expand="block" color="primary" shape="round">
+        Track Your Order Location
+      </ion-button>
     </ng-container>
   </ion-list>
 </ion-content>

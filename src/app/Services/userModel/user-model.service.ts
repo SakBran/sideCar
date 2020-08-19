@@ -40,7 +40,7 @@ export class UserModelService {
   post(data: userModel): void {
     this.http.post(this.url, data, this.httpOptions).subscribe(
       res => {
-        console.log(res);
+        
         this.appSetting.showSuccess();
       },
       err => {
@@ -53,7 +53,7 @@ export class UserModelService {
     const searchUrl = `${this.url}/${data.id}`;
     this.http.put(searchUrl, data, this.httpOptions).subscribe(
       res => {
-        console.log(res);
+        
         this.appSetting.showSuccess();
       },
       err => {
@@ -67,7 +67,7 @@ export class UserModelService {
     const searchUrl = `${this.url}/${data.id}`;
     this.http.put(searchUrl, data, this.httpOptions).subscribe(
       res => {
-        console.log(res);
+        
         
       },
       err => {
@@ -84,7 +84,7 @@ export class UserModelService {
 
     xhr.addEventListener('readystatechange', function() {
       if (this.readyState === this.DONE) {
-        console.log(this.responseText);
+        
       }
     });
 

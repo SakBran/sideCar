@@ -4,11 +4,9 @@ import { Router, ActivatedRoute } from "@angular/router";
 import { orderTransationModel } from "src/app/Models/orderTransationModel";
 import { orderModel } from "src/app/Models/orderModel";
 import { Location } from "@angular/common";
-import { InAppBrowserOptions } from '@ionic-native/in-app-browser/ngx';
-import {
-  InAppBrowser
-} from "@ionic-native/in-app-browser/ngx";
-import { LocationDBService } from 'src/app/Services/locationDB/location-db.service';
+import { InAppBrowserOptions } from "@ionic-native/in-app-browser/ngx";
+import { InAppBrowser } from "@ionic-native/in-app-browser/ngx";
+import { LocationDBService } from "src/app/Services/locationDB/location-db.service";
 @Component({
   selector: "app-customer-info",
   templateUrl: "./customer-info.component.html",
@@ -19,8 +17,7 @@ export class CustomerInfoComponent implements OnInit {
     public appSetting: appSetting,
     public location: Location,
     private iab: InAppBrowser,
-    private route: ActivatedRoute,
-    private locationDBSvs:LocationDBService
+    private route: ActivatedRoute
   ) {
     this.id = +this.route.snapshot.paramMap.get("id");
   }
@@ -50,44 +47,38 @@ export class CustomerInfoComponent implements OnInit {
   }
   onClick() {
     this.appSetting.showLoading();
-    let userLatitude='';
-    let userLongitude='';
-    this.locationDBSvs.getSingle(
-      +this.orderData.clitentFlatNo,
-      this.orderData.Township_id).subscribe(x=>{
-        userLatitude=x.latitude;
-        userLongitude=x.longitude;
-      },
-      err=>(console.log(err)),
-      ()=>{
-        if(userLongitude==='' || userLatitude===''){
-     
-          this.appSetting.showInvalid();
-        }
-        else{
-          this.appSetting.loadingClose();
-          this.geolocation(userLatitude,userLongitude);
-        }
-      }
-      );
+    let userLatitude = this.ltd;
+    let userLongitude = this.lng;
+
+    if (userLongitude === "" || userLatitude === "" || userLatitude === null) {
+      this.appSetting.showInvalid();
+    } else {
+      this.appSetting.loadingClose();
+      this.geolocation(userLatitude, userLongitude);
+    }
   }
 
-  geolocation(lat,long){
+  geolocation(lat, long) {
     if (navigator.geolocation) {
-      navigator.geolocation.getCurrentPosition(position => {
-       let latitude = position.coords.latitude.toString();
-       let  longitude = position.coords.longitude.toString();
-        this.googleMap(latitude,longitude,lat,long);
+      navigator.geolocation.getCurrentPosition((position) => {
+        let latitude = position.coords.latitude.toString();
+        let longitude = position.coords.longitude.toString();
+        this.googleMap(latitude, longitude, lat, long);
       });
     }
   }
-  
+
+  ltd:String='';
+  lng:String='';
   getCustomerInfo() {
     const temp: orderTransationModel[] = this.appSetting.orderTransationList;
     temp.forEach((x) => {
       if (x.orderModel.id === this.id) {
         this.orderData = x.orderModel;
+        this.ltd=this.orderData.latitude;
+        this.lng=this.orderData.longitude;
       }
-    });
+      }
+    );
   }
 }

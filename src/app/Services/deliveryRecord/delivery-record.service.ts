@@ -28,7 +28,7 @@ export class DeliveryRecordService {
   post(data: deliveryRecordModel): void {
     this.http.post(this.url, data, this.httpOptions).subscribe(
       (res) => {
-        console.log(res);
+      
         this.appSetting.showSuccess();
       },
       (err) => {
@@ -41,7 +41,7 @@ putRider(orderID:number){
   const searchUrl = `${this.appSetting.apiAddress}/api/deliveryRecordModel/rider?orderID=${orderID}`;
   this.http.put(searchUrl, data, this.httpOptions).subscribe(
     (res) => {
-      console.log(res);
+      
       let i = -1;
       const temp: orderTransationModel[] = [
         ...this.appSetting.orderTransationList,
@@ -65,7 +65,7 @@ putRider(orderID:number){
     const searchUrl = `${this.url}/${data.orderID}?ResturantID=${this.appSetting.resturantID}`;
     this.http.put(searchUrl, data, this.httpOptions).subscribe(
       (res) => {
-        console.log(res);
+        
         let i = -1;
         const temp: orderTransationModel[] = [
           ...this.appSetting.orderTransationList,
@@ -92,7 +92,7 @@ putRider(orderID:number){
 
     xhr.addEventListener("readystatechange", function () {
       if (this.readyState === this.DONE) {
-        console.log(this.responseText);
+        
       }
     });
 

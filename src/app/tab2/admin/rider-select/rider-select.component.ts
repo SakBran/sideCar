@@ -121,7 +121,7 @@ export class RiderSelectComponent implements OnInit {
         if (y.itemID === x.id) {
           tempRes.push(x.resturant_id);
         } else {
-          console.log("Not include in data");
+     
         }
       });
     });
@@ -188,6 +188,6 @@ export class RiderSelectComponent implements OnInit {
     this.data.riderID = id;
     this.data.status = "delivering";
     this.orderService.put(this.data);
-    this.router.navigateByUrl("/tabs/tab1/deliveryPending");
+    this.router.navigateByUrl("/managmenet/tabs/tab1/deliveryPending");
   }
 }

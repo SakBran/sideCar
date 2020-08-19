@@ -69,7 +69,7 @@ export class OrderService {
     data.orderModel.operatorID = this.appSetting.sessionUserID;
     this.http.post(this.url, data, this.httpOptions).subscribe(
       (res) => {
-        console.log(res);
+        
         this.appSetting.orderTransationClear();
         this.modalCtrl.dismiss({
           dismissed: true,
@@ -90,7 +90,7 @@ export class OrderService {
     const searchUrl = `${this.url}/${data.id}`;
     this.http.put(searchUrl, data, this.httpOptions).subscribe(
       (res) => {
-        console.log(res);
+        
         this.appSetting.showSuccess();
       },
       (err) => {
@@ -104,7 +104,7 @@ export class OrderService {
     const searchUrl = `${this.appSetting.apiAddress}/api/orderDetailModels/${data.orderDetailID}`;
     this.http.put(searchUrl, data, this.httpOptions).subscribe(
       (res) => {
-        console.log(res);
+        
         this.appSetting.showSuccess();
       },
       (err) => {
@@ -119,7 +119,7 @@ export class OrderService {
     const searchUrl = `${this.url}/resturant/resend?id=${orderID}&ResturantID=${this.appSetting.resturantID}`;
     this.http.put(searchUrl, data, this.httpOptions).subscribe(
       (res) => {
-        console.log(res);
+        
         let i = -1;
         const temp = [...this.appSetting.orderTransationList];
         temp.forEach((x) => {
@@ -145,7 +145,7 @@ export class OrderService {
 
     xhr.addEventListener("readystatechange", function () {
       if (this.readyState === this.DONE) {
-        console.log(this.responseText);
+        
       }
     });
 
@@ -161,7 +161,7 @@ export class OrderService {
 
     xhr.addEventListener("readystatechange", function () {
       if (this.readyState === this.DONE) {
-        console.log(this.responseText);
+        
       }
     });
 

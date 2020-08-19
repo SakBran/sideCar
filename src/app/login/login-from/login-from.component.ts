@@ -47,6 +47,7 @@ export class LoginFromComponent implements OnInit {
       navigator.geolocation.getCurrentPosition(position => {
         this.userData.latitude = position.coords.latitude.toString();
         this.userData.longitude = position.coords.longitude.toString();
+        
         this.userService.putLocation(this.userData);
       });
     }
@@ -77,13 +78,14 @@ export class LoginFromComponent implements OnInit {
                 this.appSetting.resturantID = this.appSetting.sessionUserID;
               }
           
+              
               if (this.appSetting.loginType === "rider") {
                 setInterval(() => {
                   //this.locationUpdate();
                this.locationUpdate();
               
                  
-                }, 30000);
+                }, 10000);
               }
               this.appSetting.loginSuccess();
               this.router.navigateByUrl("/managmenet");

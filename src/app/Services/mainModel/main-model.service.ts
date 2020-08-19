@@ -47,7 +47,7 @@ export class MainModelService {
     const searchUrl = `${this.url}/${data.id}`;
     this.http.put(searchUrl, data, this.httpOptions).subscribe(
       (res) => {
-        console.log(res);
+        
         this.appSetting.showSuccess();
       },
       (err) => {
@@ -64,7 +64,7 @@ export class MainModelService {
 
     xhr.addEventListener("readystatechange", function () {
       if (this.readyState === this.DONE) {
-        console.log(this.responseText);
+        
       }
     });
 

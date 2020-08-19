@@ -1,3 +1,4 @@
+import { InAppBrowserOptions } from "@ionic-native/in-app-browser/ngx";
 import { FoodService } from "src/app/Services/food/food.service";
 import { OrderService } from "src/app/Services/order/order.service";
 import { ClientInfoComponent } from "./../client-info/client-info.component";
@@ -7,6 +8,8 @@ import { ModalController } from "@ionic/angular";
 import { orderTransationModel } from "src/app/Models/orderTransationModel";
 import { isUndefined } from "util";
 import { threadId } from "worker_threads";
+import { InAppBrowser } from "@ionic-native/in-app-browser/ngx";
+import { UserModelService } from "src/app/Services/userModel/user-model.service";
 
 @Component({
   selector: "app-client-invoice",
@@ -22,7 +25,9 @@ export class ClientInvoiceComponent implements OnInit {
     public modalCtrl: ModalController,
     public modalController: ModalController,
     private orderService: OrderService,
-    private FoodService: FoodService
+    private FoodService: FoodService,
+    private iab: InAppBrowser,
+    private userService: UserModelService
   ) {}
 
   ngOnInit() {}
@@ -80,7 +85,14 @@ export class ClientInvoiceComponent implements OnInit {
     return res;
   }
 
+  status = "";
   displayTotal = 0;
+  options: InAppBrowserOptions = {
+    location: "yes", //Or 'no'
+    hidden: "no", //Or  'yes'
+    zoom: "no", //Android only ,shows browser zoom controls
+    hideurlbar: "yes", //Or 'no'
+  };
   total() {
     let total = 0;
     const temp = [...this.data.orderDetailModels];
@@ -88,11 +100,13 @@ export class ClientInvoiceComponent implements OnInit {
     temp.forEach((x) => {
       total = total + x.itemFinalPrice;
     });
+    this.status = this.data.orderModel.status;
 
     this.displayTotal = total;
   }
 
   loading = 0;
+  riderID = 0;
   search() {
     this.loading = 1;
     this.orderService.getInvoice(this.invoiceNo, this.phoneNo).subscribe(
@@ -101,6 +115,7 @@ export class ClientInvoiceComponent implements OnInit {
         this.appSetting.showInvalid();
       },
       () => {
+        this.riderID = this.data.orderModel.riderID;
         this.food();
       }
     );
@@ -122,5 +137,57 @@ export class ClientInvoiceComponent implements OnInit {
       this.total();
       this.loading = 0;
     }
+  }
+
+  showMap() {
+    this.appSetting.showLoading();
+    this.getCustomerInfo();
+  }
+
+  googleMap(meltd, melng, clientLtd, clientLng) {
+    const url = `https://www.google.com/maps/dir/${meltd},${melng}/${clientLtd},${clientLng}/@${clientLtd},${clientLng}`;
+    let target = "_blank";
+    const browser = this.iab.create(url, target, this.options);
+
+    browser.on("loadstop").subscribe((event) => {
+      browser.insertCSS({ code: "body{color: red;" });
+    });
+  }
+  onClick() {
+    
+    let userLatitude = this.ltd;
+    let userLongitude = this.lng;
+
+    if (userLongitude === "" || userLatitude === "" || userLatitude === null) {
+      this.appSetting.showInvalid();
+    } else {
+      this.appSetting.loadingClose();
+      this.geolocation(userLatitude, userLongitude);
+    }
+  }
+
+  geolocation(lat, long) {
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition((position) => {
+        let latitude = position.coords.latitude.toString();
+        let longitude = position.coords.longitude.toString();
+        this.googleMap(latitude, longitude, lat, long);
+      });
+    }
+  }
+
+  ltd: String = "";
+  lng: String = "";
+  getCustomerInfo() {
+    this.userService.getSingle(this.riderID).subscribe(
+      (x) => {
+        this.ltd = x.latitude;
+        this.lng = x.longitude;
+      },
+      (err) => console.log(err),
+      () => {
+        this.onClick();
+      }
+    );
   }
 }

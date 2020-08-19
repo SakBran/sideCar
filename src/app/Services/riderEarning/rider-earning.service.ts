@@ -27,7 +27,7 @@ export class RiderEarningService {
   post(data: riderEarningModel): void {
     this.http.post(this.url, data, this.httpOptions).subscribe(
       res => {
-        console.log(res);
+        
         this.appSetting.showSuccess();
       },
       err => {
@@ -41,7 +41,7 @@ export class RiderEarningService {
     const searchUrl = `${this.url}/${data.id}`;
     this.http.put(searchUrl, data, this.httpOptions).subscribe(
       res => {
-        console.log(res);
+        
         this.appSetting.showSuccess();
       },
       err => {
@@ -58,7 +58,7 @@ export class RiderEarningService {
 
     xhr.addEventListener('readystatechange', function() {
       if (this.readyState === this.DONE) {
-        console.log(this.responseText);
+        
       }
     });
 
