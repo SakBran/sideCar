@@ -30,7 +30,13 @@ export class OrderService {
       this.url + "/" + this.appSetting.sessionUserID
     );
   }
-
+  getInvoice(
+    orderID: number,
+    clientPhone: string
+  ): Observable<orderTransationModel> {
+    const searchUrl = `${this.url}/client/invoice?orderID=${orderID}&clientPhone=${clientPhone}`;
+    return this.http.get<orderTransationModel>(searchUrl);
+  }
   getResturantOrder(): Observable<orderTransationModel[]> {
     console.log(
       this.url + "/resturant/orderTracking?id=" + this.appSetting.resturantID

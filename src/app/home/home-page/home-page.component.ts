@@ -1,3 +1,4 @@
+import { ClientInvoiceComponent } from './../client-invoice/client-invoice.component';
 import { FoodService } from './../../Services/food/food.service';
 import { CategoryService } from "./../../Services/category/category.service";
 import { Router } from "@angular/router";
@@ -79,6 +80,14 @@ export class HomePageComponent implements OnInit {
   async shopCart() {
     const modal = await this.modalController.create({
       component: ClientShopcartComponent,
+      //,cssClass: 'my-custom-class'
+    });
+    return await modal.present();
+  }
+
+  async invoice() {
+    const modal = await this.modalController.create({
+      component: ClientInvoiceComponent,
       //,cssClass: 'my-custom-class'
     });
     return await modal.present();

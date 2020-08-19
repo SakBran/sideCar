@@ -1,3 +1,4 @@
+import { ClientInvoiceComponent } from './client-invoice/client-invoice.component';
 import { HomeItemDetailComponent } from "./home-item-detail/home-item-detail.component";
 import { ClientShopcartComponent } from "./client-shopcart/client-shopcart.component";
 import { HomePageComponent } from "./home-page/home-page.component";
@@ -17,6 +18,7 @@ import { ClientInfoComponent } from './client-info/client-info.component';
     HomeItemsComponent,
     ClientInfoComponent,
     ClientShopcartComponent,
+    ClientInvoiceComponent
   ],
   imports: [IonicModule, CommonModule, FormsModule, HomeRoutingModule],
 })

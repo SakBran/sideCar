@@ -5,14 +5,8 @@
     </ion-button>
   </ion-buttons>----->
   <ion-buttons slot="end">
-    <ion-button (click)="shopCart()">
-      <ion-badge
-        *ngIf="this.appSetting.orderDetailViewList.length > 0"
-        color="warning"
-        slot="end"
-        >{{ this.appSetting.orderDetailViewList.length }}</ion-badge
-      >
-      <ion-icon name="file-tray-full-outline"></ion-icon>
+    <ion-button (click)="invoice()">
+      <ion-icon class="title" name="file-tray-full-outline"></ion-icon>
     </ion-button>
 
     <ion-button (click)="shopCart()">
