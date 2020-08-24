@@ -26,36 +26,44 @@ export class ClientInfoComponent implements OnInit {
       return index === self.indexOf(elem);
     });
   }
-  deliverChange(e) {
-    
 
+  deliverChange(e) {
     const temp: locationModel[] = [...this.appSetting.locationDataList];
     let calculationID = 0;
     const orderData = [...this.appSetting.orderDetailViewList];
     const foodData = [...this.appSetting.menuFoodDataList];
+    let resturnatList:number[]=[];
     orderData.forEach((x) => {
       foodData.forEach((a) => {
         if (a.id == x.orderDetialModel.itemID) {
           this.appSetting.zone.push(this.appSetting.resZone(a.resturant_id));
+          resturnatList.push(a.resturant_id);
         }
       });
     });
 
-    
     const arr = [...this.appSetting.zone];
     let unique = arr.filter(function (elem, index, self) {
       return index === self.indexOf(elem);
     });
+
     this.appSetting.orderData.Township_id = 0;
-    if(unique.length===1){
-    temp.forEach((x) => {
-     
-      
-      if (x.TownShip === e && x.Zone === unique[0]) {
-        this.appSetting.orderData.deliveryCharegs = x.deliveryCharges;
-        this.appSetting.orderData.Township_id = x.id;
+    if (unique.length === 1) {
+      temp.forEach((x) => {
+        if (x.TownShip === e && x.Zone === unique[0]) {
+          this.appSetting.orderData.deliveryCharegs = x.deliveryCharges;
+          this.appSetting.orderData.Township_id = x.id;
+        }
+      });
+      let resturant = resturnatList.filter(function (elem, index, self) {
+        return index === self.indexOf(elem);
+      });
+      let additionalCharges=0;
+      if(resturant.length>1){
+        additionalCharges=(resturant.length-1)*500;
       }
-    });}else{
+      this.appSetting.orderData.deliveryCharegs=this.appSetting.orderData.deliveryCharegs+additionalCharges;
+    } else {
       this.appSetting.orderData.Township_id = 0;
     }
   }

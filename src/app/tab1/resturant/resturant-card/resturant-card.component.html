@@ -3,7 +3,7 @@
     <ion-card-subtitle color="secondary">{{this.foodName(orderDetail.itemID).toString()}} <br />Quantity:
       {{orderDetail.itemQty}}
       <ng-container *ngIf="this.orderDetail.status==='no'">
-        <ion-label color="danger">
+        <ion-label >
           Rejected
         </ion-label>
       </ng-container>

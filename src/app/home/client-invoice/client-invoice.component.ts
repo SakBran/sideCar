@@ -7,7 +7,6 @@ import { Component, OnInit } from "@angular/core";
 import { ModalController } from "@ionic/angular";
 import { orderTransationModel } from "src/app/Models/orderTransationModel";
 import { isUndefined } from "util";
-import { threadId } from "worker_threads";
 import { InAppBrowser } from "@ionic-native/in-app-browser/ngx";
 import { UserModelService } from "src/app/Services/userModel/user-model.service";
 
