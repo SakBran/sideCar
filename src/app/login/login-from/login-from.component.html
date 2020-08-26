@@ -5,85 +5,88 @@
   <ion-title> </ion-title>
 </ion-toolbar>
 <ion-content color="light" padding>
-  <ion-card>
-    <ion-card-content>
-      <ion-grid>
-        <ion-row color="primary" justify-content-center>
-          <ion-col>
-            <div padding>
-              <ion-card>
-                <ion-item>
-                  <ion-avatar slot="start">
-                    <img
-                      class="icon"
-                      src="/../assets/person-circle-outline.svg"
-                    />
-                  </ion-avatar>
-                  <ion-label>
-                    <ion-input
-                      id="user"
-                      type="text"
-                      [(ngModel)]="this.username"
-                      placeholder="Username"
-                    ></ion-input>
-                  </ion-label>
-                </ion-item>
-              </ion-card>
-            </div>
-          </ion-col>
-        </ion-row>
-        <ion-row>
-          <ion-col>
-            <div padding>
-              <ion-card>
-                <ion-item>
-                  <ion-avatar slot="start">
-                    <img class="icon" src="/../assets/key-outline.svg" />
-                  </ion-avatar>
-                  <ion-label>
-                    <ion-input
-                      [(ngModel)]="this.password"
-                      [type]="this.passwordVisibility"
-                      placeholder="Password"
-                      autofocus="true"
-                    >
-                    </ion-input>
-                  </ion-label>
-                </ion-item>
+ 
+  <center>
+    <ion-card class="loginCard">
+      <ion-card-content>
+        <ion-grid>
+          <ion-row color="primary" justify-content-center>
+            <ion-col>
+              <div padding>
+                <ion-card>
+                  <ion-item>
+                    <ion-avatar slot="start">
+                      <img
+                        class="icon"
+                        src="/../assets/person-circle-outline.svg"
+                      />
+                    </ion-avatar>
+                    <ion-label>
+                      <ion-input
+                        id="user"
+                        type="text"
+                        [(ngModel)]="this.username"
+                        placeholder="Username"
+                      ></ion-input>
+                    </ion-label>
+                  </ion-item>
+                </ion-card>
+              </div>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col>
+              <div padding>
+                <ion-card>
+                  <ion-item>
+                    <ion-avatar slot="start">
+                      <img class="icon" src="/../assets/key-outline.svg" />
+                    </ion-avatar>
+                    <ion-label>
+                      <ion-input
+                        [(ngModel)]="this.password"
+                        [type]="this.passwordVisibility"
+                        placeholder="Password"
+                        autofocus="true"
+                      >
+                      </ion-input>
+                    </ion-label>
+                  </ion-item>
 
-                <ion-button
-                  expand="block"
-                  (click)="passVisible()"
-                  color="light"
-                >
-                  <ion-icon
-                    *ngIf="this.passwordVisibility === 'password'"
-                    name="eye-outline"
-                  ></ion-icon>
-                  <ion-icon
-                    *ngIf="this.passwordVisibility === 'text'"
-                    name="eye-off-outline"
-                  ></ion-icon>
-                </ion-button>
-              </ion-card>
-            </div>
-          </ion-col>
-        </ion-row>
-        <ion-row>
-          <ion-col size="6">
-            <ion-button routerLink="" expand="block" color="primary">
-              Cancel
-            </ion-button>
-          </ion-col>
-          <ion-col size="6">
-            <ion-button (click)="onClick()" expand="block" color="primary">
-              Login
-            </ion-button>
-          </ion-col>
-        </ion-row>
-      </ion-grid>
-    </ion-card-content>
-  </ion-card>
+                  <ion-button
+                    expand="block"
+                    (click)="passVisible()"
+                    color="light"
+                  >
+                    <ion-icon
+                      *ngIf="this.passwordVisibility === 'password'"
+                      name="eye-outline"
+                    ></ion-icon>
+                    <ion-icon
+                      *ngIf="this.passwordVisibility === 'text'"
+                      name="eye-off-outline"
+                    ></ion-icon>
+                  </ion-button>
+                </ion-card>
+              </div>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col size="6">
+              <ion-button routerLink="" expand="block" color="primary">
+                Cancel
+              </ion-button>
+            </ion-col>
+            <ion-col size="6">
+              <ion-button (click)="onClick()" expand="block" color="primary">
+                Login
+              </ion-button>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-card-content>
+    </ion-card>
+ </center>
 </ion-content>
 
 <ion-toolbar color="light">
