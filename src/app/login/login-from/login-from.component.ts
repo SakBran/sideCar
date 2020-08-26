@@ -28,6 +28,7 @@ export class LoginFromComponent implements OnInit {
     } else {
       this.passwordVisibility = "password";
     }
+    
   }
 
   userData: userModel = {
@@ -39,6 +40,8 @@ export class LoginFromComponent implements OnInit {
     latitude: "",
     longitude: "",
   };
+
+  
   locationUpdate() {
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition((position) => {

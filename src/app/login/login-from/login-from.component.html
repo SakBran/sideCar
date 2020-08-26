@@ -14,10 +14,14 @@
               <ion-card>
                 <ion-item>
                   <ion-avatar slot="start">
-                    <img src="/../assets/person.svg" />
+                    <img
+                      class="icon"
+                      src="/../assets/person-circle-outline.svg"
+                    />
                   </ion-avatar>
                   <ion-label>
                     <ion-input
+                      id="user"
                       type="text"
                       [(ngModel)]="this.username"
                       placeholder="Username"
@@ -34,27 +38,33 @@
               <ion-card>
                 <ion-item>
                   <ion-avatar slot="start">
-                    <img src="/../assets/key.svg" />
+                    <img class="icon" src="/../assets/key-outline.svg" />
                   </ion-avatar>
                   <ion-label>
                     <ion-input
                       [(ngModel)]="this.password"
-                      type="{{ this.passwordVisibility }}"
+                      [type]="this.passwordVisibility"
                       placeholder="Password"
+                      autofocus="true"
                     >
                     </ion-input>
                   </ion-label>
-                  <ion-button (click)="passVisible()" color="light">
-                    <ion-icon
-                      *ngIf="this.passwordVisibility === 'password'"
-                      name="eye-outline"
-                    ></ion-icon>
-                    <ion-icon
-                      *ngIf="this.passwordVisibility === 'text'"
-                      name="eye-off-outline"
-                    ></ion-icon>
-                  </ion-button>
                 </ion-item>
+
+                <ion-button
+                  expand="block"
+                  (click)="passVisible()"
+                  color="light"
+                >
+                  <ion-icon
+                    *ngIf="this.passwordVisibility === 'password'"
+                    name="eye-outline"
+                  ></ion-icon>
+                  <ion-icon
+                    *ngIf="this.passwordVisibility === 'text'"
+                    name="eye-off-outline"
+                  ></ion-icon>
+                </ion-button>
               </ion-card>
             </div>
           </ion-col>
@@ -78,7 +88,7 @@
 
 <ion-toolbar color="light">
   <ion-text color="" class="ion-align-items-center">
-    <div style="text-align: center;">
+    <div style="text-align: center">
       <p>
         All Rights Reserved. ™ by
         <a target="_blank" color="light" href="https://sakbran.github.io"
