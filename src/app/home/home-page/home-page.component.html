@@ -36,18 +36,24 @@
 </ion-toolbar>
 
 <ion-content *ngIf="this.appSetting.customerSearch === ''">
-  <ion-card class="search">
-    <ion-card-content class="searchContent">
-      <h1 class="searchTitle">
-        သင်ချစ်တဲ့ အစားအသောက်တွေကို သင့်ဆီအရောက် ပို့ဆောင်ပေးနေပါပြီ
-      </h1>
-      <ion-searchbar animated></ion-searchbar>
-      <ion-button (click)="search()" expand="block" color="dark" shape="round">
-        Find Foods
-      </ion-button>
-    </ion-card-content>
-  </ion-card>
 
+    <ion-card class="search">
+      <ion-card-content class="searchContent">
+        <h1 class="searchTitle">
+          သင်ချစ်တဲ့ အစားအသောက်တွေကို သင့်ဆီအရောက် ပို့ဆောင်ပေးနေပါပြီ
+        </h1>
+        <ion-searchbar animated></ion-searchbar>
+        <ion-button
+          (click)="search()"
+          expand="block"
+          color="dark"
+          shape="round"
+        >
+          Find Foods
+        </ion-button>
+      </ion-card-content>
+    </ion-card>
+ 
   <ion-slides
     *ngIf="this.appSetting.device === '12'"
     class="foot"
