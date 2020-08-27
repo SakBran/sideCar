@@ -94,7 +94,7 @@
               </ion-text>
             </ion-label>
 
-            <ion-select [(ngModel)]="foodData.mainitem_id">
+            <ion-select [(ngModel)]="foodData.mainitem_id" (ngModelChange)="dataChange($event)">
               <ion-select-option
                 *ngFor="let item of this.appSetting.mainItemDataList"
                 [value]="item.id"

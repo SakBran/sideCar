@@ -28,8 +28,8 @@ export class ClientInfoComponent implements OnInit {
   }
 
   deliverChange(e) {
+    console.log(e);
     const temp: locationModel[] = [...this.appSetting.locationDataList];
-    let calculationID = 0;
     const orderData = [...this.appSetting.orderDetailViewList];
     const foodData = [...this.appSetting.menuFoodDataList];
     let resturnatList:number[]=[];

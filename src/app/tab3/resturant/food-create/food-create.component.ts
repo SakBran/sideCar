@@ -45,6 +45,14 @@ export class FoodCreateComponent implements OnInit {
       }
     );
   }
+
+  dataChange(e) {
+    this.appSetting.mainItemDataList.forEach((x) => {
+      if (x.id === this.foodData.id) {
+        this.foodData.resturant_id = x.resturant_id;
+      }
+    });
+  }
   getCategory() {
     this.categoryService.get().subscribe(
       (x) => {

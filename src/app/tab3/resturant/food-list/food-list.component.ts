@@ -27,17 +27,32 @@ export class FoodListComponent implements OnInit {
     this.location.back();
   }
   dataLoading() {
-    this.FoodService.get(this.appSetting.resturantID).subscribe(
-      (x) => {
-        this.appSetting.showLoading();
-        this.appSetting.foodDataList = x;
-      },
-      (err) => this.appSetting.showError(err),
+    if (this.appSetting.loginType === "resturant") {
+      this.FoodService.get(this.appSetting.resturantID).subscribe(
+        (x) => {
+          this.appSetting.showLoading();
+          this.appSetting.foodDataList = x;
+        },
+        (err) => this.appSetting.showError(err),
 
-      () => {
-        this.appSetting.loadingClose();
-      }
-    );
+        () => {
+          this.appSetting.loadingClose();
+        }
+      );
+    }
+    else if(this.appSetting.loginType==="admin"){
+      this.FoodService.getActive().subscribe(
+        (x) => {
+          this.appSetting.showLoading();
+          this.appSetting.foodDataList = x;
+        },
+        (err) => this.appSetting.showError(err),
+
+        () => {
+          this.appSetting.loadingClose();
+        }
+      );
+    }
   }
 
   refresh(event) {
