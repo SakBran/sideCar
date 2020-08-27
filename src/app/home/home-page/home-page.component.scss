@@ -15,6 +15,8 @@ ion-card-content.searchContent{
     margin-top: 200px;
     min-height: 500px;
     max-width: 500px;
+    margin-left: 5%;
+    margin-right: 5%;
 
 }
 }
@@ -33,12 +35,14 @@ ion-card-content.searchContent{
     }   
 
     ion-card-content.searchContent{
-        border-radius: 20px;
+        border-radius: 5px;
         background-color: #FFE400;
         margin-top: 200px;
-        margin-left: 20px;
+        margin-left: 20%;
+        margin-right: 20%;
+
         min-height: auto;
-        max-width: 500px;
+       // max-width: 500px;
     
     }
     }

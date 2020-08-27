@@ -39,18 +39,15 @@
 
     <ion-card class="search">
       <ion-card-content class="searchContent">
-        <h1 class="searchTitle">
-          သင်ချစ်တဲ့ အစားအသောက်တွေကို သင့်ဆီအရောက် ပို့ဆောင်ပေးနေပါပြီ
-        </h1>
+        <div style="text-align: center;">
+          <h1 class="searchTitle">
+            သင်ချစ်တဲ့ အစားအသောက်တွေကို သင့်ဆီအရောက် ပို့ဆောင်ပေးနေပါပြီ
+          </h1>
+        </div>
         <ion-searchbar animated></ion-searchbar>
-        <ion-button
-          (click)="search()"
-          expand="block"
-          color="dark"
-          shape="round"
-        >
-          Find Foods
-        </ion-button>
+        <div style="text-align: center;">
+          <ion-button (click)="search()" color="dark"> Find Foods </ion-button>
+        </div>
       </ion-card-content>
     </ion-card>
  
