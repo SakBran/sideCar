@@ -33,8 +33,8 @@ export class appSetting {
 
   public device="";
   public customerSearch="";
-  public apiAddress = "http://localhost/sidecar";
-  //public apiAddress ="https://www.myanmatrishaw.asia";
+  //public apiAddress = "http://localhost/sidecar";
+  public apiAddress ="https://www.myanmatrishaw.asia";
 
   public userTypeData: userTypeModel[] = [];
 
