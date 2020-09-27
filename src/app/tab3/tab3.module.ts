@@ -27,6 +27,9 @@ import { RiderEarningListComponent } from './admin/rider-earning-list/rider-earn
 import { RiderEarningCreateComponent } from './admin/rider-earning-create/rider-earning-create.component';
 import { FileUploadModule } from 'ng2-file-upload';
 import { MainItemListComponent } from './admin/main-item-list/main-item-list.component';
+import { ItemConfirmDetailComponent } from './admin/item-confirm-detail/item-confirm-detail.component';
+import { OrderManagementListComponent } from './admin/order-management-list/order-management-list.component';
+import { OrderManagementCreateComponent } from './admin/order-management-create/order-management-create.component';
 @NgModule({
   imports: [
     IonicModule,
@@ -40,6 +43,7 @@ import { MainItemListComponent } from './admin/main-item-list/main-item-list.com
   ],
   declarations: [
     Tab3Page,
+    ItemConfirmDetailComponent,
     RiderEarningListComponent,
     RiderEarningCreateComponent,
     MainItemCreateComponent,
@@ -56,7 +60,9 @@ import { MainItemListComponent } from './admin/main-item-list/main-item-list.com
     FoodCreateComponent,
     FoodListComponent,
     OpeningCreateComponent,
-    OpeningListComponent
+    OpeningListComponent,
+    OrderManagementListComponent,
+    OrderManagementCreateComponent
   ],
 })
 export class Tab3PageModule {}
