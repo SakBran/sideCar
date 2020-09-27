@@ -1,3 +1,6 @@
+ion-button,ion-toolbar.dark{
+    --background:#212224;
+}
 @media only screen and (max-width: 600px) {
 ion-card.search{
     background-image: url("../../../assets/mobile.jpg");
@@ -9,6 +12,10 @@ ion-card.search{
     border-radius: 0px;
     margin: 0px;
 }   
+
+ion-button{
+    width: 100%;
+}
 
 ion-card-content.searchContent{
 

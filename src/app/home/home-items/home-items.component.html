@@ -1,14 +1,15 @@
 <ion-toolbar color="light">
-  <p class="center">
+
     <ion-chip
       outline
       (click)="resturantChoose()"
       color="tertiary"
+      slot="end"
       interface="action-sheet"
     >
       <ion-icon name="restaurant"></ion-icon>
       <ion-label>Resturant</ion-label>
-      <ion-icon name="filter-outline"></ion-icon>
+      
     </ion-chip>
     <ion-select
       class="none"
@@ -24,10 +25,10 @@
         >{{ item.shopname }}</ion-select-option
       >
     </ion-select>
-    <ion-chip  (click)="categoryChoose()" outline color="tertiary">
+    <ion-chip slot="end" (click)="categoryChoose()" outline color="tertiary">
       <ion-icon name="fast-food-outline"></ion-icon>
       <ion-label>Foods</ion-label>
-      <ion-icon name="filter-outline"></ion-icon>
+      
     </ion-chip>
     <ion-select
       class="none"
@@ -43,12 +44,12 @@
         >{{ item.categoryName }}</ion-select-option
       >
     </ion-select>
-    <ion-chip (click)="refresh()" outline color="tertiary">
+    <ion-chip slot="end" (click)="refresh()" outline color="tertiary">
       <ion-icon name="fast-food-outline"></ion-icon>
       <ion-label>Refresh</ion-label>
-      <ion-icon name="filter-outline"></ion-icon>
+      
     </ion-chip>
-  </p>
+ 
 </ion-toolbar>
 <ion-toolbar color="light">
   <ion-searchbar
@@ -64,7 +65,7 @@
       *ngFor="let item of this.appSetting.mainItemDataList"
       size="{{ this.appSetting.device }}"
     >
-      <div>
+      <div class="center">
         <ion-card button (click)="cardClick(item.id)">
           <img
             class="center"
@@ -82,7 +83,8 @@
           </ion-card-header>
           <ion-card-content>
         <!-----   {{ this.appSetting.resName(item.resturant_id) }}---->
-       <!-----     <br />{{ item.Descriptions }}------>
+        Founded in 1829 on an isthmus between Lake Monona and Lake Mendota,
+        Madison was named the capital of the Wisconsin Territory in 1836.
           </ion-card-content>
         </ion-card>
       </div>

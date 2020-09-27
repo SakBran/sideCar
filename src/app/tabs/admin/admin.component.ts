@@ -10,7 +10,9 @@ import { Component, OnInit } from "@angular/core";
 export class AdminComponent implements OnInit {
   constructor(private router: Router,public appSetting:appSetting) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.router.navigateByUrl("/managmenet/tabs/tab3")
+  }
 
   onClick() {
    // this.router.navigateByUrl("/tabs/tab1");
