@@ -6,30 +6,13 @@
     </ion-buttons>
   </ion-toolbar>
   <ion-progress-bar
-    *ngIf="this.foodData.id === 0"
+    *ngIf="!this.foodList"
     type="indeterminate"
   ></ion-progress-bar>
 </ion-header>
 <ion-content fullscreen>
-  <ion-list *ngIf="this.foodData.id !== 0">
+  <ion-list>
     
-       <!-----
-        <ion-label position="floating" color="secondary">
-          <ion-icon name="fast-food-outline"></ion-icon> Select One
-          <ion-text *ngIf="this.foodData.id === 0" color="danger"> * </ion-text>
-        </ion-label>
-
-        <ion-select
-          (ngModelChange)="changeModel($event)"
-          [(ngModel)]="foodData.id"
-        >
-          <ion-select-option
-            *ngFor="let item of this.foodList"
-            [value]="item.id"
-            >{{ item.itemName }}</ion-select-option
-          >
-        </ion-select>----->
-
         <ion-slides   mode="ios" pager="ios"  scrollbar="ios">
           <ion-slide *ngFor="let item of this.foodList">
             <ion-card >
@@ -58,15 +41,7 @@
         </ion-slides>
     
     <ion-item>
-      <!------
-      <ion-avatar slot="start">
-        <ion-img
-          [src]="
-            this.appSetting.apiAddress + '/images/Image' + foodData.id + '.jpg'
-          "
-        ></ion-img>
-      </ion-avatar>---->
-      <ion-label>
+      <ion-label *ngIf="foodData.id!==0" >
         <h2>{{ foodData.itemName }}</h2>
         <h2>{{ this.appSetting.resName(foodData.resturant_id) }}</h2>
       </ion-label>
@@ -130,8 +105,9 @@
     </ion-button>
   </ion-list>
 
-  <ion-list *ngIf="this.foodData.id === 0">
   <!----------
+  <ion-list *ngIf="this.foodData.id === 0">
+  
     <ion-card>
       <ion-card-content>
         <ion-label position="floating" color="secondary">
@@ -150,7 +126,7 @@
           >
         </ion-select>
       </ion-card-content>
-    </ion-card>------->
+    </ion-card>
     <ion-slides  mode="ios" pager="ios" scrollbar="ios">
       <ion-slide *ngFor="let item of this.foodList">
         <ion-card   >
@@ -240,5 +216,5 @@
     >
       Add to Shopcart
     </ion-button>
-  </ion-list>
+  </ion-list>------>
 </ion-content>
