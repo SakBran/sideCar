@@ -1,3 +1,4 @@
+import { ClientShopcartComponent } from './home/client-shopcart/client-shopcart.component';
 import { HomeModule } from './home/home.module';
 import { ClientInvoiceComponent } from './home/client-invoice/client-invoice.component';
 import { OrderManagementListComponent } from './tab3/admin/order-management-list/order-management-list.component';
@@ -29,7 +30,7 @@ import { environment } from '../environments/environment';
 @NgModule({
   declarations: [AppComponent,AuthComponent],
   
-  entryComponents: [ClientInvoiceComponent],
+  entryComponents: [ClientInvoiceComponent,ClientShopcartComponent],
   imports: [BrowserModule,HomeModule, ImageCropperModule, CommonModule, IonicModule.forRoot(), HttpClientModule, AppRoutingModule, ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })],
   providers: [
     appSetting,

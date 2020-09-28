@@ -21,6 +21,6 @@ import { ClientInfoComponent } from './client-info/client-info.component';
     ClientInvoiceComponent
   ],
   imports: [IonicModule, CommonModule, FormsModule, HomeRoutingModule],
-  exports:[ClientInvoiceComponent]
+  exports:[ClientInvoiceComponent,ClientShopcartComponent]
 })
 export class HomeModule {}
