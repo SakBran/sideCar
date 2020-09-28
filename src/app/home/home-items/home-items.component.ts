@@ -5,6 +5,7 @@ import { Component, OnInit } from "@angular/core";
 import { ModalController } from "@ionic/angular";
 import { LocationService } from "src/app/Services/location/location.service";
 import { MainModelService } from 'src/app/Services/mainModel/main-model.service';
+import { ResturantModelService } from 'src/app/Services/resturantModel/resturant-model.service';
 
 @Component({
   selector: "app-home-items",
@@ -17,7 +18,8 @@ export class HomeItemsComponent implements OnInit {
     public appSetting: appSetting,
     private LocationService: LocationService,
     private mainItemService:MainModelService,
-    public modalController: ModalController
+    public modalController: ModalController,
+    public ResturantModelService:ResturantModelService
   ) {
    
     this.mainItemService.get().subscribe(
@@ -30,7 +32,9 @@ export class HomeItemsComponent implements OnInit {
     this.locationReload();
   }
 
-  ngOnInit() {}
+  ngOnInit() {
+  
+  }
 
   locationReload() {
     if (this.appSetting.locationDataList.length === 0) {
