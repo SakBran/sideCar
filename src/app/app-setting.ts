@@ -206,15 +206,16 @@ export class appSetting {
     this.adminTab3Process = "";
     this.adminTab3ID = "";
 
-    this.userTypeData = [];
+   // this.userTypeData = [];
 
     this.resturantID = 0;
     this.sessionUserID = 0;
+/*
 
     this.foodDataList = [];
     this.menuFoodDataList = [];
     this.constFoodDataList = [];
-    this.resturandDataList = [];
+  
 
     this.locationDataList = [];
 
@@ -242,6 +243,7 @@ export class appSetting {
       longitude:"",
       latitude:""
     };
+    */
   }
 
   public distanceCal(lat1, lon1, lat2, lon2): number {

@@ -4,8 +4,6 @@ import { Component, OnInit } from "@angular/core";
 import { appSetting } from "src/app/app-setting";
 import { Router, ActivatedRoute } from "@angular/router";
 import { Location } from "@angular/common";
-import { FoodService } from "src/app/Services/food/food.service";
-import { foodModel } from "src/app/Models/foodModel";
 import { ImageCroppedEvent } from "ngx-image-cropper";
 import { mainModel } from 'src/app/Models/mainModel';
 
