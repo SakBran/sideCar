@@ -79,8 +79,10 @@ export class HomeItemDetailComponent implements OnInit {
     });
   }
 
+  selectedCard=0;
   changeModel(id){
     const temp:foodModel[]=[...this.foodList];
+    this.selectedCard=id;
     temp.forEach(x=>{
       if(x.id===id){
         this.foodData=x;

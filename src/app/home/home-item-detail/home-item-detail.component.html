@@ -12,11 +12,8 @@
 </ion-header>
 <ion-content fullscreen>
   <ion-list *ngIf="this.foodData.id !== 0">
-    <ion-img class="emoj"
-    src="/../assets/icon/favicon.png"
-        ></ion-img>
-    <ion-card> 
-      <ion-card-content>
+    
+       <!-----
         <ion-label position="floating" color="secondary">
           <ion-icon name="fast-food-outline"></ion-icon> Select One
           <ion-text *ngIf="this.foodData.id === 0" color="danger"> * </ion-text>
@@ -31,17 +28,44 @@
             [value]="item.id"
             >{{ item.itemName }}</ion-select-option
           >
-        </ion-select>
-      </ion-card-content>
-    </ion-card>
+        </ion-select>----->
+
+        <ion-slides   mode="ios" pager="ios"  scrollbar="ios">
+          <ion-slide *ngFor="let item of this.foodList">
+            <ion-card >
+              <img
+                class="center"
+                src="{{
+                  this.appSetting.apiAddress + '/images/Image' + item.id + '.jpg'
+                }}"
+              />
+              <ion-card-header>
+                <ion-card-subtitle> {{this.appSetting.resName(item.resturant_id)}}</ion-card-subtitle>
+                <ion-card-title>{{item.itemName}}</ion-card-title>
+              </ion-card-header>
+              <ion-card-content>
+                Founded in 1829 on an isthmus between Lake Monona and Lake Mendota,
+                Madison was named the capital of the Wisconsin Territory in 1836.
+                
+                <ion-item>
+                  <ion-label>Check</ion-label>
+                  <ion-checkbox  (click)="changeModel(item.id)"slot="end" *ngIf='this.selectedCard===item.id' checked="true" ></ion-checkbox>
+                  <ion-checkbox  (click)="changeModel(item.id)" slot="end" *ngIf='this.selectedCard!==item.id'  ></ion-checkbox>
+                </ion-item>
+              </ion-card-content>
+            </ion-card>
+          </ion-slide>
+        </ion-slides>
+    
     <ion-item>
+      <!------
       <ion-avatar slot="start">
         <ion-img
           [src]="
             this.appSetting.apiAddress + '/images/Image' + foodData.id + '.jpg'
           "
         ></ion-img>
-      </ion-avatar>
+      </ion-avatar>---->
       <ion-label>
         <h2>{{ foodData.itemName }}</h2>
         <h2>{{ this.appSetting.resName(foodData.resturant_id) }}</h2>
@@ -107,9 +131,7 @@
   </ion-list>
 
   <ion-list *ngIf="this.foodData.id === 0">
-    <ion-img class="emoj"
-    src="/../assets/icon/favicon.png"
-  ></ion-img>
+  <!----------
     <ion-card>
       <ion-card-content>
         <ion-label position="floating" color="secondary">
@@ -128,9 +150,33 @@
           >
         </ion-select>
       </ion-card-content>
-    </ion-card>
+    </ion-card>------->
+    <ion-slides  mode="ios" pager="ios" scrollbar="ios">
+      <ion-slide *ngFor="let item of this.foodList">
+        <ion-card   >
+          <img
+            class="center"
+            src="{{
+              this.appSetting.apiAddress + '/images/Image' + item.id + '.jpg'
+            }}"
+          />
+          <ion-card-header>
+            <ion-card-subtitle> {{this.appSetting.resName(item.resturant_id)}}</ion-card-subtitle>
+            <ion-card-title>{{item.itemName}}</ion-card-title>
+          </ion-card-header>
+          <ion-card-content>
+            Founded in 1829 on an isthmus between Lake Monona and Lake Mendota,
+            Madison was named the capital of the Wisconsin Territory in 1836.
+            <ion-item>
+              <ion-label>Check</ion-label>
+              <ion-checkbox slot="end" (click)="changeModel(item.id)" *ngIf='this.selectedCard===item.id' checked="true" ></ion-checkbox>
+              <ion-checkbox slot="end" (click)="changeModel(item.id)"  *ngIf='this.selectedCard!==item.id'  ></ion-checkbox>
+            </ion-item>
+          </ion-card-content>
+        </ion-card>
+      </ion-slide>
+    </ion-slides>
     <ion-item>
-      <ion-avatar slot="start"> </ion-avatar>
       <ion-label>
         <h2>
           <ion-skeleton-text animated style="width: 20%"></ion-skeleton-text>
