@@ -25,7 +25,7 @@ import { environment } from '../environments/environment';
 
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent,AuthComponent],
   
   entryComponents: [],
   imports: [BrowserModule, ImageCropperModule, CommonModule, IonicModule.forRoot(), HttpClientModule, AppRoutingModule, ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })],
