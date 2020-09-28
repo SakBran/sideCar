@@ -1,3 +1,6 @@
+import { OrderManagementListComponent } from './tab3/admin/order-management-list/order-management-list.component';
+import { ItemConfirmComponent } from './tab3/admin/item-confirm/item-confirm.component';
+import { OrderManagementCreateComponent } from './tab3/admin/order-management-create/order-management-create.component';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouteReuseStrategy } from '@angular/router';
@@ -21,9 +24,9 @@ import { environment } from '../environments/environment';
 
 
 
-
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent,AuthComponent],
+  
   entryComponents: [],
   imports: [BrowserModule, ImageCropperModule, CommonModule, IonicModule.forRoot(), HttpClientModule, AppRoutingModule, ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })],
   providers: [
