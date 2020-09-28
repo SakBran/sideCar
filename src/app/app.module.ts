@@ -1,3 +1,5 @@
+import { HomeModule } from './home/home.module';
+import { ClientInvoiceComponent } from './home/client-invoice/client-invoice.component';
 import { OrderManagementListComponent } from './tab3/admin/order-management-list/order-management-list.component';
 import { ItemConfirmComponent } from './tab3/admin/item-confirm/item-confirm.component';
 import { OrderManagementCreateComponent } from './tab3/admin/order-management-create/order-management-create.component';
@@ -27,8 +29,8 @@ import { environment } from '../environments/environment';
 @NgModule({
   declarations: [AppComponent,AuthComponent],
   
-  entryComponents: [],
-  imports: [BrowserModule, ImageCropperModule, CommonModule, IonicModule.forRoot(), HttpClientModule, AppRoutingModule, ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })],
+  entryComponents: [ClientInvoiceComponent],
+  imports: [BrowserModule,HomeModule, ImageCropperModule, CommonModule, IonicModule.forRoot(), HttpClientModule, AppRoutingModule, ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })],
   providers: [
     appSetting,
     StatusBar,

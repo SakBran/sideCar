@@ -1,7 +1,6 @@
 import { InAppBrowserOptions } from "@ionic-native/in-app-browser/ngx";
 import { FoodService } from "src/app/Services/food/food.service";
 import { OrderService } from "src/app/Services/order/order.service";
-import { ClientInfoComponent } from "./../client-info/client-info.component";
 import { appSetting } from "src/app/app-setting";
 import { Component, OnInit } from "@angular/core";
 import { ModalController } from "@ionic/angular";
