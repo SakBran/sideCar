@@ -18,35 +18,14 @@
       <ion-icon class="title" name="basket-outline"></ion-icon>
     </ion-button>
   </ion-buttons>
-  <ion-title slot="start" class="title" (click)="reset()">
-    <table>
-      <tr>
-        <td>
-          <ion-img class="icon" src="/../assets/icon/favicon.png"></ion-img>
-        </td>
-        <td>&nbsp;Sidecar</td>
-      </tr>
-    </table></ion-title
-  >
+  <ion-img
+    slot="start"
+    class="icon"
+    src="/../assets/icon/favicon.png"
+  ></ion-img>
+  <ion-title class="title"> Sidecar </ion-title>
 </ion-toolbar>
 
-<ion-content *ngIf="this.appSetting.customerSearch === ''">
-
-    <ion-card class="search">
-      <ion-card-content class="searchContent">
-        <div style="text-align: center;">
-          <h1 class="searchTitle">
-            သင်ချစ်တဲ့ အစားအသောက်တွေကို သင့်ဆီအရောက် ပို့ဆောင်ပေးနေပါပြီ
-          </h1>
-        </div>
-        <ion-searchbar [(ngModel)]="this.appSetting.customerSearch" animated></ion-searchbar>
-        <div style="text-align: center;">
-          <ion-button (click)="search()"  class="dark"> Find Foods </ion-button>
-        </div>
-      </ion-card-content>
-    </ion-card>
-</ion-content>
-
-<ion-content *ngIf="this.appSetting.customerSearch !== ''">
+<ion-content>
   <app-home-items></app-home-items>
 </ion-content>

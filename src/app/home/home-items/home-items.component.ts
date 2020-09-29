@@ -21,20 +21,23 @@ export class HomeItemsComponent implements OnInit {
     public modalController: ModalController,
     public ResturantModelService:ResturantModelService
   ) {
-   document.getElementById("searchBar").autofocus;
+   
     this.mainItemService.get().subscribe(
       
       (x) => (this.appSetting.mainItemDataList = x),
       (err) => this.appSetting.showError(err),
       () => {
         this.appSetting.constmainItemDataList = this.appSetting.mainItemDataList;
+        if(this.appSetting.customerSearch!==""){
+        this.onSearch(this.appSetting.customerSearch);
+        }
       }
     );
     this.locationReload();
   }
 
   ngOnInit() {
-  
+    
   }
 
   locationReload() {

@@ -48,12 +48,7 @@ export class HomePageComponent implements OnInit {
     }
     this.foodService.getActive().subscribe(x=>this.appSetting.menuFoodDataList=x);
   }
-  search() {
-    this.appSetting.customerSearch = "Search";
-  }
-  reset() {
-    this.appSetting.customerSearch = "";
-  }
+ 
 
   login() {
     this.router.navigateByUrl("/login");
