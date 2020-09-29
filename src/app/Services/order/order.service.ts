@@ -115,19 +115,34 @@ export class OrderService {
   }
 
   putResend_From_Resturant(orderID, data: resendModel[]): void {
-    console.log(data);
-    const searchUrl = `${this.url}/resturant/resend?id=${orderID}&ResturantID=${this.appSetting.resturantID}`;
+    console.log(orderID,data);
+    //const searchUrl = `${this.url}/resturant/resend?id=${orderID}&ResturantID=${this.appSetting.resturantID}`;
+    const searchUrl = `${this.url}/resturant/resend?id=${orderID}&ResturantID=${0}`;
     this.http.put(searchUrl, data, this.httpOptions).subscribe(
       (res) => {
         
         let i = -1;
         const temp = [...this.appSetting.orderTransationList];
-        temp.forEach((x) => {
+
+        let aClone:orderTransationModel[]=temp.filter(x=>{
+          if(x.orderModel.id===orderID){
+            x.orderDetailModels.forEach(y=>{
+              y.status="yes";
+            })
+            return x;
+          }
+        });
+        this.appSetting.orderTransationList=[...temp.filter(x=>x.orderModel.id!==orderID)];
+        aClone.forEach(x=>{
+          this.appSetting.orderTransationList.push(x);
+        })
+
+      /*  temp.forEach((x) => {
           i = i + 1;
           if (x.orderModel.id === orderID) {
             this.appSetting.orderTransationList.splice(i, 1);
           }
-        });
+        });*/
         this.appSetting.showSuccess();
         this.appSetting.resendListFromResturant = [];
       },

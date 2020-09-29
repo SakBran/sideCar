@@ -89,7 +89,7 @@ export class ResturantIndividualOrderComponent implements OnInit {
     this.DeliveryRecordService.put(this.recordData);
   }
   sendToServer() {
-    if (this.appSetting.loginType === "resturant") {
+    if (this.appSetting.loginType === "admin") {
       this.appSetting.showLoading();
       const temp = [...this.appSetting.resendListFromResturant];
       let dataList: resendModel[] = [];
@@ -100,7 +100,7 @@ export class ResturantIndividualOrderComponent implements OnInit {
       });
 
       this.orderService.putResend_From_Resturant(this.invoiceNo, dataList);
-    } else if (this.appSetting.loginType === "admin") {
+    } /*else if (this.appSetting.loginType === "admin") {
       this.appSetting.showLoading();
       const temp = [...this.appSetting.resendListFromResturant];
       let dataList: resendModel[] = [];
@@ -108,10 +108,10 @@ export class ResturantIndividualOrderComponent implements OnInit {
         if (x.orderNo === this.invoiceNo) {
           dataList.push(x);
         }
-      });
+      });*/
       //this.orderService.putResend_From_Resturant(this.invoiceNo, dataList);
-      //Resend function from Admin to resturant
-    } else if (this.appSetting.loginType === "rider") {
+      //Resend function from Admin to resturant}
+     else if (this.appSetting.loginType === "rider") {
       this.appSetting.showLoading();
       this.DeliveryRecordService.putRider(this.Orderid);
       //this.orderService.putResend_From_Resturant(this.invoiceNo, dataList);
