@@ -42,7 +42,7 @@ export class HomeItemDetailComponent implements OnInit {
     discount: 0,
     itemFinalPrice: this.foodData.price,
     orderID: 0,
-    status: "pending",
+    status: "no",
     remark: "",
     comment: "",
     isPickUpResturant: false,
