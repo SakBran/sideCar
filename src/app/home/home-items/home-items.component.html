@@ -53,7 +53,8 @@
 </ion-toolbar>
 <ion-toolbar color="light">
   <ion-searchbar
-    [(ngModel)]="searchTxt"
+    id='searchBar'
+    [(ngModel)]="this.appSetting.customerSearch"
     autofocus="true"
     (ngModelChange)="onSearch($event)"
   ></ion-searchbar>

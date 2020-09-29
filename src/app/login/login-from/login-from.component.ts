@@ -81,7 +81,7 @@ export class LoginFromComponent implements OnInit {
                   this.locationUpdate();
                 }, 10000);
               }
-              this.appSetting.loginSuccess();
+             
               this.router.navigateByUrl("/managmenet");
             }
           );

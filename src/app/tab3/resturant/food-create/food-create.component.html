@@ -71,7 +71,7 @@
               </ion-text>
             </ion-label>
 
-            <ion-select [(ngModel)]="foodData.categoryType_ID">
+            <ion-select interface="action-sheet" [(ngModel)]="foodData.categoryType_ID">
               <ion-select-option
                 *ngFor="let item of this.appSetting.categoryList"
                 [value]="item.id"
@@ -88,7 +88,7 @@
               </ion-text>
             </ion-label>
 
-            <ion-select [(ngModel)]="foodData.mainitem_id" (ngModelChange)="dataChange($event)">
+            <ion-select [(ngModel)]="foodData.mainitem_id" interface="action-sheet" (ngModelChange)="dataChange($event)">
               <ion-select-option
                 *ngFor="let item of this.appSetting.mainItemDataList"
                 [value]="item.id"

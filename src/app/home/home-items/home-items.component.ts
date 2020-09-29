@@ -21,8 +21,9 @@ export class HomeItemsComponent implements OnInit {
     public modalController: ModalController,
     public ResturantModelService:ResturantModelService
   ) {
-   
+   document.getElementById("searchBar").autofocus;
     this.mainItemService.get().subscribe(
+      
       (x) => (this.appSetting.mainItemDataList = x),
       (err) => this.appSetting.showError(err),
       () => {
@@ -94,18 +95,18 @@ export class HomeItemsComponent implements OnInit {
     );
   }
 
-  searchTxt = "";
+  
   onSearch(val) {
     const temp: mainModel[] = [...this.appSetting.constmainItemDataList];
     let z: mainModel[] = [];
     temp.forEach((x) => {
-      if (x.name.toLowerCase().includes(this.searchTxt.toLowerCase())) {
+      if (x.name.toLowerCase().includes(this.appSetting.customerSearch.toLowerCase())) {
         z.push(x);
       }
 
       this.appSetting.mainItemDataList = z;
     });
-    if (this.searchTxt === "") {
+    if (this.appSetting.customerSearch === "") {
       this.appSetting.mainItemDataList = temp;
     }
   }
