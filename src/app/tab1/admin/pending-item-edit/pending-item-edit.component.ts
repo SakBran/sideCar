@@ -25,7 +25,7 @@ export class PendingItemEditComponent implements OnInit {
     discount: 0,
     itemFinalPrice: 0,
     orderID: 0,
-    status:'pending',
+    status:'no',
     remark: "",
     comment:"",
     isPickUpResturant:false,
@@ -102,7 +102,7 @@ export class PendingItemEditComponent implements OnInit {
     this.appSetting.showLoading();
     if(this.validation()){
       let itemJ:itemRest=this.appSetting.itemJoin(this.foodData.id);
-      this.orderDetail.status='pending';
+      this.orderDetail.status='no';
       this.orderService.putOrderDetail(this.orderDetail);
       
     }

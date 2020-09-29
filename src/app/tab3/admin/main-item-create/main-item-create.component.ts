@@ -85,8 +85,8 @@ export class MainItemCreateComponent implements OnInit {
   update() {
     this.appSetting.showLoading();
     if (this.formValidation() === true) {
-      this.foodData.status = "pending";
-      this.FoodService.put(this.foodData);
+      this.foodData.status = "active";
+      this.FoodService.put(this.foodData,this.croppedImage);
       // this.route.navigateByUrl('tabs/tab3/resturantList');
     } else {
       this.appSetting.showInvalid();

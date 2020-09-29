@@ -11,7 +11,7 @@ export class AdminComponent implements OnInit {
   constructor(private router: Router,public appSetting:appSetting) {}
 
   ngOnInit() {
-  //  this.router.navigateByUrl("/managmenet/tabs/tab3")
+   this.router.navigateByUrl("/managmenet/tabs/tab3")
   }
 
   onClick() {
