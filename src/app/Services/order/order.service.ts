@@ -120,7 +120,6 @@ export class OrderService {
     const searchUrl = `${this.url}/resturant/resend?id=${orderID}&ResturantID=${0}`;
     this.http.put(searchUrl, data, this.httpOptions).subscribe(
       (res) => {
-        
         let i = -1;
         const temp = [...this.appSetting.orderTransationList];
 
