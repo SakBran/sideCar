@@ -3,7 +3,8 @@
     this.data !== null &&
     this.status() === this.appSetting.displaySetting &&
     this.appSetting.displaySetting !== 'delivering' &&
-    this.data.orderModel.status !== 'delivering' && this.data.orderModel.status !== 'delivered' 
+    this.data.orderModel.status !== 'delivering' &&
+    this.data.orderModel.status !== 'delivered'
   "
 >
   <ion-card
@@ -13,7 +14,6 @@
   >
     <ion-card-content>
       <ion-item>
-        
         <ion-label>
           <h2>
             Order: {{ this.data.orderModel.id }}
@@ -34,7 +34,10 @@
             </ng-container>
           </h2>
           <p>Date: {{ this.data.orderModel.orderDate | date }}</p>
-          <p>Item Price Amount: {{ this.total()-this.data.orderModel.deliveryCharegs }}</p>
+          <p>
+            Item Price Amount:
+            {{ this.total() - this.data.orderModel.deliveryCharegs }}
+          </p>
           <p>Delivery Amount: {{ this.data.orderModel.deliveryCharegs }}</p>
           <p>Total Amount: {{ this.total() }}</p>
         </ion-label>
@@ -56,7 +59,6 @@
           </ng-container>
         </ng-container>
 ------>
-        
       </ion-item>
 
       <ion-list-header>
@@ -96,8 +98,8 @@
       <ng-container *ngIf="this.data.orderModel.status !== 'delivering'">
         <ng-container>
           <ion-toolbar>
-          <ion-buttons slot="end">
-  <!-----        <ion-button
+            <ion-buttons slot="end">
+              <!-----        <ion-button
             *ngIf="this.status() === 'no'"
             (click)="sendToServer()"
             color="warning"
@@ -105,45 +107,49 @@
             <ion-icon name="cloud-upload-outline"></ion-icon>
           </ion-button>----->
 
-         
+              <ion-button
+                (click)="onDelete(this.data.orderModel.id)"
+                color="danger"
+              >
+                <ion-icon name="trash"></ion-icon>
+              </ion-button>
 
-          <ion-button
-            (click)="onDelete(this.data.orderModel.id)"
-            color="danger"
-          >
-            <ion-icon name="trash"></ion-icon>
-          </ion-button>
+              <ion-button
+                *ngIf="this.status() === 'yes'"
+                routerLink="/managmenet/tabs/tab2/riderSelect/{{ Orderid }}"
+                color="secondary"
+              >
+                <ion-icon name="bicycle-outline"></ion-icon>
+              </ion-button>
 
-          <ion-button
-          *ngIf="this.status() === 'yes'"
-          routerLink="/managmenet/tabs/tab2/riderSelect/{{ Orderid }}"
-          color="secondary"
-        >
-          <ion-icon name="bicycle-outline"></ion-icon>
-        </ion-button>
+              <ion-button
+                *ngIf="this.status() === 'no'"
+                (click)="sendToServer()"
+                color="secondary"
+              >
+                <ion-icon name="thumbs-up-outline"></ion-icon>
+              </ion-button>
 
-          <ion-button *ngIf="this.status() === 'no'" (click)="sendToServer()" color="secondary">
-            <ion-icon name="thumbs-up-outline"></ion-icon>
-          </ion-button>
-
-          <ion-button routerLink="/managmenet/tabs/tab1/customerInfo/{{ Orderid }}" color="success">
-            <ion-icon name="location-outline"></ion-icon>
-          </ion-button>
-          </ion-buttons>
-        </ion-toolbar>
+              <ion-button
+                routerLink="/managmenet/tabs/tab1/customerInfo/{{ Orderid }}"
+                color="success"
+              >
+                <ion-icon name="location-outline"></ion-icon>
+              </ion-button>
+            </ion-buttons>
+          </ion-toolbar>
         </ng-container>
       </ng-container>
     </ng-container>
   </ion-card>
 </ng-container>
 
-
 <ng-container
   *ngIf="
     this.data !== null &&
     this.appSetting.displaySetting === 'delivering' &&
-    (this.data.orderModel.status === 'delivering' && 
-    this.data.orderModel.status.toString() !== 'delivered')
+    this.data.orderModel.status === 'delivering' &&
+      this.data.orderModel.status.toString() !== 'delivered'
   "
 >
   <ion-card
@@ -151,7 +157,6 @@
   >
     <ion-card-content>
       <ion-item>
-      
         <ion-label>
           <h2>
             Order: {{ this.data.orderModel.id }}
@@ -188,7 +193,10 @@
             </ng-container>
           </h2>
           <p>Date: {{ this.data.orderModel.orderDate | date }}</p>
-          <p>Item Price Amount: {{ this.total()-this.data.orderModel.deliveryCharegs }}</p>
+          <p>
+            Item Price Amount:
+            {{ this.total() - this.data.orderModel.deliveryCharegs }}
+          </p>
           <p>Delivery Amount: {{ this.data.orderModel.deliveryCharegs }}</p>
           <p>Total Amount: {{ this.total() }}</p>
         </ion-label>
@@ -258,17 +266,6 @@
             </ng-container>
           </ng-container>
         </ng-container>
-
-        <ng-container *ngIf="this.appSetting.loginType === 'rider'">
-          <ion-toolbar>
-              <ion-button (click)="sendToServer()" color="secondary">
-                <ion-icon name="golf-outline"></ion-icon>
-              </ion-button>
-              <ion-button routerLink="customerInfo/{{ Orderid }}" color="secondary">
-                <ion-icon name="location-outline"></ion-icon>
-              </ion-button>
-          </ion-toolbar>
-        </ng-container>
       </ion-item>
 
       <ion-list-header>
@@ -303,13 +300,28 @@
         </ion-button>
       </ion-list-header>
     </ion-card-content>
+
+    <ng-container *ngIf="this.appSetting.loginType === 'rider'">
+      <ion-toolbar>
+        <ion-buttons slot="end">
+          <ion-button (click)="sendToServer()" color="secondary">
+            <ion-icon name="golf-outline"></ion-icon>
+          </ion-button>
+          <ion-button routerLink="customerInfo/{{ Orderid }}" color="secondary">
+            <ion-icon name="location-outline"></ion-icon>
+          </ion-button>
+        </ion-buttons>
+      </ion-toolbar>
+    </ng-container>
   </ion-card>
 </ng-container>
 
-
-
 <ng-container
-  *ngIf="this.data !== null  && this.appSetting.displaySetting === 'delivered' && this.data.orderModel.status === 'delivered'"
+  *ngIf="
+    this.data !== null &&
+    this.appSetting.displaySetting === 'delivered' &&
+    this.data.orderModel.status === 'delivered'
+  "
 >
   <ion-card
     *ngIf="this.data !== null && this.data.orderModel.status === 'delivered'"
@@ -319,7 +331,7 @@
         <ion-label>
           <h2>
             Order: {{ this.data.orderModel.id }}
-            <ng-container >
+            <ng-container>
               <ng-container *ngIf="this.status() === 'no'">
                 <ion-label color="danger">Rejected</ion-label>
               </ng-container>
