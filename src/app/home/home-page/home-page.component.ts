@@ -54,11 +54,17 @@ export class HomePageComponent implements OnInit {
   }
 
   resturantLoaddata() {
-    this.ResturantModelService.get().subscribe(
-      (x) => (this.appSetting.resturandDataList = x),
-      (err) => this.appSetting.showError(err),
+    this.foodService.getActive().subscribe(
+      (x) => (this.appSetting.menuFoodDataList = x),
+      (err) => console.log(err),
       () => {
-        this.loadCategory();
+        this.ResturantModelService.get().subscribe(
+          (x) => (this.appSetting.resturandDataList = x),
+          (err) => this.appSetting.showError(err),
+          () => {
+            this.loadCategory();
+          }
+        );
       }
     );
   }
@@ -68,19 +74,11 @@ export class HomePageComponent implements OnInit {
       (this.appSetting.categoryList = y),
         (err) => this.appSetting.showError(err),
         () => {
-          this.loadMenuFood();
+          console.log("Complete");
         };
     });
   }
 
-  loadMenuFood() {
-    this.foodService.getActive().subscribe(
-      (x) => (this.appSetting.menuFoodDataList = x),
-      (err) => console.log(err),
-      () => console.log(this.appSetting.menuFoodDataList)
-    );
-  }
-  
   async shopCart() {
     const modal = await this.modalController.create({
       component: ClientShopcartComponent,

@@ -51,6 +51,7 @@ export class HomeItemsComponent implements OnInit {
       );
     }
   }
+  
   cardClick(cardID) {
     this.itemDetail(cardID.toString());
   }

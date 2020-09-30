@@ -28,5 +28,5 @@
 <ion-progress-bar  *ngIf="!this.appSetting.menuFoodDataList" type="indeterminate"></ion-progress-bar>
 
 <ion-content>
-  <app-home-items></app-home-items>
+  <app-home-items *ngIf="this.appSetting.categoryList&&this.appSetting.menuFoodDataList&&this.appSetting.resturandDataList" ></app-home-items>
 </ion-content>
