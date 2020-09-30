@@ -19,7 +19,7 @@ export class PendingItemEditComponent implements OnInit {
   foodData = new foodModel();
   orderDetail: orderDetialModel = {
     orderDetailID: 0,
-    itemID: this.foodData.id,
+    itemID: 0,
     itemQty: 1,
     itemOrgPrice: 0,
     discount: 0,
@@ -50,18 +50,35 @@ export class PendingItemEditComponent implements OnInit {
   }
   loadData(id): foodModel {
     let result = new foodModel();
-    const temp:orderTransationModel[]=[...this.appSetting.orderTransationList];
-    temp.forEach(x=>{
-      this.orderDetail=x.orderDetailModels.find(y=>y.orderDetailID===id);
-      result=this.loadFoodData(this.orderDetail.itemID);
+    let i=-1;
+    const temp:orderTransationModel[]=this.appSetting.orderTransationList;
+    temp.forEach((x) => {
+     
+      x.orderDetailModels.forEach(
+        y=>{
+          if(y.orderDetailID===id){
+            this.orderDetail=y;
+            result=this.loadFoodData(y.itemID);
+          }
+        }
+      )
     });
-    
     return result;
   }
 
   loadFoodData(id): foodModel {
+    let result = new foodModel();
     const temp=[...this.appSetting.menuFoodDataList]
-    return temp.find(x=>x.id===id);
+    temp.forEach((x) => {
+
+
+      if (x.id === id) {
+        
+        result = x;
+      }
+    });
+
+    return result;
   }
   totalAmount(): string {
     if (this.orderDetail.itemQty !== 0) {
