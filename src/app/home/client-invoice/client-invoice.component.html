@@ -6,12 +6,10 @@
     </ion-buttons>
   </ion-toolbar>
 </ion-header>
+<ion-progress-bar *ngIf="this.loading===1"  type="indeterminate"></ion-progress-bar>
 <ion-content fullscreen>
   <ion-list>
-    
-
-  
-    <ng-container *ngIf="checkUndefined(this.data)===false">
+    <ng-container *ngIf="checkUndefined(this.data) === false">
       <ion-item-divider>
         <ion-label color="medium">
           <h2>Informations</h2>
@@ -30,8 +28,7 @@
         </ion-avatar>
         <ion-label>
           <h2>
-            {{ this.appSetting.itemJoin(item.itemID).itemName }} |
-            {{ this.appSetting.itemJoin(item.itemID).resturant }}
+            {{ this.appSetting.itemJoin(item.itemID).itemName }} 
           </h2>
           <p>
             <ion-buttons slot="end">
@@ -75,9 +72,15 @@
         <ion-label>
           <h2>Status</h2>
         </ion-label>
-        <p>{{this.status}}</p>
+        <p>{{ this.status }}</p>
       </ion-item>
-      <ion-button *ngIf="this.status==='delivering'"  (click)="showMap()" expand="block" color="primary" shape="round">
+      <ion-button
+        *ngIf="this.status === 'delivering'"
+        (click)="showMap()"
+        expand="block"
+        color="primary"
+        shape="round"
+      >
         Track Your Order Location
       </ion-button>
     </ng-container>
@@ -88,9 +91,7 @@
       </ion-label>
     </ion-item-divider>
     <ion-item>
-      <ion-label>
-        Invoice No:
-      </ion-label>
+      <ion-label> Invoice No: </ion-label>
       <ion-input
         [(ngModel)]="this.invoiceNo"
         type="number"
@@ -98,22 +99,17 @@
       ></ion-input>
     </ion-item>
     <ion-item>
-      <ion-label>
-        Phone No :
-      </ion-label>
+      <ion-label> Phone No : </ion-label>
       <ion-input
         [(ngModel)]="this.phoneNo"
         type="tel"
         placeholder="eg:09xxxxxxx"
       ></ion-input>
-     
     </ion-item>
-   
-     
-  
-    
   </ion-list>
-  <ion-button (click)="search()" color="primary"  >
-    <ion-icon name="search-outline"></ion-icon>
-  </ion-button>
+  <ion-toolbar>
+    <ion-button expand="full" (click)="search()" color="primary">
+      Check Your Order
+    </ion-button>
+  </ion-toolbar>
 </ion-content>

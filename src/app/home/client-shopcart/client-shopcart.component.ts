@@ -15,7 +15,9 @@ export class ClientShopcartComponent implements OnInit {
     public modalController: ModalController
   ) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    console.log(this.appSetting.orderDetailViewList);
+  }
 
   dismissModal() {
     // using the injected ModalController this page

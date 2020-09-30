@@ -47,8 +47,9 @@ export class FoodCreateComponent implements OnInit {
   }
 
   dataChange(e) {
+    this.foodData.mainitem_id=e;
     this.appSetting.mainItemDataList.forEach((x) => {
-      if (x.id === this.foodData.id) {
+      if (x.id === e) {
         this.foodData.resturant_id = x.resturant_id;
       }
     });
@@ -73,7 +74,7 @@ export class FoodCreateComponent implements OnInit {
     id: 0,
     itemName: "",
     itemNameTemp: "",
-    resturant_id: this.appSetting.resturantID,
+    resturant_id: 0,
     mainitem_id: 0,
     price: 0,
     priceTemp: 0,
@@ -102,7 +103,8 @@ export class FoodCreateComponent implements OnInit {
   }
 
   formValidation(): boolean {
-    if (this.foodData.itemName === "" || this.foodData.price === 0) {
+    if (this.foodData.itemName === "" || this.foodData.price === 0 || this.foodData.resturant_id===0) {
+      console.log(this.foodData);
       return false;
     }
     return true;
@@ -120,7 +122,7 @@ export class FoodCreateComponent implements OnInit {
   update() {
     this.appSetting.showLoading();
     if (this.formValidation() === true) {
-      this.foodData.status = "pending";
+      this.foodData.status = "active";
       this.FoodService.put(this.foodData);
       // this.route.navigateByUrl('tabs/tab3/resturantList');
     } else {

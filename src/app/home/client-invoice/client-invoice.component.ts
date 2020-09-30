@@ -115,6 +115,7 @@ export class ClientInvoiceComponent implements OnInit {
       () => {
         this.riderID = this.data.orderModel.riderID;
         this.food();
+        this.loading=0
       }
     );
   }

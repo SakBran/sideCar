@@ -62,6 +62,7 @@ export class HomePageComponent implements OnInit {
           (x) => (this.appSetting.resturandDataList = x),
           (err) => this.appSetting.showError(err),
           () => {
+            this.appSetting.constFoodDataList=[...this.appSetting.menuFoodDataList];
             this.loadCategory();
           }
         );

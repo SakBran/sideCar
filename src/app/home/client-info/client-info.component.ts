@@ -1,3 +1,4 @@
+import { orderModel } from "src/app/Models/orderModel";
 import { orderDetialModel } from "src/app/Models/orderDetailModel";
 import { appSetting } from "src/app/app-setting";
 import { Component, OnInit } from "@angular/core";
@@ -16,8 +17,29 @@ export class ClientInfoComponent implements OnInit {
     public modalCtrl: ModalController,
     public appSetting: appSetting,
     private orderService: OrderService
-  ) {}
+  ) {
+    this.getDataFromLocalStorage();
+  }
 
+  getDataFromLocalStorage() {
+    let temp = localStorage.getItem("localData");
+    if (temp !== null) {
+      const localData: orderModel = Object.assign(JSON.parse(temp));
+
+      this.appSetting.orderData.clientName = localData.clientName;
+      this.appSetting.orderData.clitentPhone = localData.clitentPhone;
+      this.appSetting.orderData.Township_id = localData.Township_id;
+      this.appSetting.orderData.clitentFlatNo = localData.clitentFlatNo;
+      this.appSetting.orderData.clientAddress = localData.clientAddress;
+      this.appSetting.orderData.longitude = localData.longitude;
+      this.appSetting.orderData.latitude = localData.latitude;
+      let location=localStorage.getItem("locationSet");
+      if(location!==null){
+        this.deliverChange(location);
+      }
+    }
+  }
+  locationSet="";
   ngOnInit() {
     const temp: locationModel[] = [...this.appSetting.locationDataList];
     let tempLocation: String[] = [];
@@ -25,17 +47,20 @@ export class ClientInfoComponent implements OnInit {
     this.location = tempLocation.filter(function (elem, index, self) {
       return index === self.indexOf(elem);
     });
+    
   }
 
   deliverChange(e) {
-    console.log(e);
+    this.locationSet=e;
+    
     const temp: locationModel[] = [...this.appSetting.locationDataList];
     const orderData = [...this.appSetting.orderDetailViewList];
     const foodData = [...this.appSetting.menuFoodDataList];
-    let resturnatList:number[]=[];
+    let resturnatList: number[] = [];
     orderData.forEach((x) => {
       foodData.forEach((a) => {
         if (a.id == x.orderDetialModel.itemID) {
+       
           this.appSetting.zone.push(this.appSetting.resZone(a.resturant_id));
           resturnatList.push(a.resturant_id);
         }
@@ -46,8 +71,8 @@ export class ClientInfoComponent implements OnInit {
     let unique = arr.filter(function (elem, index, self) {
       return index === self.indexOf(elem);
     });
-
-    this.appSetting.orderData.Township_id = 0;
+   
+    //this.appSetting.orderData.Township_id = 0;
     if (unique.length === 1) {
       temp.forEach((x) => {
         if (x.TownShip === e && x.Zone === unique[0]) {
@@ -58,11 +83,12 @@ export class ClientInfoComponent implements OnInit {
       let resturant = resturnatList.filter(function (elem, index, self) {
         return index === self.indexOf(elem);
       });
-      let additionalCharges=0;
-      if(resturant.length>1){
-        additionalCharges=(resturant.length-1)*500;
+      let additionalCharges = 0;
+      if (resturant.length > 1) {
+        additionalCharges = (resturant.length - 1) * 500;
       }
-      this.appSetting.orderData.deliveryCharegs=this.appSetting.orderData.deliveryCharegs+additionalCharges;
+      this.appSetting.orderData.deliveryCharegs =
+        this.appSetting.orderData.deliveryCharegs + additionalCharges;
     } else {
       this.appSetting.orderData.Township_id = 0;
     }
@@ -84,7 +110,6 @@ export class ClientInfoComponent implements OnInit {
 
   submitOrder() {
     this.appSetting.showLoading();
-
     const temp = [...this.appSetting.orderDetailViewList];
     let orderDetial: orderDetialModel[] = [];
     temp.forEach((x) => {
@@ -101,6 +126,11 @@ export class ClientInfoComponent implements OnInit {
         this.appSetting.orderData.longitude = position.coords.longitude.toString();
       });
     }
+    localStorage.setItem(
+      "localData",
+      JSON.stringify(this.appSetting.orderData)
+    );
+    localStorage.setItem("locationSet",this.locationSet);
     this.orderService.post(data);
   }
 }
