@@ -8,39 +8,9 @@
 </ion-header>
 <ion-content fullscreen>
   <ion-list>
-    <ion-item-divider>
-      <ion-label color="medium">
-        <h2>Search</h2>
-      </ion-label>
-    </ion-item-divider>
-    <ion-item>
-      <ion-label>
-        Invoice No:
-      </ion-label>
-      <ion-input
-        [(ngModel)]="this.invoiceNo"
-        type="number"
-        placeholder="eg:Oxxxxxxx"
-      ></ion-input>
-    </ion-item>
-    <ion-item>
-      <ion-label>
-        Phone No :
-      </ion-label>
-      <ion-input
-        [(ngModel)]="this.phoneNo"
-        type="tel"
-        placeholder="eg:09xxxxxxx"
-      ></ion-input>
-      <ion-button (click)="search()" size="small" shape="round">
-        <ion-icon name="search-outline"></ion-icon>
-      </ion-button>
-    </ion-item>
+    
 
-    <ion-progress-bar
-      *ngIf="this.loading === 1"
-      type="indeterminate"
-    ></ion-progress-bar>
+  
     <ng-container *ngIf="checkUndefined(this.data)===false">
       <ion-item-divider>
         <ion-label color="medium">
@@ -111,5 +81,39 @@
         Track Your Order Location
       </ion-button>
     </ng-container>
+
+    <ion-item-divider>
+      <ion-label color="medium">
+        <h2>Search</h2>
+      </ion-label>
+    </ion-item-divider>
+    <ion-item>
+      <ion-label>
+        Invoice No:
+      </ion-label>
+      <ion-input
+        [(ngModel)]="this.invoiceNo"
+        type="number"
+        placeholder="eg:Oxxxxxxx"
+      ></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>
+        Phone No :
+      </ion-label>
+      <ion-input
+        [(ngModel)]="this.phoneNo"
+        type="tel"
+        placeholder="eg:09xxxxxxx"
+      ></ion-input>
+     
+    </ion-item>
+   
+     
+  
+    
   </ion-list>
+  <ion-button (click)="search()" color="primary"  >
+    <ion-icon name="search-outline"></ion-icon>
+  </ion-button>
 </ion-content>
