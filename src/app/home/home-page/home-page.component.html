@@ -25,6 +25,7 @@
   ></ion-img>
   <ion-title class="title"> Sidecar </ion-title>
 </ion-toolbar>
+<ion-progress-bar  *ngIf="!this.appSetting.menuFoodDataList" type="indeterminate"></ion-progress-bar>
 
 <ion-content>
   <app-home-items></app-home-items>
