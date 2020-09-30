@@ -229,6 +229,7 @@
             </ion-button>
           </ng-container>
         </ng-container>
+
         <ng-container *ngIf="this.appSetting.loginType === 'admin'">
           <ng-container *ngIf="this.data.orderModel.status !== 'delivering'">
             <ng-container>
@@ -259,13 +260,14 @@
         </ng-container>
 
         <ng-container *ngIf="this.appSetting.loginType === 'rider'">
-          <ion-button (click)="sendToServer()" color="success">
-            <ion-icon name="golf-outline"></ion-icon>
-          </ion-button>
-
-          <ion-button routerLink="customerInfo/{{ Orderid }}" color="danger">
-            <ion-icon name="location-outline"></ion-icon>
-          </ion-button>
+          <ion-toolbar>
+              <ion-button (click)="sendToServer()" color="secondary">
+                <ion-icon name="golf-outline"></ion-icon>
+              </ion-button>
+              <ion-button routerLink="customerInfo/{{ Orderid }}" color="secondary">
+                <ion-icon name="location-outline"></ion-icon>
+              </ion-button>
+          </ion-toolbar>
         </ng-container>
       </ion-item>
 
