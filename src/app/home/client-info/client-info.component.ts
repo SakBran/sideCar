@@ -39,6 +39,7 @@ export class ClientInfoComponent implements OnInit {
       }
     }
   }
+  
   locationSet="";
   ngOnInit() {
     const temp: locationModel[] = [...this.appSetting.locationDataList];
@@ -100,6 +101,7 @@ export class ClientInfoComponent implements OnInit {
       return index === self.indexOf(elem);
     });
   }
+
   dismissModal() {
     // using the injected ModalController this page
     // can "dismiss" itself and optionally pass back data
