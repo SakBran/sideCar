@@ -260,7 +260,7 @@ export class appSetting {
       Math.sin(dLong / 2) * Math.sin(dLong / 2);
     var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
     var d = R * c;
-    return d; // returns the distance in meter
+    return d/1000; // returns the distance in meter
   };
 /*
   public distanceCal(lat1, lon1, lat2, lon2): number {
