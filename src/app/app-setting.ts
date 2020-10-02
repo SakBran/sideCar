@@ -246,6 +246,23 @@ export class appSetting {
     */
   }
 
+  rad(x) {
+    return x * Math.PI / 180;
+  };
+
+   public distanceCal(lat1, lon1, lat2, lon2) {
+    
+    var R = 6378137; // Earth’s mean radius in meter
+    var dLat = this.rad(lat2 - lat1);
+    var dLong = this.rad(lon2 - lon1);
+    var a = Math.sin(dLat / 2) * Math.sin(dLat / 2) +
+      Math.cos(this.rad(lat1)) * Math.cos(this.rad(lat2)) *
+      Math.sin(dLong / 2) * Math.sin(dLong / 2);
+    var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+    var d = R * c;
+    return d; // returns the distance in meter
+  };
+/*
   public distanceCal(lat1, lon1, lat2, lon2): number {
     const R = 6371e3; // metres
     const φ1 = (lat1 * Math.PI) / 180; // φ, λ in radians
@@ -263,7 +280,10 @@ export class appSetting {
 
     return result;
   }
+  */
 }
+
+
 export class itemRest {
   itemName: string;
   resturant: string;
