@@ -284,9 +284,9 @@
         </ion-button>
       </ion-list-header>
 
-      <ng-container *ngIf="this.itemVisible === true">
+      <ng-container *ngIf="this.itemVisible === true && data.orderDetailModels">
         <ng-container *ngFor="let item of data.orderDetailModels">
-          <app-resturant-card *ngIf="item" [data]="item"></app-resturant-card>
+          <app-resturant-card  [data]="item"></app-resturant-card>
         </ng-container>
       </ng-container>
 

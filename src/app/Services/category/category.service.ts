@@ -2,7 +2,6 @@ import { appSetting } from "./../../app-setting";
 import { Injectable } from "@angular/core";
 import { HttpHeaders, HttpClient } from "@angular/common/http";
 import { Observable } from "rxjs";
-import Swal from "sweetalert2";
 import { CategoryModel } from "src/app/Models/CategoryModel";
 
 @Injectable({
@@ -44,6 +43,7 @@ export class CategoryService {
         this.appSetting.showSuccess();
       },
       (err) => {
+        
         console.log(err);
         this.appSetting.showError(err);
       }
