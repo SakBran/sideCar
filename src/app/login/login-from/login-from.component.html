@@ -100,13 +100,10 @@
   <div class="center">
     <ion-card class="loginCard">
       <div class="centerCard">
-        <ion-img class="icon" src="/../assets/userlogin.svg"></ion-img>
+        <ion-img class="icon" src="/../assets/icon/logo.jpg"></ion-img>
       </div>
       <ion-card-content>
-        <ion-toolbar>
-          <ion-text><h2>Login Box!</h2></ion-text>
-        </ion-toolbar>
-        <ion-item>
+        <ion-item lines="none">
           <ion-label><ion-icon name="person-outline"></ion-icon></ion-label>
           <ion-input
             [(ngModel)]="this.username"
@@ -114,7 +111,8 @@
             placeholder="Username"
           ></ion-input>
         </ion-item>
-        <ion-item>
+        <br/>
+        <ion-item  lines="none">
           <ion-label><ion-icon name="lock-open-outline"></ion-icon></ion-label>
           <ion-input
             [(ngModel)]="this.password"
