@@ -34,6 +34,7 @@ export class ResturantIndividualOrderComponent implements OnInit {
     temp.forEach((x) => {
       if (x.orderModel.id === this.Orderid) {
         this.data = x;
+        this.selectedCard=this.data.orderModel.riderTakeOption;
       }
     });
   }
@@ -99,7 +100,7 @@ export class ResturantIndividualOrderComponent implements OnInit {
         }
       });
 
-      this.orderService.putResend_From_Resturant(this.invoiceNo, dataList);
+      this.orderService.putResend_From_Resturant(this.invoiceNo,this.data.orderModel, dataList);
     } /*else if (this.appSetting.loginType === "admin") {
       this.appSetting.showLoading();
       const temp = [...this.appSetting.resendListFromResturant];
@@ -144,5 +145,10 @@ export class ResturantIndividualOrderComponent implements OnInit {
         Swal.fire("Deleted!", "Your file has been deleted.", "success");
       }
     });
+  }
+  selectedCard=""
+  changeModel(status){
+    this.selectedCard=status.toLocaleLowerCase();
+    this.data.orderModel.riderTakeOption=this.selectedCard;
   }
 }

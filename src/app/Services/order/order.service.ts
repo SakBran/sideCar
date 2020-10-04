@@ -1,3 +1,4 @@
+import { orderModel } from './../../Models/orderModel';
 import { orderDetialModel } from "./../../Models/orderDetailModel";
 import { appSetting } from "./../../app-setting";
 import { Injectable } from "@angular/core";
@@ -6,7 +7,6 @@ import { Observable } from "rxjs";
 import Swal from "sweetalert2";
 import { orderTransationModel } from "src/app/Models/orderTransationModel";
 import { resendModel } from "src/app/Models/resendModel";
-import { orderModel } from "src/app/Models/orderModel";
 import { ModalController } from "@ionic/angular";
 
 @Injectable({
@@ -114,7 +114,7 @@ export class OrderService {
     );
   }
 
-  putResend_From_Resturant(orderID, data: resendModel[]): void {
+  putResend_From_Resturant(orderID,updateData:orderModel, data: resendModel[]): void {
     console.log(orderID,data);
     //const searchUrl = `${this.url}/resturant/resend?id=${orderID}&ResturantID=${this.appSetting.resturantID}`;
     const searchUrl = `${this.url}/resturant/resend?id=${orderID}&ResturantID=${0}`;
@@ -141,6 +141,7 @@ export class OrderService {
             this.appSetting.orderTransationList.splice(i, 1);
           }
         });*/
+        this.put(updateData);
         this.appSetting.showSuccess();
         this.appSetting.resendListFromResturant = [];
       },
