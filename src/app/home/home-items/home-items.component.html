@@ -1,5 +1,46 @@
 <ion-toolbar color="light">
 
+  <ion-chip
+  outline
+  (click)="zoneChoose()"
+  color="tertiary"
+  slot="end"
+  interface="action-sheet"
+>
+<ion-icon name="earth-outline"></ion-icon>
+  <ion-label>Zones-{{searchZone}}</ion-label>
+  
+</ion-chip>
+<ion-select
+  class="none"
+  id="selectZone"
+  value="notifications"
+  interface="action-sheet"
+  [(ngModel)]="searchZone"
+  (ngModelChange)="FilterZone($event)"
+>
+  <ion-select-option
+        [value]="1"
+    >1</ion-select-option
+  >
+  <ion-select-option
+        [value]="2"
+    >2</ion-select-option
+  >
+  <ion-select-option
+        [value]="3"
+    >3</ion-select-option
+  >
+  <ion-select-option
+        [value]="4"
+    >4</ion-select-option
+  >
+  <ion-select-option
+        [value]="5"
+    >5</ion-select-option
+  >
+</ion-select>
+
     <ion-chip
       outline
       (click)="resturantChoose()"

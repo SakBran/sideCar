@@ -13,7 +13,9 @@ import { ResturantModelService } from 'src/app/Services/resturantModel/resturant
   styleUrls: ["./home-items.component.scss"],
 })
 export class HomeItemsComponent implements OnInit {
-  constructor(
+  zoneList:number[]=[];
+  searchZone:number;
+    constructor(
 
     public appSetting: appSetting,
     private LocationService: LocationService,
@@ -30,6 +32,7 @@ export class HomeItemsComponent implements OnInit {
         this.appSetting.constmainItemDataList = this.appSetting.mainItemDataList;
         if(this.appSetting.customerSearch!==""){
         this.onSearch(this.appSetting.customerSearch);
+       
         }
       }
     );
@@ -69,6 +72,24 @@ export class HomeItemsComponent implements OnInit {
     this.appSetting.mainItemDataList = res;
   }
 
+  FilterZone(e) {
+ 
+    const x=[...this.appSetting.constantResturandDataList];
+    const resList=[...x.filter(a=>a.locationID===e)];
+    const temp = [...this.appSetting.constmainItemDataList];
+    let res: mainModel[] = [];
+    temp.forEach((x) => {
+      resList.forEach(a=>{
+        if(x.resturant_id===a.id){
+          res.push(x);
+        }
+      })
+     
+    });
+    this.appSetting.resturandDataList=[...resList];
+    this.appSetting.mainItemDataList = res;
+  }
+
   searchCategory = 0;
   FilterCategory(e) {
 
@@ -85,11 +106,16 @@ export class HomeItemsComponent implements OnInit {
     let a = document.getElementById("select");
     a.click();
   }
+  zoneChoose(){
+    let a = document.getElementById("selectZone");
+    a.click();
+  }
   categoryChoose() {
     let a = document.getElementById("selectCategory");
     a.click();
   }
   refresh() {
+    this.searchZone=null;
     this.mainItemService.get().subscribe(
       (x) => (this.appSetting.mainItemDataList = x),
       (err) => this.appSetting.showError(err),
