@@ -82,6 +82,25 @@
 
           <ion-item>
             <ion-label position="floating" color="secondary">
+              <ion-icon name="cash-outline"></ion-icon> Resturant
+              <ion-text *ngIf="this.foodData.price === 0" color="danger">
+                *
+              </ion-text>
+            </ion-label>
+
+            <ion-select [(ngModel)]="selectRes" interface="action-sheet" (ngModelChange)="dataChangeRes($event)">
+              <ion-select-option
+                *ngFor="let item of this.appSetting.resturandDataList"
+                [value]="item.id"
+                >
+                {{item.shopname}}
+                </ion-select-option
+              >
+            </ion-select>
+          </ion-item>
+
+          <ion-item>
+            <ion-label position="floating" color="secondary">
               <ion-icon name="cash-outline"></ion-icon> Main Base Item
               <ion-text *ngIf="this.foodData.price === 0" color="danger">
                 *
@@ -90,7 +109,7 @@
 
             <ion-select [(ngModel)]="foodData.mainitem_id" interface="action-sheet" (ngModelChange)="dataChange($event)">
               <ion-select-option
-                *ngFor="let item of this.appSetting.mainItemDataList"
+                *ngFor="let item of this.menuMain"
                 [value]="item.id"
                 >{{ item.name }} |
                 {{

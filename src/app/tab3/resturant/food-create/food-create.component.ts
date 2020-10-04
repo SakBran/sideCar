@@ -7,6 +7,7 @@ import { FoodService } from "src/app/Services/food/food.service";
 import { foodModel } from "src/app/Models/foodModel";
 import { ImageCroppedEvent } from "ngx-image-cropper";
 import { MainModelService } from "src/app/Services/mainModel/main-model.service";
+import { mainModel } from 'src/app/Models/mainModel';
 
 @Component({
   selector: "app-food-create",
@@ -15,6 +16,8 @@ import { MainModelService } from "src/app/Services/mainModel/main-model.service"
 })
 export class FoodCreateComponent implements OnInit {
   id = +this.Router.snapshot.paramMap.get("id");
+  menuMain:mainModel[]=[]
+  selectRes:number=0;
   constructor(
     public location: Location,
     public appSetting: appSetting,
@@ -45,7 +48,11 @@ export class FoodCreateComponent implements OnInit {
       }
     );
   }
-
+  
+  dataChangeRes(e){
+  let temp:mainModel[]=[...this.appSetting.mainItemDataList];
+  this.menuMain=[...temp.filter(x=>x.resturant_id===e)];
+  }
   dataChange(e) {
     this.foodData.mainitem_id=e;
     this.appSetting.mainItemDataList.forEach((x) => {
