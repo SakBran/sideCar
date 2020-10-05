@@ -1,3 +1,8 @@
-<p>
-  order-accept-form works!
+<ion-input type="date" [(ngModel)]="startDate"  placeholder="Awesome Input"></ion-input>
+<ion-input type="date" [(ngModel)]="endDate" placeholder="Awesome Input"></ion-input>
+<ion-button (click)="click()"  expand="block" fill="clear" shape="round">
+  Click me
+</ion-button>
+<p *ngFor="let item of this.dataList" >
+  {{item.itemName}}
 </p>
