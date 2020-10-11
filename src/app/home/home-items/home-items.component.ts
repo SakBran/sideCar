@@ -150,4 +150,15 @@ export class HomeItemsComponent implements OnInit {
     });
     return await modal.present();
   }
+
+  resItemID(id):number{
+    const foodList:mainModel[]=[...this.appSetting.constmainItemDataList];
+    let result:number=0;
+    foodList.forEach(x=>{
+      if(x.resturant_id===id)
+      result= x.id;
+      return result;
+    });
+    return result;
+  }
 }

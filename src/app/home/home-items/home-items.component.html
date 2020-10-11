@@ -255,3 +255,161 @@
     </ion-col>
   </ion-row>
 </ion-grid>
+
+
+<ion-grid *ngIf="this.searchResturant===0" >
+  <ion-row *ngIf="this.appSetting.resturandDataList.length !== 0">
+    <ion-col
+      *ngFor="let item of this.appSetting.resturandDataList"
+      size="{{ this.appSetting.device }}"
+    >
+      <div class="center">
+        <ion-card button (click)="Filter(item.id)">
+          <img
+            class="center"
+            src="{{
+              this.appSetting.apiAddress + '/images/MainImage' + this.resItemID(item.id) + '.jpg'
+            }}"
+          />
+          <ion-card-header>
+            <ion-card-subtitle>
+              {{
+                item.phone
+              }}</ion-card-subtitle
+            >
+            <ion-card-title>{{ item.shopname }}</ion-card-title>
+          </ion-card-header>
+          <ion-card-content>
+        <!-----   {{ this.appSetting.resName(item.resturant_id) }}---->
+        Founded in 1829 on an isthmus between Lake Monona and Lake Mendota,
+        Madison was named the capital of the Wisconsin Territory in 1836.
+          </ion-card-content>
+        </ion-card>
+      </div>
+    </ion-col>
+  </ion-row>
+  
+  
+
+  <ion-row *ngIf="this.appSetting.resturandDataList.length === 0">
+    <ion-col size="{{ this.appSetting.device }}">
+      <div>
+        <ion-card button (click)="cardClick('cardID')">
+          <ion-skeleton-text animated></ion-skeleton-text>
+          <ion-card-header>
+            <ion-card-subtitle
+              ><ion-skeleton-text animated></ion-skeleton-text
+            ></ion-card-subtitle>
+            <ion-card-title
+              ><ion-skeleton-text animated></ion-skeleton-text
+            ></ion-card-title>
+          </ion-card-header>
+          <ion-card-content>
+            <ion-skeleton-text animated></ion-skeleton-text><br />
+            <ion-skeleton-text animated></ion-skeleton-text>
+          </ion-card-content>
+        </ion-card>
+      </div>
+    </ion-col>
+
+    <ion-col size="{{ this.appSetting.device }}">
+      <div>
+        <ion-card button (click)="cardClick('cardID')">
+          <ion-skeleton-text animated></ion-skeleton-text>
+          <ion-card-header>
+            <ion-card-subtitle
+              ><ion-skeleton-text animated></ion-skeleton-text
+            ></ion-card-subtitle>
+            <ion-card-title
+              ><ion-skeleton-text animated></ion-skeleton-text
+            ></ion-card-title>
+          </ion-card-header>
+          <ion-card-content>
+            <ion-skeleton-text animated></ion-skeleton-text><br />
+            <ion-skeleton-text animated></ion-skeleton-text>
+          </ion-card-content>
+        </ion-card>
+      </div>
+    </ion-col>
+
+    <ion-col size="{{ this.appSetting.device }}">
+      <div>
+        <ion-card button (click)="cardClick('cardID')">
+          <ion-skeleton-text animated></ion-skeleton-text>
+          <ion-card-header>
+            <ion-card-subtitle
+              ><ion-skeleton-text animated></ion-skeleton-text
+            ></ion-card-subtitle>
+            <ion-card-title
+              ><ion-skeleton-text animated></ion-skeleton-text
+            ></ion-card-title>
+          </ion-card-header>
+          <ion-card-content>
+            <ion-skeleton-text animated></ion-skeleton-text><br />
+            <ion-skeleton-text animated></ion-skeleton-text>
+          </ion-card-content>
+        </ion-card>
+      </div>
+    </ion-col>
+
+    <ion-col size="{{ this.appSetting.device }}">
+      <div>
+        <ion-card button (click)="cardClick('cardID')">
+          <ion-skeleton-text animated></ion-skeleton-text>
+          <ion-card-header>
+            <ion-card-subtitle
+              ><ion-skeleton-text animated></ion-skeleton-text
+            ></ion-card-subtitle>
+            <ion-card-title
+              ><ion-skeleton-text animated></ion-skeleton-text
+            ></ion-card-title>
+          </ion-card-header>
+          <ion-card-content>
+            <ion-skeleton-text animated></ion-skeleton-text><br />
+            <ion-skeleton-text animated></ion-skeleton-text>
+          </ion-card-content>
+        </ion-card>
+      </div>
+    </ion-col>
+
+    <ion-col size="{{ this.appSetting.device }}">
+      <div>
+        <ion-card button (click)="cardClick('cardID')">
+          <ion-skeleton-text animated></ion-skeleton-text>
+          <ion-card-header>
+            <ion-card-subtitle
+              ><ion-skeleton-text animated></ion-skeleton-text
+            ></ion-card-subtitle>
+            <ion-card-title
+              ><ion-skeleton-text animated></ion-skeleton-text
+            ></ion-card-title>
+          </ion-card-header>
+          <ion-card-content>
+            <ion-skeleton-text animated></ion-skeleton-text><br />
+            <ion-skeleton-text animated></ion-skeleton-text>
+          </ion-card-content>
+        </ion-card>
+      </div>
+    </ion-col>
+
+    <ion-col size="{{ this.appSetting.device }}">
+      <div>
+        <ion-card button (click)="cardClick('cardID')">
+          <ion-skeleton-text animated></ion-skeleton-text>
+          <ion-card-header>
+            <ion-card-subtitle
+              ><ion-skeleton-text animated></ion-skeleton-text
+            ></ion-card-subtitle>
+            <ion-card-title
+              ><ion-skeleton-text animated></ion-skeleton-text
+            ></ion-card-title>
+          </ion-card-header>
+          <ion-card-content>
+            <ion-skeleton-text animated></ion-skeleton-text><br />
+            <ion-skeleton-text animated></ion-skeleton-text>
+          </ion-card-content>
+        </ion-card>
+      </div>
+    </ion-col>
+  </ion-row>
+</ion-grid>

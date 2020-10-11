@@ -5,7 +5,6 @@ import { appSetting } from "src/app/app-setting";
 import { Component, OnInit } from "@angular/core";
 import { ModalController } from "@ionic/angular";
 import { orderTransationModel } from "src/app/Models/orderTransationModel";
-import { isUndefined } from "util";
 import { InAppBrowser } from "@ionic-native/in-app-browser/ngx";
 import { UserModelService } from "src/app/Services/userModel/user-model.service";
 
@@ -98,6 +97,7 @@ export class ClientInvoiceComponent implements OnInit {
     temp.forEach((x) => {
       total = total + x.itemFinalPrice;
     });
+
     this.status = this.data.orderModel.status;
 
     this.displayTotal = total;
