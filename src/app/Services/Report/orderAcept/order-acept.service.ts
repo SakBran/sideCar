@@ -20,9 +20,9 @@ export class OrderAceptService {
   ) {}
 
   get(start:string,end:string): Observable<orderAcceptModel[]> {
-    console.log(this.url + `/resturant?start='${start}'&end='${end}'`);
+    console.log(this.url + `?start=${start}&end=${end}`);
     return this.http.get<orderAcceptModel[]>(
-      this.url + `/resturant?start='${start}'&end='${end}'`
+      this.url + `?start='${start}'&end='${end}'`
     );
     
   }

@@ -33,17 +33,17 @@ export class OrderAcceptFormComponent implements OnInit {
     const x:Date=new Date(data);
     let month:string="00";
     let date:string="00";
-    if(+x.getMonth()<10){
-      month=`0${x.getMonth().toString()}`
+    if(x.getMonth()+1<10){
+      month=`0${(x.getMonth()+1).toString()}`
     }else{
-      month=x.getMonth().toString();
+      month=(x.getMonth()+1).toString();
     }
-    if(+x.getDate()<10){
+    if(x.getDate()<10){
       date=`0${x.getDate().toString()}`
     }else{
       date=x.getDate().toString();
     }
-    const startDate:string=`${x.getFullYear()}-${month}-${date}`;
+    const startDate:string=`${x.getFullYear().toString()}-${month}-${date}`;
     return startDate;
   }
 }

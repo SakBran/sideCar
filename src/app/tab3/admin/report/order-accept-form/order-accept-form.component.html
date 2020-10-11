@@ -1,8 +1,23 @@
-<ion-input type="date" [(ngModel)]="startDate"  placeholder="Awesome Input"></ion-input>
-<ion-input type="date" [(ngModel)]="endDate" placeholder="Awesome Input"></ion-input>
-<ion-button (click)="click()"  expand="block" fill="clear" shape="round">
-  Click me
-</ion-button>
-<p *ngFor="let item of this.dataList" >
-  {{item.itemName}}
-</p>
+<ion-header>
+  <ion-toolbar>
+    <ion-input type="date" [(ngModel)]="startDate"  placeholder="Awesome Input"></ion-input>
+  </ion-toolbar>
+  <ion-toolbar>
+    <ion-input type="date" [(ngModel)]="endDate" placeholder="Awesome Input"></ion-input>
+  </ion-toolbar>
+  <ion-button (click)="click()"  expand="block" fill="clear" shape="round">
+    Click me
+  </ion-button>
+</ion-header>
+
+
+
+
+<ion-list>
+   <ion-card button *ngFor="let item of this.dataList" >
+      <ion-card-content>
+        {{item.itemName}}
+      </ion-card-content>
+   </ion-card>
+</ion-list>
+
