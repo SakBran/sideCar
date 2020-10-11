@@ -61,7 +61,7 @@ export class HomeItemsComponent implements OnInit {
 
   searchResturant = 0;
   Filter(e) {
- 
+    this.searchResturant=e;
     const temp = [...this.appSetting.constmainItemDataList];
     let res: mainModel[] = [];
     temp.forEach((x) => {

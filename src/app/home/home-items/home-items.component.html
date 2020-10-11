@@ -66,6 +66,7 @@
         >{{ item.shopname }}</ion-select-option
       >
     </ion-select>
+    
     <ion-chip slot="end" (click)="categoryChoose()" outline color="tertiary">
       <ion-icon name="fast-food-outline"></ion-icon>
       <ion-label>Foods</ion-label>
@@ -85,10 +86,11 @@
         >{{ item.categoryName }}</ion-select-option
       >
     </ion-select>
+    <!------
     <ion-chip slot="end" (click)="refresh()" outline color="tertiary">
       <ion-icon name="refresh-outline"></ion-icon>
     </ion-chip>
- 
+ ------>
 </ion-toolbar>
 <ion-toolbar color="light">
   <ion-searchbar
@@ -99,7 +101,7 @@
   ></ion-searchbar>
 </ion-toolbar>
 
-<ion-grid>
+<ion-grid *ngIf="this.searchResturant!==0" >
   <ion-row *ngIf="this.appSetting.mainItemDataList.length !== 0">
     <ion-col
       *ngFor="let item of this.appSetting.mainItemDataList"
