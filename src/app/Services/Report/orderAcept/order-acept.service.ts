@@ -19,9 +19,11 @@ export class OrderAceptService {
     private appSetting: appSetting
   ) {}
 
-  get(start:Date,end:Date): Observable<orderAcceptModel[]> {
+  get(start:string,end:string): Observable<orderAcceptModel[]> {
+    console.log(this.url + `/resturant?start='${start}'&end='${end}'`);
     return this.http.get<orderAcceptModel[]>(
       this.url + `/resturant?start='${start}'&end='${end}'`
     );
+    
   }
 }

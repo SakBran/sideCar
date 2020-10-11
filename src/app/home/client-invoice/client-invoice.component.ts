@@ -38,9 +38,6 @@ export class ClientInvoiceComponent implements OnInit {
     });
   }
 
-  checkUndefined(obj): boolean {
-    return isUndefined(obj);
-  }
   count(id, fun) {
     let i = 0;
     const temp = [...this.appSetting.orderDetailViewList];

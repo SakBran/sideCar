@@ -9,7 +9,7 @@
 <ion-progress-bar *ngIf="this.loading===1"  type="indeterminate"></ion-progress-bar>
 <ion-content fullscreen>
   <ion-list>
-    <ng-container *ngIf="checkUndefined(this.data) === false">
+    <ng-container *ngIf="this.data">
       <ion-item-divider>
         <ion-label color="medium">
           <h2>Informations</h2>

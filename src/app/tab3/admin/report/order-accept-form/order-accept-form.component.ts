@@ -14,7 +14,7 @@ export class OrderAcceptFormComponent implements OnInit {
   endDate:Date=new Date();
   constructor(private orderAcceptService:OrderAceptService) {
    
-    this.orderAcceptService.get(this.startDate,this.endDate).subscribe(x=>{
+    this.orderAcceptService.get(this.date2String(this.startDate),this.date2String(this.endDate)).subscribe(x=>{
       this.dataList=x
     })
    }
@@ -22,9 +22,28 @@ export class OrderAcceptFormComponent implements OnInit {
   ngOnInit() {}
 
   click(){
-
-    this.orderAcceptService.get(this.startDate,this.endDate).subscribe(x=>
+   this.orderAcceptService.get(this.date2String(this.startDate),this.date2String(this.endDate)).subscribe(x=>
       this.dataList=x,err=>console.log(err),()=>{console.log(this.dataList)}
-    )
+    );
+    
+   
+  }
+
+  date2String(data:Date):string{
+    const x:Date=new Date(data);
+    let month:string="00";
+    let date:string="00";
+    if(+x.getMonth()<10){
+      month=`0${x.getMonth().toString()}`
+    }else{
+      month=x.getMonth().toString();
+    }
+    if(+x.getDate()<10){
+      date=`0${x.getDate().toString()}`
+    }else{
+      date=x.getDate().toString();
+    }
+    const startDate:string=`${x.getFullYear()}-${month}-${date}`;
+    return startDate;
   }
 }
