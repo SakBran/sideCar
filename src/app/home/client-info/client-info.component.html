@@ -37,7 +37,7 @@
       <ion-item>
         <ion-label position="floating">Township</ion-label>
         <ion-select 
-          [(ngModel)]="this.appSetting.orderData.Township_id"
+          [(ngModel)]="this.locationSet"
           (ngModelChange)="deliverChange($event)"
         >
           <ion-select-option
@@ -97,7 +97,10 @@
       </ion-item>
     </ion-item-group>
   </ion-list>
-  <ion-button (click)="submitOrder()" expand="block" color="primary" shape="round">
+  <ion-button *ngIf="this.appSetting.orderData.Township_id!==0" (click)="submitOrder()" expand="block" color="primary" shape="round">
     Submit Order
+  </ion-button>
+  <ion-button *ngIf="this.appSetting.orderData.Township_id===0" disabled expand="block" color="danger" shape="round">
+    Select Same Zone Please.
   </ion-button>
 </ion-content>

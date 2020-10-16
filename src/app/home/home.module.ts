@@ -11,16 +11,18 @@ import { FormsModule } from "@angular/forms";
 import { HomeItemsComponent } from "./home-items/home-items.component";
 import { ClientInfoComponent } from './client-info/client-info.component';
 
+const pages:any=[
+  HomePageComponent,
+  HomeItemDetailComponent,
+  HomeItemsComponent,
+  ClientInfoComponent,
+  ClientShopcartComponent,
+  ClientInvoiceComponent
+]
 @NgModule({
-  declarations: [
-    HomePageComponent,
-    HomeItemDetailComponent,
-    HomeItemsComponent,
-    ClientInfoComponent,
-    ClientShopcartComponent,
-    ClientInvoiceComponent
-  ],
+  declarations: pages,
+
   imports: [IonicModule, CommonModule, FormsModule, HomeRoutingModule],
-  exports:[ClientInvoiceComponent]
+  exports:pages
 })
 export class HomeModule {}

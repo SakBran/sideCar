@@ -10,11 +10,11 @@ function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) return _arrayLikeToAr
 
 function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
 
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
 function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
 
 function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 (window["webpackJsonp"] = window["webpackJsonp"] || []).push([["tab1-tab1-module"], {
   /***/
@@ -33,7 +33,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = "<ion-content>\r\n  <ion-card>\r\n    <ion-card-content>\r\n      <ion-item lines=\"none\">\r\n        <ion-avatar slot=\"start\">\r\n          <img src=\"/../assets/food.svg\" />\r\n        </ion-avatar>\r\n        <ion-label lines=\"none\">\r\n          <h2>{{ this.foodData.itemName }}</h2>\r\n          <h3>{{ this.foodData.price }}</h3>\r\n          <h3>{{ this.appSetting.resName(foodData.resturant_id) }}</h3>\r\n        </ion-label>\r\n      </ion-item>\r\n    </ion-card-content>\r\n  </ion-card>\r\n\r\n  <ion-card>\r\n    <ion-card-content>\r\n      <ion-item lines=\"none\">\r\n        <ion-avatar slot=\"start\">\r\n          <img src=\"/../assets/number.svg\" />\r\n        </ion-avatar>\r\n        <ion-label>\r\n          <h2>Please enter the quantity</h2>\r\n        </ion-label>\r\n      </ion-item>\r\n      <ion-item>\r\n        <ion-label color=\"tertiary\" position=\"floating\">\r\n          <ion-icon name=\"calculator-outline\"></ion-icon> Quantity <ion-text *ngIf=\"this.orderDetail.itemQty===0\" color=\"danger\">\r\n            ***\r\n          </ion-text>\r\n        </ion-label>\r\n        <ion-input [(ngModel)]=\"this.orderDetail.itemQty\" type=\"number\"></ion-input>\r\n      </ion-item>\r\n    </ion-card-content>\r\n  </ion-card>\r\n\r\n  <ion-card>\r\n    <ion-card-content>\r\n      <ion-item lines=\"none\">\r\n        <ion-avatar slot=\"start\">\r\n          <img src=\"/../assets/sale.svg\" />\r\n        </ion-avatar>\r\n        <ion-label>\r\n          <h2 color=\"primary\">Please enter the Discount amount</h2>\r\n        </ion-label>\r\n      </ion-item>\r\n      <ion-item>\r\n        <ion-label color=\"tertiary\" position=\"floating\">\r\n          <ion-icon name=\"cash-outline\"></ion-icon> Discount\r\n        </ion-label>\r\n        <ion-input [(ngModel)]=\"this.orderDetail.discount\" type=\"number\"></ion-input>\r\n      </ion-item>\r\n    </ion-card-content>\r\n  </ion-card>\r\n\r\n  <ion-card>\r\n    <ion-card-content>\r\n      <ion-item lines=\"none\">\r\n        <ion-avatar slot=\"start\">\r\n          <img src=\"/../assets/remark.svg\" />\r\n        </ion-avatar>\r\n        <ion-label>\r\n          <h2 color=\"primary\">Please enter remark</h2>\r\n        </ion-label>\r\n      </ion-item>\r\n      <ion-item>\r\n        <ion-label color=\"tertiary\" position=\"floating\">\r\n          <ion-icon name=\"chatbubbles-outline\"></ion-icon> Remark\r\n        </ion-label>\r\n        <ion-input [(ngModel)]=\"this.orderDetail.remark\" type=\"text\"></ion-input>\r\n      </ion-item>\r\n    </ion-card-content>\r\n  </ion-card>\r\n\r\n  <ion-card>\r\n    <ion-item lines=\"none\">\r\n      <ion-avatar slot=\"start\">\r\n        <img src=\"/../assets/money.svg\" />\r\n      </ion-avatar>\r\n      <ion-label>\r\n        <h2>Total</h2>\r\n        <h3>{{this.totalAmount()}}</h3>\r\n      </ion-label>\r\n    </ion-item>\r\n  </ion-card>\r\n\r\n  <ion-grid fixed>\r\n    <ion-row>\r\n      <ion-col size=\"6\">\r\n        <ion-button expand=\"block\" (click)=\"this.back()\" color=\"light\">\r\n          Back\r\n        </ion-button>\r\n      </ion-col>\r\n      <ion-col size=\"6\">\r\n        <ion-button expand=\"block\" (click)=\"this.addToInvoice()\" color=\"light\">\r\n          Add to Invoice\r\n        </ion-button>\r\n      </ion-col>\r\n    </ion-row>\r\n  </ion-grid>\r\n</ion-content>";
+    __webpack_exports__["default"] = "<ion-content>\r\n  <ion-card>\r\n    <ion-card-content>\r\n      <ion-item lines=\"none\">\r\n      \r\n        <ion-label lines=\"none\">\r\n          <h2>{{ this.foodData.itemName }}</h2>\r\n          <h3>{{ this.foodData.price }}</h3>\r\n          <h3>{{ this.appSetting.resName(foodData.resturant_id) }}</h3>\r\n        </ion-label>\r\n      </ion-item>\r\n    </ion-card-content>\r\n  </ion-card>\r\n\r\n  <ion-card>\r\n    <ion-card-content>\r\n      <ion-item lines=\"none\">\r\n     \r\n        <ion-label>\r\n          <h2>Please enter the quantity</h2>\r\n        </ion-label>\r\n      </ion-item>\r\n      <ion-item>\r\n        <ion-label color=\"tertiary\" position=\"floating\">\r\n          <ion-icon name=\"calculator-outline\"></ion-icon> Quantity <ion-text *ngIf=\"this.orderDetail.itemQty===0\" color=\"danger\">\r\n            ***\r\n          </ion-text>\r\n        </ion-label>\r\n        <ion-input [(ngModel)]=\"this.orderDetail.itemQty\" type=\"number\"></ion-input>\r\n      </ion-item>\r\n    </ion-card-content>\r\n  </ion-card>\r\n\r\n  <ion-card>\r\n    <ion-card-content>\r\n      <ion-item lines=\"none\">\r\n \r\n        <ion-label>\r\n          <h2 color=\"primary\">Please enter the Discount amount</h2>\r\n        </ion-label>\r\n      </ion-item>\r\n      <ion-item>\r\n        <ion-label color=\"tertiary\" position=\"floating\">\r\n          <ion-icon name=\"cash-outline\"></ion-icon> Discount\r\n        </ion-label>\r\n        <ion-input [(ngModel)]=\"this.orderDetail.discount\" type=\"number\"></ion-input>\r\n      </ion-item>\r\n    </ion-card-content>\r\n  </ion-card>\r\n\r\n  <ion-card>\r\n    <ion-card-content>\r\n      <ion-item lines=\"none\">\r\n      \r\n        <ion-label>\r\n          <h2 color=\"primary\">Please enter remark</h2>\r\n        </ion-label>\r\n      </ion-item>\r\n      <ion-item>\r\n        <ion-label color=\"tertiary\" position=\"floating\">\r\n          <ion-icon name=\"chatbubbles-outline\"></ion-icon> Remark\r\n        </ion-label>\r\n        <ion-input [(ngModel)]=\"this.orderDetail.remark\" type=\"text\"></ion-input>\r\n      </ion-item>\r\n    </ion-card-content>\r\n  </ion-card>\r\n\r\n  <ion-card>\r\n    <ion-item lines=\"none\">\r\n    \r\n      <ion-label>\r\n        <h2>Total</h2>\r\n        <h3>{{this.totalAmount()}}</h3>\r\n      </ion-label>\r\n    </ion-item>\r\n  </ion-card>\r\n\r\n  <ion-grid fixed>\r\n    <ion-row>\r\n      <ion-col size=\"6\">\r\n        <ion-button expand=\"block\" (click)=\"this.back()\" color=\"light\">\r\n          Back\r\n        </ion-button>\r\n      </ion-col>\r\n      <ion-col size=\"6\">\r\n        <ion-button expand=\"block\" (click)=\"this.addToInvoice()\" color=\"light\">\r\n          Add to Invoice\r\n        </ion-button>\r\n      </ion-col>\r\n    </ion-row>\r\n  </ion-grid>\r\n</ion-content>";
     /***/
   },
 
@@ -53,7 +53,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = "<ion-header translucent>\r\n  <ion-toolbar>\r\n    <ion-segment value=\"all\">\r\n      <ion-segment-button (click)=\"this.appSetting.displayFunction('pending')\" value=\"Pending\" >\r\n        <ion-label>Pending</ion-label>\r\n      </ion-segment-button>\r\n      <ion-segment-button (click)=\"this.appSetting.displayFunction('no')\" value=\"Rejected\">\r\n        <ion-label>Rejected</ion-label>\r\n      </ion-segment-button>\r\n      <ion-segment-button (click)=\"this.appSetting.displayFunction('yes')\" value=\"Acepted\">\r\n        <ion-label>Acepted</ion-label>\r\n      </ion-segment-button>\r\n      <ion-segment-button (click)=\"this.appSetting.displayFunction('delivering')\" value=\"Delivering\">\r\n        <ion-label>Delivering</ion-label>\r\n      </ion-segment-button>\r\n    </ion-segment>\r\n  </ion-toolbar>\r\n</ion-header>\r\n\r\n<ion-content>\r\n  <ion-refresher slot=\"fixed\" (ionRefresh)=\"refresh($event)\">\r\n    <ion-refresher-content></ion-refresher-content>\r\n  </ion-refresher>\r\n  <ng-container *ngFor=\"let x of this.appSetting.orderTransationList\">\r\n    <app-resturant-individual-order *ngIf=\"x\" [orderNo]=x.orderModel.id>\r\n    </app-resturant-individual-order>\r\n  </ng-container>\r\n</ion-content>";
+    __webpack_exports__["default"] = "<ion-header translucent>\r\n  <ion-toolbar>\r\n    <ion-segment value=\"all\">\r\n     <!----- <ion-segment-button (click)=\"this.appSetting.displayFunction('pending')\" value=\"Pending\" >\r\n        <ion-label>Pending</ion-label>\r\n      </ion-segment-button>----->\r\n      <ion-segment-button (click)=\"this.appSetting.displayFunction('no')\" value=\"Rejected\">\r\n        <ion-label>Pending</ion-label>\r\n      </ion-segment-button>\r\n      <ion-segment-button (click)=\"this.appSetting.displayFunction('yes')\" value=\"Acepted\">\r\n        <ion-label>Acepted</ion-label>\r\n      </ion-segment-button>\r\n      <ion-segment-button (click)=\"this.appSetting.displayFunction('delivering')\" value=\"Delivering\">\r\n        <ion-label>Delivering</ion-label>\r\n      </ion-segment-button>\r\n    </ion-segment>\r\n  </ion-toolbar>\r\n</ion-header>\r\n\r\n<ion-content>\r\n  <ion-refresher slot=\"fixed\" (ionRefresh)=\"refresh($event)\">\r\n    <ion-refresher-content></ion-refresher-content>\r\n  </ion-refresher>\r\n  <ng-container *ngFor=\"let x of this.appSetting.orderTransationList\">\r\n    <app-resturant-individual-order *ngIf=\"x\" [orderNo]=x.orderModel.id>\r\n    </app-resturant-individual-order>\r\n  </ng-container>\r\n</ion-content>";
     /***/
   },
 
@@ -73,7 +73,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = "\r\n<ion-refresher slot=\"fixed\" (ionRefresh)=\"refresh($event)\">\r\n  <ion-refresher-content></ion-refresher-content>\r\n</ion-refresher>\r\n\r\n<ion-card *ngFor=\"let i of this.appSetting.menuFoodDataList\">\r\n  <ion-item>\r\n    <ion-avatar slot=\"start\">\r\n      <img src=\"/../assets/food.svg\" />\r\n    </ion-avatar>\r\n    <ion-label>\r\n      <h2>{{ i.itemName }}</h2>\r\n      <h3>{{ i.price }}</h3>\r\n      <p>{{ this.appSetting.resName(i.resturant_id) }}</p>\r\n    </ion-label>\r\n    <ion-button routerLink=\"/tabs/tab1/add/{{ i.id }}\" color=\"secondary\">\r\n      <ion-icon name=\"add-outline\"></ion-icon>\r\n    </ion-button>\r\n  </ion-item>\r\n</ion-card>\r\n";
+    __webpack_exports__["default"] = "\r\n<ion-refresher slot=\"fixed\" (ionRefresh)=\"refresh($event)\">\r\n  <ion-refresher-content></ion-refresher-content>\r\n</ion-refresher>\r\n\r\n<ion-card *ngFor=\"let i of this.appSetting.menuFoodDataList\">\r\n  <ion-item>\r\n\r\n    <ion-label>\r\n      <h2>{{ i.itemName }}</h2>\r\n      <h3>{{ i.price }}</h3>\r\n      <p>{{ this.appSetting.resName(i.resturant_id) }}</p>\r\n    </ion-label>\r\n    <ion-button routerLink=\"/managmenet/tabs/tab1/add/{{ i.id }}\" color=\"secondary\">\r\n      <ion-icon name=\"add-outline\"></ion-icon>\r\n    </ion-button>\r\n  </ion-item>\r\n</ion-card>\r\n";
     /***/
   },
 
@@ -113,7 +113,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = "<ion-content>\r\n  <ion-card>\r\n    <ion-card-content>\r\n      <ion-item lines=\"none\">\r\n        <ion-avatar slot=\"start\">\r\n          <img src=\"/../assets/food.svg\" />\r\n        </ion-avatar>\r\n        <ion-label lines=\"none\">\r\n          <h2>{{ this.foodData.itemName }}</h2>\r\n          <h3>{{ this.foodData.price }}</h3>\r\n          <h3>{{ this.appSetting.resName(foodData.resturant_id) }}</h3>\r\n        </ion-label>\r\n      </ion-item>\r\n    </ion-card-content>\r\n  </ion-card>\r\n\r\n  <ion-card>\r\n    <ion-card-content>\r\n      <ion-item lines=\"none\">\r\n        <ion-avatar slot=\"start\">\r\n          <img src=\"/../assets/number.svg\" />\r\n        </ion-avatar>\r\n        <ion-label>\r\n          <h2>Please enter the quantity</h2>\r\n        </ion-label>\r\n      </ion-item>\r\n      <ion-item>\r\n        <ion-label color=\"tertiary\" position=\"floating\">\r\n          <ion-icon name=\"calculator-outline\"></ion-icon> Quantity <ion-text *ngIf=\"this.orderDetail.itemQty===0\" color=\"danger\">\r\n            ***\r\n          </ion-text>\r\n        </ion-label>\r\n        <ion-input [(ngModel)]=\"this.orderDetail.itemQty\" type=\"number\"></ion-input>\r\n      </ion-item>\r\n    </ion-card-content>\r\n  </ion-card>\r\n\r\n  <ion-card>\r\n    <ion-card-content>\r\n      <ion-item lines=\"none\">\r\n        <ion-avatar slot=\"start\">\r\n          <img src=\"/../assets/sale.svg\" />\r\n        </ion-avatar>\r\n        <ion-label>\r\n          <h2 color=\"primary\">Please enter the Discount amount</h2>\r\n        </ion-label>\r\n      </ion-item>\r\n      <ion-item>\r\n        <ion-label color=\"tertiary\" position=\"floating\">\r\n          <ion-icon name=\"cash-outline\"></ion-icon> Discount\r\n        </ion-label>\r\n        <ion-input [(ngModel)]=\"this.orderDetail.discount\" type=\"number\"></ion-input>\r\n      </ion-item>\r\n    </ion-card-content>\r\n  </ion-card>\r\n\r\n  <ion-card>\r\n    <ion-card-content>\r\n      <ion-item lines=\"none\">\r\n        <ion-avatar slot=\"start\">\r\n          <img src=\"/../assets/remark.svg\" />\r\n        </ion-avatar>\r\n        <ion-label>\r\n          <h2 color=\"primary\">Please enter remark</h2>\r\n        </ion-label>\r\n      </ion-item>\r\n      <ion-item>\r\n        <ion-label color=\"tertiary\" position=\"floating\">\r\n          <ion-icon name=\"chatbubbles-outline\"></ion-icon> Remark\r\n        </ion-label>\r\n        <ion-input [(ngModel)]=\"this.orderDetail.remark\" type=\"text\"></ion-input>\r\n      </ion-item>\r\n    </ion-card-content>\r\n  </ion-card>\r\n\r\n  <ion-card>\r\n    <ion-item lines=\"none\">\r\n      <ion-avatar slot=\"start\">\r\n        <img src=\"/../assets/money.svg\" />\r\n      </ion-avatar>\r\n      <ion-label>\r\n        <h2>Total</h2>\r\n        <h3>{{this.totalAmount()}}</h3>\r\n      </ion-label>\r\n    </ion-item>\r\n  </ion-card>\r\n\r\n  <ion-grid fixed>\r\n    <ion-row>\r\n      <ion-col size=\"6\">\r\n        <ion-button expand=\"block\" (click)=\"this.back()\" color=\"light\">\r\n          Back\r\n        </ion-button>\r\n      </ion-col>\r\n      <ion-col size=\"6\">\r\n        <ion-button expand=\"block\" (click)=\"this.addToInvoice()\" color=\"light\">\r\n          Update Invoice\r\n        </ion-button>\r\n      </ion-col>\r\n    </ion-row>\r\n  </ion-grid>\r\n</ion-content>";
+    __webpack_exports__["default"] = "<ion-content>\r\n  <ion-card>\r\n    <ion-card-content>\r\n      <ion-item lines=\"none\">\r\n       \r\n        <ion-label lines=\"none\">\r\n          <h2>{{ this.foodData.itemName }}</h2>\r\n          <h3>{{ this.foodData.price }}</h3>\r\n          <h3>{{ this.appSetting.resName(foodData.resturant_id) }}</h3>\r\n        </ion-label>\r\n      </ion-item>\r\n    </ion-card-content>\r\n  </ion-card>\r\n\r\n  <ion-card>\r\n    <ion-card-content>\r\n      <ion-item lines=\"none\">\r\n    \r\n        <ion-label>\r\n          <h2>Please enter the quantity</h2>\r\n        </ion-label>\r\n      </ion-item>\r\n      <ion-item>\r\n        <ion-label color=\"tertiary\" position=\"floating\">\r\n          <ion-icon name=\"calculator-outline\"></ion-icon> Quantity <ion-text *ngIf=\"this.orderDetail.itemQty===0\" color=\"danger\">\r\n            ***\r\n          </ion-text>\r\n        </ion-label>\r\n        <ion-input [(ngModel)]=\"this.orderDetail.itemQty\" type=\"number\"></ion-input>\r\n      </ion-item>\r\n    </ion-card-content>\r\n  </ion-card>\r\n\r\n  <ion-card>\r\n    <ion-card-content>\r\n      <ion-item lines=\"none\">\r\n     \r\n        <ion-label>\r\n          <h2 color=\"primary\">Please enter the Discount amount</h2>\r\n        </ion-label>\r\n      </ion-item>\r\n      <ion-item>\r\n        <ion-label color=\"tertiary\" position=\"floating\">\r\n          <ion-icon name=\"cash-outline\"></ion-icon> Discount\r\n        </ion-label>\r\n        <ion-input [(ngModel)]=\"this.orderDetail.discount\" type=\"number\"></ion-input>\r\n      </ion-item>\r\n    </ion-card-content>\r\n  </ion-card>\r\n\r\n  <ion-card>\r\n    <ion-card-content>\r\n      <ion-item lines=\"none\">\r\n    \r\n        <ion-label>\r\n          <h2 color=\"primary\">Please enter remark</h2>\r\n        </ion-label>\r\n      </ion-item>\r\n      <ion-item>\r\n        <ion-label color=\"tertiary\" position=\"floating\">\r\n          <ion-icon name=\"chatbubbles-outline\"></ion-icon> Remark\r\n        </ion-label>\r\n        <ion-input [(ngModel)]=\"this.orderDetail.remark\" type=\"text\"></ion-input>\r\n      </ion-item>\r\n    </ion-card-content>\r\n  </ion-card>\r\n\r\n  <ion-card>\r\n    <ion-item lines=\"none\">\r\n  \r\n      <ion-label>\r\n        <h2>Total</h2>\r\n        <h3>{{this.totalAmount()}}</h3>\r\n      </ion-label>\r\n    </ion-item>\r\n  </ion-card>\r\n\r\n  <ion-grid fixed>\r\n    <ion-row>\r\n      <ion-col size=\"6\">\r\n        <ion-button expand=\"block\" (click)=\"this.back()\" color=\"light\">\r\n          Back\r\n        </ion-button>\r\n      </ion-col>\r\n      <ion-col size=\"6\">\r\n        <ion-button expand=\"block\" (click)=\"this.addToInvoice()\" color=\"light\">\r\n          Update Invoice\r\n        </ion-button>\r\n      </ion-col>\r\n    </ion-row>\r\n  </ion-grid>\r\n</ion-content>";
     /***/
   },
 
@@ -133,7 +133,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = "<ion-card>\r\n  <ion-card-header>\r\n    <ion-card-subtitle color=\"secondary\">{{this.foodName(orderDetail.itemID).toString()}} <br />Quantity:\r\n      {{orderDetail.itemQty}}\r\n      <ng-container *ngIf=\"this.orderDetail.status==='no'\">\r\n        <ion-label color=\"danger\">\r\n          Rejected\r\n        </ion-label>\r\n      </ng-container>\r\n\r\n      <ng-container *ngIf=\"this.orderDetail.status==='yes'\">\r\n        <ion-label color=\"success\">\r\n          Acepted\r\n        </ion-label>\r\n      </ng-container>\r\n\r\n      <ng-container *ngIf=\"this.orderDetail.status==='pending'\">\r\n        <ion-label color=\"warning\">\r\n          Processing\r\n        </ion-label>\r\n      </ng-container>\r\n\r\n      <ng-container *ngIf=\"this.appSetting.loginType==='admin'\">\r\n        <ng-container *ngIf=\"this.orderDetail.isPickUpResturant===true\">\r\n          <ion-label color=\"dark\">\r\n            <p>\r\n              <ion-icon name=\"checkmark-circle-outline\"></ion-icon>Resturant\r\n            </p>\r\n          </ion-label>\r\n        </ng-container>\r\n        <ng-container *ngIf=\"this.orderDetail.isPickUpRider===true\">\r\n          <ion-label color=\"dark\">\r\n            <p>\r\n              <ion-icon name=\"checkmark-circle-outline\"></ion-icon>Rider\r\n            </p>\r\n          </ion-label>\r\n        </ng-container>\r\n      </ng-container>\r\n    </ion-card-subtitle>\r\n  </ion-card-header>\r\n  <ion-card-content>\r\n    <ion-item>\r\n      <ion-label>\r\n        <p>Discount:{{orderDetail.discount}}</p>\r\n        <p>Price:{{orderDetail.itemFinalPrice}}</p>\r\n\r\n      </ion-label>\r\n      <ng-container *ngIf=\"this.orderDetail.status==='pending'\">\r\n        <ion-checkbox [(ngModel)]=\"available\" (ngModelChange)=\"resendListFun($event)\"></ion-checkbox>\r\n      </ng-container>\r\n\r\n      <ng-container *ngIf=\"this.orderDetail.status==='no'\">\r\n        <ion-button routerLink=\"/tabs/tab1/pendingEdit/{{orderDetail.orderDetailID}}\" color=\"secondary\">\r\n          <ion-icon name=\"create-outline\"></ion-icon>\r\n        </ion-button>\r\n        <ion-button (click)=\"this.onDelete(orderDetail.orderDetailID)\" color=\"danger\">\r\n          <ion-icon name=\"trash-outline\"></ion-icon>\r\n        </ion-button>\r\n      </ng-container>\r\n\r\n    </ion-item>\r\n    <ion-item>\r\n      <ion-label color=\"success\">\r\n        <p>Remark:{{orderDetail.remark}}</p>\r\n      </ion-label>\r\n    </ion-item>\r\n    <ng-container *ngIf=\"this.available === false && this.appSetting.loginType==='resturant'\">\r\n      <ion-item>\r\n        <ion-label color=\"danger\" position=\"floating\">Comment</ion-label>\r\n        <ion-input [(ngModel)]=\"this.comment\" (ngModelChange)=\"resendListKeyPress($event)\" type=\"text\"\r\n          placeholder=\"eg: Only four item available\"></ion-input>\r\n      </ion-item>\r\n    </ng-container>\r\n    <ng-container *ngIf=\"orderDetail.status==='no' && this.appSetting.loginType==='admin'\">\r\n      <ion-item>\r\n        <ion-label color=\"danger\" position=\"floating\">Comment</ion-label>\r\n        <ion-input value='{{orderDetail.comment}}' type=\"text\" placeholder=\"eg: Only four item available\" readonly>\r\n        </ion-input>\r\n      </ion-item>\r\n    </ng-container>\r\n  </ion-card-content>\r\n</ion-card>";
+    __webpack_exports__["default"] = "<ng-container *ngIf=\"this.appSetting.loginType === 'admin'\">\r\n  <ng-container *ngIf=\"this.orderDetail.isPickUpResturant === true\">\r\n    <ion-label color=\"primary\">\r\n      <p><ion-icon name=\"checkmark-circle-outline\"></ion-icon>Resturant</p>\r\n    </ion-label>\r\n  </ng-container>\r\n  <ng-container *ngIf=\"this.orderDetail.isPickUpRider === true\">\r\n    <ion-label color=\"primary\">\r\n      <p><ion-icon name=\"checkmark-circle-outline\"></ion-icon>Rider</p>\r\n    </ion-label>\r\n  </ng-container>\r\n</ng-container>\r\n\r\n<ion-item>\r\n  <ion-label>\r\n    <ng-container *ngIf=\"this.orderDetail.status === 'no'\">\r\n      <ion-text color=\"danger\">Please Check!</ion-text>\r\n    </ng-container>\r\n\r\n    <ng-container *ngIf=\"this.orderDetail.status === 'yes'\">\r\n      <ion-text color=\"success\">Acepted</ion-text>\r\n    </ng-container>\r\n\r\n    <ng-container *ngIf=\"this.orderDetail.status === 'pending'\">\r\n      <ion-text color=\"secondary\">Processing</ion-text>\r\n    </ng-container>\r\n    <p>{{ this.foodName(orderDetail.itemID).toString() }}</p>\r\n    <p>Quantity:{{ orderDetail.itemQty }}</p>\r\n    <p>Discount:{{ orderDetail.discount }}</p>\r\n    <p>Price:{{ orderDetail.itemFinalPrice }}</p>\r\n  </ion-label>\r\n  <ng-container *ngIf=\"this.orderDetail.status === 'pending'\">\r\n    <ion-checkbox\r\n      [(ngModel)]=\"available\"\r\n      (ngModelChange)=\"resendListFun($event)\"\r\n    ></ion-checkbox>\r\n  </ng-container>\r\n\r\n  <ng-container *ngIf=\"this.orderDetail.status === 'no'\">\r\n    <ion-button\r\n      routerLink=\"/managmenet/tabs/tab1/pendingEdit/{{\r\n        orderDetail.orderDetailID\r\n      }}\"\r\n      color=\"secondary\"\r\n    >\r\n      <ion-icon name=\"create-outline\"></ion-icon>\r\n    </ion-button>\r\n    <ion-button\r\n      (click)=\"this.onDelete(orderDetail.orderDetailID)\"\r\n      color=\"danger\"\r\n    >\r\n      <ion-icon name=\"trash-outline\"></ion-icon>\r\n    </ion-button>\r\n  </ng-container>\r\n</ion-item>\r\n<ion-item>\r\n  <ion-label color=\"success\">\r\n    <p>Remark:{{ orderDetail.remark }}</p>\r\n  </ion-label>\r\n</ion-item>\r\n<ng-container\r\n  *ngIf=\"this.available === false && this.appSetting.loginType === 'resturant'\"\r\n>\r\n<!-------\r\n  <ion-item>\r\n    <ion-label color=\"danger\" position=\"floating\">Comment</ion-label>\r\n    <ion-input\r\n      [(ngModel)]=\"this.comment\"\r\n      (ngModelChange)=\"resendListKeyPress($event)\"\r\n      type=\"text\"\r\n      placeholder=\"eg: Only four item available\"\r\n    ></ion-input>\r\n  </ion-item>----->\r\n</ng-container>\r\n<ng-container\r\n  *ngIf=\"orderDetail.status === 'no' && this.appSetting.loginType === 'admin'\"\r\n>\r\n<!--------\r\n  <ion-item>\r\n    <ion-label color=\"danger\" position=\"floating\">Comment</ion-label>\r\n    <ion-input\r\n      value=\"{{ orderDetail.comment }}\"\r\n      type=\"text\"\r\n      placeholder=\"eg: Only four item available\"\r\n      readonly\r\n    >\r\n    </ion-input>\r\n  </ion-item>\r\n  ------->\r\n</ng-container>\r\n<hr />\r\n";
     /***/
   },
 
@@ -153,7 +153,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = "<ng-container\r\n  *ngIf=\"\r\n    this.data !== null &&\r\n    this.status() === this.appSetting.displaySetting &&\r\n    this.appSetting.displaySetting !== 'delivering' &&\r\n    this.data.orderModel.status !== 'delivering'\r\n  \"\r\n>\r\n  <ion-card\r\n    *ngIf=\"\r\n      this.data !== null && this.status() === this.appSetting.displaySetting\r\n    \"\r\n  >\r\n    <ion-card-content>\r\n      <ion-item>\r\n        <ion-avatar slot=\"start\">\r\n          <img src=\"/../assets/food.svg\" />\r\n        </ion-avatar>\r\n        <ion-label>\r\n          <h2>\r\n            Order: {{ this.data.orderModel.id }}\r\n            <ng-container *ngIf=\"this.data.orderModel.status !== 'delivering'\">\r\n              <ng-container *ngIf=\"this.status() === 'no'\">\r\n                <ion-label color=\"danger\">Rejected</ion-label>\r\n              </ng-container>\r\n              <ng-container *ngIf=\"this.status() === 'pending'\">\r\n                <ion-label color=\"secondary\">Processing</ion-label>\r\n              </ng-container>\r\n              <ng-container *ngIf=\"this.status() === 'yes'\">\r\n                <ion-label color=\"success\">Accepted</ion-label>\r\n              </ng-container>\r\n            </ng-container>\r\n\r\n            <ng-container *ngIf=\"this.data.orderModel.status === 'delivering'\">\r\n              <ion-label color=\"warning\">In Delivery Process</ion-label>\r\n            </ng-container>\r\n          </h2>\r\n          <p>Date: {{ this.data.orderModel.orderDate | date }}</p>\r\n          <p>Total Amount: {{ this.total() }}</p>\r\n        </ion-label>\r\n        <ng-container *ngIf=\"this.appSetting.loginType === 'resturant'\">\r\n          <ng-container\r\n            *ngIf=\"!this.appSetting.resendBtn(this.data.orderModel.id)\"\r\n          >\r\n            <ion-button (click)=\"sendToServer()\" color=\"danger\">\r\n              <ion-icon name=\"thumbs-down-outline\"></ion-icon>\r\n            </ion-button>\r\n          </ng-container>\r\n          <ng-container\r\n            *ngIf=\"this.appSetting.resendBtn(this.data.orderModel.id)\"\r\n          >\r\n            <ion-button (click)=\"sendToServer()\" color=\"secondary\">\r\n              <ion-icon name=\"thumbs-up-outline\"></ion-icon>\r\n            </ion-button>\r\n          </ng-container>\r\n        </ng-container>\r\n\r\n        <ng-container *ngIf=\"this.appSetting.loginType === 'admin'\">\r\n          <ng-container *ngIf=\"this.data.orderModel.status !== 'delivering'\">\r\n            <ng-container>\r\n              <ion-button\r\n                *ngIf=\"this.status() === 'no'\"\r\n                (click)=\"sendToServer()\"\r\n                color=\"warning\"\r\n              >\r\n                <ion-icon name=\"cloud-upload-outline\"></ion-icon>\r\n              </ion-button>\r\n\r\n              <ion-button\r\n                *ngIf=\"this.status() === 'yes'\"\r\n                routerLink=\"/tabs/tab2/riderSelect/{{ Orderid }}\"\r\n                color=\"success\"\r\n              >\r\n                <ion-icon name=\"bicycle-outline\"></ion-icon>\r\n              </ion-button>\r\n\r\n              <ion-button\r\n                (click)=\"onDelete(this.data.orderModel.id)\"\r\n                color=\"danger\"\r\n              >\r\n                <ion-icon name=\"trash\"></ion-icon>\r\n              </ion-button>\r\n            </ng-container>\r\n          </ng-container>\r\n        </ng-container>\r\n      </ion-item>\r\n\r\n      <ion-list-header>\r\n        <ion-label>\r\n          <h3>\r\n            Order Detail Descriptions [Qty:{{\r\n              this.data.orderDetailModels.length\r\n            }}]\r\n          </h3>\r\n        </ion-label>\r\n        <ion-button (click)=\"itemVisibleMethod()\">\r\n          <ion-text color=\"primary\">\r\n            <p *ngIf=\"this.itemVisible === false\">See All</p>\r\n            <p *ngIf=\"this.itemVisible === true\">Collapse</p>\r\n          </ion-text>\r\n        </ion-button>\r\n      </ion-list-header>\r\n\r\n      <ng-container *ngIf=\"this.itemVisible === true\">\r\n        <ng-container *ngFor=\"let item of data.orderDetailModels\">\r\n          <app-resturant-card *ngIf=\"item\" [data]=\"item\"></app-resturant-card>\r\n        </ng-container>\r\n      </ng-container>\r\n\r\n      <ion-list-header *ngIf=\"this.itemVisible === true\">\r\n        <ion-label></ion-label>\r\n        <ion-button (click)=\"itemVisibleMethod()\">\r\n          <ion-text color=\"primary\">\r\n            <p *ngIf=\"this.itemVisible !== true\">See All</p>\r\n            <p *ngIf=\"this.itemVisible === true\">Collapse</p>\r\n          </ion-text>\r\n        </ion-button>\r\n      </ion-list-header>\r\n    </ion-card-content>\r\n  </ion-card>\r\n</ng-container>\r\n\r\n<ng-container\r\n  *ngIf=\"\r\n    this.data !== null &&\r\n    this.appSetting.displaySetting === 'delivering' &&\r\n    this.data.orderModel.status === 'delivering'\r\n  \"\r\n>\r\n  <ion-card\r\n    *ngIf=\"this.data !== null && this.data.orderModel.status === 'delivering'\"\r\n  >\r\n    <ion-card-content>\r\n      <ion-item>\r\n        <ion-avatar slot=\"start\">\r\n          <img src=\"/../assets/food.svg\" />\r\n        </ion-avatar>\r\n        <ion-label>\r\n          <h2>\r\n            Order: {{ this.data.orderModel.id }}\r\n            <ng-container *ngIf=\"this.data.orderModel.status !== 'delivering'\">\r\n              <ng-container *ngIf=\"this.status() === 'no'\">\r\n                <ion-label color=\"danger\">Rejected</ion-label>\r\n              </ng-container>\r\n              <ng-container *ngIf=\"this.status() === 'pending'\">\r\n                <ion-label color=\"secondary\">Processing</ion-label>\r\n              </ng-container>\r\n              <ng-container *ngIf=\"this.status() === 'yes'\">\r\n                <ion-label color=\"success\">Accepted</ion-label>\r\n              </ng-container>\r\n            </ng-container>\r\n\r\n            <ng-container\r\n              *ngIf=\"\r\n                this.appSetting.loginType === 'admin' &&\r\n                this.data.orderModel.status === 'delivering'\r\n              \"\r\n            >\r\n              <ion-label color=\"warning\">In Delivery Process</ion-label>\r\n            </ng-container>\r\n\r\n            <ng-container\r\n              *ngIf=\"\r\n                this.appSetting.loginType === 'resturant' &&\r\n                this.data.orderModel.status === 'delivering'\r\n              \"\r\n            >\r\n              <ion-label color=\"secondary\">\r\n                <ion-icon name=\"checkmark-circle-outline\"></ion-icon>\r\n              </ion-label>\r\n            </ng-container>\r\n          </h2>\r\n          <p>Date: {{ this.data.orderModel.orderDate | date }}</p>\r\n          <p>Total Amount: {{ this.total() }}</p>\r\n        </ion-label>\r\n        <ng-container\r\n          *ngIf=\"\r\n            this.appSetting.loginType === 'resturant' &&\r\n            this.data.orderModel.status !== 'delivering'\r\n          \"\r\n        >\r\n          <ng-container\r\n            *ngIf=\"!this.appSetting.resendBtn(this.data.orderModel.id)\"\r\n          >\r\n            <ion-button (click)=\"sendToServer()\" color=\"danger\">\r\n              <ion-icon name=\"thumbs-down-outline\"></ion-icon>\r\n            </ion-button>\r\n          </ng-container>\r\n          <ng-container\r\n            *ngIf=\"this.appSetting.resendBtn(this.data.orderModel.id)\"\r\n          >\r\n            <ion-button (click)=\"sendToServer()\" color=\"secondary\">\r\n              <ion-icon name=\"thumbs-up-outline\"></ion-icon>\r\n            </ion-button>\r\n          </ng-container>\r\n        </ng-container>\r\n\r\n        <ng-container\r\n          *ngIf=\"\r\n            this.appSetting.loginType === 'resturant' &&\r\n            this.data.orderModel.status === 'delivering'\r\n          \"\r\n        >\r\n          <ng-container>\r\n            <ion-button\r\n              (click)=\"delivryRecordSave(this.data.orderModel.id)\"\r\n              color=\"success\"\r\n            >\r\n              <ion-icon name=\"bicycle-outline\"></ion-icon>\r\n            </ion-button>\r\n          </ng-container>\r\n        </ng-container>\r\n\r\n        <ng-container *ngIf=\"this.appSetting.loginType === 'admin'\">\r\n          <ng-container *ngIf=\"this.data.orderModel.status !== 'delivering'\">\r\n            <ng-container>\r\n              <ion-button\r\n                *ngIf=\"this.status() === 'no'\"\r\n                (click)=\"sendToServer()\"\r\n                color=\"secondary\"\r\n              >\r\n                <ion-icon name=\"cloud-upload-outline\"></ion-icon>\r\n              </ion-button>\r\n\r\n              <ion-button\r\n                *ngIf=\"this.status() === 'yes'\"\r\n                routerLink=\"/tabs/tab2/riderSelect/{{ Orderid }}\"\r\n                color=\"success\"\r\n              >\r\n                <ion-icon name=\"bicycle-outline\"></ion-icon>\r\n              </ion-button>\r\n\r\n              <ion-button\r\n                (click)=\"onDelete(this.data.orderModel.id)\"\r\n                color=\"danger\"\r\n              >\r\n                <ion-icon name=\"trash\"></ion-icon>\r\n              </ion-button>\r\n            </ng-container>\r\n          </ng-container>\r\n        </ng-container>\r\n\r\n        <ng-container *ngIf=\"this.appSetting.loginType === 'rider'\">\r\n          <ion-button (click)=\"sendToServer()\" color=\"success\">\r\n            <ion-icon name=\"golf-outline\"></ion-icon>\r\n          </ion-button>\r\n\r\n          <ion-button routerLink=\"customerInfo/{{ Orderid }}\" color=\"danger\">\r\n            <ion-icon name=\"location-outline\"></ion-icon>\r\n          </ion-button>\r\n        </ng-container>\r\n      </ion-item>\r\n\r\n      <ion-list-header>\r\n        <ion-label>\r\n          <h3>\r\n            Order Detail Descriptions [Qty:{{\r\n              this.data.orderDetailModels.length\r\n            }}]\r\n          </h3>\r\n        </ion-label>\r\n        <ion-button (click)=\"itemVisibleMethod()\">\r\n          <ion-text color=\"primary\">\r\n            <p *ngIf=\"this.itemVisible !== true\">See All</p>\r\n            <p *ngIf=\"this.itemVisible === true\">Collapse</p>\r\n          </ion-text>\r\n        </ion-button>\r\n      </ion-list-header>\r\n\r\n      <ng-container *ngIf=\"this.itemVisible === true\">\r\n        <ng-container *ngFor=\"let item of data.orderDetailModels\">\r\n          <app-resturant-card *ngIf=\"item\" [data]=\"item\"></app-resturant-card>\r\n        </ng-container>\r\n      </ng-container>\r\n\r\n      <ion-list-header *ngIf=\"this.itemVisible === true\">\r\n        <ion-label></ion-label>\r\n        <ion-button (click)=\"itemVisibleMethod()\">\r\n          <ion-text color=\"primary\">\r\n            <p *ngIf=\"this.itemVisible !== true\">See All</p>\r\n            <p *ngIf=\"this.itemVisible === true\">Collapse</p>\r\n          </ion-text>\r\n        </ion-button>\r\n      </ion-list-header>\r\n    </ion-card-content>\r\n  </ion-card>\r\n</ng-container>\r\n\r\n<ng-container\r\n  *ngIf=\"this.data !== null && this.data.orderModel.status === 'delivered'\"\r\n>\r\n  <ion-card\r\n    *ngIf=\"this.data !== null && this.data.orderModel.status === 'delivered'\"\r\n  >\r\n    <ion-card-content>\r\n      <ion-item>\r\n        <ion-avatar slot=\"start\">\r\n          <img src=\"/../assets/food.svg\" />\r\n        </ion-avatar>\r\n        <ion-label>\r\n          <h2>\r\n            Order: {{ this.data.orderModel.id }}\r\n            <ng-container >\r\n              <ng-container *ngIf=\"this.status() === 'no'\">\r\n                <ion-label color=\"danger\">Rejected</ion-label>\r\n              </ng-container>\r\n              <ng-container *ngIf=\"this.status() === 'pending'\">\r\n                <ion-label color=\"secondary\">Processing</ion-label>\r\n              </ng-container>\r\n              <ng-container *ngIf=\"this.status() === 'yes'\">\r\n                <ion-label color=\"success\">Accepted</ion-label>\r\n              </ng-container>\r\n            </ng-container>\r\n          </h2>\r\n          <p>Date: {{ this.data.orderModel.orderDate | date }}</p>\r\n          <p>Total Amount: {{ this.total() }}</p>\r\n        </ion-label>\r\n      </ion-item>\r\n\r\n      <ion-list-header>\r\n        <ion-label>\r\n          <h3>\r\n            Order Detail Descriptions [Qty:{{\r\n              this.data.orderDetailModels.length\r\n            }}]\r\n          </h3>\r\n        </ion-label>\r\n        <ion-button (click)=\"itemVisibleMethod()\">\r\n          <ion-text color=\"primary\">\r\n            <p *ngIf=\"this.itemVisible === false\">See All</p>\r\n            <p *ngIf=\"this.itemVisible === true\">Collapse</p>\r\n          </ion-text>\r\n        </ion-button>\r\n      </ion-list-header>\r\n\r\n      <ng-container *ngIf=\"this.itemVisible === true\">\r\n        <ng-container *ngFor=\"let item of data.orderDetailModels\">\r\n          <app-resturant-card *ngIf=\"item\" [data]=\"item\"></app-resturant-card>\r\n        </ng-container>\r\n      </ng-container>\r\n\r\n      <ion-list-header *ngIf=\"this.itemVisible === true\">\r\n        <ion-label></ion-label>\r\n        <ion-button (click)=\"itemVisibleMethod()\">\r\n          <ion-text color=\"primary\">\r\n            <p *ngIf=\"this.itemVisible !== true\">See All</p>\r\n            <p *ngIf=\"this.itemVisible === true\">Collapse</p>\r\n          </ion-text>\r\n        </ion-button>\r\n      </ion-list-header>\r\n    </ion-card-content>\r\n  </ion-card>\r\n</ng-container>\r\n";
+    __webpack_exports__["default"] = "<ng-container\r\n  *ngIf=\"\r\n    this.data !== null &&\r\n    this.status() === this.appSetting.displaySetting &&\r\n    this.appSetting.displaySetting !== 'delivering' &&\r\n    this.data.orderModel.status !== 'delivering' && this.data.orderModel.status !== 'delivered' \r\n  \"\r\n>\r\n  <ion-card\r\n    *ngIf=\"\r\n      this.data !== null && this.status() === this.appSetting.displaySetting\r\n    \"\r\n  >\r\n    <ion-card-content>\r\n      <ion-item>\r\n        \r\n        <ion-label>\r\n          <h2>\r\n            Order: {{ this.data.orderModel.id }}\r\n            <ng-container *ngIf=\"this.data.orderModel.status !== 'delivering'\">\r\n              <ng-container *ngIf=\"this.status() === 'no'\">\r\n                <ion-label color=\"secondary\">Order!</ion-label>\r\n              </ng-container>\r\n              <ng-container *ngIf=\"this.status() === 'pending'\">\r\n                <ion-label color=\"secondary\">Processing</ion-label>\r\n              </ng-container>\r\n              <ng-container *ngIf=\"this.status() === 'yes'\">\r\n                <ion-label color=\"success\">Accepted</ion-label>\r\n              </ng-container>\r\n            </ng-container>\r\n\r\n            <ng-container *ngIf=\"this.data.orderModel.status === 'delivering'\">\r\n              <ion-label color=\"warning\">In Delivery Process</ion-label>\r\n            </ng-container>\r\n          </h2>\r\n          <p>Date: {{ this.data.orderModel.orderDate | date }}</p>\r\n          <p>Item Price Amount: {{ this.total()-this.data.orderModel.deliveryCharegs }}</p>\r\n          <p>Delivery Amount: {{ this.data.orderModel.deliveryCharegs }}</p>\r\n          <p>Total Amount: {{ this.total() }}</p>\r\n        </ion-label>\r\n        <!--------\r\n        <ng-container *ngIf=\"this.appSetting.loginType === 'resturant'\">\r\n          <ng-container\r\n            *ngIf=\"!this.appSetting.resendBtn(this.data.orderModel.id)\"\r\n          >\r\n            <ion-button (click)=\"sendToServer()\" color=\"danger\">\r\n              <ion-icon name=\"thumbs-down-outline\"></ion-icon>\r\n            </ion-button>\r\n          </ng-container>\r\n          <ng-container\r\n            *ngIf=\"this.appSetting.resendBtn(this.data.orderModel.id)\"\r\n          >\r\n            <ion-button (click)=\"sendToServer()\" color=\"secondary\">\r\n              <ion-icon name=\"thumbs-up-outline\"></ion-icon>\r\n            </ion-button>\r\n          </ng-container>\r\n        </ng-container>\r\n------>\r\n        \r\n      </ion-item>\r\n\r\n      <ion-list-header>\r\n        <ion-label>\r\n          <h3>\r\n            Order Detail Descriptions [Qty:{{\r\n              this.data.orderDetailModels.length\r\n            }}]\r\n          </h3>\r\n        </ion-label>\r\n        <ion-button (click)=\"itemVisibleMethod()\">\r\n          <ion-text color=\"primary\">\r\n            <p *ngIf=\"this.itemVisible === false\">See All</p>\r\n            <p *ngIf=\"this.itemVisible === true\">Collapse</p>\r\n          </ion-text>\r\n        </ion-button>\r\n      </ion-list-header>\r\n\r\n      <ng-container *ngIf=\"this.itemVisible === true\">\r\n        <ng-container *ngFor=\"let item of data.orderDetailModels\">\r\n          <app-resturant-card *ngIf=\"item\" [data]=\"item\"></app-resturant-card>\r\n        </ng-container>\r\n      </ng-container>\r\n\r\n      <ion-list-header *ngIf=\"this.itemVisible === true\">\r\n        <ion-label></ion-label>\r\n        <ion-button (click)=\"itemVisibleMethod()\">\r\n          <ion-text color=\"primary\">\r\n            <p *ngIf=\"this.itemVisible !== true\">See All</p>\r\n            <p *ngIf=\"this.itemVisible === true\">Collapse</p>\r\n          </ion-text>\r\n        </ion-button>\r\n      </ion-list-header>\r\n    </ion-card-content>\r\n\r\n    <ng-container *ngIf=\"this.appSetting.loginType === 'admin'\">\r\n      <ng-container *ngIf=\"this.data.orderModel.status !== 'delivering'\">\r\n        <ng-container>\r\n          <ion-toolbar>\r\n          <ion-buttons slot=\"end\">\r\n  <!-----        <ion-button\r\n            *ngIf=\"this.status() === 'no'\"\r\n            (click)=\"sendToServer()\"\r\n            color=\"warning\"\r\n          >\r\n            <ion-icon name=\"cloud-upload-outline\"></ion-icon>\r\n          </ion-button>----->\r\n\r\n         \r\n\r\n          <ion-button\r\n            (click)=\"onDelete(this.data.orderModel.id)\"\r\n            color=\"danger\"\r\n          >\r\n            <ion-icon name=\"trash\"></ion-icon>\r\n          </ion-button>\r\n\r\n          <ion-button\r\n          *ngIf=\"this.status() === 'yes'\"\r\n          routerLink=\"/managmenet/tabs/tab2/riderSelect/{{ Orderid }}\"\r\n          color=\"secondary\"\r\n        >\r\n          <ion-icon name=\"bicycle-outline\"></ion-icon>\r\n        </ion-button>\r\n\r\n          <ion-button *ngIf=\"this.status() === 'no'\" (click)=\"sendToServer()\" color=\"secondary\">\r\n            <ion-icon name=\"thumbs-up-outline\"></ion-icon>\r\n          </ion-button>\r\n\r\n          <ion-button routerLink=\"/managmenet/tabs/tab1/customerInfo/{{ Orderid }}\" color=\"success\">\r\n            <ion-icon name=\"location-outline\"></ion-icon>\r\n          </ion-button>\r\n          </ion-buttons>\r\n        </ion-toolbar>\r\n        </ng-container>\r\n      </ng-container>\r\n    </ng-container>\r\n  </ion-card>\r\n</ng-container>\r\n\r\n\r\n<ng-container\r\n  *ngIf=\"\r\n    this.data !== null &&\r\n    this.appSetting.displaySetting === 'delivering' &&\r\n    (this.data.orderModel.status === 'delivering' && \r\n    this.data.orderModel.status.toString() !== 'delivered')\r\n  \"\r\n>\r\n  <ion-card\r\n    *ngIf=\"this.data !== null && this.data.orderModel.status === 'delivering'\"\r\n  >\r\n    <ion-card-content>\r\n      <ion-item>\r\n      \r\n        <ion-label>\r\n          <h2>\r\n            Order: {{ this.data.orderModel.id }}\r\n            <ng-container *ngIf=\"this.data.orderModel.status !== 'delivering'\">\r\n              <ng-container *ngIf=\"this.status() === 'no'\">\r\n                <ion-label color=\"danger\">Rejected</ion-label>\r\n              </ng-container>\r\n              <ng-container *ngIf=\"this.status() === 'pending'\">\r\n                <ion-label color=\"secondary\">Processing</ion-label>\r\n              </ng-container>\r\n              <ng-container *ngIf=\"this.status() === 'yes'\">\r\n                <ion-label color=\"success\">Accepted</ion-label>\r\n              </ng-container>\r\n            </ng-container>\r\n\r\n            <ng-container\r\n              *ngIf=\"\r\n                this.appSetting.loginType === 'admin' &&\r\n                this.data.orderModel.status === 'delivering'\r\n              \"\r\n            >\r\n              <ion-label color=\"warning\">In Delivery Process</ion-label>\r\n            </ng-container>\r\n\r\n            <ng-container\r\n              *ngIf=\"\r\n                this.appSetting.loginType === 'resturant' &&\r\n                this.data.orderModel.status === 'delivering'\r\n              \"\r\n            >\r\n              <ion-label color=\"secondary\">\r\n                <ion-icon name=\"checkmark-circle-outline\"></ion-icon>\r\n              </ion-label>\r\n            </ng-container>\r\n          </h2>\r\n          <p>Date: {{ this.data.orderModel.orderDate | date }}</p>\r\n          <p>Item Price Amount: {{ this.total()-this.data.orderModel.deliveryCharegs }}</p>\r\n          <p>Delivery Amount: {{ this.data.orderModel.deliveryCharegs }}</p>\r\n          <p>Total Amount: {{ this.total() }}</p>\r\n        </ion-label>\r\n        <ng-container\r\n          *ngIf=\"\r\n            this.appSetting.loginType === 'resturant' &&\r\n            this.data.orderModel.status !== 'delivering'\r\n          \"\r\n        >\r\n          <ng-container\r\n            *ngIf=\"!this.appSetting.resendBtn(this.data.orderModel.id)\"\r\n          >\r\n            <ion-button (click)=\"sendToServer()\" color=\"danger\">\r\n              <ion-icon name=\"thumbs-down-outline\"></ion-icon>\r\n            </ion-button>\r\n          </ng-container>\r\n          <ng-container\r\n            *ngIf=\"this.appSetting.resendBtn(this.data.orderModel.id)\"\r\n          >\r\n            <ion-button (click)=\"sendToServer()\" color=\"secondary\">\r\n              <ion-icon name=\"thumbs-up-outline\"></ion-icon>\r\n            </ion-button>\r\n          </ng-container>\r\n        </ng-container>\r\n\r\n        <ng-container\r\n          *ngIf=\"\r\n            this.appSetting.loginType === 'resturant' &&\r\n            this.data.orderModel.status === 'delivering'\r\n          \"\r\n        >\r\n          <ng-container>\r\n            <ion-button\r\n              (click)=\"delivryRecordSave(this.data.orderModel.id)\"\r\n              color=\"success\"\r\n            >\r\n              <ion-icon name=\"bicycle-outline\"></ion-icon>\r\n            </ion-button>\r\n          </ng-container>\r\n        </ng-container>\r\n        <ng-container *ngIf=\"this.appSetting.loginType === 'admin'\">\r\n          <ng-container *ngIf=\"this.data.orderModel.status !== 'delivering'\">\r\n            <ng-container>\r\n              <ion-button\r\n                *ngIf=\"this.status() === 'no'\"\r\n                (click)=\"sendToServer()\"\r\n                color=\"secondary\"\r\n              >\r\n                <ion-icon name=\"cloud-upload-outline\"></ion-icon>\r\n              </ion-button>\r\n\r\n              <ion-button\r\n                *ngIf=\"this.status() === 'yes'\"\r\n                routerLink=\"/managmenet/tabs/tab2/riderSelect/{{ Orderid }}\"\r\n                color=\"success\"\r\n              >\r\n                <ion-icon name=\"bicycle-outline\"></ion-icon>\r\n              </ion-button>\r\n\r\n              <ion-button\r\n                (click)=\"onDelete(this.data.orderModel.id)\"\r\n                color=\"danger\"\r\n              >\r\n                <ion-icon name=\"trash\"></ion-icon>\r\n              </ion-button>\r\n            </ng-container>\r\n          </ng-container>\r\n        </ng-container>\r\n\r\n        <ng-container *ngIf=\"this.appSetting.loginType === 'rider'\">\r\n          <ion-button (click)=\"sendToServer()\" color=\"success\">\r\n            <ion-icon name=\"golf-outline\"></ion-icon>\r\n          </ion-button>\r\n\r\n          <ion-button routerLink=\"customerInfo/{{ Orderid }}\" color=\"danger\">\r\n            <ion-icon name=\"location-outline\"></ion-icon>\r\n          </ion-button>\r\n        </ng-container>\r\n      </ion-item>\r\n\r\n      <ion-list-header>\r\n        <ion-label>\r\n          <h3>\r\n            Order Detail Descriptions [Qty:{{\r\n              this.data.orderDetailModels.length\r\n            }}]\r\n          </h3>\r\n        </ion-label>\r\n        <ion-button (click)=\"itemVisibleMethod()\">\r\n          <ion-text color=\"primary\">\r\n            <p *ngIf=\"this.itemVisible !== true\">See All</p>\r\n            <p *ngIf=\"this.itemVisible === true\">Collapse</p>\r\n          </ion-text>\r\n        </ion-button>\r\n      </ion-list-header>\r\n\r\n      <ng-container *ngIf=\"this.itemVisible === true\">\r\n        <ng-container *ngFor=\"let item of data.orderDetailModels\">\r\n          <app-resturant-card *ngIf=\"item\" [data]=\"item\"></app-resturant-card>\r\n        </ng-container>\r\n      </ng-container>\r\n\r\n      <ion-list-header *ngIf=\"this.itemVisible === true\">\r\n        <ion-label></ion-label>\r\n        <ion-button (click)=\"itemVisibleMethod()\">\r\n          <ion-text color=\"primary\">\r\n            <p *ngIf=\"this.itemVisible !== true\">See All</p>\r\n            <p *ngIf=\"this.itemVisible === true\">Collapse</p>\r\n          </ion-text>\r\n        </ion-button>\r\n      </ion-list-header>\r\n    </ion-card-content>\r\n  </ion-card>\r\n</ng-container>\r\n\r\n\r\n\r\n<ng-container\r\n  *ngIf=\"this.data !== null  && this.appSetting.displaySetting === 'delivered' && this.data.orderModel.status === 'delivered'\"\r\n>\r\n  <ion-card\r\n    *ngIf=\"this.data !== null && this.data.orderModel.status === 'delivered'\"\r\n  >\r\n    <ion-card-content>\r\n      <ion-item>\r\n        <ion-label>\r\n          <h2>\r\n            Order: {{ this.data.orderModel.id }}\r\n            <ng-container >\r\n              <ng-container *ngIf=\"this.status() === 'no'\">\r\n                <ion-label color=\"danger\">Rejected</ion-label>\r\n              </ng-container>\r\n              <ng-container *ngIf=\"this.status() === 'pending'\">\r\n                <ion-label color=\"secondary\">Processing</ion-label>\r\n              </ng-container>\r\n              <ng-container *ngIf=\"this.status() === 'yes'\">\r\n                <ion-label color=\"success\">Accepted</ion-label>\r\n              </ng-container>\r\n            </ng-container>\r\n          </h2>\r\n          <p>Date: {{ this.data.orderModel.orderDate | date }}</p>\r\n          <p>Total Amount: {{ this.total() }}</p>\r\n        </ion-label>\r\n      </ion-item>\r\n\r\n      <ion-list-header>\r\n        <ion-label>\r\n          <h3>\r\n            Order Detail Descriptions [Qty:{{\r\n              this.data.orderDetailModels.length\r\n            }}]\r\n          </h3>\r\n        </ion-label>\r\n        <ion-button (click)=\"itemVisibleMethod()\">\r\n          <ion-text color=\"primary\">\r\n            <p *ngIf=\"this.itemVisible === false\">See All</p>\r\n            <p *ngIf=\"this.itemVisible === true\">Collapse</p>\r\n          </ion-text>\r\n        </ion-button>\r\n      </ion-list-header>\r\n\r\n      <ng-container *ngIf=\"this.itemVisible === true\">\r\n        <ng-container *ngFor=\"let item of data.orderDetailModels\">\r\n          <app-resturant-card *ngIf=\"item\" [data]=\"item\"></app-resturant-card>\r\n        </ng-container>\r\n      </ng-container>\r\n\r\n      <ion-list-header *ngIf=\"this.itemVisible === true\">\r\n        <ion-label></ion-label>\r\n        <ion-button (click)=\"itemVisibleMethod()\">\r\n          <ion-text color=\"primary\">\r\n            <p *ngIf=\"this.itemVisible !== true\">See All</p>\r\n            <p *ngIf=\"this.itemVisible === true\">Collapse</p>\r\n          </ion-text>\r\n        </ion-button>\r\n      </ion-list-header>\r\n    </ion-card-content>\r\n  </ion-card>\r\n</ng-container>\r\n";
     /***/
   },
 
@@ -193,7 +193,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = "<ion-header [translucent]=\"true\">\r\n  <ion-toolbar>\r\n    <ion-grid fixed>\r\n      <ion-row>\r\n        <ion-col size=\"4\">\r\n          <ion-chip (click)=\"back()\">\r\n            <ion-icon name=\"chevron-back-circle-outline\"></ion-icon>\r\n            <ion-label>Back</ion-label>\r\n          </ion-chip>\r\n        </ion-col>\r\n        <ion-col size=\"5\"> </ion-col>\r\n        <ion-col size=\"3\"> </ion-col>\r\n      </ion-row>\r\n    </ion-grid>\r\n  </ion-toolbar>\r\n</ion-header>\r\n\r\n<ion-content>\r\n  <ion-card>\r\n    <ion-card-header>\r\n      <ion-card-subtitle color=\"primary\">Customer</ion-card-subtitle>\r\n    </ion-card-header>\r\n    <ion-card-content>\r\n      <ion-card>\r\n        <ion-card-header>\r\n          <ion-card-subtitle>Shipping Information</ion-card-subtitle>\r\n        </ion-card-header>\r\n        <ion-card-content>\r\n          <ion-item>\r\n            <ion-label position=\"floating\" color=\"secondary\">\r\n              <ion-icon name=\"business-outline\"></ion-icon> Client Name\r\n            </ion-label>\r\n            <ion-input\r\n              [(ngModel)]=\"orderData.clientName\"\r\n              type=\"text\"\r\n              readonly\r\n            ></ion-input>\r\n          </ion-item>\r\n\r\n          <ion-item>\r\n            <ion-label position=\"floating\" color=\"secondary\">\r\n              <ion-icon name=\"business-outline\"></ion-icon> Address\r\n            </ion-label>\r\n            <ion-input\r\n              [(ngModel)]=\"orderData.clientAddress\"\r\n              type=\"text\"\r\n              readonly\r\n            ></ion-input>\r\n          </ion-item>\r\n\r\n          <ion-item>\r\n            <ion-label position=\"floating\" color=\"secondary\">\r\n              <ion-icon name=\"business-outline\"></ion-icon> Flat No\r\n            </ion-label>\r\n            <ion-input\r\n              [(ngModel)]=\"orderData.clitentFlatNo\"\r\n              type=\"text\"\r\n              readonly\r\n            ></ion-input>\r\n          </ion-item>\r\n\r\n          <ion-item>\r\n            <ion-label position=\"floating\" color=\"secondary\">\r\n              <ion-icon name=\"business-outline\"></ion-icon> Phone\r\n            </ion-label>\r\n            <ion-input\r\n              [(ngModel)]=\"orderData.clitentPhone\"\r\n              type=\"tel\"\r\n              readonly\r\n            ></ion-input>\r\n          </ion-item>\r\n          <ion-grid fixed>\r\n            <ion-row>\r\n              <ion-col size=\"12\">\r\n                <ion-button\r\n                  (click)=\"onClick()\"\r\n                  expand=\"block\"\r\n                  color=\"success\"\r\n                  shape=\"round\"\r\n                >\r\n                  Location\r\n                </ion-button>\r\n              </ion-col>\r\n            </ion-row>\r\n          </ion-grid>\r\n        </ion-card-content>\r\n      </ion-card>\r\n    </ion-card-content>\r\n  </ion-card>\r\n</ion-content>\r\n";
+    __webpack_exports__["default"] = "<ion-header [translucent]=\"true\">\r\n  <ion-toolbar>\r\n    <ion-grid fixed>\r\n      <ion-row>\r\n        <ion-col size=\"4\">\r\n          <ion-chip (click)=\"back()\">\r\n            <ion-icon name=\"chevron-back-circle-outline\"></ion-icon>\r\n            <ion-label>Back</ion-label>\r\n          </ion-chip>\r\n        </ion-col>\r\n        <ion-col size=\"5\"> </ion-col>\r\n        <ion-col size=\"3\"> </ion-col>\r\n      </ion-row>\r\n    </ion-grid>\r\n  </ion-toolbar>\r\n</ion-header>\r\n\r\n<ion-content>\r\n\r\n      <ion-card>\r\n        <ion-card-header>\r\n          <ion-card-subtitle>Shipping Information</ion-card-subtitle>\r\n        </ion-card-header>\r\n        <ion-card-content>\r\n          <ion-item>\r\n            <ion-label position=\"floating\" color=\"secondary\">\r\n              <ion-icon name=\"business-outline\"></ion-icon> Client Name\r\n            </ion-label>\r\n            <ion-input\r\n              [(ngModel)]=\"orderData.clientName\"\r\n              type=\"text\"\r\n              readonly\r\n            ></ion-input>\r\n          </ion-item>\r\n\r\n          <ion-item>\r\n            <ion-label position=\"floating\" color=\"secondary\">\r\n              <ion-icon name=\"business-outline\"></ion-icon> Address\r\n            </ion-label>\r\n            <ion-input\r\n              [(ngModel)]=\"orderData.clientAddress\"\r\n              type=\"text\"\r\n              readonly\r\n            ></ion-input>\r\n          </ion-item>\r\n\r\n          <ion-item>\r\n            <ion-label position=\"floating\" color=\"secondary\">\r\n              <ion-icon name=\"business-outline\"></ion-icon> Flat No\r\n            </ion-label>\r\n            <ion-input\r\n              [(ngModel)]=\"orderData.clitentFlatNo\"\r\n              type=\"text\"\r\n              readonly\r\n            ></ion-input>\r\n          </ion-item>\r\n\r\n          <ion-item>\r\n            <ion-label position=\"floating\" color=\"secondary\">\r\n              <ion-icon name=\"business-outline\"></ion-icon> Phone\r\n            </ion-label>\r\n            <ion-input\r\n              [(ngModel)]=\"orderData.clitentPhone\"\r\n              type=\"tel\"\r\n              readonly\r\n            ></ion-input>\r\n          </ion-item>\r\n          <ion-grid fixed>\r\n            <ion-row>\r\n              <ion-col size=\"12\">\r\n                <ion-button\r\n                  (click)=\"onClick()\"\r\n                  expand=\"block\"\r\n                  color=\"success\"\r\n                  shape=\"round\"\r\n                >\r\n                  Location\r\n                </ion-button>\r\n              </ion-col>\r\n            </ion-row>\r\n          </ion-grid>\r\n        </ion-card-content>\r\n      </ion-card>\r\n\r\n</ion-content>\r\n";
     /***/
   },
 
@@ -238,33 +238,6 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
   },
 
   /***/
-  "./src/app/Models/orderTransationModel.ts":
-  /*!************************************************!*\
-    !*** ./src/app/Models/orderTransationModel.ts ***!
-    \************************************************/
-
-  /*! exports provided: orderTransationModel */
-
-  /***/
-  function srcAppModelsOrderTransationModelTs(module, __webpack_exports__, __webpack_require__) {
-    "use strict";
-
-    __webpack_require__.r(__webpack_exports__);
-    /* harmony export (binding) */
-
-
-    __webpack_require__.d(__webpack_exports__, "orderTransationModel", function () {
-      return orderTransationModel;
-    });
-
-    var orderTransationModel = function orderTransationModel() {
-      _classCallCheck(this, orderTransationModel);
-    };
-    /***/
-
-  },
-
-  /***/
   "./src/app/Services/deliveryRecord/delivery-record.service.ts":
   /*!********************************************************************!*\
     !*** ./src/app/Services/deliveryRecord/delivery-record.service.ts ***!
@@ -300,13 +273,13 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
     var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
     /*! @angular/core */
-    "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
+    "./node_modules/@angular/core/fesm2015/core.js");
     /* harmony import */
 
 
     var _angular_common_http__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
     /*! @angular/common/http */
-    "./node_modules/@angular/common/__ivy_ngcc__/fesm2015/http.js");
+    "./node_modules/@angular/common/fesm2015/http.js");
 
     var DeliveryRecordService = /*#__PURE__*/function () {
       function DeliveryRecordService(http, appSetting) {
@@ -339,8 +312,6 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           var _this = this;
 
           this.http.post(this.url, data, this.httpOptions).subscribe(function (res) {
-            console.log(res);
-
             _this.appSetting.showSuccess();
           }, function (err) {
             console.log(err);
@@ -354,7 +325,6 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           var data = null;
           var searchUrl = "".concat(this.appSetting.apiAddress, "/api/deliveryRecordModel/rider?orderID=").concat(orderID);
           this.http.put(searchUrl, data, this.httpOptions).subscribe(function (res) {
-            console.log(res);
             var i = -1;
 
             var temp = _toConsumableArray(_this2.appSetting.orderTransationList);
@@ -381,7 +351,6 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
           var searchUrl = "".concat(this.url, "/").concat(data.orderID, "?ResturantID=").concat(this.appSetting.resturantID);
           this.http.put(searchUrl, data, this.httpOptions).subscribe(function (res) {
-            console.log(res);
             var i = -1;
 
             var temp = _toConsumableArray(_this3.appSetting.orderTransationList);
@@ -408,9 +377,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           var xhr = new XMLHttpRequest();
           xhr.withCredentials = false;
           xhr.addEventListener("readystatechange", function () {
-            if (this.readyState === this.DONE) {
-              console.log(this.responseText);
-            }
+            if (this.readyState === this.DONE) {}
           });
           xhr.open("DELETE", this.url + "/" + id);
           xhr.send(data);
@@ -431,137 +398,6 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     DeliveryRecordService = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([Object(_angular_core__WEBPACK_IMPORTED_MODULE_2__["Injectable"])({
       providedIn: "root"
     })], DeliveryRecordService);
-    /***/
-  },
-
-  /***/
-  "./src/app/Services/locationDB/location-db.service.ts":
-  /*!************************************************************!*\
-    !*** ./src/app/Services/locationDB/location-db.service.ts ***!
-    \************************************************************/
-
-  /*! exports provided: LocationDBService */
-
-  /***/
-  function srcAppServicesLocationDBLocationDbServiceTs(module, __webpack_exports__, __webpack_require__) {
-    "use strict";
-
-    __webpack_require__.r(__webpack_exports__);
-    /* harmony export (binding) */
-
-
-    __webpack_require__.d(__webpack_exports__, "LocationDBService", function () {
-      return LocationDBService;
-    });
-    /* harmony import */
-
-
-    var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
-    /*! tslib */
-    "./node_modules/tslib/tslib.es6.js");
-    /* harmony import */
-
-
-    var _app_setting__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
-    /*! ./../../app-setting */
-    "./src/app/app-setting.ts");
-    /* harmony import */
-
-
-    var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
-    /*! @angular/core */
-    "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
-    /* harmony import */
-
-
-    var _angular_common_http__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
-    /*! @angular/common/http */
-    "./node_modules/@angular/common/__ivy_ngcc__/fesm2015/http.js");
-
-    var LocationDBService = /*#__PURE__*/function () {
-      function LocationDBService(http, appSetting) {
-        _classCallCheck(this, LocationDBService);
-
-        this.http = http;
-        this.appSetting = appSetting;
-        this.url = "".concat(this.appSetting.apiAddress, "/api/locationDatabaseModels");
-        this.httpOptions = {
-          headers: new _angular_common_http__WEBPACK_IMPORTED_MODULE_3__["HttpHeaders"]({
-            "Content-Type": "application/json"
-          })
-        };
-      }
-
-      _createClass(LocationDBService, [{
-        key: "get",
-        value: function get() {
-          return this.http.get(this.url);
-        }
-      }, {
-        key: "getSingle",
-        value: function getSingle(flatNo, township_id) {
-          var searchUrl = "".concat(this.url, "/?township_id=").concat(township_id, "&flatNo=").concat(flatNo);
-          return this.http.get(searchUrl);
-        }
-      }, {
-        key: "post",
-        value: function post(data) {
-          var _this4 = this;
-
-          this.http.post(this.url, data, this.httpOptions).subscribe(function (res) {
-            console.log(res);
-
-            _this4.appSetting.showSuccess();
-          }, function (err) {
-            console.log(err);
-          });
-        }
-      }, {
-        key: "put",
-        value: function put(data) {
-          var _this5 = this;
-
-          var searchUrl = "".concat(this.url, "/").concat(data.id);
-          this.http.put(searchUrl, data, this.httpOptions).subscribe(function (res) {
-            console.log(res);
-
-            _this5.appSetting.showSuccess();
-          }, function (err) {
-            console.log(err);
-
-            _this5.appSetting.showError(err);
-          });
-        }
-      }, {
-        key: "delete",
-        value: function _delete(id) {
-          var data = null;
-          var xhr = new XMLHttpRequest();
-          xhr.withCredentials = false;
-          xhr.addEventListener("readystatechange", function () {
-            if (this.readyState === this.DONE) {
-              console.log(this.responseText);
-            }
-          });
-          xhr.open("DELETE", this.url + "/" + id);
-          xhr.send(data);
-        }
-      }]);
-
-      return LocationDBService;
-    }();
-
-    LocationDBService.ctorParameters = function () {
-      return [{
-        type: _angular_common_http__WEBPACK_IMPORTED_MODULE_3__["HttpClient"]
-      }, {
-        type: _app_setting__WEBPACK_IMPORTED_MODULE_1__["appSetting"]
-      }];
-    };
-
-    LocationDBService = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([Object(_angular_core__WEBPACK_IMPORTED_MODULE_2__["Injectable"])({
-      providedIn: 'root'
-    })], LocationDBService);
     /***/
   },
 
@@ -615,7 +451,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
     var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
     /*! @angular/core */
-    "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
+    "./node_modules/@angular/core/fesm2015/core.js");
     /* harmony import */
 
 
@@ -627,7 +463,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
     var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
     /*! @angular/router */
-    "./node_modules/@angular/router/__ivy_ngcc__/fesm2015/router.js");
+    "./node_modules/@angular/router/fesm2015/router.js");
     /* harmony import */
 
 
@@ -639,7 +475,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
     var _angular_common__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
     /*! @angular/common */
-    "./node_modules/@angular/common/__ivy_ngcc__/fesm2015/common.js");
+    "./node_modules/@angular/common/fesm2015/common.js");
 
     var AddToInvoiceComponent = /*#__PURE__*/function () {
       function AddToInvoiceComponent(appSetting, Router, location, route) {
@@ -814,7 +650,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
     var _angular_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
     /*! @angular/core */
-    "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
+    "./node_modules/@angular/core/fesm2015/core.js");
     /* harmony import */
 
 
@@ -830,28 +666,24 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         this.FoodService = FoodService;
         this.orderService = orderService;
         this.firstLoad();
-        console.log(this.appSetting.orderTransationList);
       }
 
       _createClass(DeliveryPendingComponent, [{
         key: "ngOnInit",
-        value: function ngOnInit() {
-          this.firstLoad();
+        value: function ngOnInit() {//this.firstLoad();
         }
       }, {
         key: "firstLoad",
         value: function firstLoad() {
-          var _this6 = this;
+          var _this4 = this;
 
           this.appSetting.showLoading();
           this.orderService.get().subscribe(function (x) {
-            _this6.appSetting.orderTransationList = x;
+            _this4.appSetting.orderTransationList = x;
           }, function (err) {
-            return _this6.appSetting.showError(err);
+            return _this4.appSetting.showError(err);
           }, function () {
-            _this6.loadFoodModel();
-
-            console.log("This work");
+            _this4.loadFoodModel();
           });
         }
       }, {
@@ -863,12 +695,12 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "refresh",
         value: function refresh(event) {
-          var _this7 = this;
+          var _this5 = this;
 
           this.orderService.get().subscribe(function (x) {
-            _this7.appSetting.orderTransationList = x;
+            _this5.appSetting.orderTransationList = x;
           }, function (err) {
-            return _this7.appSetting.showError(err);
+            return _this5.appSetting.showError(err);
           }, function () {
             event.target.complete();
           });
@@ -950,7 +782,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
     var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
     /*! @angular/core */
-    "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
+    "./node_modules/@angular/core/fesm2015/core.js");
     /* harmony import */
 
 
@@ -990,14 +822,14 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "loadData",
         value: function loadData(e) {
-          var _this8 = this;
+          var _this6 = this;
 
           this.FoodService.getActive().subscribe(function (x) {
-            return _this8.appSetting.menuFoodDataList = x;
+            return _this6.appSetting.menuFoodDataList = x;
           }, function (err) {
-            return _this8.appSetting.showError(err);
+            return _this6.appSetting.showError(err);
           }, function () {
-            _this8.appSetting.constFoodDataList = _this8.appSetting.menuFoodDataList;
+            _this6.appSetting.constFoodDataList = _this6.appSetting.menuFoodDataList;
             e.target.complete();
           });
         }
@@ -1078,7 +910,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
     var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
     /*! @angular/core */
-    "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
+    "./node_modules/@angular/core/fesm2015/core.js");
     /* harmony import */
 
 
@@ -1170,7 +1002,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
     var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
     /*! @angular/core */
-    "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
+    "./node_modules/@angular/core/fesm2015/core.js");
     /* harmony import */
 
 
@@ -1182,7 +1014,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
     var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
     /*! @angular/router */
-    "./node_modules/@angular/router/__ivy_ngcc__/fesm2015/router.js");
+    "./node_modules/@angular/router/fesm2015/router.js");
     /* harmony import */
 
 
@@ -1194,7 +1026,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
     var _angular_common__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
     /*! @angular/common */
-    "./node_modules/@angular/common/__ivy_ngcc__/fesm2015/common.js");
+    "./node_modules/@angular/common/fesm2015/common.js");
     /* harmony import */
 
 
@@ -1220,7 +1052,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           discount: 0,
           itemFinalPrice: 0,
           orderID: 0,
-          status: 'pending',
+          status: 'no',
           remark: "",
           comment: "",
           isPickUpResturant: false,
@@ -1239,7 +1071,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "loadData",
         value: function loadData(id) {
-          var _this9 = this;
+          var _this7 = this;
 
           var result = new src_app_Models_foodModel__WEBPACK_IMPORTED_MODULE_4__["foodModel"]();
           var i = -1;
@@ -1247,8 +1079,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           temp.forEach(function (x) {
             x.orderDetailModels.forEach(function (y) {
               if (y.orderDetailID === id) {
-                _this9.orderDetail = y;
-                result = _this9.loadFoodData(y.itemID);
+                _this7.orderDetail = y;
+                result = _this7.loadFoodData(y.itemID);
               }
             });
           });
@@ -1295,7 +1127,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
           if (this.validation()) {
             var itemJ = this.appSetting.itemJoin(this.foodData.id);
-            this.orderDetail.status = 'pending';
+            this.orderDetail.status = 'no';
             this.orderService.putOrderDetail(this.orderDetail);
           }
         }
@@ -1349,7 +1181,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL3RhYjEvcmVzdHVyYW50L3Jlc3R1cmFudC1jYXJkL3Jlc3R1cmFudC1jYXJkLmNvbXBvbmVudC5zY3NzIn0= */";
+    __webpack_exports__["default"] = "ion-card-header {\n  --background:rgba(253, 0, 0, 0);\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvdGFiMS9yZXN0dXJhbnQvcmVzdHVyYW50LWNhcmQvRDpcXHNpZGVDYXIvc3JjXFxhcHBcXHRhYjFcXHJlc3R1cmFudFxccmVzdHVyYW50LWNhcmRcXHJlc3R1cmFudC1jYXJkLmNvbXBvbmVudC5zY3NzIiwic3JjL2FwcC90YWIxL3Jlc3R1cmFudC9yZXN0dXJhbnQtY2FyZC9yZXN0dXJhbnQtY2FyZC5jb21wb25lbnQuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNJLCtCQUFBO0FDQ0oiLCJmaWxlIjoic3JjL2FwcC90YWIxL3Jlc3R1cmFudC9yZXN0dXJhbnQtY2FyZC9yZXN0dXJhbnQtY2FyZC5jb21wb25lbnQuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbImlvbi1jYXJkLWhlYWRlcntcclxuICAgIC0tYmFja2dyb3VuZDpyZ2JhKDI1MywgMCwgMCwgMCk7XHJcblxyXG59IiwiaW9uLWNhcmQtaGVhZGVyIHtcbiAgLS1iYWNrZ3JvdW5kOnJnYmEoMjUzLCAwLCAwLCAwKTtcbn0iXX0= */";
     /***/
   },
 
@@ -1395,7 +1227,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
     var _angular_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
     /*! @angular/core */
-    "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
+    "./node_modules/@angular/core/fesm2015/core.js");
     /* harmony import */
 
 
@@ -1423,7 +1255,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "resendListKeyPress",
         value: function resendListKeyPress(e) {
-          var _this10 = this;
+          var _this8 = this;
 
           var data = {
             orderDetailID: this.orderDetail.orderDetailID,
@@ -1439,14 +1271,14 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             i = i + 1;
 
             if (x.orderNo === data.orderNo && x.orderDetailID === data.orderDetailID) {
-              _this10.appSetting.resendListFromResturant[i].comment = _this10.comment;
+              _this8.appSetting.resendListFromResturant[i].comment = _this8.comment;
             }
           });
         }
       }, {
         key: "resendListFun",
         value: function resendListFun(e) {
-          var _this11 = this;
+          var _this9 = this;
 
           var data = {
             orderDetailID: this.orderDetail.orderDetailID,
@@ -1466,7 +1298,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
               i = i + 1;
 
               if (x.orderNo === data.orderNo && x.orderDetailID === data.orderDetailID) {
-                _this11.appSetting.resendListFromResturant.splice(i, 1);
+                _this9.appSetting.resendListFromResturant.splice(i, 1);
               }
             });
           }
@@ -1488,7 +1320,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "onDelete",
         value: function onDelete(id) {
-          var _this12 = this;
+          var _this10 = this;
 
           sweetalert2__WEBPACK_IMPORTED_MODULE_4___default.a.fire({
             title: "Are you sure?",
@@ -1500,12 +1332,12 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             confirmButtonText: "Yes, delete it!"
           }).then(function (result) {
             if (result.value) {
-              _this12.orderService.deleteOrderDetail(id);
+              _this10.orderService.deleteOrderDetail(id);
 
-              _this12.orderService.get().subscribe(function (x) {
-                _this12.appSetting.orderTransationList = x;
+              _this10.orderService.get().subscribe(function (x) {
+                _this10.appSetting.orderTransationList = x;
               }, function (err) {
-                return _this12.appSetting.showError(err);
+                return _this10.appSetting.showError(err);
               }, function () {
                 sweetalert2__WEBPACK_IMPORTED_MODULE_4___default.a.fire("Deleted!", "Your file has been deleted.", "success");
               });
@@ -1594,7 +1426,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
     var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
     /*! @angular/core */
-    "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
+    "./node_modules/@angular/core/fesm2015/core.js");
     /* harmony import */
 
 
@@ -1653,7 +1485,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         key: "itemFilter",
         value: function itemFilter() {
           return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, /*#__PURE__*/regeneratorRuntime.mark(function _callee() {
-            var _this13 = this;
+            var _this11 = this;
 
             var temp;
             return regeneratorRuntime.wrap(function _callee$(_context) {
@@ -1662,8 +1494,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                   case 0:
                     temp = _toConsumableArray(this.appSetting.orderTransationList);
                     temp.forEach(function (x) {
-                      if (x.orderModel.id === _this13.Orderid) {
-                        _this13.data = x;
+                      if (x.orderModel.id === _this11.Orderid) {
+                        _this11.data = x;
                       }
                     });
 
@@ -1678,15 +1510,15 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "total",
         value: function total() {
-          var _this14 = this;
+          var _this12 = this;
 
           var total = 0;
           this.data.orderDetailModels.forEach(function (x) {
-            _this14.invoiceNo = x.orderID;
+            _this12.invoiceNo = x.orderID;
             total = total + x.itemFinalPrice;
           });
           this.appSetting.orderTransationList.forEach(function (x) {
-            if (x.orderModel.id === _this14.Orderid) {
+            if (x.orderModel.id === _this12.Orderid) {
               total = total + x.orderModel.deliveryCharegs;
             }
           });
@@ -1726,44 +1558,42 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "sendToServer",
         value: function sendToServer() {
-          var _this15 = this;
+          var _this13 = this;
 
-          if (this.appSetting.loginType === "resturant") {
+          if (this.appSetting.loginType === "admin") {
             this.appSetting.showLoading();
 
             var temp = _toConsumableArray(this.appSetting.resendListFromResturant);
 
             var dataList = [];
             temp.forEach(function (x) {
-              if (x.orderNo === _this15.invoiceNo) {
+              if (x.orderNo === _this13.invoiceNo) {
                 dataList.push(x);
               }
             });
             this.orderService.putResend_From_Resturant(this.invoiceNo, dataList);
-          } else if (this.appSetting.loginType === "admin") {
-            this.appSetting.showLoading();
-
-            var _temp = _toConsumableArray(this.appSetting.resendListFromResturant);
-
-            var _dataList = [];
-
-            _temp.forEach(function (x) {
-              if (x.orderNo === _this15.invoiceNo) {
-                _dataList.push(x);
-              }
-            }); //this.orderService.putResend_From_Resturant(this.invoiceNo, dataList);
-            //Resend function from Admin to resturant
-
-          } else if (this.appSetting.loginType === "rider") {
-            this.appSetting.showLoading();
-            this.DeliveryRecordService.putRider(this.Orderid); //this.orderService.putResend_From_Resturant(this.invoiceNo, dataList);
-            //Resend function from Admin to resturant
           }
+          /*else if (this.appSetting.loginType === "admin") {
+          this.appSetting.showLoading();
+          const temp = [...this.appSetting.resendListFromResturant];
+          let dataList: resendModel[] = [];
+          temp.forEach((x) => {
+            if (x.orderNo === this.invoiceNo) {
+              dataList.push(x);
+            }
+          });*/
+          //this.orderService.putResend_From_Resturant(this.invoiceNo, dataList);
+          //Resend function from Admin to resturant}
+          else if (this.appSetting.loginType === "rider") {
+              this.appSetting.showLoading();
+              this.DeliveryRecordService.putRider(this.Orderid); //this.orderService.putResend_From_Resturant(this.invoiceNo, dataList);
+              //Resend function from Admin to resturant
+            }
         }
       }, {
         key: "onDelete",
         value: function onDelete(id) {
-          var _this16 = this;
+          var _this14 = this;
 
           sweetalert2__WEBPACK_IMPORTED_MODULE_5___default.a.fire({
             title: "Are you sure?",
@@ -1775,16 +1605,16 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             confirmButtonText: "Yes, delete it!"
           }).then(function (result) {
             if (result.value) {
-              _this16.orderService["delete"](id);
+              _this14.orderService["delete"](id);
 
-              var temp = _toConsumableArray(_this16.appSetting.orderTransationList);
+              var temp = _toConsumableArray(_this14.appSetting.orderTransationList);
 
               var i = -1;
               temp.forEach(function (x) {
                 i = i + 1;
 
                 if (x.orderModel.id === id) {
-                  _this16.appSetting.orderTransationList.splice(i, 1);
+                  _this14.appSetting.orderTransationList.splice(i, 1);
                 }
               });
               sweetalert2__WEBPACK_IMPORTED_MODULE_5___default.a.fire("Deleted!", "Your file has been deleted.", "success");
@@ -1881,7 +1711,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
     var _angular_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
     /*! @angular/core */
-    "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
+    "./node_modules/@angular/core/fesm2015/core.js");
     /* harmony import */
 
 
@@ -1902,41 +1732,39 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _createClass(ResturantMainComponent, [{
         key: "firstLoad",
         value: function firstLoad() {
-          var _this17 = this;
+          var _this15 = this;
 
           this.appSetting.showLoading();
 
           if (this.appSetting.loginType === "admin") {
             this.orderService.get().subscribe(function (x) {
-              _this17.appSetting.orderTransationList = x;
+              _this15.appSetting.orderTransationList = x;
             }, function (err) {
-              return _this17.appSetting.showError(err);
+              return _this15.appSetting.showError(err);
             }, function () {
-              _this17.loadFoodModel();
+              _this15.loadFoodModel();
             });
           } else if (this.appSetting.loginType === "resturant") {
             this.orderService.getResturantPendings(this.appSetting.resturantID).subscribe(function (x) {
-              _this17.appSetting.orderTransationList = x;
+              _this15.appSetting.orderTransationList = x;
             }, function (err) {
-              return _this17.appSetting.showError(err);
+              return _this15.appSetting.showError(err);
             }, function () {
-              console.log(_this17.appSetting.orderTransationList);
-
-              _this17.loadFoodModel();
+              _this15.loadFoodModel();
             });
           } else if (this.appSetting.loginType === "rider") {}
         }
       }, {
         key: "loadFoodModel",
         value: function loadFoodModel() {
-          var _this18 = this;
+          var _this16 = this;
 
           this.FoodService.getActive().subscribe(function (x) {
-            return _this18.appSetting.foodDataList = x;
+            return _this16.appSetting.foodDataList = x;
           }, function (err) {
-            return _this18.appSetting.showError(err);
+            return _this16.appSetting.showError(err);
           }, function () {
-            return _this18.appSetting.loadingClose();
+            return _this16.appSetting.loadingClose();
           });
         }
       }, {
@@ -1945,23 +1773,22 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "refresh",
         value: function refresh(event) {
-          var _this19 = this;
+          var _this17 = this;
 
           if (this.appSetting.displaySetting === 'pending') {
             this.orderService.getResturantPendings(this.appSetting.resturantID).subscribe(function (x) {
-              _this19.appSetting.orderTransationList = x;
+              _this17.appSetting.orderTransationList = x;
             }, function (err) {
-              return _this19.appSetting.showError(err);
+              return _this17.appSetting.showError(err);
             }, function () {
               event.target.complete();
             });
           } else if (this.appSetting.displaySetting === 'delivering') {
             this.orderService.getResturantOrder().subscribe(function (x) {
-              _this19.appSetting.orderTransationList = x;
+              _this17.appSetting.orderTransationList = x;
             }, function (err) {
-              return _this19.appSetting.showError(err);
+              return _this17.appSetting.showError(err);
             }, function () {
-              console.log(_this19.appSetting.orderTransationList);
               event.target.complete();
             });
           }
@@ -2043,7 +1870,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
     var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
     /*! @angular/core */
-    "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
+    "./node_modules/@angular/core/fesm2015/core.js");
     /* harmony import */
 
 
@@ -2055,7 +1882,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
     var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
     /*! @angular/router */
-    "./node_modules/@angular/router/__ivy_ngcc__/fesm2015/router.js");
+    "./node_modules/@angular/router/fesm2015/router.js");
     /* harmony import */
 
 
@@ -2067,29 +1894,22 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
     var _angular_common__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
     /*! @angular/common */
-    "./node_modules/@angular/common/__ivy_ngcc__/fesm2015/common.js");
+    "./node_modules/@angular/common/fesm2015/common.js");
     /* harmony import */
 
 
     var _ionic_native_in_app_browser_ngx__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(
     /*! @ionic-native/in-app-browser/ngx */
-    "./node_modules/@ionic-native/in-app-browser/__ivy_ngcc__/ngx/index.js");
-    /* harmony import */
-
-
-    var src_app_Services_locationDB_location_db_service__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(
-    /*! src/app/Services/locationDB/location-db.service */
-    "./src/app/Services/locationDB/location-db.service.ts");
+    "./node_modules/@ionic-native/in-app-browser/ngx/index.js");
 
     var CustomerInfoComponent = /*#__PURE__*/function () {
-      function CustomerInfoComponent(appSetting, location, iab, route, locationDBSvs) {
+      function CustomerInfoComponent(appSetting, location, iab, route) {
         _classCallCheck(this, CustomerInfoComponent);
 
         this.appSetting = appSetting;
         this.location = location;
         this.iab = iab;
         this.route = route;
-        this.locationDBSvs = locationDBSvs;
         this.id = 0;
         this.options = {
           location: "yes",
@@ -2098,6 +1918,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           hideurlbar: "yes"
         };
         this.orderData = new src_app_Models_orderModel__WEBPACK_IMPORTED_MODULE_4__["orderModel"]();
+        this.ltd = '';
+        this.lng = '';
         this.id = +this.route.snapshot.paramMap.get("id");
       }
 
@@ -2126,51 +1948,42 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "onClick",
         value: function onClick() {
-          var _this20 = this;
-
           this.appSetting.showLoading();
-          var userLatitude = '';
-          var userLongitude = '';
-          this.locationDBSvs.getSingle(+this.orderData.clitentFlatNo, this.orderData.Township_id).subscribe(function (x) {
-            userLatitude = x.latitude;
-            userLongitude = x.longitude;
-          }, function (err) {
-            return console.log(err);
-          }, function () {
-            if (userLongitude === '' || userLatitude === '') {
-              console.log("Error");
+          var userLatitude = this.ltd;
+          var userLongitude = this.lng;
 
-              _this20.appSetting.showInvalid();
-            } else {
-              _this20.appSetting.loadingClose();
-
-              _this20.geolocation(userLatitude, userLongitude);
-            }
-          });
+          if (userLongitude === "" || userLatitude === "" || userLatitude === null) {
+            this.appSetting.showInvalid();
+          } else {
+            this.appSetting.loadingClose();
+            this.geolocation(userLatitude, userLongitude);
+          }
         }
       }, {
         key: "geolocation",
         value: function geolocation(lat, _long) {
-          var _this21 = this;
+          var _this18 = this;
 
           if (navigator.geolocation) {
             navigator.geolocation.getCurrentPosition(function (position) {
               var latitude = position.coords.latitude.toString();
               var longitude = position.coords.longitude.toString();
 
-              _this21.googleMap(latitude, longitude, lat, _long);
+              _this18.googleMap(latitude, longitude, lat, _long);
             });
           }
         }
       }, {
         key: "getCustomerInfo",
         value: function getCustomerInfo() {
-          var _this22 = this;
+          var _this19 = this;
 
           var temp = this.appSetting.orderTransationList;
           temp.forEach(function (x) {
-            if (x.orderModel.id === _this22.id) {
-              _this22.orderData = x.orderModel;
+            if (x.orderModel.id === _this19.id) {
+              _this19.orderData = x.orderModel;
+              _this19.ltd = _this19.orderData.latitude;
+              _this19.lng = _this19.orderData.longitude;
             }
           });
         }
@@ -2188,8 +2001,6 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         type: _ionic_native_in_app_browser_ngx__WEBPACK_IMPORTED_MODULE_6__["InAppBrowser"]
       }, {
         type: _angular_router__WEBPACK_IMPORTED_MODULE_3__["ActivatedRoute"]
-      }, {
-        type: src_app_Services_locationDB_location_db_service__WEBPACK_IMPORTED_MODULE_7__["LocationDBService"]
       }];
     };
 
@@ -2261,7 +2072,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
     var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
     /*! @angular/core */
-    "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
+    "./node_modules/@angular/core/fesm2015/core.js");
     /* harmony import */
 
 
@@ -2291,75 +2102,69 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "firstLoad",
         value: function firstLoad() {
-          var _this23 = this;
+          var _this20 = this;
 
           if (this.appSetting.displaySetting === "delivering") {
             this.orderService.getRiderPending().subscribe(function (x) {
-              _this23.appSetting.orderTransationList = x;
+              _this20.appSetting.orderTransationList = x;
             }, function (err) {
-              return _this23.appSetting.showError(err);
+              return _this20.appSetting.showError(err);
             }, function () {
-              console.log(_this23.appSetting.orderTransationList);
-
-              _this23.appSetting.loadingClose();
+              _this20.appSetting.loadingClose();
             });
           } else if (this.appSetting.displaySetting === "delivered") {
             this.orderService.getRiderComplete().subscribe(function (x) {
-              _this23.appSetting.orderTransationList = x;
+              _this20.appSetting.orderTransationList = x;
             }, function (err) {
-              return _this23.appSetting.showError(err);
+              return _this20.appSetting.showError(err);
             }, function () {
-              console.log(_this23.appSetting.orderTransationList);
-
-              _this23.appSetting.loadingClose();
+              _this20.appSetting.loadingClose();
             });
           }
         }
       }, {
         key: "loadFoodModel",
         value: function loadFoodModel() {
-          var _this24 = this;
+          var _this21 = this;
 
           this.appSetting.showLoading();
           this.FoodService.getActive().subscribe(function (x) {
-            return _this24.appSetting.foodDataList = x;
+            return _this21.appSetting.foodDataList = x;
           }, function (err) {
-            return _this24.appSetting.showError(err);
+            return _this21.appSetting.showError(err);
           }, function () {
-            _this24.appSetting.menuFoodDataList = _this24.appSetting.foodDataList;
+            _this21.appSetting.menuFoodDataList = _this21.appSetting.foodDataList;
 
-            _this24.appSetting.loadingClose(); //this.firstLoad();
+            _this21.appSetting.loadingClose(); //this.firstLoad();
 
           });
         }
       }, {
         key: "refresh",
         value: function refresh(event) {
-          var _this25 = this;
+          var _this22 = this;
 
           if (this.appSetting.displaySetting === "delivering") {
             this.orderService.getRiderPending().subscribe(function (x) {
-              _this25.appSetting.orderTransationList = x;
+              _this22.appSetting.orderTransationList = x;
             }, function (err) {
-              return _this25.appSetting.showError(err);
+              return _this22.appSetting.showError(err);
             }, function () {
-              console.log(_this25.appSetting.orderTransationList);
               event.target.complete();
             });
           } else if (this.appSetting.displaySetting === "delivered") {
             this.orderService.getRiderComplete().subscribe(function (x) {
-              _this25.appSetting.orderTransationList = x;
+              _this22.appSetting.orderTransationList = x;
             }, function (err) {
-              return _this25.appSetting.showError(err);
+              return _this22.appSetting.showError(err);
             }, function () {
-              console.log(_this25.appSetting.orderTransationList);
               event.target.complete();
             });
           } else {
             this.orderService.getRiderPending().subscribe(function (x) {
-              _this25.appSetting.orderTransationList = x;
+              _this22.appSetting.orderTransationList = x;
             }, function (err) {
-              return _this25.appSetting.showError(err);
+              return _this22.appSetting.showError(err);
             }, function () {
               event.target.complete();
             });
@@ -2434,13 +2239,13 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
     var _angular_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
     /*! @angular/core */
-    "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
+    "./node_modules/@angular/core/fesm2015/core.js");
     /* harmony import */
 
 
     var _angular_router__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
     /*! @angular/router */
-    "./node_modules/@angular/router/__ivy_ngcc__/fesm2015/router.js");
+    "./node_modules/@angular/router/fesm2015/router.js");
     /* harmony import */
 
 
@@ -2524,25 +2329,25 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
     var _ionic_angular__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
     /*! @ionic/angular */
-    "./node_modules/@ionic/angular/__ivy_ngcc__/fesm2015/ionic-angular.js");
+    "./node_modules/@ionic/angular/fesm2015/ionic-angular.js");
     /* harmony import */
 
 
     var _angular_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
     /*! @angular/core */
-    "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
+    "./node_modules/@angular/core/fesm2015/core.js");
     /* harmony import */
 
 
     var _angular_common__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
     /*! @angular/common */
-    "./node_modules/@angular/common/__ivy_ngcc__/fesm2015/common.js");
+    "./node_modules/@angular/common/fesm2015/common.js");
     /* harmony import */
 
 
     var _angular_forms__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
     /*! @angular/forms */
-    "./node_modules/@angular/forms/__ivy_ngcc__/fesm2015/forms.js");
+    "./node_modules/@angular/forms/fesm2015/forms.js");
     /* harmony import */
 
 
@@ -2683,7 +2488,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
     var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
     /*! @angular/core */
-    "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
+    "./node_modules/@angular/core/fesm2015/core.js");
     /* harmony import */
 
 
@@ -2724,35 +2529,35 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _createClass(Tab1Page, [{
         key: "loadData",
         value: function loadData() {
-          var _this26 = this;
+          var _this23 = this;
 
           if (this.appSetting.menuFoodDataList.length === 0) {
             this.appSetting.showLoading();
             this.FoodService.getActive().subscribe(function (x) {
-              return _this26.appSetting.menuFoodDataList = x;
+              return _this23.appSetting.menuFoodDataList = x;
             }, function (err) {
-              return _this26.appSetting.showError(err);
+              return _this23.appSetting.showError(err);
             }, function () {
-              _this26.appSetting.constFoodDataList = _this26.appSetting.menuFoodDataList;
+              _this23.appSetting.constFoodDataList = _this23.appSetting.menuFoodDataList;
 
-              _this26.resturantLoaddata();
+              _this23.resturantLoaddata();
             });
           }
         }
       }, {
         key: "onSearch",
         value: function onSearch(val) {
-          var _this27 = this;
+          var _this24 = this;
 
           var temp = _toConsumableArray(this.appSetting.constFoodDataList);
 
           var z = [];
           temp.forEach(function (x) {
-            if (x.itemName.toLowerCase().includes(_this27.searchTxt.toLowerCase())) {
+            if (x.itemName.toLowerCase().includes(_this24.searchTxt.toLowerCase())) {
               z.push(x);
             }
 
-            _this27.appSetting.menuFoodDataList = z;
+            _this24.appSetting.menuFoodDataList = z;
           });
 
           if (this.searchTxt === "") {
@@ -2762,21 +2567,19 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "onSearchResturant",
         value: function onSearchResturant(val) {
-          var _this28 = this;
+          var _this25 = this;
 
-          console.log(val);
           this.searchResturant = val;
 
           var temp = _toConsumableArray(this.appSetting.constFoodDataList);
 
           var z = [];
           temp.forEach(function (x) {
-            if (x.resturant_id === _this28.searchResturant) {
-              console.log(x);
+            if (x.resturant_id === _this25.searchResturant) {
               z.push(x);
             }
 
-            _this28.appSetting.menuFoodDataList = z;
+            _this25.appSetting.menuFoodDataList = z;
           });
 
           if (this.searchResturant === 0) {
@@ -2797,52 +2600,48 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "resturantLoaddata",
         value: function resturantLoaddata() {
-          var _this29 = this;
+          var _this26 = this;
 
           if (this.appSetting.resturandDataList.length === 0) {
             this.ResturantModelService.get().subscribe(function (x) {
-              return _this29.appSetting.resturandDataList = x;
+              return _this26.appSetting.resturandDataList = x;
             }, function (err) {
-              return _this29.appSetting.showError(err);
+              return _this26.appSetting.showError(err);
             }, function () {
-              _this29.appSetting.loadingClose();
+              _this26.appSetting.loadingClose();
             });
           }
         }
       }, {
         key: "riderRefresh",
         value: function riderRefresh() {
-          var _this30 = this;
+          var _this27 = this;
 
           this.appSetting.showLoading();
 
           if (this.appSetting.displaySetting === "delivering") {
             this.orderService.getRiderPending().subscribe(function (x) {
-              _this30.appSetting.orderTransationList = x;
+              _this27.appSetting.orderTransationList = x;
             }, function (err) {
-              return _this30.appSetting.showError(err);
+              return _this27.appSetting.showError(err);
             }, function () {
-              console.log(_this30.appSetting.orderTransationList);
-
-              _this30.appSetting.loadingClose();
+              _this27.appSetting.loadingClose();
             });
           } else if (this.appSetting.displaySetting === "delivered") {
             this.orderService.getRiderComplete().subscribe(function (x) {
-              _this30.appSetting.orderTransationList = x;
+              _this27.appSetting.orderTransationList = x;
             }, function (err) {
-              return _this30.appSetting.showError(err);
+              return _this27.appSetting.showError(err);
             }, function () {
-              console.log(_this30.appSetting.orderTransationList);
-
-              _this30.appSetting.loadingClose();
+              _this27.appSetting.loadingClose();
             });
           } else {
             this.orderService.getRiderPending().subscribe(function (x) {
-              _this30.appSetting.orderTransationList = x;
+              _this27.appSetting.orderTransationList = x;
             }, function (err) {
-              return _this30.appSetting.showError(err);
+              return _this27.appSetting.showError(err);
             }, function () {
-              _this30.appSetting.loadingClose();
+              _this27.appSetting.loadingClose();
             });
           }
         }

@@ -9,7 +9,7 @@
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<ion-content>\r\n  <ion-card>\r\n    <ion-card-content>\r\n      <ion-item lines=\"none\">\r\n        <ion-avatar slot=\"start\">\r\n          <img src=\"/../assets/food.svg\" />\r\n        </ion-avatar>\r\n        <ion-label lines=\"none\">\r\n          <h2>{{ this.foodData.itemName }}</h2>\r\n          <h3>{{ this.foodData.price }}</h3>\r\n          <h3>{{ this.appSetting.resName(foodData.resturant_id) }}</h3>\r\n        </ion-label>\r\n      </ion-item>\r\n    </ion-card-content>\r\n  </ion-card>\r\n\r\n  <ion-card>\r\n    <ion-card-content>\r\n      <ion-item lines=\"none\">\r\n        <ion-avatar slot=\"start\">\r\n          <img src=\"/../assets/number.svg\" />\r\n        </ion-avatar>\r\n        <ion-label>\r\n          <h2>Please enter the quantity</h2>\r\n        </ion-label>\r\n      </ion-item>\r\n      <ion-item>\r\n        <ion-label color=\"tertiary\" position=\"floating\">\r\n          <ion-icon name=\"calculator-outline\"></ion-icon> Quantity <ion-text *ngIf=\"this.orderDetail.itemQty===0\" color=\"danger\">\r\n            ***\r\n          </ion-text>\r\n        </ion-label>\r\n        <ion-input [(ngModel)]=\"this.orderDetail.itemQty\" type=\"number\"></ion-input>\r\n      </ion-item>\r\n    </ion-card-content>\r\n  </ion-card>\r\n\r\n  <ion-card>\r\n    <ion-card-content>\r\n      <ion-item lines=\"none\">\r\n        <ion-avatar slot=\"start\">\r\n          <img src=\"/../assets/sale.svg\" />\r\n        </ion-avatar>\r\n        <ion-label>\r\n          <h2 color=\"primary\">Please enter the Discount amount</h2>\r\n        </ion-label>\r\n      </ion-item>\r\n      <ion-item>\r\n        <ion-label color=\"tertiary\" position=\"floating\">\r\n          <ion-icon name=\"cash-outline\"></ion-icon> Discount\r\n        </ion-label>\r\n        <ion-input [(ngModel)]=\"this.orderDetail.discount\" type=\"number\"></ion-input>\r\n      </ion-item>\r\n    </ion-card-content>\r\n  </ion-card>\r\n\r\n  <ion-card>\r\n    <ion-card-content>\r\n      <ion-item lines=\"none\">\r\n        <ion-avatar slot=\"start\">\r\n          <img src=\"/../assets/remark.svg\" />\r\n        </ion-avatar>\r\n        <ion-label>\r\n          <h2 color=\"primary\">Please enter remark</h2>\r\n        </ion-label>\r\n      </ion-item>\r\n      <ion-item>\r\n        <ion-label color=\"tertiary\" position=\"floating\">\r\n          <ion-icon name=\"chatbubbles-outline\"></ion-icon> Remark\r\n        </ion-label>\r\n        <ion-input [(ngModel)]=\"this.orderDetail.remark\" type=\"text\"></ion-input>\r\n      </ion-item>\r\n    </ion-card-content>\r\n  </ion-card>\r\n\r\n  <ion-card>\r\n    <ion-item lines=\"none\">\r\n      <ion-avatar slot=\"start\">\r\n        <img src=\"/../assets/money.svg\" />\r\n      </ion-avatar>\r\n      <ion-label>\r\n        <h2>Total</h2>\r\n        <h3>{{this.totalAmount()}}</h3>\r\n      </ion-label>\r\n    </ion-item>\r\n  </ion-card>\r\n\r\n  <ion-grid fixed>\r\n    <ion-row>\r\n      <ion-col size=\"6\">\r\n        <ion-button expand=\"block\" (click)=\"this.back()\" color=\"light\">\r\n          Back\r\n        </ion-button>\r\n      </ion-col>\r\n      <ion-col size=\"6\">\r\n        <ion-button expand=\"block\" (click)=\"this.addToInvoice()\" color=\"light\">\r\n          Add to Invoice\r\n        </ion-button>\r\n      </ion-col>\r\n    </ion-row>\r\n  </ion-grid>\r\n</ion-content>");
+/* harmony default export */ __webpack_exports__["default"] = ("<ion-content>\r\n  <ion-card>\r\n    <ion-card-content>\r\n      <ion-item lines=\"none\">\r\n      \r\n        <ion-label lines=\"none\">\r\n          <h2>{{ this.foodData.itemName }}</h2>\r\n          <h3>{{ this.foodData.price }}</h3>\r\n          <h3>{{ this.appSetting.resName(foodData.resturant_id) }}</h3>\r\n        </ion-label>\r\n      </ion-item>\r\n    </ion-card-content>\r\n  </ion-card>\r\n\r\n  <ion-card>\r\n    <ion-card-content>\r\n      <ion-item lines=\"none\">\r\n     \r\n        <ion-label>\r\n          <h2>Please enter the quantity</h2>\r\n        </ion-label>\r\n      </ion-item>\r\n      <ion-item>\r\n        <ion-label color=\"tertiary\" position=\"floating\">\r\n          <ion-icon name=\"calculator-outline\"></ion-icon> Quantity <ion-text *ngIf=\"this.orderDetail.itemQty===0\" color=\"danger\">\r\n            ***\r\n          </ion-text>\r\n        </ion-label>\r\n        <ion-input [(ngModel)]=\"this.orderDetail.itemQty\" type=\"number\"></ion-input>\r\n      </ion-item>\r\n    </ion-card-content>\r\n  </ion-card>\r\n\r\n  <ion-card>\r\n    <ion-card-content>\r\n      <ion-item lines=\"none\">\r\n \r\n        <ion-label>\r\n          <h2 color=\"primary\">Please enter the Discount amount</h2>\r\n        </ion-label>\r\n      </ion-item>\r\n      <ion-item>\r\n        <ion-label color=\"tertiary\" position=\"floating\">\r\n          <ion-icon name=\"cash-outline\"></ion-icon> Discount\r\n        </ion-label>\r\n        <ion-input [(ngModel)]=\"this.orderDetail.discount\" type=\"number\"></ion-input>\r\n      </ion-item>\r\n    </ion-card-content>\r\n  </ion-card>\r\n\r\n  <ion-card>\r\n    <ion-card-content>\r\n      <ion-item lines=\"none\">\r\n      \r\n        <ion-label>\r\n          <h2 color=\"primary\">Please enter remark</h2>\r\n        </ion-label>\r\n      </ion-item>\r\n      <ion-item>\r\n        <ion-label color=\"tertiary\" position=\"floating\">\r\n          <ion-icon name=\"chatbubbles-outline\"></ion-icon> Remark\r\n        </ion-label>\r\n        <ion-input [(ngModel)]=\"this.orderDetail.remark\" type=\"text\"></ion-input>\r\n      </ion-item>\r\n    </ion-card-content>\r\n  </ion-card>\r\n\r\n  <ion-card>\r\n    <ion-item lines=\"none\">\r\n    \r\n      <ion-label>\r\n        <h2>Total</h2>\r\n        <h3>{{this.totalAmount()}}</h3>\r\n      </ion-label>\r\n    </ion-item>\r\n  </ion-card>\r\n\r\n  <ion-grid fixed>\r\n    <ion-row>\r\n      <ion-col size=\"6\">\r\n        <ion-button expand=\"block\" (click)=\"this.back()\" color=\"light\">\r\n          Back\r\n        </ion-button>\r\n      </ion-col>\r\n      <ion-col size=\"6\">\r\n        <ion-button expand=\"block\" (click)=\"this.addToInvoice()\" color=\"light\">\r\n          Add to Invoice\r\n        </ion-button>\r\n      </ion-col>\r\n    </ion-row>\r\n  </ion-grid>\r\n</ion-content>");
 
 /***/ }),
 
@@ -22,7 +22,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<ion-header translucent>\r\n  <ion-toolbar>\r\n    <ion-segment value=\"all\">\r\n      <ion-segment-button (click)=\"this.appSetting.displayFunction('pending')\" value=\"Pending\" >\r\n        <ion-label>Pending</ion-label>\r\n      </ion-segment-button>\r\n      <ion-segment-button (click)=\"this.appSetting.displayFunction('no')\" value=\"Rejected\">\r\n        <ion-label>Rejected</ion-label>\r\n      </ion-segment-button>\r\n      <ion-segment-button (click)=\"this.appSetting.displayFunction('yes')\" value=\"Acepted\">\r\n        <ion-label>Acepted</ion-label>\r\n      </ion-segment-button>\r\n      <ion-segment-button (click)=\"this.appSetting.displayFunction('delivering')\" value=\"Delivering\">\r\n        <ion-label>Delivering</ion-label>\r\n      </ion-segment-button>\r\n    </ion-segment>\r\n  </ion-toolbar>\r\n</ion-header>\r\n\r\n<ion-content>\r\n  <ion-refresher slot=\"fixed\" (ionRefresh)=\"refresh($event)\">\r\n    <ion-refresher-content></ion-refresher-content>\r\n  </ion-refresher>\r\n  <ng-container *ngFor=\"let x of this.appSetting.orderTransationList\">\r\n    <app-resturant-individual-order *ngIf=\"x\" [orderNo]=x.orderModel.id>\r\n    </app-resturant-individual-order>\r\n  </ng-container>\r\n</ion-content>");
+/* harmony default export */ __webpack_exports__["default"] = ("<ion-header translucent>\r\n  <ion-toolbar>\r\n    <ion-segment value=\"all\">\r\n     <!----- <ion-segment-button (click)=\"this.appSetting.displayFunction('pending')\" value=\"Pending\" >\r\n        <ion-label>Pending</ion-label>\r\n      </ion-segment-button>----->\r\n      <ion-segment-button (click)=\"this.appSetting.displayFunction('no')\" value=\"Rejected\">\r\n        <ion-label>Pending</ion-label>\r\n      </ion-segment-button>\r\n      <ion-segment-button (click)=\"this.appSetting.displayFunction('yes')\" value=\"Acepted\">\r\n        <ion-label>Acepted</ion-label>\r\n      </ion-segment-button>\r\n      <ion-segment-button (click)=\"this.appSetting.displayFunction('delivering')\" value=\"Delivering\">\r\n        <ion-label>Delivering</ion-label>\r\n      </ion-segment-button>\r\n    </ion-segment>\r\n  </ion-toolbar>\r\n</ion-header>\r\n\r\n<ion-content>\r\n  <ion-refresher slot=\"fixed\" (ionRefresh)=\"refresh($event)\">\r\n    <ion-refresher-content></ion-refresher-content>\r\n  </ion-refresher>\r\n  <ng-container *ngFor=\"let x of this.appSetting.orderTransationList\">\r\n    <app-resturant-individual-order *ngIf=\"x\" [orderNo]=x.orderModel.id>\r\n    </app-resturant-individual-order>\r\n  </ng-container>\r\n</ion-content>");
 
 /***/ }),
 
@@ -35,7 +35,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("\r\n<ion-refresher slot=\"fixed\" (ionRefresh)=\"refresh($event)\">\r\n  <ion-refresher-content></ion-refresher-content>\r\n</ion-refresher>\r\n\r\n<ion-card *ngFor=\"let i of this.appSetting.menuFoodDataList\">\r\n  <ion-item>\r\n    <ion-avatar slot=\"start\">\r\n      <img src=\"/../assets/food.svg\" />\r\n    </ion-avatar>\r\n    <ion-label>\r\n      <h2>{{ i.itemName }}</h2>\r\n      <h3>{{ i.price }}</h3>\r\n      <p>{{ this.appSetting.resName(i.resturant_id) }}</p>\r\n    </ion-label>\r\n    <ion-button routerLink=\"/tabs/tab1/add/{{ i.id }}\" color=\"secondary\">\r\n      <ion-icon name=\"add-outline\"></ion-icon>\r\n    </ion-button>\r\n  </ion-item>\r\n</ion-card>\r\n");
+/* harmony default export */ __webpack_exports__["default"] = ("\r\n<ion-refresher slot=\"fixed\" (ionRefresh)=\"refresh($event)\">\r\n  <ion-refresher-content></ion-refresher-content>\r\n</ion-refresher>\r\n\r\n<ion-card *ngFor=\"let i of this.appSetting.menuFoodDataList\">\r\n  <ion-item>\r\n\r\n    <ion-label>\r\n      <h2>{{ i.itemName }}</h2>\r\n      <h3>{{ i.price }}</h3>\r\n      <p>{{ this.appSetting.resName(i.resturant_id) }}</p>\r\n    </ion-label>\r\n    <ion-button routerLink=\"/managmenet/tabs/tab1/add/{{ i.id }}\" color=\"secondary\">\r\n      <ion-icon name=\"add-outline\"></ion-icon>\r\n    </ion-button>\r\n  </ion-item>\r\n</ion-card>\r\n");
 
 /***/ }),
 
@@ -61,7 +61,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<ion-content>\r\n  <ion-card>\r\n    <ion-card-content>\r\n      <ion-item lines=\"none\">\r\n        <ion-avatar slot=\"start\">\r\n          <img src=\"/../assets/food.svg\" />\r\n        </ion-avatar>\r\n        <ion-label lines=\"none\">\r\n          <h2>{{ this.foodData.itemName }}</h2>\r\n          <h3>{{ this.foodData.price }}</h3>\r\n          <h3>{{ this.appSetting.resName(foodData.resturant_id) }}</h3>\r\n        </ion-label>\r\n      </ion-item>\r\n    </ion-card-content>\r\n  </ion-card>\r\n\r\n  <ion-card>\r\n    <ion-card-content>\r\n      <ion-item lines=\"none\">\r\n        <ion-avatar slot=\"start\">\r\n          <img src=\"/../assets/number.svg\" />\r\n        </ion-avatar>\r\n        <ion-label>\r\n          <h2>Please enter the quantity</h2>\r\n        </ion-label>\r\n      </ion-item>\r\n      <ion-item>\r\n        <ion-label color=\"tertiary\" position=\"floating\">\r\n          <ion-icon name=\"calculator-outline\"></ion-icon> Quantity <ion-text *ngIf=\"this.orderDetail.itemQty===0\" color=\"danger\">\r\n            ***\r\n          </ion-text>\r\n        </ion-label>\r\n        <ion-input [(ngModel)]=\"this.orderDetail.itemQty\" type=\"number\"></ion-input>\r\n      </ion-item>\r\n    </ion-card-content>\r\n  </ion-card>\r\n\r\n  <ion-card>\r\n    <ion-card-content>\r\n      <ion-item lines=\"none\">\r\n        <ion-avatar slot=\"start\">\r\n          <img src=\"/../assets/sale.svg\" />\r\n        </ion-avatar>\r\n        <ion-label>\r\n          <h2 color=\"primary\">Please enter the Discount amount</h2>\r\n        </ion-label>\r\n      </ion-item>\r\n      <ion-item>\r\n        <ion-label color=\"tertiary\" position=\"floating\">\r\n          <ion-icon name=\"cash-outline\"></ion-icon> Discount\r\n        </ion-label>\r\n        <ion-input [(ngModel)]=\"this.orderDetail.discount\" type=\"number\"></ion-input>\r\n      </ion-item>\r\n    </ion-card-content>\r\n  </ion-card>\r\n\r\n  <ion-card>\r\n    <ion-card-content>\r\n      <ion-item lines=\"none\">\r\n        <ion-avatar slot=\"start\">\r\n          <img src=\"/../assets/remark.svg\" />\r\n        </ion-avatar>\r\n        <ion-label>\r\n          <h2 color=\"primary\">Please enter remark</h2>\r\n        </ion-label>\r\n      </ion-item>\r\n      <ion-item>\r\n        <ion-label color=\"tertiary\" position=\"floating\">\r\n          <ion-icon name=\"chatbubbles-outline\"></ion-icon> Remark\r\n        </ion-label>\r\n        <ion-input [(ngModel)]=\"this.orderDetail.remark\" type=\"text\"></ion-input>\r\n      </ion-item>\r\n    </ion-card-content>\r\n  </ion-card>\r\n\r\n  <ion-card>\r\n    <ion-item lines=\"none\">\r\n      <ion-avatar slot=\"start\">\r\n        <img src=\"/../assets/money.svg\" />\r\n      </ion-avatar>\r\n      <ion-label>\r\n        <h2>Total</h2>\r\n        <h3>{{this.totalAmount()}}</h3>\r\n      </ion-label>\r\n    </ion-item>\r\n  </ion-card>\r\n\r\n  <ion-grid fixed>\r\n    <ion-row>\r\n      <ion-col size=\"6\">\r\n        <ion-button expand=\"block\" (click)=\"this.back()\" color=\"light\">\r\n          Back\r\n        </ion-button>\r\n      </ion-col>\r\n      <ion-col size=\"6\">\r\n        <ion-button expand=\"block\" (click)=\"this.addToInvoice()\" color=\"light\">\r\n          Update Invoice\r\n        </ion-button>\r\n      </ion-col>\r\n    </ion-row>\r\n  </ion-grid>\r\n</ion-content>");
+/* harmony default export */ __webpack_exports__["default"] = ("<ion-content>\r\n  <ion-card>\r\n    <ion-card-content>\r\n      <ion-item lines=\"none\">\r\n       \r\n        <ion-label lines=\"none\">\r\n          <h2>{{ this.foodData.itemName }}</h2>\r\n          <h3>{{ this.foodData.price }}</h3>\r\n          <h3>{{ this.appSetting.resName(foodData.resturant_id) }}</h3>\r\n        </ion-label>\r\n      </ion-item>\r\n    </ion-card-content>\r\n  </ion-card>\r\n\r\n  <ion-card>\r\n    <ion-card-content>\r\n      <ion-item lines=\"none\">\r\n    \r\n        <ion-label>\r\n          <h2>Please enter the quantity</h2>\r\n        </ion-label>\r\n      </ion-item>\r\n      <ion-item>\r\n        <ion-label color=\"tertiary\" position=\"floating\">\r\n          <ion-icon name=\"calculator-outline\"></ion-icon> Quantity <ion-text *ngIf=\"this.orderDetail.itemQty===0\" color=\"danger\">\r\n            ***\r\n          </ion-text>\r\n        </ion-label>\r\n        <ion-input [(ngModel)]=\"this.orderDetail.itemQty\" type=\"number\"></ion-input>\r\n      </ion-item>\r\n    </ion-card-content>\r\n  </ion-card>\r\n\r\n  <ion-card>\r\n    <ion-card-content>\r\n      <ion-item lines=\"none\">\r\n     \r\n        <ion-label>\r\n          <h2 color=\"primary\">Please enter the Discount amount</h2>\r\n        </ion-label>\r\n      </ion-item>\r\n      <ion-item>\r\n        <ion-label color=\"tertiary\" position=\"floating\">\r\n          <ion-icon name=\"cash-outline\"></ion-icon> Discount\r\n        </ion-label>\r\n        <ion-input [(ngModel)]=\"this.orderDetail.discount\" type=\"number\"></ion-input>\r\n      </ion-item>\r\n    </ion-card-content>\r\n  </ion-card>\r\n\r\n  <ion-card>\r\n    <ion-card-content>\r\n      <ion-item lines=\"none\">\r\n    \r\n        <ion-label>\r\n          <h2 color=\"primary\">Please enter remark</h2>\r\n        </ion-label>\r\n      </ion-item>\r\n      <ion-item>\r\n        <ion-label color=\"tertiary\" position=\"floating\">\r\n          <ion-icon name=\"chatbubbles-outline\"></ion-icon> Remark\r\n        </ion-label>\r\n        <ion-input [(ngModel)]=\"this.orderDetail.remark\" type=\"text\"></ion-input>\r\n      </ion-item>\r\n    </ion-card-content>\r\n  </ion-card>\r\n\r\n  <ion-card>\r\n    <ion-item lines=\"none\">\r\n  \r\n      <ion-label>\r\n        <h2>Total</h2>\r\n        <h3>{{this.totalAmount()}}</h3>\r\n      </ion-label>\r\n    </ion-item>\r\n  </ion-card>\r\n\r\n  <ion-grid fixed>\r\n    <ion-row>\r\n      <ion-col size=\"6\">\r\n        <ion-button expand=\"block\" (click)=\"this.back()\" color=\"light\">\r\n          Back\r\n        </ion-button>\r\n      </ion-col>\r\n      <ion-col size=\"6\">\r\n        <ion-button expand=\"block\" (click)=\"this.addToInvoice()\" color=\"light\">\r\n          Update Invoice\r\n        </ion-button>\r\n      </ion-col>\r\n    </ion-row>\r\n  </ion-grid>\r\n</ion-content>");
 
 /***/ }),
 
@@ -74,7 +74,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<ion-card>\r\n  <ion-card-header>\r\n    <ion-card-subtitle color=\"secondary\">{{this.foodName(orderDetail.itemID).toString()}} <br />Quantity:\r\n      {{orderDetail.itemQty}}\r\n      <ng-container *ngIf=\"this.orderDetail.status==='no'\">\r\n        <ion-label color=\"danger\">\r\n          Rejected\r\n        </ion-label>\r\n      </ng-container>\r\n\r\n      <ng-container *ngIf=\"this.orderDetail.status==='yes'\">\r\n        <ion-label color=\"success\">\r\n          Acepted\r\n        </ion-label>\r\n      </ng-container>\r\n\r\n      <ng-container *ngIf=\"this.orderDetail.status==='pending'\">\r\n        <ion-label color=\"warning\">\r\n          Processing\r\n        </ion-label>\r\n      </ng-container>\r\n\r\n      <ng-container *ngIf=\"this.appSetting.loginType==='admin'\">\r\n        <ng-container *ngIf=\"this.orderDetail.isPickUpResturant===true\">\r\n          <ion-label color=\"dark\">\r\n            <p>\r\n              <ion-icon name=\"checkmark-circle-outline\"></ion-icon>Resturant\r\n            </p>\r\n          </ion-label>\r\n        </ng-container>\r\n        <ng-container *ngIf=\"this.orderDetail.isPickUpRider===true\">\r\n          <ion-label color=\"dark\">\r\n            <p>\r\n              <ion-icon name=\"checkmark-circle-outline\"></ion-icon>Rider\r\n            </p>\r\n          </ion-label>\r\n        </ng-container>\r\n      </ng-container>\r\n    </ion-card-subtitle>\r\n  </ion-card-header>\r\n  <ion-card-content>\r\n    <ion-item>\r\n      <ion-label>\r\n        <p>Discount:{{orderDetail.discount}}</p>\r\n        <p>Price:{{orderDetail.itemFinalPrice}}</p>\r\n\r\n      </ion-label>\r\n      <ng-container *ngIf=\"this.orderDetail.status==='pending'\">\r\n        <ion-checkbox [(ngModel)]=\"available\" (ngModelChange)=\"resendListFun($event)\"></ion-checkbox>\r\n      </ng-container>\r\n\r\n      <ng-container *ngIf=\"this.orderDetail.status==='no'\">\r\n        <ion-button routerLink=\"/tabs/tab1/pendingEdit/{{orderDetail.orderDetailID}}\" color=\"secondary\">\r\n          <ion-icon name=\"create-outline\"></ion-icon>\r\n        </ion-button>\r\n        <ion-button (click)=\"this.onDelete(orderDetail.orderDetailID)\" color=\"danger\">\r\n          <ion-icon name=\"trash-outline\"></ion-icon>\r\n        </ion-button>\r\n      </ng-container>\r\n\r\n    </ion-item>\r\n    <ion-item>\r\n      <ion-label color=\"success\">\r\n        <p>Remark:{{orderDetail.remark}}</p>\r\n      </ion-label>\r\n    </ion-item>\r\n    <ng-container *ngIf=\"this.available === false && this.appSetting.loginType==='resturant'\">\r\n      <ion-item>\r\n        <ion-label color=\"danger\" position=\"floating\">Comment</ion-label>\r\n        <ion-input [(ngModel)]=\"this.comment\" (ngModelChange)=\"resendListKeyPress($event)\" type=\"text\"\r\n          placeholder=\"eg: Only four item available\"></ion-input>\r\n      </ion-item>\r\n    </ng-container>\r\n    <ng-container *ngIf=\"orderDetail.status==='no' && this.appSetting.loginType==='admin'\">\r\n      <ion-item>\r\n        <ion-label color=\"danger\" position=\"floating\">Comment</ion-label>\r\n        <ion-input value='{{orderDetail.comment}}' type=\"text\" placeholder=\"eg: Only four item available\" readonly>\r\n        </ion-input>\r\n      </ion-item>\r\n    </ng-container>\r\n  </ion-card-content>\r\n</ion-card>");
+/* harmony default export */ __webpack_exports__["default"] = ("<ng-container *ngIf=\"this.appSetting.loginType === 'admin'\">\r\n  <ng-container *ngIf=\"this.orderDetail.isPickUpResturant === true\">\r\n    <ion-label color=\"primary\">\r\n      <p><ion-icon name=\"checkmark-circle-outline\"></ion-icon>Resturant</p>\r\n    </ion-label>\r\n  </ng-container>\r\n  <ng-container *ngIf=\"this.orderDetail.isPickUpRider === true\">\r\n    <ion-label color=\"primary\">\r\n      <p><ion-icon name=\"checkmark-circle-outline\"></ion-icon>Rider</p>\r\n    </ion-label>\r\n  </ng-container>\r\n</ng-container>\r\n\r\n<ion-item>\r\n  <ion-label>\r\n    <ng-container *ngIf=\"this.orderDetail.status === 'no'\">\r\n      <ion-text color=\"danger\">Please Check!</ion-text>\r\n    </ng-container>\r\n\r\n    <ng-container *ngIf=\"this.orderDetail.status === 'yes'\">\r\n      <ion-text color=\"success\">Acepted</ion-text>\r\n    </ng-container>\r\n\r\n    <ng-container *ngIf=\"this.orderDetail.status === 'pending'\">\r\n      <ion-text color=\"secondary\">Processing</ion-text>\r\n    </ng-container>\r\n    <p>{{ this.foodName(orderDetail.itemID).toString() }}</p>\r\n    <p>Quantity:{{ orderDetail.itemQty }}</p>\r\n    <p>Discount:{{ orderDetail.discount }}</p>\r\n    <p>Price:{{ orderDetail.itemFinalPrice }}</p>\r\n  </ion-label>\r\n  <ng-container *ngIf=\"this.orderDetail.status === 'pending'\">\r\n    <ion-checkbox\r\n      [(ngModel)]=\"available\"\r\n      (ngModelChange)=\"resendListFun($event)\"\r\n    ></ion-checkbox>\r\n  </ng-container>\r\n\r\n  <ng-container *ngIf=\"this.orderDetail.status === 'no'\">\r\n    <ion-button\r\n      routerLink=\"/managmenet/tabs/tab1/pendingEdit/{{\r\n        orderDetail.orderDetailID\r\n      }}\"\r\n      color=\"secondary\"\r\n    >\r\n      <ion-icon name=\"create-outline\"></ion-icon>\r\n    </ion-button>\r\n    <ion-button\r\n      (click)=\"this.onDelete(orderDetail.orderDetailID)\"\r\n      color=\"danger\"\r\n    >\r\n      <ion-icon name=\"trash-outline\"></ion-icon>\r\n    </ion-button>\r\n  </ng-container>\r\n</ion-item>\r\n<ion-item>\r\n  <ion-label color=\"success\">\r\n    <p>Remark:{{ orderDetail.remark }}</p>\r\n  </ion-label>\r\n</ion-item>\r\n<ng-container\r\n  *ngIf=\"this.available === false && this.appSetting.loginType === 'resturant'\"\r\n>\r\n<!-------\r\n  <ion-item>\r\n    <ion-label color=\"danger\" position=\"floating\">Comment</ion-label>\r\n    <ion-input\r\n      [(ngModel)]=\"this.comment\"\r\n      (ngModelChange)=\"resendListKeyPress($event)\"\r\n      type=\"text\"\r\n      placeholder=\"eg: Only four item available\"\r\n    ></ion-input>\r\n  </ion-item>----->\r\n</ng-container>\r\n<ng-container\r\n  *ngIf=\"orderDetail.status === 'no' && this.appSetting.loginType === 'admin'\"\r\n>\r\n<!--------\r\n  <ion-item>\r\n    <ion-label color=\"danger\" position=\"floating\">Comment</ion-label>\r\n    <ion-input\r\n      value=\"{{ orderDetail.comment }}\"\r\n      type=\"text\"\r\n      placeholder=\"eg: Only four item available\"\r\n      readonly\r\n    >\r\n    </ion-input>\r\n  </ion-item>\r\n  ------->\r\n</ng-container>\r\n<hr />\r\n");
 
 /***/ }),
 
@@ -87,7 +87,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<ng-container\r\n  *ngIf=\"\r\n    this.data !== null &&\r\n    this.status() === this.appSetting.displaySetting &&\r\n    this.appSetting.displaySetting !== 'delivering' &&\r\n    this.data.orderModel.status !== 'delivering'\r\n  \"\r\n>\r\n  <ion-card\r\n    *ngIf=\"\r\n      this.data !== null && this.status() === this.appSetting.displaySetting\r\n    \"\r\n  >\r\n    <ion-card-content>\r\n      <ion-item>\r\n        <ion-avatar slot=\"start\">\r\n          <img src=\"/../assets/food.svg\" />\r\n        </ion-avatar>\r\n        <ion-label>\r\n          <h2>\r\n            Order: {{ this.data.orderModel.id }}\r\n            <ng-container *ngIf=\"this.data.orderModel.status !== 'delivering'\">\r\n              <ng-container *ngIf=\"this.status() === 'no'\">\r\n                <ion-label color=\"danger\">Rejected</ion-label>\r\n              </ng-container>\r\n              <ng-container *ngIf=\"this.status() === 'pending'\">\r\n                <ion-label color=\"secondary\">Processing</ion-label>\r\n              </ng-container>\r\n              <ng-container *ngIf=\"this.status() === 'yes'\">\r\n                <ion-label color=\"success\">Accepted</ion-label>\r\n              </ng-container>\r\n            </ng-container>\r\n\r\n            <ng-container *ngIf=\"this.data.orderModel.status === 'delivering'\">\r\n              <ion-label color=\"warning\">In Delivery Process</ion-label>\r\n            </ng-container>\r\n          </h2>\r\n          <p>Date: {{ this.data.orderModel.orderDate | date }}</p>\r\n          <p>Total Amount: {{ this.total() }}</p>\r\n        </ion-label>\r\n        <ng-container *ngIf=\"this.appSetting.loginType === 'resturant'\">\r\n          <ng-container\r\n            *ngIf=\"!this.appSetting.resendBtn(this.data.orderModel.id)\"\r\n          >\r\n            <ion-button (click)=\"sendToServer()\" color=\"danger\">\r\n              <ion-icon name=\"thumbs-down-outline\"></ion-icon>\r\n            </ion-button>\r\n          </ng-container>\r\n          <ng-container\r\n            *ngIf=\"this.appSetting.resendBtn(this.data.orderModel.id)\"\r\n          >\r\n            <ion-button (click)=\"sendToServer()\" color=\"secondary\">\r\n              <ion-icon name=\"thumbs-up-outline\"></ion-icon>\r\n            </ion-button>\r\n          </ng-container>\r\n        </ng-container>\r\n\r\n        <ng-container *ngIf=\"this.appSetting.loginType === 'admin'\">\r\n          <ng-container *ngIf=\"this.data.orderModel.status !== 'delivering'\">\r\n            <ng-container>\r\n              <ion-button\r\n                *ngIf=\"this.status() === 'no'\"\r\n                (click)=\"sendToServer()\"\r\n                color=\"warning\"\r\n              >\r\n                <ion-icon name=\"cloud-upload-outline\"></ion-icon>\r\n              </ion-button>\r\n\r\n              <ion-button\r\n                *ngIf=\"this.status() === 'yes'\"\r\n                routerLink=\"/tabs/tab2/riderSelect/{{ Orderid }}\"\r\n                color=\"success\"\r\n              >\r\n                <ion-icon name=\"bicycle-outline\"></ion-icon>\r\n              </ion-button>\r\n\r\n              <ion-button\r\n                (click)=\"onDelete(this.data.orderModel.id)\"\r\n                color=\"danger\"\r\n              >\r\n                <ion-icon name=\"trash\"></ion-icon>\r\n              </ion-button>\r\n            </ng-container>\r\n          </ng-container>\r\n        </ng-container>\r\n      </ion-item>\r\n\r\n      <ion-list-header>\r\n        <ion-label>\r\n          <h3>\r\n            Order Detail Descriptions [Qty:{{\r\n              this.data.orderDetailModels.length\r\n            }}]\r\n          </h3>\r\n        </ion-label>\r\n        <ion-button (click)=\"itemVisibleMethod()\">\r\n          <ion-text color=\"primary\">\r\n            <p *ngIf=\"this.itemVisible === false\">See All</p>\r\n            <p *ngIf=\"this.itemVisible === true\">Collapse</p>\r\n          </ion-text>\r\n        </ion-button>\r\n      </ion-list-header>\r\n\r\n      <ng-container *ngIf=\"this.itemVisible === true\">\r\n        <ng-container *ngFor=\"let item of data.orderDetailModels\">\r\n          <app-resturant-card *ngIf=\"item\" [data]=\"item\"></app-resturant-card>\r\n        </ng-container>\r\n      </ng-container>\r\n\r\n      <ion-list-header *ngIf=\"this.itemVisible === true\">\r\n        <ion-label></ion-label>\r\n        <ion-button (click)=\"itemVisibleMethod()\">\r\n          <ion-text color=\"primary\">\r\n            <p *ngIf=\"this.itemVisible !== true\">See All</p>\r\n            <p *ngIf=\"this.itemVisible === true\">Collapse</p>\r\n          </ion-text>\r\n        </ion-button>\r\n      </ion-list-header>\r\n    </ion-card-content>\r\n  </ion-card>\r\n</ng-container>\r\n\r\n<ng-container\r\n  *ngIf=\"\r\n    this.data !== null &&\r\n    this.appSetting.displaySetting === 'delivering' &&\r\n    this.data.orderModel.status === 'delivering'\r\n  \"\r\n>\r\n  <ion-card\r\n    *ngIf=\"this.data !== null && this.data.orderModel.status === 'delivering'\"\r\n  >\r\n    <ion-card-content>\r\n      <ion-item>\r\n        <ion-avatar slot=\"start\">\r\n          <img src=\"/../assets/food.svg\" />\r\n        </ion-avatar>\r\n        <ion-label>\r\n          <h2>\r\n            Order: {{ this.data.orderModel.id }}\r\n            <ng-container *ngIf=\"this.data.orderModel.status !== 'delivering'\">\r\n              <ng-container *ngIf=\"this.status() === 'no'\">\r\n                <ion-label color=\"danger\">Rejected</ion-label>\r\n              </ng-container>\r\n              <ng-container *ngIf=\"this.status() === 'pending'\">\r\n                <ion-label color=\"secondary\">Processing</ion-label>\r\n              </ng-container>\r\n              <ng-container *ngIf=\"this.status() === 'yes'\">\r\n                <ion-label color=\"success\">Accepted</ion-label>\r\n              </ng-container>\r\n            </ng-container>\r\n\r\n            <ng-container\r\n              *ngIf=\"\r\n                this.appSetting.loginType === 'admin' &&\r\n                this.data.orderModel.status === 'delivering'\r\n              \"\r\n            >\r\n              <ion-label color=\"warning\">In Delivery Process</ion-label>\r\n            </ng-container>\r\n\r\n            <ng-container\r\n              *ngIf=\"\r\n                this.appSetting.loginType === 'resturant' &&\r\n                this.data.orderModel.status === 'delivering'\r\n              \"\r\n            >\r\n              <ion-label color=\"secondary\">\r\n                <ion-icon name=\"checkmark-circle-outline\"></ion-icon>\r\n              </ion-label>\r\n            </ng-container>\r\n          </h2>\r\n          <p>Date: {{ this.data.orderModel.orderDate | date }}</p>\r\n          <p>Total Amount: {{ this.total() }}</p>\r\n        </ion-label>\r\n        <ng-container\r\n          *ngIf=\"\r\n            this.appSetting.loginType === 'resturant' &&\r\n            this.data.orderModel.status !== 'delivering'\r\n          \"\r\n        >\r\n          <ng-container\r\n            *ngIf=\"!this.appSetting.resendBtn(this.data.orderModel.id)\"\r\n          >\r\n            <ion-button (click)=\"sendToServer()\" color=\"danger\">\r\n              <ion-icon name=\"thumbs-down-outline\"></ion-icon>\r\n            </ion-button>\r\n          </ng-container>\r\n          <ng-container\r\n            *ngIf=\"this.appSetting.resendBtn(this.data.orderModel.id)\"\r\n          >\r\n            <ion-button (click)=\"sendToServer()\" color=\"secondary\">\r\n              <ion-icon name=\"thumbs-up-outline\"></ion-icon>\r\n            </ion-button>\r\n          </ng-container>\r\n        </ng-container>\r\n\r\n        <ng-container\r\n          *ngIf=\"\r\n            this.appSetting.loginType === 'resturant' &&\r\n            this.data.orderModel.status === 'delivering'\r\n          \"\r\n        >\r\n          <ng-container>\r\n            <ion-button\r\n              (click)=\"delivryRecordSave(this.data.orderModel.id)\"\r\n              color=\"success\"\r\n            >\r\n              <ion-icon name=\"bicycle-outline\"></ion-icon>\r\n            </ion-button>\r\n          </ng-container>\r\n        </ng-container>\r\n\r\n        <ng-container *ngIf=\"this.appSetting.loginType === 'admin'\">\r\n          <ng-container *ngIf=\"this.data.orderModel.status !== 'delivering'\">\r\n            <ng-container>\r\n              <ion-button\r\n                *ngIf=\"this.status() === 'no'\"\r\n                (click)=\"sendToServer()\"\r\n                color=\"secondary\"\r\n              >\r\n                <ion-icon name=\"cloud-upload-outline\"></ion-icon>\r\n              </ion-button>\r\n\r\n              <ion-button\r\n                *ngIf=\"this.status() === 'yes'\"\r\n                routerLink=\"/tabs/tab2/riderSelect/{{ Orderid }}\"\r\n                color=\"success\"\r\n              >\r\n                <ion-icon name=\"bicycle-outline\"></ion-icon>\r\n              </ion-button>\r\n\r\n              <ion-button\r\n                (click)=\"onDelete(this.data.orderModel.id)\"\r\n                color=\"danger\"\r\n              >\r\n                <ion-icon name=\"trash\"></ion-icon>\r\n              </ion-button>\r\n            </ng-container>\r\n          </ng-container>\r\n        </ng-container>\r\n\r\n        <ng-container *ngIf=\"this.appSetting.loginType === 'rider'\">\r\n          <ion-button (click)=\"sendToServer()\" color=\"success\">\r\n            <ion-icon name=\"golf-outline\"></ion-icon>\r\n          </ion-button>\r\n\r\n          <ion-button routerLink=\"customerInfo/{{ Orderid }}\" color=\"danger\">\r\n            <ion-icon name=\"location-outline\"></ion-icon>\r\n          </ion-button>\r\n        </ng-container>\r\n      </ion-item>\r\n\r\n      <ion-list-header>\r\n        <ion-label>\r\n          <h3>\r\n            Order Detail Descriptions [Qty:{{\r\n              this.data.orderDetailModels.length\r\n            }}]\r\n          </h3>\r\n        </ion-label>\r\n        <ion-button (click)=\"itemVisibleMethod()\">\r\n          <ion-text color=\"primary\">\r\n            <p *ngIf=\"this.itemVisible !== true\">See All</p>\r\n            <p *ngIf=\"this.itemVisible === true\">Collapse</p>\r\n          </ion-text>\r\n        </ion-button>\r\n      </ion-list-header>\r\n\r\n      <ng-container *ngIf=\"this.itemVisible === true\">\r\n        <ng-container *ngFor=\"let item of data.orderDetailModels\">\r\n          <app-resturant-card *ngIf=\"item\" [data]=\"item\"></app-resturant-card>\r\n        </ng-container>\r\n      </ng-container>\r\n\r\n      <ion-list-header *ngIf=\"this.itemVisible === true\">\r\n        <ion-label></ion-label>\r\n        <ion-button (click)=\"itemVisibleMethod()\">\r\n          <ion-text color=\"primary\">\r\n            <p *ngIf=\"this.itemVisible !== true\">See All</p>\r\n            <p *ngIf=\"this.itemVisible === true\">Collapse</p>\r\n          </ion-text>\r\n        </ion-button>\r\n      </ion-list-header>\r\n    </ion-card-content>\r\n  </ion-card>\r\n</ng-container>\r\n\r\n<ng-container\r\n  *ngIf=\"this.data !== null && this.data.orderModel.status === 'delivered'\"\r\n>\r\n  <ion-card\r\n    *ngIf=\"this.data !== null && this.data.orderModel.status === 'delivered'\"\r\n  >\r\n    <ion-card-content>\r\n      <ion-item>\r\n        <ion-avatar slot=\"start\">\r\n          <img src=\"/../assets/food.svg\" />\r\n        </ion-avatar>\r\n        <ion-label>\r\n          <h2>\r\n            Order: {{ this.data.orderModel.id }}\r\n            <ng-container >\r\n              <ng-container *ngIf=\"this.status() === 'no'\">\r\n                <ion-label color=\"danger\">Rejected</ion-label>\r\n              </ng-container>\r\n              <ng-container *ngIf=\"this.status() === 'pending'\">\r\n                <ion-label color=\"secondary\">Processing</ion-label>\r\n              </ng-container>\r\n              <ng-container *ngIf=\"this.status() === 'yes'\">\r\n                <ion-label color=\"success\">Accepted</ion-label>\r\n              </ng-container>\r\n            </ng-container>\r\n          </h2>\r\n          <p>Date: {{ this.data.orderModel.orderDate | date }}</p>\r\n          <p>Total Amount: {{ this.total() }}</p>\r\n        </ion-label>\r\n      </ion-item>\r\n\r\n      <ion-list-header>\r\n        <ion-label>\r\n          <h3>\r\n            Order Detail Descriptions [Qty:{{\r\n              this.data.orderDetailModels.length\r\n            }}]\r\n          </h3>\r\n        </ion-label>\r\n        <ion-button (click)=\"itemVisibleMethod()\">\r\n          <ion-text color=\"primary\">\r\n            <p *ngIf=\"this.itemVisible === false\">See All</p>\r\n            <p *ngIf=\"this.itemVisible === true\">Collapse</p>\r\n          </ion-text>\r\n        </ion-button>\r\n      </ion-list-header>\r\n\r\n      <ng-container *ngIf=\"this.itemVisible === true\">\r\n        <ng-container *ngFor=\"let item of data.orderDetailModels\">\r\n          <app-resturant-card *ngIf=\"item\" [data]=\"item\"></app-resturant-card>\r\n        </ng-container>\r\n      </ng-container>\r\n\r\n      <ion-list-header *ngIf=\"this.itemVisible === true\">\r\n        <ion-label></ion-label>\r\n        <ion-button (click)=\"itemVisibleMethod()\">\r\n          <ion-text color=\"primary\">\r\n            <p *ngIf=\"this.itemVisible !== true\">See All</p>\r\n            <p *ngIf=\"this.itemVisible === true\">Collapse</p>\r\n          </ion-text>\r\n        </ion-button>\r\n      </ion-list-header>\r\n    </ion-card-content>\r\n  </ion-card>\r\n</ng-container>\r\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<ng-container\r\n  *ngIf=\"\r\n    this.data !== null &&\r\n    this.status() === this.appSetting.displaySetting &&\r\n    this.appSetting.displaySetting !== 'delivering' &&\r\n    this.data.orderModel.status !== 'delivering' && this.data.orderModel.status !== 'delivered' \r\n  \"\r\n>\r\n  <ion-card\r\n    *ngIf=\"\r\n      this.data !== null && this.status() === this.appSetting.displaySetting\r\n    \"\r\n  >\r\n    <ion-card-content>\r\n      <ion-item>\r\n        \r\n        <ion-label>\r\n          <h2>\r\n            Order: {{ this.data.orderModel.id }}\r\n            <ng-container *ngIf=\"this.data.orderModel.status !== 'delivering'\">\r\n              <ng-container *ngIf=\"this.status() === 'no'\">\r\n                <ion-label color=\"secondary\">Order!</ion-label>\r\n              </ng-container>\r\n              <ng-container *ngIf=\"this.status() === 'pending'\">\r\n                <ion-label color=\"secondary\">Processing</ion-label>\r\n              </ng-container>\r\n              <ng-container *ngIf=\"this.status() === 'yes'\">\r\n                <ion-label color=\"success\">Accepted</ion-label>\r\n              </ng-container>\r\n            </ng-container>\r\n\r\n            <ng-container *ngIf=\"this.data.orderModel.status === 'delivering'\">\r\n              <ion-label color=\"warning\">In Delivery Process</ion-label>\r\n            </ng-container>\r\n          </h2>\r\n          <p>Date: {{ this.data.orderModel.orderDate | date }}</p>\r\n          <p>Item Price Amount: {{ this.total()-this.data.orderModel.deliveryCharegs }}</p>\r\n          <p>Delivery Amount: {{ this.data.orderModel.deliveryCharegs }}</p>\r\n          <p>Total Amount: {{ this.total() }}</p>\r\n        </ion-label>\r\n        <!--------\r\n        <ng-container *ngIf=\"this.appSetting.loginType === 'resturant'\">\r\n          <ng-container\r\n            *ngIf=\"!this.appSetting.resendBtn(this.data.orderModel.id)\"\r\n          >\r\n            <ion-button (click)=\"sendToServer()\" color=\"danger\">\r\n              <ion-icon name=\"thumbs-down-outline\"></ion-icon>\r\n            </ion-button>\r\n          </ng-container>\r\n          <ng-container\r\n            *ngIf=\"this.appSetting.resendBtn(this.data.orderModel.id)\"\r\n          >\r\n            <ion-button (click)=\"sendToServer()\" color=\"secondary\">\r\n              <ion-icon name=\"thumbs-up-outline\"></ion-icon>\r\n            </ion-button>\r\n          </ng-container>\r\n        </ng-container>\r\n------>\r\n        \r\n      </ion-item>\r\n\r\n      <ion-list-header>\r\n        <ion-label>\r\n          <h3>\r\n            Order Detail Descriptions [Qty:{{\r\n              this.data.orderDetailModels.length\r\n            }}]\r\n          </h3>\r\n        </ion-label>\r\n        <ion-button (click)=\"itemVisibleMethod()\">\r\n          <ion-text color=\"primary\">\r\n            <p *ngIf=\"this.itemVisible === false\">See All</p>\r\n            <p *ngIf=\"this.itemVisible === true\">Collapse</p>\r\n          </ion-text>\r\n        </ion-button>\r\n      </ion-list-header>\r\n\r\n      <ng-container *ngIf=\"this.itemVisible === true\">\r\n        <ng-container *ngFor=\"let item of data.orderDetailModels\">\r\n          <app-resturant-card *ngIf=\"item\" [data]=\"item\"></app-resturant-card>\r\n        </ng-container>\r\n      </ng-container>\r\n\r\n      <ion-list-header *ngIf=\"this.itemVisible === true\">\r\n        <ion-label></ion-label>\r\n        <ion-button (click)=\"itemVisibleMethod()\">\r\n          <ion-text color=\"primary\">\r\n            <p *ngIf=\"this.itemVisible !== true\">See All</p>\r\n            <p *ngIf=\"this.itemVisible === true\">Collapse</p>\r\n          </ion-text>\r\n        </ion-button>\r\n      </ion-list-header>\r\n    </ion-card-content>\r\n\r\n    <ng-container *ngIf=\"this.appSetting.loginType === 'admin'\">\r\n      <ng-container *ngIf=\"this.data.orderModel.status !== 'delivering'\">\r\n        <ng-container>\r\n          <ion-toolbar>\r\n          <ion-buttons slot=\"end\">\r\n  <!-----        <ion-button\r\n            *ngIf=\"this.status() === 'no'\"\r\n            (click)=\"sendToServer()\"\r\n            color=\"warning\"\r\n          >\r\n            <ion-icon name=\"cloud-upload-outline\"></ion-icon>\r\n          </ion-button>----->\r\n\r\n         \r\n\r\n          <ion-button\r\n            (click)=\"onDelete(this.data.orderModel.id)\"\r\n            color=\"danger\"\r\n          >\r\n            <ion-icon name=\"trash\"></ion-icon>\r\n          </ion-button>\r\n\r\n          <ion-button\r\n          *ngIf=\"this.status() === 'yes'\"\r\n          routerLink=\"/managmenet/tabs/tab2/riderSelect/{{ Orderid }}\"\r\n          color=\"secondary\"\r\n        >\r\n          <ion-icon name=\"bicycle-outline\"></ion-icon>\r\n        </ion-button>\r\n\r\n          <ion-button *ngIf=\"this.status() === 'no'\" (click)=\"sendToServer()\" color=\"secondary\">\r\n            <ion-icon name=\"thumbs-up-outline\"></ion-icon>\r\n          </ion-button>\r\n\r\n          <ion-button routerLink=\"/managmenet/tabs/tab1/customerInfo/{{ Orderid }}\" color=\"success\">\r\n            <ion-icon name=\"location-outline\"></ion-icon>\r\n          </ion-button>\r\n          </ion-buttons>\r\n        </ion-toolbar>\r\n        </ng-container>\r\n      </ng-container>\r\n    </ng-container>\r\n  </ion-card>\r\n</ng-container>\r\n\r\n\r\n<ng-container\r\n  *ngIf=\"\r\n    this.data !== null &&\r\n    this.appSetting.displaySetting === 'delivering' &&\r\n    (this.data.orderModel.status === 'delivering' && \r\n    this.data.orderModel.status.toString() !== 'delivered')\r\n  \"\r\n>\r\n  <ion-card\r\n    *ngIf=\"this.data !== null && this.data.orderModel.status === 'delivering'\"\r\n  >\r\n    <ion-card-content>\r\n      <ion-item>\r\n      \r\n        <ion-label>\r\n          <h2>\r\n            Order: {{ this.data.orderModel.id }}\r\n            <ng-container *ngIf=\"this.data.orderModel.status !== 'delivering'\">\r\n              <ng-container *ngIf=\"this.status() === 'no'\">\r\n                <ion-label color=\"danger\">Rejected</ion-label>\r\n              </ng-container>\r\n              <ng-container *ngIf=\"this.status() === 'pending'\">\r\n                <ion-label color=\"secondary\">Processing</ion-label>\r\n              </ng-container>\r\n              <ng-container *ngIf=\"this.status() === 'yes'\">\r\n                <ion-label color=\"success\">Accepted</ion-label>\r\n              </ng-container>\r\n            </ng-container>\r\n\r\n            <ng-container\r\n              *ngIf=\"\r\n                this.appSetting.loginType === 'admin' &&\r\n                this.data.orderModel.status === 'delivering'\r\n              \"\r\n            >\r\n              <ion-label color=\"warning\">In Delivery Process</ion-label>\r\n            </ng-container>\r\n\r\n            <ng-container\r\n              *ngIf=\"\r\n                this.appSetting.loginType === 'resturant' &&\r\n                this.data.orderModel.status === 'delivering'\r\n              \"\r\n            >\r\n              <ion-label color=\"secondary\">\r\n                <ion-icon name=\"checkmark-circle-outline\"></ion-icon>\r\n              </ion-label>\r\n            </ng-container>\r\n          </h2>\r\n          <p>Date: {{ this.data.orderModel.orderDate | date }}</p>\r\n          <p>Item Price Amount: {{ this.total()-this.data.orderModel.deliveryCharegs }}</p>\r\n          <p>Delivery Amount: {{ this.data.orderModel.deliveryCharegs }}</p>\r\n          <p>Total Amount: {{ this.total() }}</p>\r\n        </ion-label>\r\n        <ng-container\r\n          *ngIf=\"\r\n            this.appSetting.loginType === 'resturant' &&\r\n            this.data.orderModel.status !== 'delivering'\r\n          \"\r\n        >\r\n          <ng-container\r\n            *ngIf=\"!this.appSetting.resendBtn(this.data.orderModel.id)\"\r\n          >\r\n            <ion-button (click)=\"sendToServer()\" color=\"danger\">\r\n              <ion-icon name=\"thumbs-down-outline\"></ion-icon>\r\n            </ion-button>\r\n          </ng-container>\r\n          <ng-container\r\n            *ngIf=\"this.appSetting.resendBtn(this.data.orderModel.id)\"\r\n          >\r\n            <ion-button (click)=\"sendToServer()\" color=\"secondary\">\r\n              <ion-icon name=\"thumbs-up-outline\"></ion-icon>\r\n            </ion-button>\r\n          </ng-container>\r\n        </ng-container>\r\n\r\n        <ng-container\r\n          *ngIf=\"\r\n            this.appSetting.loginType === 'resturant' &&\r\n            this.data.orderModel.status === 'delivering'\r\n          \"\r\n        >\r\n          <ng-container>\r\n            <ion-button\r\n              (click)=\"delivryRecordSave(this.data.orderModel.id)\"\r\n              color=\"success\"\r\n            >\r\n              <ion-icon name=\"bicycle-outline\"></ion-icon>\r\n            </ion-button>\r\n          </ng-container>\r\n        </ng-container>\r\n        <ng-container *ngIf=\"this.appSetting.loginType === 'admin'\">\r\n          <ng-container *ngIf=\"this.data.orderModel.status !== 'delivering'\">\r\n            <ng-container>\r\n              <ion-button\r\n                *ngIf=\"this.status() === 'no'\"\r\n                (click)=\"sendToServer()\"\r\n                color=\"secondary\"\r\n              >\r\n                <ion-icon name=\"cloud-upload-outline\"></ion-icon>\r\n              </ion-button>\r\n\r\n              <ion-button\r\n                *ngIf=\"this.status() === 'yes'\"\r\n                routerLink=\"/managmenet/tabs/tab2/riderSelect/{{ Orderid }}\"\r\n                color=\"success\"\r\n              >\r\n                <ion-icon name=\"bicycle-outline\"></ion-icon>\r\n              </ion-button>\r\n\r\n              <ion-button\r\n                (click)=\"onDelete(this.data.orderModel.id)\"\r\n                color=\"danger\"\r\n              >\r\n                <ion-icon name=\"trash\"></ion-icon>\r\n              </ion-button>\r\n            </ng-container>\r\n          </ng-container>\r\n        </ng-container>\r\n\r\n        <ng-container *ngIf=\"this.appSetting.loginType === 'rider'\">\r\n          <ion-button (click)=\"sendToServer()\" color=\"success\">\r\n            <ion-icon name=\"golf-outline\"></ion-icon>\r\n          </ion-button>\r\n\r\n          <ion-button routerLink=\"customerInfo/{{ Orderid }}\" color=\"danger\">\r\n            <ion-icon name=\"location-outline\"></ion-icon>\r\n          </ion-button>\r\n        </ng-container>\r\n      </ion-item>\r\n\r\n      <ion-list-header>\r\n        <ion-label>\r\n          <h3>\r\n            Order Detail Descriptions [Qty:{{\r\n              this.data.orderDetailModels.length\r\n            }}]\r\n          </h3>\r\n        </ion-label>\r\n        <ion-button (click)=\"itemVisibleMethod()\">\r\n          <ion-text color=\"primary\">\r\n            <p *ngIf=\"this.itemVisible !== true\">See All</p>\r\n            <p *ngIf=\"this.itemVisible === true\">Collapse</p>\r\n          </ion-text>\r\n        </ion-button>\r\n      </ion-list-header>\r\n\r\n      <ng-container *ngIf=\"this.itemVisible === true\">\r\n        <ng-container *ngFor=\"let item of data.orderDetailModels\">\r\n          <app-resturant-card *ngIf=\"item\" [data]=\"item\"></app-resturant-card>\r\n        </ng-container>\r\n      </ng-container>\r\n\r\n      <ion-list-header *ngIf=\"this.itemVisible === true\">\r\n        <ion-label></ion-label>\r\n        <ion-button (click)=\"itemVisibleMethod()\">\r\n          <ion-text color=\"primary\">\r\n            <p *ngIf=\"this.itemVisible !== true\">See All</p>\r\n            <p *ngIf=\"this.itemVisible === true\">Collapse</p>\r\n          </ion-text>\r\n        </ion-button>\r\n      </ion-list-header>\r\n    </ion-card-content>\r\n  </ion-card>\r\n</ng-container>\r\n\r\n\r\n\r\n<ng-container\r\n  *ngIf=\"this.data !== null  && this.appSetting.displaySetting === 'delivered' && this.data.orderModel.status === 'delivered'\"\r\n>\r\n  <ion-card\r\n    *ngIf=\"this.data !== null && this.data.orderModel.status === 'delivered'\"\r\n  >\r\n    <ion-card-content>\r\n      <ion-item>\r\n        <ion-label>\r\n          <h2>\r\n            Order: {{ this.data.orderModel.id }}\r\n            <ng-container >\r\n              <ng-container *ngIf=\"this.status() === 'no'\">\r\n                <ion-label color=\"danger\">Rejected</ion-label>\r\n              </ng-container>\r\n              <ng-container *ngIf=\"this.status() === 'pending'\">\r\n                <ion-label color=\"secondary\">Processing</ion-label>\r\n              </ng-container>\r\n              <ng-container *ngIf=\"this.status() === 'yes'\">\r\n                <ion-label color=\"success\">Accepted</ion-label>\r\n              </ng-container>\r\n            </ng-container>\r\n          </h2>\r\n          <p>Date: {{ this.data.orderModel.orderDate | date }}</p>\r\n          <p>Total Amount: {{ this.total() }}</p>\r\n        </ion-label>\r\n      </ion-item>\r\n\r\n      <ion-list-header>\r\n        <ion-label>\r\n          <h3>\r\n            Order Detail Descriptions [Qty:{{\r\n              this.data.orderDetailModels.length\r\n            }}]\r\n          </h3>\r\n        </ion-label>\r\n        <ion-button (click)=\"itemVisibleMethod()\">\r\n          <ion-text color=\"primary\">\r\n            <p *ngIf=\"this.itemVisible === false\">See All</p>\r\n            <p *ngIf=\"this.itemVisible === true\">Collapse</p>\r\n          </ion-text>\r\n        </ion-button>\r\n      </ion-list-header>\r\n\r\n      <ng-container *ngIf=\"this.itemVisible === true\">\r\n        <ng-container *ngFor=\"let item of data.orderDetailModels\">\r\n          <app-resturant-card *ngIf=\"item\" [data]=\"item\"></app-resturant-card>\r\n        </ng-container>\r\n      </ng-container>\r\n\r\n      <ion-list-header *ngIf=\"this.itemVisible === true\">\r\n        <ion-label></ion-label>\r\n        <ion-button (click)=\"itemVisibleMethod()\">\r\n          <ion-text color=\"primary\">\r\n            <p *ngIf=\"this.itemVisible !== true\">See All</p>\r\n            <p *ngIf=\"this.itemVisible === true\">Collapse</p>\r\n          </ion-text>\r\n        </ion-button>\r\n      </ion-list-header>\r\n    </ion-card-content>\r\n  </ion-card>\r\n</ng-container>\r\n");
 
 /***/ }),
 
@@ -113,7 +113,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<ion-header [translucent]=\"true\">\r\n  <ion-toolbar>\r\n    <ion-grid fixed>\r\n      <ion-row>\r\n        <ion-col size=\"4\">\r\n          <ion-chip (click)=\"back()\">\r\n            <ion-icon name=\"chevron-back-circle-outline\"></ion-icon>\r\n            <ion-label>Back</ion-label>\r\n          </ion-chip>\r\n        </ion-col>\r\n        <ion-col size=\"5\"> </ion-col>\r\n        <ion-col size=\"3\"> </ion-col>\r\n      </ion-row>\r\n    </ion-grid>\r\n  </ion-toolbar>\r\n</ion-header>\r\n\r\n<ion-content>\r\n  <ion-card>\r\n    <ion-card-header>\r\n      <ion-card-subtitle color=\"primary\">Customer</ion-card-subtitle>\r\n    </ion-card-header>\r\n    <ion-card-content>\r\n      <ion-card>\r\n        <ion-card-header>\r\n          <ion-card-subtitle>Shipping Information</ion-card-subtitle>\r\n        </ion-card-header>\r\n        <ion-card-content>\r\n          <ion-item>\r\n            <ion-label position=\"floating\" color=\"secondary\">\r\n              <ion-icon name=\"business-outline\"></ion-icon> Client Name\r\n            </ion-label>\r\n            <ion-input\r\n              [(ngModel)]=\"orderData.clientName\"\r\n              type=\"text\"\r\n              readonly\r\n            ></ion-input>\r\n          </ion-item>\r\n\r\n          <ion-item>\r\n            <ion-label position=\"floating\" color=\"secondary\">\r\n              <ion-icon name=\"business-outline\"></ion-icon> Address\r\n            </ion-label>\r\n            <ion-input\r\n              [(ngModel)]=\"orderData.clientAddress\"\r\n              type=\"text\"\r\n              readonly\r\n            ></ion-input>\r\n          </ion-item>\r\n\r\n          <ion-item>\r\n            <ion-label position=\"floating\" color=\"secondary\">\r\n              <ion-icon name=\"business-outline\"></ion-icon> Flat No\r\n            </ion-label>\r\n            <ion-input\r\n              [(ngModel)]=\"orderData.clitentFlatNo\"\r\n              type=\"text\"\r\n              readonly\r\n            ></ion-input>\r\n          </ion-item>\r\n\r\n          <ion-item>\r\n            <ion-label position=\"floating\" color=\"secondary\">\r\n              <ion-icon name=\"business-outline\"></ion-icon> Phone\r\n            </ion-label>\r\n            <ion-input\r\n              [(ngModel)]=\"orderData.clitentPhone\"\r\n              type=\"tel\"\r\n              readonly\r\n            ></ion-input>\r\n          </ion-item>\r\n          <ion-grid fixed>\r\n            <ion-row>\r\n              <ion-col size=\"12\">\r\n                <ion-button\r\n                  (click)=\"onClick()\"\r\n                  expand=\"block\"\r\n                  color=\"success\"\r\n                  shape=\"round\"\r\n                >\r\n                  Location\r\n                </ion-button>\r\n              </ion-col>\r\n            </ion-row>\r\n          </ion-grid>\r\n        </ion-card-content>\r\n      </ion-card>\r\n    </ion-card-content>\r\n  </ion-card>\r\n</ion-content>\r\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<ion-header [translucent]=\"true\">\r\n  <ion-toolbar>\r\n    <ion-grid fixed>\r\n      <ion-row>\r\n        <ion-col size=\"4\">\r\n          <ion-chip (click)=\"back()\">\r\n            <ion-icon name=\"chevron-back-circle-outline\"></ion-icon>\r\n            <ion-label>Back</ion-label>\r\n          </ion-chip>\r\n        </ion-col>\r\n        <ion-col size=\"5\"> </ion-col>\r\n        <ion-col size=\"3\"> </ion-col>\r\n      </ion-row>\r\n    </ion-grid>\r\n  </ion-toolbar>\r\n</ion-header>\r\n\r\n<ion-content>\r\n\r\n      <ion-card>\r\n        <ion-card-header>\r\n          <ion-card-subtitle>Shipping Information</ion-card-subtitle>\r\n        </ion-card-header>\r\n        <ion-card-content>\r\n          <ion-item>\r\n            <ion-label position=\"floating\" color=\"secondary\">\r\n              <ion-icon name=\"business-outline\"></ion-icon> Client Name\r\n            </ion-label>\r\n            <ion-input\r\n              [(ngModel)]=\"orderData.clientName\"\r\n              type=\"text\"\r\n              readonly\r\n            ></ion-input>\r\n          </ion-item>\r\n\r\n          <ion-item>\r\n            <ion-label position=\"floating\" color=\"secondary\">\r\n              <ion-icon name=\"business-outline\"></ion-icon> Address\r\n            </ion-label>\r\n            <ion-input\r\n              [(ngModel)]=\"orderData.clientAddress\"\r\n              type=\"text\"\r\n              readonly\r\n            ></ion-input>\r\n          </ion-item>\r\n\r\n          <ion-item>\r\n            <ion-label position=\"floating\" color=\"secondary\">\r\n              <ion-icon name=\"business-outline\"></ion-icon> Flat No\r\n            </ion-label>\r\n            <ion-input\r\n              [(ngModel)]=\"orderData.clitentFlatNo\"\r\n              type=\"text\"\r\n              readonly\r\n            ></ion-input>\r\n          </ion-item>\r\n\r\n          <ion-item>\r\n            <ion-label position=\"floating\" color=\"secondary\">\r\n              <ion-icon name=\"business-outline\"></ion-icon> Phone\r\n            </ion-label>\r\n            <ion-input\r\n              [(ngModel)]=\"orderData.clitentPhone\"\r\n              type=\"tel\"\r\n              readonly\r\n            ></ion-input>\r\n          </ion-item>\r\n          <ion-grid fixed>\r\n            <ion-row>\r\n              <ion-col size=\"12\">\r\n                <ion-button\r\n                  (click)=\"onClick()\"\r\n                  expand=\"block\"\r\n                  color=\"success\"\r\n                  shape=\"round\"\r\n                >\r\n                  Location\r\n                </ion-button>\r\n              </ion-col>\r\n            </ion-row>\r\n          </ion-grid>\r\n        </ion-card-content>\r\n      </ion-card>\r\n\r\n</ion-content>\r\n");
 
 /***/ }),
 
@@ -143,22 +143,6 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./src/app/Models/orderTransationModel.ts":
-/*!************************************************!*\
-  !*** ./src/app/Models/orderTransationModel.ts ***!
-  \************************************************/
-/*! exports provided: orderTransationModel */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "orderTransationModel", function() { return orderTransationModel; });
-class orderTransationModel {
-}
-
-
-/***/ }),
-
 /***/ "./src/app/Services/deliveryRecord/delivery-record.service.ts":
 /*!********************************************************************!*\
   !*** ./src/app/Services/deliveryRecord/delivery-record.service.ts ***!
@@ -171,8 +155,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DeliveryRecordService", function() { return DeliveryRecordService; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _app_setting__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./../../app-setting */ "./src/app/app-setting.ts");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
-/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/__ivy_ngcc__/fesm2015/http.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm2015/http.js");
 
 
 
@@ -197,7 +181,6 @@ let DeliveryRecordService = class DeliveryRecordService {
     }
     post(data) {
         this.http.post(this.url, data, this.httpOptions).subscribe((res) => {
-            console.log(res);
             this.appSetting.showSuccess();
         }, (err) => {
             console.log(err);
@@ -207,7 +190,6 @@ let DeliveryRecordService = class DeliveryRecordService {
         let data = null;
         const searchUrl = `${this.appSetting.apiAddress}/api/deliveryRecordModel/rider?orderID=${orderID}`;
         this.http.put(searchUrl, data, this.httpOptions).subscribe((res) => {
-            console.log(res);
             let i = -1;
             const temp = [
                 ...this.appSetting.orderTransationList,
@@ -227,7 +209,6 @@ let DeliveryRecordService = class DeliveryRecordService {
     put(data) {
         const searchUrl = `${this.url}/${data.orderID}?ResturantID=${this.appSetting.resturantID}`;
         this.http.put(searchUrl, data, this.httpOptions).subscribe((res) => {
-            console.log(res);
             let i = -1;
             const temp = [
                 ...this.appSetting.orderTransationList,
@@ -250,7 +231,6 @@ let DeliveryRecordService = class DeliveryRecordService {
         xhr.withCredentials = false;
         xhr.addEventListener("readystatechange", function () {
             if (this.readyState === this.DONE) {
-                console.log(this.responseText);
             }
         });
         xhr.open("DELETE", this.url + "/" + id);
@@ -266,87 +246,6 @@ DeliveryRecordService = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])
         providedIn: "root",
     })
 ], DeliveryRecordService);
-
-
-
-/***/ }),
-
-/***/ "./src/app/Services/locationDB/location-db.service.ts":
-/*!************************************************************!*\
-  !*** ./src/app/Services/locationDB/location-db.service.ts ***!
-  \************************************************************/
-/*! exports provided: LocationDBService */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LocationDBService", function() { return LocationDBService; });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-/* harmony import */ var _app_setting__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./../../app-setting */ "./src/app/app-setting.ts");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
-/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/__ivy_ngcc__/fesm2015/http.js");
-
-
-
-
-let LocationDBService = class LocationDBService {
-    constructor(http, appSetting) {
-        this.http = http;
-        this.appSetting = appSetting;
-        this.url = `${this.appSetting.apiAddress}/api/locationDatabaseModels`;
-        this.httpOptions = {
-            headers: new _angular_common_http__WEBPACK_IMPORTED_MODULE_3__["HttpHeaders"]({
-                "Content-Type": "application/json",
-            }),
-        };
-    }
-    get() {
-        return this.http.get(this.url);
-    }
-    getSingle(flatNo, township_id) {
-        const searchUrl = `${this.url}/?township_id=${township_id}&flatNo=${flatNo}`;
-        return this.http.get(searchUrl);
-    }
-    post(data) {
-        this.http.post(this.url, data, this.httpOptions).subscribe((res) => {
-            console.log(res);
-            this.appSetting.showSuccess();
-        }, (err) => {
-            console.log(err);
-        });
-    }
-    put(data) {
-        const searchUrl = `${this.url}/${data.id}`;
-        this.http.put(searchUrl, data, this.httpOptions).subscribe((res) => {
-            console.log(res);
-            this.appSetting.showSuccess();
-        }, (err) => {
-            console.log(err);
-            this.appSetting.showError(err);
-        });
-    }
-    delete(id) {
-        const data = null;
-        const xhr = new XMLHttpRequest();
-        xhr.withCredentials = false;
-        xhr.addEventListener("readystatechange", function () {
-            if (this.readyState === this.DONE) {
-                console.log(this.responseText);
-            }
-        });
-        xhr.open("DELETE", this.url + "/" + id);
-        xhr.send(data);
-    }
-};
-LocationDBService.ctorParameters = () => [
-    { type: _angular_common_http__WEBPACK_IMPORTED_MODULE_3__["HttpClient"] },
-    { type: _app_setting__WEBPACK_IMPORTED_MODULE_1__["appSetting"] }
-];
-LocationDBService = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
-    Object(_angular_core__WEBPACK_IMPORTED_MODULE_2__["Injectable"])({
-        providedIn: 'root'
-    })
-], LocationDBService);
 
 
 
@@ -376,11 +275,11 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AddToInvoiceComponent", function() { return AddToInvoiceComponent; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
 /* harmony import */ var src_app_app_setting__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! src/app/app-setting */ "./src/app/app-setting.ts");
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/__ivy_ngcc__/fesm2015/router.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm2015/router.js");
 /* harmony import */ var src_app_Models_foodModel__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! src/app/Models/foodModel */ "./src/app/Models/foodModel.ts");
-/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/__ivy_ngcc__/fesm2015/common.js");
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/fesm2015/common.js");
 
 
 
@@ -501,7 +400,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _Services_food_food_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./../../../Services/food/food.service */ "./src/app/Services/food/food.service.ts");
 /* harmony import */ var src_app_app_setting__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! src/app/app-setting */ "./src/app/app-setting.ts");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
 /* harmony import */ var src_app_Services_order_order_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! src/app/Services/order/order.service */ "./src/app/Services/order/order.service.ts");
 
 
@@ -514,10 +413,9 @@ let DeliveryPendingComponent = class DeliveryPendingComponent {
         this.FoodService = FoodService;
         this.orderService = orderService;
         this.firstLoad();
-        console.log(this.appSetting.orderTransationList);
     }
     ngOnInit() {
-        this.firstLoad();
+        //this.firstLoad();
     }
     firstLoad() {
         this.appSetting.showLoading();
@@ -525,7 +423,6 @@ let DeliveryPendingComponent = class DeliveryPendingComponent {
             this.appSetting.orderTransationList = x;
         }, (err) => this.appSetting.showError(err), () => {
             this.loadFoodModel();
-            console.log("This work");
         });
     }
     loadFoodModel() {
@@ -581,7 +478,7 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ItemListComponent", function() { return ItemListComponent; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
 /* harmony import */ var src_app_app_setting__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! src/app/app-setting */ "./src/app/app-setting.ts");
 /* harmony import */ var src_app_Services_food_food_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! src/app/Services/food/food.service */ "./src/app/Services/food/food.service.ts");
 /* harmony import */ var src_app_Services_resturantModel_resturant_model_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! src/app/Services/resturantModel/resturant-model.service */ "./src/app/Services/resturantModel/resturant-model.service.ts");
@@ -648,7 +545,7 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "MainPageComponent", function() { return MainPageComponent; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
 /* harmony import */ var src_app_app_setting__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! src/app/app-setting */ "./src/app/app-setting.ts");
 
 
@@ -699,11 +596,11 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PendingItemEditComponent", function() { return PendingItemEditComponent; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
 /* harmony import */ var src_app_app_setting__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! src/app/app-setting */ "./src/app/app-setting.ts");
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/__ivy_ngcc__/fesm2015/router.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm2015/router.js");
 /* harmony import */ var src_app_Models_foodModel__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! src/app/Models/foodModel */ "./src/app/Models/foodModel.ts");
-/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/__ivy_ngcc__/fesm2015/common.js");
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/fesm2015/common.js");
 /* harmony import */ var src_app_Services_order_order_service__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! src/app/Services/order/order.service */ "./src/app/Services/order/order.service.ts");
 
 
@@ -729,7 +626,7 @@ let PendingItemEditComponent = class PendingItemEditComponent {
             discount: 0,
             itemFinalPrice: 0,
             orderID: 0,
-            status: 'pending',
+            status: 'no',
             remark: "",
             comment: "",
             isPickUpResturant: false,
@@ -788,7 +685,7 @@ let PendingItemEditComponent = class PendingItemEditComponent {
         this.appSetting.showLoading();
         if (this.validation()) {
             let itemJ = this.appSetting.itemJoin(this.foodData.id);
-            this.orderDetail.status = 'pending';
+            this.orderDetail.status = 'no';
             this.orderService.putOrderDetail(this.orderDetail);
         }
     }
@@ -822,7 +719,7 @@ PendingItemEditComponent = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL3RhYjEvcmVzdHVyYW50L3Jlc3R1cmFudC1jYXJkL3Jlc3R1cmFudC1jYXJkLmNvbXBvbmVudC5zY3NzIn0= */");
+/* harmony default export */ __webpack_exports__["default"] = ("ion-card-header {\n  --background:rgba(253, 0, 0, 0);\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvdGFiMS9yZXN0dXJhbnQvcmVzdHVyYW50LWNhcmQvRDpcXHNpZGVDYXIvc3JjXFxhcHBcXHRhYjFcXHJlc3R1cmFudFxccmVzdHVyYW50LWNhcmRcXHJlc3R1cmFudC1jYXJkLmNvbXBvbmVudC5zY3NzIiwic3JjL2FwcC90YWIxL3Jlc3R1cmFudC9yZXN0dXJhbnQtY2FyZC9yZXN0dXJhbnQtY2FyZC5jb21wb25lbnQuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNJLCtCQUFBO0FDQ0oiLCJmaWxlIjoic3JjL2FwcC90YWIxL3Jlc3R1cmFudC9yZXN0dXJhbnQtY2FyZC9yZXN0dXJhbnQtY2FyZC5jb21wb25lbnQuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbImlvbi1jYXJkLWhlYWRlcntcclxuICAgIC0tYmFja2dyb3VuZDpyZ2JhKDI1MywgMCwgMCwgMCk7XHJcblxyXG59IiwiaW9uLWNhcmQtaGVhZGVyIHtcbiAgLS1iYWNrZ3JvdW5kOnJnYmEoMjUzLCAwLCAwLCAwKTtcbn0iXX0= */");
 
 /***/ }),
 
@@ -839,7 +736,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var src_app_Services_order_order_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! src/app/Services/order/order.service */ "./src/app/Services/order/order.service.ts");
 /* harmony import */ var src_app_app_setting__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! src/app/app-setting */ "./src/app/app-setting.ts");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
 /* harmony import */ var sweetalert2__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! sweetalert2 */ "./node_modules/sweetalert2/dist/sweetalert2.all.js");
 /* harmony import */ var sweetalert2__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(sweetalert2__WEBPACK_IMPORTED_MODULE_4__);
 
@@ -969,7 +866,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ResturantIndividualOrderComponent", function() { return ResturantIndividualOrderComponent; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var src_app_app_setting__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! src/app/app-setting */ "./src/app/app-setting.ts");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
 /* harmony import */ var src_app_Models_orderTransationModel__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! src/app/Models/orderTransationModel */ "./src/app/Models/orderTransationModel.ts");
 /* harmony import */ var src_app_Services_order_order_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! src/app/Services/order/order.service */ "./src/app/Services/order/order.service.ts");
 /* harmony import */ var sweetalert2__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! sweetalert2 */ "./node_modules/sweetalert2/dist/sweetalert2.all.js");
@@ -1053,7 +950,7 @@ let ResturantIndividualOrderComponent = class ResturantIndividualOrderComponent 
         this.DeliveryRecordService.put(this.recordData);
     }
     sendToServer() {
-        if (this.appSetting.loginType === "resturant") {
+        if (this.appSetting.loginType === "admin") {
             this.appSetting.showLoading();
             const temp = [...this.appSetting.resendListFromResturant];
             let dataList = [];
@@ -1063,19 +960,17 @@ let ResturantIndividualOrderComponent = class ResturantIndividualOrderComponent 
                 }
             });
             this.orderService.putResend_From_Resturant(this.invoiceNo, dataList);
-        }
-        else if (this.appSetting.loginType === "admin") {
-            this.appSetting.showLoading();
-            const temp = [...this.appSetting.resendListFromResturant];
-            let dataList = [];
-            temp.forEach((x) => {
-                if (x.orderNo === this.invoiceNo) {
-                    dataList.push(x);
-                }
-            });
-            //this.orderService.putResend_From_Resturant(this.invoiceNo, dataList);
-            //Resend function from Admin to resturant
-        }
+        } /*else if (this.appSetting.loginType === "admin") {
+          this.appSetting.showLoading();
+          const temp = [...this.appSetting.resendListFromResturant];
+          let dataList: resendModel[] = [];
+          temp.forEach((x) => {
+            if (x.orderNo === this.invoiceNo) {
+              dataList.push(x);
+            }
+          });*/
+        //this.orderService.putResend_From_Resturant(this.invoiceNo, dataList);
+        //Resend function from Admin to resturant}
         else if (this.appSetting.loginType === "rider") {
             this.appSetting.showLoading();
             this.DeliveryRecordService.putRider(this.Orderid);
@@ -1156,7 +1051,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _Services_food_food_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./../../../Services/food/food.service */ "./src/app/Services/food/food.service.ts");
 /* harmony import */ var src_app_app_setting__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! src/app/app-setting */ "./src/app/app-setting.ts");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
 /* harmony import */ var src_app_Services_order_order_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! src/app/Services/order/order.service */ "./src/app/Services/order/order.service.ts");
 
 
@@ -1185,7 +1080,6 @@ let ResturantMainComponent = class ResturantMainComponent {
                 .subscribe((x) => {
                 this.appSetting.orderTransationList = x;
             }, (err) => this.appSetting.showError(err), () => {
-                console.log(this.appSetting.orderTransationList);
                 this.loadFoodModel();
             });
         }
@@ -1212,7 +1106,6 @@ let ResturantMainComponent = class ResturantMainComponent {
                 .subscribe((x) => {
                 this.appSetting.orderTransationList = x;
             }, (err) => this.appSetting.showError(err), () => {
-                console.log(this.appSetting.orderTransationList);
                 event.target.complete();
             });
         }
@@ -1259,14 +1152,12 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CustomerInfoComponent", function() { return CustomerInfoComponent; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
 /* harmony import */ var _app_setting__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./../../../app-setting */ "./src/app/app-setting.ts");
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/__ivy_ngcc__/fesm2015/router.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm2015/router.js");
 /* harmony import */ var src_app_Models_orderModel__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! src/app/Models/orderModel */ "./src/app/Models/orderModel.ts");
-/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/__ivy_ngcc__/fesm2015/common.js");
-/* harmony import */ var _ionic_native_in_app_browser_ngx__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @ionic-native/in-app-browser/ngx */ "./node_modules/@ionic-native/in-app-browser/__ivy_ngcc__/ngx/index.js");
-/* harmony import */ var src_app_Services_locationDB_location_db_service__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! src/app/Services/locationDB/location-db.service */ "./src/app/Services/locationDB/location-db.service.ts");
-
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/fesm2015/common.js");
+/* harmony import */ var _ionic_native_in_app_browser_ngx__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @ionic-native/in-app-browser/ngx */ "./node_modules/@ionic-native/in-app-browser/ngx/index.js");
 
 
 
@@ -1275,12 +1166,11 @@ __webpack_require__.r(__webpack_exports__);
 
 
 let CustomerInfoComponent = class CustomerInfoComponent {
-    constructor(appSetting, location, iab, route, locationDBSvs) {
+    constructor(appSetting, location, iab, route) {
         this.appSetting = appSetting;
         this.location = location;
         this.iab = iab;
         this.route = route;
-        this.locationDBSvs = locationDBSvs;
         this.id = 0;
         this.options = {
             location: "yes",
@@ -1289,6 +1179,8 @@ let CustomerInfoComponent = class CustomerInfoComponent {
             hideurlbar: "yes",
         };
         this.orderData = new src_app_Models_orderModel__WEBPACK_IMPORTED_MODULE_4__["orderModel"]();
+        this.ltd = '';
+        this.lng = '';
         this.id = +this.route.snapshot.paramMap.get("id");
     }
     ngOnInit() {
@@ -1307,25 +1199,19 @@ let CustomerInfoComponent = class CustomerInfoComponent {
     }
     onClick() {
         this.appSetting.showLoading();
-        let userLatitude = '';
-        let userLongitude = '';
-        this.locationDBSvs.getSingle(+this.orderData.clitentFlatNo, this.orderData.Township_id).subscribe(x => {
-            userLatitude = x.latitude;
-            userLongitude = x.longitude;
-        }, err => (console.log(err)), () => {
-            if (userLongitude === '' || userLatitude === '') {
-                console.log("Error");
-                this.appSetting.showInvalid();
-            }
-            else {
-                this.appSetting.loadingClose();
-                this.geolocation(userLatitude, userLongitude);
-            }
-        });
+        let userLatitude = this.ltd;
+        let userLongitude = this.lng;
+        if (userLongitude === "" || userLatitude === "" || userLatitude === null) {
+            this.appSetting.showInvalid();
+        }
+        else {
+            this.appSetting.loadingClose();
+            this.geolocation(userLatitude, userLongitude);
+        }
     }
     geolocation(lat, long) {
         if (navigator.geolocation) {
-            navigator.geolocation.getCurrentPosition(position => {
+            navigator.geolocation.getCurrentPosition((position) => {
                 let latitude = position.coords.latitude.toString();
                 let longitude = position.coords.longitude.toString();
                 this.googleMap(latitude, longitude, lat, long);
@@ -1337,6 +1223,8 @@ let CustomerInfoComponent = class CustomerInfoComponent {
         temp.forEach((x) => {
             if (x.orderModel.id === this.id) {
                 this.orderData = x.orderModel;
+                this.ltd = this.orderData.latitude;
+                this.lng = this.orderData.longitude;
             }
         });
     }
@@ -1345,8 +1233,7 @@ CustomerInfoComponent.ctorParameters = () => [
     { type: _app_setting__WEBPACK_IMPORTED_MODULE_2__["appSetting"] },
     { type: _angular_common__WEBPACK_IMPORTED_MODULE_5__["Location"] },
     { type: _ionic_native_in_app_browser_ngx__WEBPACK_IMPORTED_MODULE_6__["InAppBrowser"] },
-    { type: _angular_router__WEBPACK_IMPORTED_MODULE_3__["ActivatedRoute"] },
-    { type: src_app_Services_locationDB_location_db_service__WEBPACK_IMPORTED_MODULE_7__["LocationDBService"] }
+    { type: _angular_router__WEBPACK_IMPORTED_MODULE_3__["ActivatedRoute"] }
 ];
 CustomerInfoComponent = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
@@ -1385,7 +1272,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RiderMainPageComponent", function() { return RiderMainPageComponent; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var src_app_app_setting__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! src/app/app-setting */ "./src/app/app-setting.ts");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
 /* harmony import */ var src_app_Services_food_food_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! src/app/Services/food/food.service */ "./src/app/Services/food/food.service.ts");
 /* harmony import */ var src_app_Services_order_order_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! src/app/Services/order/order.service */ "./src/app/Services/order/order.service.ts");
 
@@ -1407,7 +1294,6 @@ let RiderMainPageComponent = class RiderMainPageComponent {
             this.orderService.getRiderPending().subscribe((x) => {
                 this.appSetting.orderTransationList = x;
             }, (err) => this.appSetting.showError(err), () => {
-                console.log(this.appSetting.orderTransationList);
                 this.appSetting.loadingClose();
             });
         }
@@ -1415,7 +1301,6 @@ let RiderMainPageComponent = class RiderMainPageComponent {
             this.orderService.getRiderComplete().subscribe((x) => {
                 this.appSetting.orderTransationList = x;
             }, (err) => this.appSetting.showError(err), () => {
-                console.log(this.appSetting.orderTransationList);
                 this.appSetting.loadingClose();
             });
         }
@@ -1433,7 +1318,6 @@ let RiderMainPageComponent = class RiderMainPageComponent {
             this.orderService.getRiderPending().subscribe((x) => {
                 this.appSetting.orderTransationList = x;
             }, (err) => this.appSetting.showError(err), () => {
-                console.log(this.appSetting.orderTransationList);
                 event.target.complete();
             });
         }
@@ -1441,7 +1325,6 @@ let RiderMainPageComponent = class RiderMainPageComponent {
             this.orderService.getRiderComplete().subscribe((x) => {
                 this.appSetting.orderTransationList = x;
             }, (err) => this.appSetting.showError(err), () => {
-                console.log(this.appSetting.orderTransationList);
                 event.target.complete();
             });
         }
@@ -1484,8 +1367,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _admin_pending_item_edit_pending_item_edit_component__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./admin/pending-item-edit/pending-item-edit.component */ "./src/app/tab1/admin/pending-item-edit/pending-item-edit.component.ts");
 /* harmony import */ var _admin_delivery_pending_delivery_pending_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./admin/delivery-pending/delivery-pending.component */ "./src/app/tab1/admin/delivery-pending/delivery-pending.component.ts");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/__ivy_ngcc__/fesm2015/router.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm2015/router.js");
 /* harmony import */ var _tab1_page__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./tab1.page */ "./src/app/tab1/tab1.page.ts");
 /* harmony import */ var _admin_add_to_invoice_add_to_invoice_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./admin/add-to-invoice/add-to-invoice.component */ "./src/app/tab1/admin/add-to-invoice/add-to-invoice.component.ts");
 /* harmony import */ var _rider_customer_info_customer_info_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./rider/customer-info/customer-info.component */ "./src/app/tab1/rider/customer-info/customer-info.component.ts");
@@ -1544,10 +1427,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Tab1PageModule", function() { return Tab1PageModule; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _admin_delivery_pending_delivery_pending_component__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./admin/delivery-pending/delivery-pending.component */ "./src/app/tab1/admin/delivery-pending/delivery-pending.component.ts");
-/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @ionic/angular */ "./node_modules/@ionic/angular/__ivy_ngcc__/fesm2015/ionic-angular.js");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
-/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/__ivy_ngcc__/fesm2015/common.js");
-/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/__ivy_ngcc__/fesm2015/forms.js");
+/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @ionic/angular */ "./node_modules/@ionic/angular/fesm2015/ionic-angular.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/fesm2015/common.js");
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm2015/forms.js");
 /* harmony import */ var _tab1_page__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./tab1.page */ "./src/app/tab1/tab1.page.ts");
 /* harmony import */ var _explore_container_explore_container_module__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../explore-container/explore-container.module */ "./src/app/explore-container/explore-container.module.ts");
 /* harmony import */ var _tab1_routing_module__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./tab1-routing.module */ "./src/app/tab1/tab1-routing.module.ts");
@@ -1634,7 +1517,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Tab1Page", function() { return Tab1Page; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var src_app_Services_order_order_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! src/app/Services/order/order.service */ "./src/app/Services/order/order.service.ts");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
 /* harmony import */ var _app_setting__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../app-setting */ "./src/app/app-setting.ts");
 /* harmony import */ var src_app_Services_resturantModel_resturant_model_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! src/app/Services/resturantModel/resturant-model.service */ "./src/app/Services/resturantModel/resturant-model.service.ts");
 /* harmony import */ var src_app_Services_food_food_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! src/app/Services/food/food.service */ "./src/app/Services/food/food.service.ts");
@@ -1680,13 +1563,11 @@ let Tab1Page = class Tab1Page {
         }
     }
     onSearchResturant(val) {
-        console.log(val);
         this.searchResturant = val;
         const temp = [...this.appSetting.constFoodDataList];
         let z = [];
         temp.forEach((x) => {
             if (x.resturant_id === this.searchResturant) {
-                console.log(x);
                 z.push(x);
             }
             this.appSetting.menuFoodDataList = z;
@@ -1717,7 +1598,6 @@ let Tab1Page = class Tab1Page {
             this.orderService.getRiderPending().subscribe((x) => {
                 this.appSetting.orderTransationList = x;
             }, (err) => this.appSetting.showError(err), () => {
-                console.log(this.appSetting.orderTransationList);
                 this.appSetting.loadingClose();
             });
         }
@@ -1725,7 +1605,6 @@ let Tab1Page = class Tab1Page {
             this.orderService.getRiderComplete().subscribe((x) => {
                 this.appSetting.orderTransationList = x;
             }, (err) => this.appSetting.showError(err), () => {
-                console.log(this.appSetting.orderTransationList);
                 this.appSetting.loadingClose();
             });
         }

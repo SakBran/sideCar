@@ -5,7 +5,6 @@ import { appSetting } from "src/app/app-setting";
 import { Component, OnInit } from "@angular/core";
 import { ModalController } from "@ionic/angular";
 import { orderTransationModel } from "src/app/Models/orderTransationModel";
-import { isUndefined } from "util";
 import { InAppBrowser } from "@ionic-native/in-app-browser/ngx";
 import { UserModelService } from "src/app/Services/userModel/user-model.service";
 
@@ -39,9 +38,6 @@ export class ClientInvoiceComponent implements OnInit {
     });
   }
 
-  checkUndefined(obj): boolean {
-    return isUndefined(obj);
-  }
   count(id, fun) {
     let i = 0;
     const temp = [...this.appSetting.orderDetailViewList];
@@ -98,6 +94,7 @@ export class ClientInvoiceComponent implements OnInit {
     temp.forEach((x) => {
       total = total + x.itemFinalPrice;
     });
+
     this.status = this.data.orderModel.status;
 
     this.displayTotal = total;
@@ -115,6 +112,7 @@ export class ClientInvoiceComponent implements OnInit {
       () => {
         this.riderID = this.data.orderModel.riderID;
         this.food();
+        this.loading=0
       }
     );
   }

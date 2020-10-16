@@ -1,5 +1,5 @@
-import { ClientInvoiceComponent } from './../client-invoice/client-invoice.component';
-import { FoodService } from './../../Services/food/food.service';
+import { ClientInvoiceComponent } from "./../client-invoice/client-invoice.component";
+import { FoodService } from "./../../Services/food/food.service";
 import { CategoryService } from "./../../Services/category/category.service";
 import { Router } from "@angular/router";
 import { ClientShopcartComponent } from "./../client-shopcart/client-shopcart.component";
@@ -14,11 +14,12 @@ import { ResturantModelService } from "src/app/Services/resturantModel/resturant
   styleUrls: ["./home-page.component.scss"],
 })
 export class HomePageComponent implements OnInit {
+  loading = 1;
   constructor(
     public plt: Platform,
     private ResturantModelService: ResturantModelService,
     private router: Router,
-    private foodService:FoodService,
+    private foodService: FoodService,
     public modalController: ModalController,
     private CategoryService: CategoryService,
     public appSetting: appSetting
@@ -35,24 +36,17 @@ export class HomePageComponent implements OnInit {
     } else {
       this.appSetting.device = "2";
     }
+
     this.resturantLoaddata();
   }
 
   ngOnInit() {
     if (navigator.geolocation) {
-      navigator.geolocation.getCurrentPosition(position => {
+      navigator.geolocation.getCurrentPosition((position) => {
         this.appSetting.orderData.latitude = position.coords.latitude.toString();
         this.appSetting.orderData.longitude = position.coords.longitude.toString();
-       
       });
     }
-    this.foodService.getActive().subscribe(x=>this.appSetting.menuFoodDataList=x);
-  }
-  search() {
-    this.appSetting.customerSearch = "Search";
-  }
-  reset() {
-    this.appSetting.customerSearch = "";
   }
 
   login() {
@@ -60,21 +54,31 @@ export class HomePageComponent implements OnInit {
   }
 
   resturantLoaddata() {
-    if (this.appSetting.resturandDataList.length === 0) {
-      this.ResturantModelService.get().subscribe(
-        (x) => (this.appSetting.resturandDataList = x),
+    this.foodService.getActive().subscribe(
+      (x) => (this.appSetting.menuFoodDataList = x),
+      (err) => console.log(err),
+      () => {
+        this.ResturantModelService.get().subscribe(
+          (x) => (this.appSetting.resturandDataList = x),
+          (err) => this.appSetting.showError(err),
+          () => {
+            this.appSetting.constantResturandDataList=[...this.appSetting.resturandDataList];
+            this.appSetting.constFoodDataList=[...this.appSetting.menuFoodDataList];
+            this.loadCategory();
+          }
+        );
+      }
+    );
+  }
+
+  loadCategory() {
+    this.CategoryService.get().subscribe((y) => {
+      (this.appSetting.categoryList = y),
         (err) => this.appSetting.showError(err),
         () => {
-          this.CategoryService.get().subscribe((x) => {
-            (this.appSetting.categoryList = x),
-              (err) => this.appSetting.showError(err),
-              () => {
-                this.appSetting.loadingClose();
-              };
-          });
-        }
-      );
-    }
+          console.log("Complete");
+        };
+    });
   }
 
   async shopCart() {

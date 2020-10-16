@@ -30,6 +30,7 @@ import { MainItemListComponent } from './admin/main-item-list/main-item-list.com
 import { ItemConfirmDetailComponent } from './admin/item-confirm-detail/item-confirm-detail.component';
 import { OrderManagementListComponent } from './admin/order-management-list/order-management-list.component';
 import { OrderManagementCreateComponent } from './admin/order-management-create/order-management-create.component';
+import { OrderAcceptFormComponent } from './admin/report/order-accept-form/order-accept-form.component';
 @NgModule({
   imports: [
     IonicModule,
@@ -43,6 +44,7 @@ import { OrderManagementCreateComponent } from './admin/order-management-create/
   ],
   declarations: [
     Tab3Page,
+    OrderAcceptFormComponent,
     ItemConfirmDetailComponent,
     RiderEarningListComponent,
     RiderEarningCreateComponent,

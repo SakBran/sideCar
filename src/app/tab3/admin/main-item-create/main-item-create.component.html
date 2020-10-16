@@ -23,11 +23,7 @@
       >
     </ion-card-header>
     <ion-card-content>
-      <ion-card>
-        <ion-card-header>
-          <ion-card-subtitle>Foods & Drinks General Info</ion-card-subtitle>
-        </ion-card-header>
-        <ion-card-content>
+      
           <ion-item>
             <ion-label position="floating" color="secondary">
               <ion-icon name="fast-food-outline"></ion-icon> Food/Drink's
@@ -66,7 +62,7 @@
               </ion-text>
             </ion-label>
 
-            <ion-select [(ngModel)]="foodData.resturant_id">
+            <ion-select interface="action-sheet" [(ngModel)]="foodData.resturant_id">
               <ion-select-option
                 *ngFor="let item of this.appSetting.resturandDataList"
                 [value]="item.id"
@@ -83,7 +79,7 @@
               </ion-text>
             </ion-label>
 
-            <ion-select  [(ngModel)]="foodData.category_id">
+            <ion-select interface="action-sheet" [(ngModel)]="foodData.category_id">
               <ion-select-option
                 *ngFor="let item of this.appSetting.categoryList"
                 [value]="item.id"
@@ -114,8 +110,7 @@
           <ion-item>
             <img [src]="croppedImage" />
           </ion-item>
-        </ion-card-content>
-      </ion-card>
+    
 
       <ion-grid fixed>
         <ion-row>

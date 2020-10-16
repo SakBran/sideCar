@@ -1,3 +1,4 @@
+import { orderModel } from './../../Models/orderModel';
 import { orderDetialModel } from "./../../Models/orderDetailModel";
 import { appSetting } from "./../../app-setting";
 import { Injectable } from "@angular/core";
@@ -6,7 +7,6 @@ import { Observable } from "rxjs";
 import Swal from "sweetalert2";
 import { orderTransationModel } from "src/app/Models/orderTransationModel";
 import { resendModel } from "src/app/Models/resendModel";
-import { orderModel } from "src/app/Models/orderModel";
 import { ModalController } from "@ionic/angular";
 
 @Injectable({
@@ -114,20 +114,34 @@ export class OrderService {
     );
   }
 
-  putResend_From_Resturant(orderID, data: resendModel[]): void {
-    console.log(data);
-    const searchUrl = `${this.url}/resturant/resend?id=${orderID}&ResturantID=${this.appSetting.resturantID}`;
+  putResend_From_Resturant(orderID,updateData:orderModel, data: resendModel[]): void {
+    console.log(orderID,data);
+    //const searchUrl = `${this.url}/resturant/resend?id=${orderID}&ResturantID=${this.appSetting.resturantID}`;
+    const searchUrl = `${this.url}/resturant/resend?id=${orderID}&ResturantID=${0}`;
     this.http.put(searchUrl, data, this.httpOptions).subscribe(
       (res) => {
-        
         let i = -1;
         const temp = [...this.appSetting.orderTransationList];
-        temp.forEach((x) => {
+        let aClone:orderTransationModel[]=temp.filter(x=>{
+          if(x.orderModel.id===orderID){
+            x.orderDetailModels.forEach(y=>{
+              y.status="yes";
+            })
+            return x;
+          }
+        });
+        this.appSetting.orderTransationList=[...temp.filter(x=>x.orderModel.id!==orderID)];
+        aClone.forEach(x=>{
+          this.appSetting.orderTransationList.push(x);
+        })
+
+      /*  temp.forEach((x) => {
           i = i + 1;
           if (x.orderModel.id === orderID) {
             this.appSetting.orderTransationList.splice(i, 1);
           }
-        });
+        });*/
+        this.put(updateData);
         this.appSetting.showSuccess();
         this.appSetting.resendListFromResturant = [];
       },

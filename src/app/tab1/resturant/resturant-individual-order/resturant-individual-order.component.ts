@@ -34,6 +34,7 @@ export class ResturantIndividualOrderComponent implements OnInit {
     temp.forEach((x) => {
       if (x.orderModel.id === this.Orderid) {
         this.data = x;
+        this.selectedCard=this.data.orderModel.riderTakeOption;
       }
     });
   }
@@ -89,7 +90,7 @@ export class ResturantIndividualOrderComponent implements OnInit {
     this.DeliveryRecordService.put(this.recordData);
   }
   sendToServer() {
-    if (this.appSetting.loginType === "resturant") {
+    if (this.appSetting.loginType === "admin") {
       this.appSetting.showLoading();
       const temp = [...this.appSetting.resendListFromResturant];
       let dataList: resendModel[] = [];
@@ -99,8 +100,8 @@ export class ResturantIndividualOrderComponent implements OnInit {
         }
       });
 
-      this.orderService.putResend_From_Resturant(this.invoiceNo, dataList);
-    } else if (this.appSetting.loginType === "admin") {
+      this.orderService.putResend_From_Resturant(this.invoiceNo,this.data.orderModel, dataList);
+    } /*else if (this.appSetting.loginType === "admin") {
       this.appSetting.showLoading();
       const temp = [...this.appSetting.resendListFromResturant];
       let dataList: resendModel[] = [];
@@ -108,10 +109,10 @@ export class ResturantIndividualOrderComponent implements OnInit {
         if (x.orderNo === this.invoiceNo) {
           dataList.push(x);
         }
-      });
+      });*/
       //this.orderService.putResend_From_Resturant(this.invoiceNo, dataList);
-      //Resend function from Admin to resturant
-    } else if (this.appSetting.loginType === "rider") {
+      //Resend function from Admin to resturant}
+     else if (this.appSetting.loginType === "rider") {
       this.appSetting.showLoading();
       this.DeliveryRecordService.putRider(this.Orderid);
       //this.orderService.putResend_From_Resturant(this.invoiceNo, dataList);
@@ -144,5 +145,10 @@ export class ResturantIndividualOrderComponent implements OnInit {
         Swal.fire("Deleted!", "Your file has been deleted.", "success");
       }
     });
+  }
+  selectedCard=""
+  changeModel(status){
+    this.selectedCard=status.toLocaleLowerCase();
+    this.data.orderModel.riderTakeOption=this.selectedCard;
   }
 }

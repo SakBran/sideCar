@@ -18,7 +18,7 @@ export class DeliveryPendingComponent implements OnInit {
    
   }
   ngOnInit() {
-    this.firstLoad();
+    //this.firstLoad();
   }
 
   firstLoad() {

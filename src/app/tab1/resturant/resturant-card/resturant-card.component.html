@@ -14,7 +14,7 @@
 <ion-item>
   <ion-label>
     <ng-container *ngIf="this.orderDetail.status === 'no'">
-      <ion-text color="danger">Rejected</ion-text>
+      <ion-text color="danger">Please Check!</ion-text>
     </ng-container>
 
     <ng-container *ngIf="this.orderDetail.status === 'yes'">
@@ -61,6 +61,7 @@
 <ng-container
   *ngIf="this.available === false && this.appSetting.loginType === 'resturant'"
 >
+<!-------
   <ion-item>
     <ion-label color="danger" position="floating">Comment</ion-label>
     <ion-input
@@ -69,11 +70,12 @@
       type="text"
       placeholder="eg: Only four item available"
     ></ion-input>
-  </ion-item>
+  </ion-item>----->
 </ng-container>
 <ng-container
   *ngIf="orderDetail.status === 'no' && this.appSetting.loginType === 'admin'"
 >
+<!--------
   <ion-item>
     <ion-label color="danger" position="floating">Comment</ion-label>
     <ion-input
@@ -84,5 +86,6 @@
     >
     </ion-input>
   </ion-item>
+  ------->
 </ng-container>
 <hr />

@@ -13,7 +13,9 @@ import { ResturantModelService } from 'src/app/Services/resturantModel/resturant
   styleUrls: ["./home-items.component.scss"],
 })
 export class HomeItemsComponent implements OnInit {
-  constructor(
+  zoneList:number[]=[];
+  searchZone:number;
+    constructor(
 
     public appSetting: appSetting,
     private LocationService: LocationService,
@@ -23,17 +25,22 @@ export class HomeItemsComponent implements OnInit {
   ) {
    
     this.mainItemService.get().subscribe(
+      
       (x) => (this.appSetting.mainItemDataList = x),
       (err) => this.appSetting.showError(err),
       () => {
         this.appSetting.constmainItemDataList = this.appSetting.mainItemDataList;
+        if(this.appSetting.customerSearch!==""){
+        this.onSearch(this.appSetting.customerSearch);
+       
+        }
       }
     );
     this.locationReload();
   }
 
   ngOnInit() {
-  
+    
   }
 
   locationReload() {
@@ -47,13 +54,14 @@ export class HomeItemsComponent implements OnInit {
       );
     }
   }
+  
   cardClick(cardID) {
     this.itemDetail(cardID.toString());
   }
 
   searchResturant = 0;
   Filter(e) {
- 
+    this.searchResturant=e;
     const temp = [...this.appSetting.constmainItemDataList];
     let res: mainModel[] = [];
     temp.forEach((x) => {
@@ -61,6 +69,24 @@ export class HomeItemsComponent implements OnInit {
         res.push(x);
       }
     });
+    this.appSetting.mainItemDataList = res;
+  }
+
+  FilterZone(e) {
+ 
+    const x=[...this.appSetting.constantResturandDataList];
+    const resList=[...x.filter(a=>a.locationID===e)];
+    const temp = [...this.appSetting.constmainItemDataList];
+    let res: mainModel[] = [];
+    temp.forEach((x) => {
+      resList.forEach(a=>{
+        if(x.resturant_id===a.id){
+          res.push(x);
+        }
+      })
+     
+    });
+    this.appSetting.resturandDataList=[...resList];
     this.appSetting.mainItemDataList = res;
   }
 
@@ -80,11 +106,16 @@ export class HomeItemsComponent implements OnInit {
     let a = document.getElementById("select");
     a.click();
   }
+  zoneChoose(){
+    let a = document.getElementById("selectZone");
+    a.click();
+  }
   categoryChoose() {
     let a = document.getElementById("selectCategory");
     a.click();
   }
   refresh() {
+    this.searchZone=null;
     this.mainItemService.get().subscribe(
       (x) => (this.appSetting.mainItemDataList = x),
       (err) => this.appSetting.showError(err),
@@ -94,18 +125,18 @@ export class HomeItemsComponent implements OnInit {
     );
   }
 
-  searchTxt = "";
+  
   onSearch(val) {
     const temp: mainModel[] = [...this.appSetting.constmainItemDataList];
     let z: mainModel[] = [];
     temp.forEach((x) => {
-      if (x.name.toLowerCase().includes(this.searchTxt.toLowerCase())) {
+      if (x.name.toLowerCase().includes(this.appSetting.customerSearch.toLowerCase())) {
         z.push(x);
       }
 
       this.appSetting.mainItemDataList = z;
     });
-    if (this.searchTxt === "") {
+    if (this.appSetting.customerSearch === "") {
       this.appSetting.mainItemDataList = temp;
     }
   }
@@ -118,5 +149,16 @@ export class HomeItemsComponent implements OnInit {
       //,cssClass: 'my-custom-class'
     });
     return await modal.present();
+  }
+
+  resItemID(id):number{
+    const foodList:mainModel[]=[...this.appSetting.constmainItemDataList];
+    let result:number=0;
+    foodList.forEach(x=>{
+      if(x.resturant_id===id)
+      result= x.id;
+      return result;
+    });
+    return result;
   }
 }

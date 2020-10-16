@@ -19,6 +19,7 @@ import { RiderEarningListComponent } from './admin/rider-earning-list/rider-earn
 import { OrderManagementListComponent } from './admin/order-management-list/order-management-list.component';
 import { MainItemCreateComponent } from './admin/main-item-create/main-item-create.component';
 import { MainItemListComponent } from './admin/main-item-list/main-item-list.component';
+import { OrderAcceptFormComponent } from './admin/report/order-accept-form/order-accept-form.component';
 
 const routes: Routes = [
   {
@@ -133,6 +134,10 @@ const routes: Routes = [
     path: "mainItemEdit/:id",
     component: MainItemCreateComponent,
   },
+  {
+    path: "report/orderAccept",
+    component: OrderAcceptFormComponent,
+  }
 ];
 
 @NgModule({

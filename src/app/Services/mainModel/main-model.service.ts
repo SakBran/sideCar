@@ -34,7 +34,7 @@ export class MainModelService {
     this.http.post(this.url, data, this.httpOptions).subscribe(
       (res) => {
         temp = Object.assign(res);
-
+        this.appSetting.mainItemDataList.push(temp);
         this.uploadService.post(imageData, "MainImage" + temp.id);
       },
       (err) => {
@@ -43,12 +43,15 @@ export class MainModelService {
     );
   }
 
-  put(data: mainModel): void {
+  put(data: mainModel, imageData): void {
     const searchUrl = `${this.url}/${data.id}`;
     this.http.put(searchUrl, data, this.httpOptions).subscribe(
       (res) => {
+        const temp=[...this.appSetting.mainItemDataList.filter(x=>x.id!==data.id)];
+        temp.push(data);
+        this.appSetting.mainItemDataList=[...temp];
         
-        this.appSetting.showSuccess();
+        this.uploadService.post(imageData, "MainImage" + data.id);
       },
       (err) => {
         console.log(err);
@@ -71,5 +74,7 @@ export class MainModelService {
     xhr.open("DELETE", this.url + "/" + id);
 
     xhr.send(data);
+    const temp=[...this.appSetting.mainItemDataList.filter(x=>x.id!==data.id)];  
+    this.appSetting.mainItemDataList=[...temp];
   }
 }

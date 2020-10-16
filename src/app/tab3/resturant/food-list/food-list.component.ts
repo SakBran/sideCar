@@ -56,21 +56,18 @@ export class FoodListComponent implements OnInit {
   }
 
   refresh(event) {
-    this.FoodService.get(this.appSetting.resturantID).subscribe(
+    this.FoodService.getActive().subscribe(
       (x) => {
         this.appSetting.foodDataList = x;
       },
-      (err) => {
-        this.appSetting.showError(err);
-        event.target.complete();
-      },
+      (err) => event.target.complete(),
 
       () => {
-        if (event !== undefined || event !== null) {
-          event.target.complete();
-        }
+        event.target.complete();
       }
     );
+          
+    
   }
 
   onEdit(id) {

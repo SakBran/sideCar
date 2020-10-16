@@ -11,18 +11,10 @@
     <ion-item
       *ngFor="let item of this.appSetting.orderDetailViewList; let i = index"
     >
-      <ion-avatar slot="start">
-        <ion-img
-          [src]="
-            this.appSetting.apiAddress +
-            '/images/Image' +
-            item.orderDetialModel.itemID +
-            '.jpg'
-          "
-        ></ion-img>
-      </ion-avatar>
       <ion-label>
-        <h2>{{ item.itemName }} | {{ item.resturantName }}</h2>
+        <ion-text color="dark">
+          <h2>{{ item.itemName }}</h2>
+        </ion-text>
         <p>
           <ion-buttons slot="end">
             <ion-button

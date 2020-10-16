@@ -1,4 +1,4 @@
-export class CategoryModel{
+export class categoryModel{
     id: number;
     categoryName: string;
 }

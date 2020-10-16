@@ -2,14 +2,13 @@ import { appSetting } from "./../../app-setting";
 import { Injectable } from "@angular/core";
 import { HttpHeaders, HttpClient } from "@angular/common/http";
 import { Observable } from "rxjs";
-import Swal from "sweetalert2";
-import { CategoryModel } from "src/app/Models/CategoryModel";
+import { categoryModel } from "src/app/Models/categoryModel";
 
 @Injectable({
   providedIn: 'root'
 })
 export class CategoryService {
-  private url = `${this.appSetting.apiAddress}/api/apiCategoryModels`;
+  private url = `${this.appSetting.apiAddress}/api/apicategoryModels`;
   private httpOptions = {
     headers: new HttpHeaders({
       "Content-Type": "application/json",
@@ -17,14 +16,14 @@ export class CategoryService {
   };
   constructor(private http: HttpClient, private appSetting: appSetting) {}
 
-  get(): Observable<CategoryModel[]> {
-    return this.http.get<CategoryModel[]>(this.url);
+  get(): Observable<categoryModel[]> {
+    return this.http.get<categoryModel[]>(this.url);
   }
-  getSingle(id: number): Observable<CategoryModel> {
+  getSingle(id: number): Observable<categoryModel> {
     const searchUrl = `${this.url}/${id}`;
-    return this.http.get<CategoryModel>(searchUrl);
+    return this.http.get<categoryModel>(searchUrl);
   }
-  post(data: CategoryModel): void {
+  post(data: categoryModel): void {
     this.http.post(this.url, data, this.httpOptions).subscribe(
       (res) => {
       
@@ -36,7 +35,7 @@ export class CategoryService {
     );
   }
 
-  put(data: CategoryModel): void {
+  put(data: categoryModel): void {
     const searchUrl = `${this.url}/${data.id}`;
     this.http.put(searchUrl, data, this.httpOptions).subscribe(
       (res) => {
@@ -44,6 +43,7 @@ export class CategoryService {
         this.appSetting.showSuccess();
       },
       (err) => {
+        
         console.log(err);
         this.appSetting.showError(err);
       }

@@ -1,3 +1,5 @@
+import { ClientInfoComponent } from './home/client-info/client-info.component';
+import { ClientShopcartComponent } from './home/client-shopcart/client-shopcart.component';
 import { HomeModule } from './home/home.module';
 import { ClientInvoiceComponent } from './home/client-invoice/client-invoice.component';
 import { OrderManagementListComponent } from './tab3/admin/order-management-list/order-management-list.component';
@@ -23,13 +25,21 @@ import { HttpClientModule } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
+import { HomeItemDetailComponent } from './home/home-item-detail/home-item-detail.component';
+import { HomeItemsComponent } from './home/home-items/home-items.component';
+import { HomePageComponent } from './home/home-page/home-page.component';
 
 
-
+const entryPages= [HomePageComponent,
+HomeItemDetailComponent,
+HomeItemsComponent,
+ClientInfoComponent,
+ClientShopcartComponent,
+ClientInvoiceComponent]
 @NgModule({
   declarations: [AppComponent,AuthComponent],
   
-  entryComponents: [ClientInvoiceComponent],
+  entryComponents: entryPages,
   imports: [BrowserModule,HomeModule, ImageCropperModule, CommonModule, IonicModule.forRoot(), HttpClientModule, AppRoutingModule, ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })],
   providers: [
     appSetting,

@@ -22,7 +22,6 @@ export class UserModelService {
   }
 
   getLogin(username:string,password:string): Observable<userModel>{
-    console.log(this.url+`/login?user=${username}&password=${password}`);
     return this.http.get<userModel>(this.url+`/login?user=${username}&password=${password}`);
   }
   getAvailableRider(): Observable<userModel[]> {

@@ -42,7 +42,7 @@ export class HomeItemDetailComponent implements OnInit {
     discount: 0,
     itemFinalPrice: this.foodData.price,
     orderID: 0,
-    status: "pending",
+    status: "no",
     remark: "",
     comment: "",
     isPickUpResturant: false,
@@ -79,8 +79,10 @@ export class HomeItemDetailComponent implements OnInit {
     });
   }
 
+  selectedCard=0;
   changeModel(id){
     const temp:foodModel[]=[...this.foodList];
+    this.selectedCard=id;
     temp.forEach(x=>{
       if(x.id===id){
         this.foodData=x;

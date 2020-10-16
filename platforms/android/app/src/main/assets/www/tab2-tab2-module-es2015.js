@@ -9,7 +9,7 @@
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<ion-content>\r\n  <ion-card>\r\n    <ion-card-content>\r\n      <ion-item lines=\"none\">\r\n        <ion-avatar slot=\"start\">\r\n          <img src=\"/../assets/food.svg\" />\r\n        </ion-avatar>\r\n        <ion-label lines=\"none\">\r\n          <h2>{{ this.foodData.itemName }}</h2>\r\n          <h3>{{ this.foodData.price }}</h3>\r\n          <h3>{{ this.appSetting.resName(foodData.resturant_id) }}</h3>\r\n        </ion-label>\r\n      </ion-item>\r\n    </ion-card-content>\r\n  </ion-card>\r\n\r\n  <ion-card>\r\n    <ion-card-content>\r\n      <ion-item lines=\"none\">\r\n        <ion-avatar slot=\"start\">\r\n          <img src=\"/../assets/number.svg\" />\r\n        </ion-avatar>\r\n        <ion-label>\r\n          <h2>Please enter the quantity</h2>\r\n        </ion-label>\r\n      </ion-item>\r\n      <ion-item>\r\n        <ion-label color=\"tertiary\" position=\"floating\">\r\n          <ion-icon name=\"calculator-outline\"></ion-icon> Quantity <ion-text *ngIf=\"this.orderDetail.itemQty===0\" color=\"danger\">\r\n            ***\r\n          </ion-text>\r\n        </ion-label>\r\n        <ion-input [(ngModel)]=\"this.orderDetail.itemQty\" type=\"number\"></ion-input>\r\n      </ion-item>\r\n    </ion-card-content>\r\n  </ion-card>\r\n\r\n  <ion-card>\r\n    <ion-card-content>\r\n      <ion-item lines=\"none\">\r\n        <ion-avatar slot=\"start\">\r\n          <img src=\"/../assets/sale.svg\" />\r\n        </ion-avatar>\r\n        <ion-label>\r\n          <h2 color=\"primary\">Please enter the Discount amount</h2>\r\n        </ion-label>\r\n      </ion-item>\r\n      <ion-item>\r\n        <ion-label color=\"tertiary\" position=\"floating\">\r\n          <ion-icon name=\"cash-outline\"></ion-icon> Discount\r\n        </ion-label>\r\n        <ion-input [(ngModel)]=\"this.orderDetail.discount\" type=\"number\"></ion-input>\r\n      </ion-item>\r\n    </ion-card-content>\r\n  </ion-card>\r\n\r\n  <ion-card>\r\n    <ion-card-content>\r\n      <ion-item lines=\"none\">\r\n        <ion-avatar slot=\"start\">\r\n          <img src=\"/../assets/remark.svg\" />\r\n        </ion-avatar>\r\n        <ion-label>\r\n          <h2 color=\"primary\">Please enter remark</h2>\r\n        </ion-label>\r\n      </ion-item>\r\n      <ion-item>\r\n        <ion-label color=\"tertiary\" position=\"floating\">\r\n          <ion-icon name=\"chatbubbles-outline\"></ion-icon> Remark\r\n        </ion-label>\r\n        <ion-input [(ngModel)]=\"this.orderDetail.remark\" type=\"text\"></ion-input>\r\n      </ion-item>\r\n    </ion-card-content>\r\n  </ion-card>\r\n\r\n  <ion-card>\r\n    <ion-item lines=\"none\">\r\n      <ion-avatar slot=\"start\">\r\n        <img src=\"/../assets/money.svg\" />\r\n      </ion-avatar>\r\n      <ion-label>\r\n        <h2>Total</h2>\r\n        <h3>{{this.totalAmount()}}</h3>\r\n      </ion-label>\r\n    </ion-item>\r\n  </ion-card>\r\n\r\n  <ion-grid fixed>\r\n    <ion-row>\r\n      <ion-col size=\"6\">\r\n        <ion-button expand=\"block\" (click)=\"this.back()\" color=\"light\">\r\n          Back\r\n        </ion-button>\r\n      </ion-col>\r\n      <ion-col size=\"6\">\r\n        <ion-button expand=\"block\" (click)=\"this.addToInvoice()\" color=\"light\">\r\n          Update Invoice\r\n        </ion-button>\r\n      </ion-col>\r\n    </ion-row>\r\n  </ion-grid>\r\n</ion-content>");
+/* harmony default export */ __webpack_exports__["default"] = ("<ion-content>\r\n  <ion-card>\r\n    <ion-card-content>\r\n      <ion-item lines=\"none\">\r\n    \r\n        <ion-label lines=\"none\">\r\n          <h2>{{ this.foodData.itemName }}</h2>\r\n          <h3>{{ this.foodData.price }}</h3>\r\n          <h3>{{ this.appSetting.resName(foodData.resturant_id) }}</h3>\r\n        </ion-label>\r\n      </ion-item>\r\n    </ion-card-content>\r\n  </ion-card>\r\n\r\n  <ion-card>\r\n    <ion-card-content>\r\n      <ion-item lines=\"none\">\r\n     \r\n        <ion-label>\r\n          <h2>Please enter the quantity</h2>\r\n        </ion-label>\r\n      </ion-item>\r\n      <ion-item>\r\n        <ion-label color=\"tertiary\" position=\"floating\">\r\n          <ion-icon name=\"calculator-outline\"></ion-icon> Quantity <ion-text *ngIf=\"this.orderDetail.itemQty===0\" color=\"danger\">\r\n            ***\r\n          </ion-text>\r\n        </ion-label>\r\n        <ion-input [(ngModel)]=\"this.orderDetail.itemQty\" type=\"number\"></ion-input>\r\n      </ion-item>\r\n    </ion-card-content>\r\n  </ion-card>\r\n\r\n  <ion-card>\r\n    <ion-card-content>\r\n      <ion-item lines=\"none\">\r\n     \r\n        <ion-label>\r\n          <h2 color=\"primary\">Please enter the Discount amount</h2>\r\n        </ion-label>\r\n      </ion-item>\r\n      <ion-item>\r\n        <ion-label color=\"tertiary\" position=\"floating\">\r\n          <ion-icon name=\"cash-outline\"></ion-icon> Discount\r\n        </ion-label>\r\n        <ion-input [(ngModel)]=\"this.orderDetail.discount\" type=\"number\"></ion-input>\r\n      </ion-item>\r\n    </ion-card-content>\r\n  </ion-card>\r\n\r\n  <ion-card>\r\n    <ion-card-content>\r\n      <ion-item lines=\"none\">\r\n    \r\n        <ion-label>\r\n          <h2 color=\"primary\">Please enter remark</h2>\r\n        </ion-label>\r\n      </ion-item>\r\n      <ion-item>\r\n        <ion-label color=\"tertiary\" position=\"floating\">\r\n          <ion-icon name=\"chatbubbles-outline\"></ion-icon> Remark\r\n        </ion-label>\r\n        <ion-input [(ngModel)]=\"this.orderDetail.remark\" type=\"text\"></ion-input>\r\n      </ion-item>\r\n    </ion-card-content>\r\n  </ion-card>\r\n\r\n  <ion-card>\r\n    <ion-item lines=\"none\">\r\n     \r\n      <ion-label>\r\n        <h2>Total</h2>\r\n        <h3>{{this.totalAmount()}}</h3>\r\n      </ion-label>\r\n    </ion-item>\r\n  </ion-card>\r\n\r\n  <ion-grid fixed>\r\n    <ion-row>\r\n      <ion-col size=\"6\">\r\n        <ion-button expand=\"block\" (click)=\"this.back()\" color=\"light\">\r\n          Back\r\n        </ion-button>\r\n      </ion-col>\r\n      <ion-col size=\"6\">\r\n        <ion-button expand=\"block\" (click)=\"this.addToInvoice()\" color=\"light\">\r\n          Update Invoice\r\n        </ion-button>\r\n      </ion-col>\r\n    </ion-row>\r\n  </ion-grid>\r\n</ion-content>");
 
 /***/ }),
 
@@ -22,7 +22,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<ion-content>\r\n  <ion-refresher slot=\"fixed\" (ionRefresh)=\"refresh($event)\">\r\n    <ion-refresher-content></ion-refresher-content>\r\n  </ion-refresher>\r\n  <ion-card *ngFor=\"let i of this.appSetting.orderDetailViewList;let x=index;\">\r\n    <ion-card-content>\r\n      <ion-item>\r\n        <ion-avatar slot=\"start\">\r\n          <img src='/../assets/food.svg'>\r\n        </ion-avatar>\r\n        <ion-label>\r\n          <h2>{{i.itemName}}</h2>\r\n          <h3>Quantity {{i.orderDetialModel.itemQty}}</h3>\r\n          <h3>Price {{i.orderDetialModel.itemFinalPrice}}</h3>\r\n          <h3>{{i.resturantName}}</h3>\r\n        </ion-label>\r\n        <ion-button routerLink='/tabs/tab2/itemEdit/{{x}}' color=\"secondary\">\r\n          <ion-icon name=\"create-outline\"></ion-icon>\r\n        </ion-button>\r\n        <ion-button (click)=\"deleteInvoice(x)\" color=\"danger\">\r\n          <ion-icon name=\"trash-outline\"></ion-icon>\r\n        </ion-button>\r\n      </ion-item>\r\n    </ion-card-content>\r\n  </ion-card>\r\n\r\n  <ion-card>\r\n    <ion-card-content>\r\n      <ion-item>\r\n        <ion-avatar slot=\"start\">\r\n          <img src='/../assets/person.svg'>\r\n        </ion-avatar>\r\n        <ion-label color=\"primary\">\r\n          <h2>Customer Information</h2>\r\n        </ion-label>\r\n\r\n      </ion-item>\r\n      <ion-item>\r\n        <ion-label position=\"floating\">Name</ion-label>\r\n        <ion-input [(ngModel)]=\"this.appSetting.orderData.clientName\" type=\"text\"></ion-input>\r\n      </ion-item>\r\n      <ion-item>\r\n        <ion-label position=\"floating\">Phone</ion-label>\r\n        <ion-input [(ngModel)]=\"this.appSetting.orderData.clitentPhone\" type=\"tel\"></ion-input>\r\n      </ion-item>\r\n      <ion-item>\r\n        <ion-label position=\"floating\">Township</ion-label>\r\n        <ion-select [(ngModel)]=\"this.appSetting.orderData.Township_id\" (ngModelChange)=\"deliverChange($event)\">\r\n          <ion-select-option *ngFor=\"let item of this.appSetting.locationDataList;let i=index;\" [value]=\"item.id\">\r\n            {{i+1}}.{{item.TownShip}}\r\n          </ion-select-option>\r\n        </ion-select>\r\n      </ion-item>\r\n\r\n      <ion-item>\r\n        <ion-label position=\"floating\">Flat No</ion-label>\r\n        <ion-input [(ngModel)]=\"this.appSetting.orderData.clitentFlatNo\" type=\"number\"></ion-input>\r\n      </ion-item>\r\n\r\n      <ion-item>\r\n        <ion-label position=\"floating\">Address</ion-label>\r\n        <ion-textarea [(ngModel)]=\"this.appSetting.orderData.clientAddress\"></ion-textarea>\r\n      </ion-item>\r\n    </ion-card-content>\r\n  </ion-card>\r\n\r\n  <ion-card>\r\n    <ion-card-content>\r\n      <ion-item>\r\n        <ion-avatar slot=\"start\">\r\n          <img src='/../assets/food-delivery.svg'>\r\n        </ion-avatar>\r\n        <ion-label color=\"primary\">\r\n          <h2>Delivery Information</h2>\r\n        </ion-label>\r\n\r\n      </ion-item>\r\n      <ion-item>\r\n        <ion-label position=\"floating\">Charges</ion-label>\r\n        <ion-input [(ngModel)]=\"this.appSetting.orderData.deliveryCharegs\" type=\"number\"></ion-input>\r\n      </ion-item>\r\n      <ion-item>\r\n        <ion-label position=\"floating\">Date for Delivery</ion-label>\r\n        <ion-datetime ionCancel [(ngModel)]=\"this.appSetting.orderData.deliveryDate\"></ion-datetime>\r\n        <ion-label position=\"floating\">Time for Delivery</ion-label>\r\n        <ion-datetime [(ngModel)]=\"this.appSetting.orderData.deliveryDate\" display-format=\"h:mm A\"\r\n          picker-format=\"h:mm A\" value=\"1990-02-19T07:43Z\"></ion-datetime>\r\n      </ion-item>\r\n\r\n      <ion-item>\r\n        <ion-label position=\"floating\">Date for Pickup</ion-label>\r\n        <ion-datetime ionCancel [(ngModel)]=\"this.appSetting.orderData.pickupDate\"></ion-datetime>\r\n        <ion-label position=\"floating\">Time for Pickup</ion-label>\r\n        <ion-datetime [(ngModel)]=\"this.appSetting.orderData.pickupDate\" display-format=\"h:mm A\"\r\n          picker-format=\"h:mm A\" value=\"1990-02-19T07:43Z\"></ion-datetime>\r\n      </ion-item>\r\n    </ion-card-content>\r\n  </ion-card>\r\n\r\n  <ion-card>\r\n    <ion-card-content>\r\n      <ion-item>\r\n        <ion-avatar slot=\"start\">\r\n          <img src='/../assets/agreement.svg'>\r\n        </ion-avatar>\r\n        <ion-label color=\"primary\">\r\n          <h2>Cash Receive Information</h2>\r\n        </ion-label>\r\n\r\n      </ion-item>\r\n      <ion-item>\r\n        <ion-label position=\"floating\">Cash Receive Options</ion-label>\r\n          <ion-select [(ngModel)]=\"this.appSetting.orderData.riderTakeOption\">\r\n            <ion-select-option [value]=\"revceiveOpt[0]\">{{revceiveOpt[0]}}</ion-select-option>\r\n            <ion-select-option [value]=\"revceiveOpt[1]\">{{revceiveOpt[1]}}</ion-select-option>\r\n            <ion-select-option [value]=\"revceiveOpt[2]\">{{revceiveOpt[2]}}</ion-select-option>\r\n          </ion-select>\r\n      </ion-item>\r\n   \r\n    </ion-card-content>\r\n  </ion-card>\r\n  <ion-grid fixed>\r\n    <ion-row>\r\n      <ion-col size=\"6\">\r\n        <ion-button expand=\"block\" color=\"light\">\r\n          Cancel\r\n        </ion-button>\r\n      </ion-col>\r\n      <ion-col size=\"6\">\r\n        <ion-button (click)=\"sendToResturant()\" expand=\"block\" color=\"light\">\r\n          Send To Resturant\r\n        </ion-button>\r\n      </ion-col>\r\n    </ion-row>\r\n  </ion-grid>\r\n</ion-content>");
+/* harmony default export */ __webpack_exports__["default"] = ("<ion-content>\r\n  <ion-refresher slot=\"fixed\" (ionRefresh)=\"refresh($event)\">\r\n    <ion-refresher-content></ion-refresher-content>\r\n  </ion-refresher>\r\n  <ion-card *ngFor=\"let i of this.appSetting.orderDetailViewList;let x=index;\">\r\n    <ion-card-content>\r\n      <ion-item>\r\n     \r\n        <ion-label>\r\n          <h2>{{i.itemName}}</h2>\r\n          <h3>Quantity {{i.orderDetialModel.itemQty}}</h3>\r\n          <h3>Price {{i.orderDetialModel.itemFinalPrice}}</h3>\r\n          <h3>{{i.resturantName}}</h3>\r\n        </ion-label>\r\n        <ion-button routerLink='/tabs/tab2/itemEdit/{{x}}' color=\"secondary\">\r\n          <ion-icon name=\"create-outline\"></ion-icon>\r\n        </ion-button>\r\n        <ion-button (click)=\"deleteInvoice(x)\" color=\"danger\">\r\n          <ion-icon name=\"trash-outline\"></ion-icon>\r\n        </ion-button>\r\n      </ion-item>\r\n    </ion-card-content>\r\n  </ion-card>\r\n\r\n  <ion-card>\r\n    <ion-card-content>\r\n      <ion-item>\r\n    \r\n        <ion-label color=\"primary\">\r\n          <h2>Customer Information</h2>\r\n        </ion-label>\r\n\r\n      </ion-item>\r\n      <ion-item>\r\n        <ion-label position=\"floating\">Name</ion-label>\r\n        <ion-input [(ngModel)]=\"this.appSetting.orderData.clientName\" type=\"text\"></ion-input>\r\n      </ion-item>\r\n      <ion-item>\r\n        <ion-label position=\"floating\">Phone</ion-label>\r\n        <ion-input [(ngModel)]=\"this.appSetting.orderData.clitentPhone\" type=\"tel\"></ion-input>\r\n      </ion-item>\r\n      <ion-item>\r\n        <ion-label position=\"floating\">Township</ion-label>\r\n        <ion-select [(ngModel)]=\"this.appSetting.orderData.Township_id\" (ngModelChange)=\"deliverChange($event)\">\r\n          <ion-select-option *ngFor=\"let item of this.appSetting.locationDataList;let i=index;\" [value]=\"item.id\">\r\n            {{i+1}}.{{item.TownShip}}\r\n          </ion-select-option>\r\n        </ion-select>\r\n      </ion-item>\r\n\r\n      <ion-item>\r\n        <ion-label position=\"floating\">Flat No</ion-label>\r\n        <ion-input [(ngModel)]=\"this.appSetting.orderData.clitentFlatNo\" type=\"number\"></ion-input>\r\n      </ion-item>\r\n\r\n      <ion-item>\r\n        <ion-label position=\"floating\">Address</ion-label>\r\n        <ion-textarea [(ngModel)]=\"this.appSetting.orderData.clientAddress\"></ion-textarea>\r\n      </ion-item>\r\n    </ion-card-content>\r\n  </ion-card>\r\n\r\n  <ion-card>\r\n    <ion-card-content>\r\n      <ion-item>\r\n     \r\n        <ion-label color=\"primary\">\r\n          <h2>Delivery Information</h2>\r\n        </ion-label>\r\n\r\n      </ion-item>\r\n      <ion-item>\r\n        <ion-label position=\"floating\">Charges</ion-label>\r\n        <ion-input [(ngModel)]=\"this.appSetting.orderData.deliveryCharegs\" type=\"number\"></ion-input>\r\n      </ion-item>\r\n      <ion-item>\r\n        <ion-label position=\"floating\">Date for Delivery</ion-label>\r\n        <ion-datetime ionCancel [(ngModel)]=\"this.appSetting.orderData.deliveryDate\"></ion-datetime>\r\n        <ion-label position=\"floating\">Time for Delivery</ion-label>\r\n        <ion-datetime [(ngModel)]=\"this.appSetting.orderData.deliveryDate\" display-format=\"h:mm A\"\r\n          picker-format=\"h:mm A\" value=\"1990-02-19T07:43Z\"></ion-datetime>\r\n      </ion-item>\r\n\r\n      <ion-item>\r\n        <ion-label position=\"floating\">Date for Pickup</ion-label>\r\n        <ion-datetime ionCancel [(ngModel)]=\"this.appSetting.orderData.pickupDate\"></ion-datetime>\r\n        <ion-label position=\"floating\">Time for Pickup</ion-label>\r\n        <ion-datetime [(ngModel)]=\"this.appSetting.orderData.pickupDate\" display-format=\"h:mm A\"\r\n          picker-format=\"h:mm A\" value=\"1990-02-19T07:43Z\"></ion-datetime>\r\n      </ion-item>\r\n    </ion-card-content>\r\n  </ion-card>\r\n\r\n  <ion-card>\r\n    <ion-card-content>\r\n      <ion-item>\r\n     \r\n        <ion-label color=\"primary\">\r\n          <h2>Cash Receive Information</h2>\r\n        </ion-label>\r\n\r\n      </ion-item>\r\n      <ion-item>\r\n        <ion-label position=\"floating\">Cash Receive Options</ion-label>\r\n          <ion-select [(ngModel)]=\"this.appSetting.orderData.riderTakeOption\">\r\n            <ion-select-option [value]=\"revceiveOpt[0]\">{{revceiveOpt[0]}}</ion-select-option>\r\n            <ion-select-option [value]=\"revceiveOpt[1]\">{{revceiveOpt[1]}}</ion-select-option>\r\n            <ion-select-option [value]=\"revceiveOpt[2]\">{{revceiveOpt[2]}}</ion-select-option>\r\n          </ion-select>\r\n      </ion-item>\r\n   \r\n    </ion-card-content>\r\n  </ion-card>\r\n  <ion-grid fixed>\r\n    <ion-row>\r\n      <ion-col size=\"6\">\r\n        <ion-button expand=\"block\" color=\"light\">\r\n          Cancel\r\n        </ion-button>\r\n      </ion-col>\r\n      <ion-col size=\"6\">\r\n        <ion-button (click)=\"sendToResturant()\" expand=\"block\" color=\"light\">\r\n          Send To Resturant\r\n        </ion-button>\r\n      </ion-col>\r\n    </ion-row>\r\n  </ion-grid>\r\n</ion-content>");
 
 /***/ }),
 
@@ -48,7 +48,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<ion-header translucent>\r\n  <ion-toolbar>\r\n    <ion-segment value=\"all\">\r\n      <ion-segment-button (click)=\"this.loadAvailable()\" value=\"all\">\r\n        <ion-label>Available</ion-label>\r\n      </ion-segment-button>\r\n      <ion-segment-button (click)=\"this.loadInProgress()\" value=\"favorites\">\r\n        <ion-label>In Progrss</ion-label>\r\n      </ion-segment-button>\r\n    </ion-segment>\r\n  </ion-toolbar>\r\n</ion-header>\r\n\r\n<ion-content *ngIf=\"this.riderSelection === 'available'\">\r\n  <ion-refresher slot=\"fixed\" (ionRefresh)=\"refresh($event)\">\r\n    <ion-refresher-content></ion-refresher-content>\r\n  </ion-refresher>\r\n  <ion-card *ngFor=\"let i of rider\">\r\n    <ion-item>\r\n      <ion-avatar slot=\"start\">\r\n        <img src=\"/../assets/food-delivery.svg\" />\r\n      </ion-avatar>\r\n      <ion-label>\r\n        <h2>{{ i.username }}</h2>\r\n        <h3>\r\n          ETD KM:{{ locationCalculate(i.longitude, i.latitude).toFixed(2) }}\r\n          Kilometer\r\n        </h3>\r\n        <p>Ph:{{ i.phone }}</p>\r\n      </ion-label>\r\n\r\n      <ion-button (click)=\"onSelect(i.id)\" color=\"secondary\">\r\n        Select\r\n      </ion-button>\r\n    </ion-item>\r\n  </ion-card>\r\n</ion-content>\r\n\r\n<ion-content *ngIf=\"this.riderSelection === 'inProgress'\">\r\n  <ion-refresher slot=\"fixed\" (ionRefresh)=\"refreshDelivering($event)\">\r\n    <ion-refresher-content></ion-refresher-content>\r\n  </ion-refresher>\r\n  <ion-card *ngFor=\"let i of progressRider\">\r\n    <ion-item>\r\n      <ion-avatar slot=\"start\">\r\n        <img src=\"/../assets/food-delivery.svg\" />\r\n      </ion-avatar>\r\n      <ion-label>\r\n        <h2>{{ i.username }}</h2>\r\n        <h3>\r\n          ETD KM:{{\r\n            locationCalculate(i.longitude, i.latitude).toFixed(2)\r\n          }}\r\n          Kilometer\r\n        </h3>\r\n\r\n        <p>Ph:{{ i.phone }}</p>\r\n      </ion-label>\r\n\r\n      <ion-button (click)=\"onSelect(i.id)\" color=\"secondary\">\r\n        Select\r\n      </ion-button>\r\n    </ion-item>\r\n\r\n    <ion-item lines=\"none\">\r\n      <ion-checkbox color=\"danger\" slot=\"start\"></ion-checkbox>\r\n      <ion-label color=\"danger\" checked readonnly>Emegency</ion-label>\r\n    </ion-item>\r\n  </ion-card>\r\n</ion-content>\r\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<ion-header translucent>\r\n  <ion-toolbar>\r\n    <ion-segment value=\"all\">\r\n      <ion-segment-button (click)=\"this.loadAvailable()\" value=\"all\">\r\n        <ion-label>Available</ion-label>\r\n      </ion-segment-button>\r\n      <ion-segment-button (click)=\"this.loadInProgress()\" value=\"favorites\">\r\n        <ion-label>In Progrss</ion-label>\r\n      </ion-segment-button>\r\n    </ion-segment>\r\n  </ion-toolbar>\r\n</ion-header>\r\n\r\n<ion-content *ngIf=\"this.riderSelection === 'available'\">\r\n  <ion-refresher slot=\"fixed\" (ionRefresh)=\"refresh($event)\">\r\n    <ion-refresher-content></ion-refresher-content>\r\n  </ion-refresher>\r\n  <ion-card *ngFor=\"let i of rider\">\r\n    <ion-item>\r\n   \r\n      <ion-label>\r\n        <h2>{{ i.username }}</h2>\r\n        <h3>\r\n          ETD KM:{{ locationCalculate(i.longitude, i.latitude).toFixed(2) }}\r\n          Kilometer\r\n        </h3>\r\n        <p>Ph:{{ i.phone }}</p>\r\n      </ion-label>\r\n\r\n      <ion-button (click)=\"onSelect(i.id)\" color=\"secondary\">\r\n        Select\r\n      </ion-button>\r\n    </ion-item>\r\n  </ion-card>\r\n</ion-content>\r\n\r\n<ion-content *ngIf=\"this.riderSelection === 'inProgress'\">\r\n  <ion-refresher slot=\"fixed\" (ionRefresh)=\"refreshDelivering($event)\">\r\n    <ion-refresher-content></ion-refresher-content>\r\n  </ion-refresher>\r\n  <ion-card *ngFor=\"let i of progressRider\">\r\n    <ion-item>\r\n    \r\n      <ion-label>\r\n        <h2>{{ i.username }}</h2>\r\n        <h3>\r\n          ETD KM:{{\r\n            locationCalculate(i.longitude, i.latitude).toFixed(2)\r\n          }}\r\n          Kilometer\r\n        </h3>\r\n\r\n        <p>Ph:{{ i.phone }}</p>\r\n      </ion-label>\r\n\r\n      <ion-button (click)=\"onSelect(i.id)\" color=\"secondary\">\r\n        Select\r\n      </ion-button>\r\n    </ion-item>\r\n\r\n    <ion-item lines=\"none\">\r\n      <ion-checkbox color=\"danger\" slot=\"start\"></ion-checkbox>\r\n      <ion-label color=\"danger\" checked readonnly>Emegency</ion-label>\r\n    </ion-item>\r\n  </ion-card>\r\n</ion-content>\r\n");
 
 /***/ }),
 
@@ -61,7 +61,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<ion-card>\r\n  <ion-card-header>\r\n    <ion-card-subtitle color=\"dark\">Summary Report\r\n      <ion-item>\r\n        <ion-label position=\"floating\">Date</ion-label>\r\n        <ion-datetime  ionCancel [(ngModel)]=\"this.dateData\"></ion-datetime>\r\n       \r\n      </ion-item>\r\n      <ion-item>\r\n        <ion-label position=\"floating\">Status</ion-label>\r\n        <ion-text color=\"primary\">\r\n          <p>Pending</p>\r\n        </ion-text>\r\n      </ion-item>\r\n    </ion-card-subtitle>\r\n   \r\n  </ion-card-header>\r\n  <ion-card-content>\r\n  \r\n    <ion-item>\r\n      <ion-avatar slot=\"end\">\r\n        <img src=\"/../assets/agreement.svg\">\r\n      </ion-avatar>\r\n      <ion-label>\r\n        <h3>Rider Earning</h3>\r\n        <p>{{this.data.riderEarning}} Kyats</p>\r\n      </ion-label>\r\n    </ion-item>\r\n    <ion-item>\r\n      <ion-avatar slot=\"end\">\r\n        <img src=\"/../assets/agreement.svg\">\r\n      </ion-avatar>\r\n      <ion-label>\r\n        <h3>ပြန်အပ်ရန်ငွေ</h3>\r\n        <p>{{this.data.dailyReturnAmount}} Kyats</p>\r\n      </ion-label>\r\n    </ion-item>\r\n\r\n    <ion-button (click)=\"this.search()\" expand=\"block\">\r\n      Refresh Data\r\n    </ion-button>\r\n  </ion-card-content>\r\n</ion-card>");
+/* harmony default export */ __webpack_exports__["default"] = ("<ion-card>\r\n  <ion-card-header>\r\n    <ion-card-subtitle color=\"primary\">Summary Report\r\n      <ion-item>\r\n        <ion-label position=\"floating\">Date</ion-label>\r\n        <ion-datetime  ionCancel [(ngModel)]=\"this.dateData\"></ion-datetime>\r\n       \r\n      </ion-item>\r\n      <ion-item>\r\n        <ion-label position=\"floating\">Status</ion-label>\r\n        <ion-text color=\"primary\">\r\n          <p>Pending</p>\r\n        </ion-text>\r\n      </ion-item>\r\n    </ion-card-subtitle>\r\n   \r\n  </ion-card-header>\r\n  <ion-card-content>\r\n  \r\n    <ion-item>\r\n      <ion-avatar slot=\"end\">\r\n        <img src=\"/../assets/agreement.svg\">\r\n      </ion-avatar>\r\n      <ion-label>\r\n        <h3>Rider Earning</h3>\r\n        <p>{{this.data.riderEarning}} Kyats</p>\r\n      </ion-label>\r\n    </ion-item>\r\n    <ion-item>\r\n      <ion-avatar slot=\"end\">\r\n        <img src=\"/../assets/agreement.svg\">\r\n      </ion-avatar>\r\n      <ion-label>\r\n        <h3>ပြန်အပ်ရန်ငွေ</h3>\r\n        <p>{{this.data.dailyReturnAmount}} Kyats</p>\r\n      </ion-label>\r\n    </ion-item>\r\n\r\n    <ion-button (click)=\"this.search()\" expand=\"block\">\r\n      Refresh Data\r\n    </ion-button>\r\n  </ion-card-content>\r\n</ion-card>");
 
 /***/ }),
 
@@ -90,8 +90,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DailyReturnService", function() { return DailyReturnService; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _app_setting__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./../../app-setting */ "./src/app/app-setting.ts");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
-/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/__ivy_ngcc__/fesm2015/http.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm2015/http.js");
 
 
 
@@ -149,11 +149,11 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ItemEditComponent", function() { return ItemEditComponent; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
 /* harmony import */ var src_app_app_setting__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! src/app/app-setting */ "./src/app/app-setting.ts");
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/__ivy_ngcc__/fesm2015/router.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm2015/router.js");
 /* harmony import */ var src_app_Models_foodModel__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! src/app/Models/foodModel */ "./src/app/Models/foodModel.ts");
-/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/__ivy_ngcc__/fesm2015/common.js");
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/fesm2015/common.js");
 
 
 
@@ -302,7 +302,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _Services_order_order_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./../../../Services/order/order.service */ "./src/app/Services/order/order.service.ts");
 /* harmony import */ var _Services_location_location_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./../../../Services/location/location.service */ "./src/app/Services/location/location.service.ts");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
 /* harmony import */ var src_app_app_setting__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! src/app/app-setting */ "./src/app/app-setting.ts");
 
 
@@ -364,12 +364,10 @@ let ItemListComponent = class ItemListComponent {
     }
     sendToResturant() {
         this.appSetting.showLoading();
-        console.log(this.appSetting.orderData.deliveryDate);
         let data = {
             orderModel: this.appSetting.orderData,
             orderDetailModels: this.appSetting.orderDetailList
         };
-        console.log(data);
         this.orderService.post(data);
     }
 };
@@ -416,7 +414,7 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "MainPageComponent", function() { return MainPageComponent; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
 /* harmony import */ var src_app_app_setting__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! src/app/app-setting */ "./src/app/app-setting.ts");
 
 
@@ -470,8 +468,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var src_app_Services_order_order_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! src/app/Services/order/order.service */ "./src/app/Services/order/order.service.ts");
 /* harmony import */ var _app_setting__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./../../../app-setting */ "./src/app/app-setting.ts");
 /* harmony import */ var _Services_userModel_user_model_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./../../../Services/userModel/user-model.service */ "./src/app/Services/userModel/user-model.service.ts");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/__ivy_ngcc__/fesm2015/router.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm2015/router.js");
 /* harmony import */ var src_app_Models_orderModel__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! src/app/Models/orderModel */ "./src/app/Models/orderModel.ts");
 
 
@@ -518,7 +516,6 @@ let RiderSelectComponent = class RiderSelectComponent {
         ];
         const foodDB = [...this.appSetting.menuFoodDataList];
         let tempRes = this.tempResMethod(foodDB, tempDetial);
-        console.log(tempDetial);
         let resIDlist = this.getUnique(tempRes);
         let locationDB = this.locationDBMethod(tempLocation, resIDlist);
         return (Math.min.apply(null, this.distanceCalculation(locationDB, riderLatidude, riderLongitude)) / 1000);
@@ -545,12 +542,10 @@ let RiderSelectComponent = class RiderSelectComponent {
         let tempRes = [];
         foodDB.forEach((x) => {
             tempDetial.forEach((y) => {
-                console.log("Item Y ID=" + y.itemID + " and " + x.id);
                 if (y.itemID === x.id) {
                     tempRes.push(x.resturant_id);
                 }
                 else {
-                    console.log("Not include in data");
                 }
             });
         });
@@ -599,7 +594,7 @@ let RiderSelectComponent = class RiderSelectComponent {
         this.data.riderID = id;
         this.data.status = "delivering";
         this.orderService.put(this.data);
-        this.router.navigateByUrl("/tabs/tab1/deliveryPending");
+        this.router.navigateByUrl("/managmenet/tabs/tab1/deliveryPending");
     }
 };
 RiderSelectComponent.ctorParameters = () => [
@@ -646,7 +641,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "MainRiderPageComponent", function() { return MainRiderPageComponent; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var src_app_app_setting__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! src/app/app-setting */ "./src/app/app-setting.ts");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
 /* harmony import */ var src_app_Services_dailyReturn_daily_return_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! src/app/Services/dailyReturn/daily-return.service */ "./src/app/Services/dailyReturn/daily-return.service.ts");
 
 
@@ -665,11 +660,9 @@ let MainRiderPageComponent = class MainRiderPageComponent {
             riderEarning: 0,
             dailyReturnAmount: 0,
         };
-        console.log(this.appSetting.loginType);
     }
     ngOnInit() { }
     refresh() {
-        console.log(this.appSetting.loginType);
     }
     search() {
         if (this.dateData === "") {
@@ -680,7 +673,6 @@ let MainRiderPageComponent = class MainRiderPageComponent {
             this.datilyReturnService
                 .get(this.appSetting.sessionUserID, this.dateData)
                 .subscribe((x) => (this.data = x), (err) => this.appSetting.showError(err), () => {
-                console.log(this.data);
                 this.appSetting.loadingClose();
             });
         }
@@ -714,8 +706,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Tab2PageRoutingModule", function() { return Tab2PageRoutingModule; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _admin_item_edit_item_edit_component__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./admin/item-edit/item-edit.component */ "./src/app/tab2/admin/item-edit/item-edit.component.ts");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/__ivy_ngcc__/fesm2015/router.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm2015/router.js");
 /* harmony import */ var _tab2_page__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./tab2.page */ "./src/app/tab2/tab2.page.ts");
 /* harmony import */ var _admin_rider_select_rider_select_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./admin/rider-select/rider-select.component */ "./src/app/tab2/admin/rider-select/rider-select.component.ts");
 
@@ -762,10 +754,10 @@ Tab2PageRoutingModule = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Tab2PageModule", function() { return Tab2PageModule; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @ionic/angular */ "./node_modules/@ionic/angular/__ivy_ngcc__/fesm2015/ionic-angular.js");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
-/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/__ivy_ngcc__/fesm2015/common.js");
-/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/__ivy_ngcc__/fesm2015/forms.js");
+/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @ionic/angular */ "./node_modules/@ionic/angular/fesm2015/ionic-angular.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/fesm2015/common.js");
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm2015/forms.js");
 /* harmony import */ var _tab2_page__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./tab2.page */ "./src/app/tab2/tab2.page.ts");
 /* harmony import */ var _explore_container_explore_container_module__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../explore-container/explore-container.module */ "./src/app/explore-container/explore-container.module.ts");
 /* harmony import */ var _tab2_routing_module__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./tab2-routing.module */ "./src/app/tab2/tab2-routing.module.ts");
@@ -830,9 +822,9 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Tab2Page", function() { return Tab2Page; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
 /* harmony import */ var _app_setting__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../app-setting */ "./src/app/app-setting.ts");
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/__ivy_ngcc__/fesm2015/router.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm2015/router.js");
 
 
 
@@ -841,7 +833,7 @@ let Tab2Page = class Tab2Page {
     constructor(appSetting, route) {
         this.appSetting = appSetting;
         this.route = route;
-        this.route.navigateByUrl('tabs/tab2');
+        //this.route.navigateByUrl('tabs/tab2');
     }
 };
 Tab2Page.ctorParameters = () => [
