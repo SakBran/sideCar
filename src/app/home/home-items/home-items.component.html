@@ -108,9 +108,9 @@
       size="{{ this.appSetting.device }}"
     >
       <div class="center">
-        <ion-card button (click)="cardClick(item.id)">
+        <ion-card class="animate__animated animate__zoomInDown"  button (click)="cardClick(item.id)">
           <img
-            class="center"
+            class="center animate__animated animate__bounce animate__delay-2s"
             src="{{
               this.appSetting.apiAddress + '/images/MainImage' + item.id + '.jpg'
             }}"
@@ -121,7 +121,7 @@
                 this.appSetting.resName(item.resturant_id)
               }}</ion-card-subtitle
             >
-            <ion-card-title>{{ item.name }}</ion-card-title>
+            <ion-card-title class="icon animate__animated animate__rubberBand animate__delay-3s">{{ item.name }}</ion-card-title>
           </ion-card-header>
           <ion-card-content>
         <!-----   {{ this.appSetting.resName(item.resturant_id) }}---->
@@ -264,9 +264,9 @@
       size="{{ this.appSetting.device }}"
     >
       <div class="center">
-        <ion-card button (click)="Filter(item.id)">
+        <ion-card class="animate__animated animate__zoomInDown" button (click)="Filter(item.id)">
           <img
-            class="center"
+          class="center animate__animated animate__bounce animate__delay-2s"
             src="{{
               this.appSetting.apiAddress + '/images/MainImage' + this.resItemID(item.id) + '.jpg'
             }}"
@@ -277,7 +277,7 @@
                 item.phone
               }}</ion-card-subtitle
             >
-            <ion-card-title>{{ item.shopname }}</ion-card-title>
+            <ion-card-title class="icon animate__animated animate__rubberBand animate__delay-3s" >{{ item.shopname }}</ion-card-title>
           </ion-card-header>
           <ion-card-content>
         <!-----   {{ this.appSetting.resName(item.resturant_id) }}---->

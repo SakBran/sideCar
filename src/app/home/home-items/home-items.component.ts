@@ -146,7 +146,7 @@ export class HomeItemsComponent implements OnInit {
     const modal = await this.modalController.create({
       component: HomeItemDetailComponent,
 
-      //,cssClass: 'my-custom-class'
+      //cssClass:"animate__animated animate__heartBeat"
     });
     return await modal.present();
   }
