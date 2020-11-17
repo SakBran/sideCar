@@ -134,7 +134,8 @@
   </ion-row>
 
   <ion-row *ngIf="this.appSetting.mainItemDataList.length === 0">
-    <ion-col size="{{ this.appSetting.device }}">
+
+    <ion-col size="12" size-sm="3">
       <div>
         <ion-card button (click)="cardClick('cardID')">
           <ion-skeleton-text animated></ion-skeleton-text>
@@ -154,7 +155,7 @@
       </div>
     </ion-col>
 
-    <ion-col size="{{ this.appSetting.device }}">
+    <ion-col size="12" size-sm="3">
       <div>
         <ion-card button (click)="cardClick('cardID')">
           <ion-skeleton-text animated></ion-skeleton-text>
@@ -174,7 +175,7 @@
       </div>
     </ion-col>
 
-    <ion-col size="{{ this.appSetting.device }}">
+    <ion-col size="12" size-sm="3">
       <div>
         <ion-card button (click)="cardClick('cardID')">
           <ion-skeleton-text animated></ion-skeleton-text>
@@ -194,7 +195,7 @@
       </div>
     </ion-col>
 
-    <ion-col size="{{ this.appSetting.device }}">
+    <ion-col size="12" size-sm="3">
       <div>
         <ion-card button (click)="cardClick('cardID')">
           <ion-skeleton-text animated></ion-skeleton-text>
@@ -214,45 +215,7 @@
       </div>
     </ion-col>
 
-    <ion-col size="{{ this.appSetting.device }}">
-      <div>
-        <ion-card button (click)="cardClick('cardID')">
-          <ion-skeleton-text animated></ion-skeleton-text>
-          <ion-card-header>
-            <ion-card-subtitle
-              ><ion-skeleton-text animated></ion-skeleton-text
-            ></ion-card-subtitle>
-            <ion-card-title
-              ><ion-skeleton-text animated></ion-skeleton-text
-            ></ion-card-title>
-          </ion-card-header>
-          <ion-card-content>
-            <ion-skeleton-text animated></ion-skeleton-text><br />
-            <ion-skeleton-text animated></ion-skeleton-text>
-          </ion-card-content>
-        </ion-card>
-      </div>
-    </ion-col>
-
-    <ion-col size="{{ this.appSetting.device }}">
-      <div>
-        <ion-card button (click)="cardClick('cardID')">
-          <ion-skeleton-text animated></ion-skeleton-text>
-          <ion-card-header>
-            <ion-card-subtitle
-              ><ion-skeleton-text animated></ion-skeleton-text
-            ></ion-card-subtitle>
-            <ion-card-title
-              ><ion-skeleton-text animated></ion-skeleton-text
-            ></ion-card-title>
-          </ion-card-header>
-          <ion-card-content>
-            <ion-skeleton-text animated></ion-skeleton-text><br />
-            <ion-skeleton-text animated></ion-skeleton-text>
-          </ion-card-content>
-        </ion-card>
-      </div>
-    </ion-col>
+   
   </ion-row>
 </ion-grid>
 
@@ -261,7 +224,7 @@
   <ion-row *ngIf="this.appSetting.resturandDataList.length !== 0">
     <ion-col
       *ngFor="let item of this.appSetting.resturandDataList"
-      size="{{ this.appSetting.device }}"
+      size="12" size-sm="3"
     >
       <div class="center">
         <ion-card button (click)="Filter(item.id)">
@@ -292,7 +255,7 @@
   
 
   <ion-row *ngIf="this.appSetting.resturandDataList.length === 0">
-    <ion-col size="{{ this.appSetting.device }}">
+    <ion-col size="12" size-sm="3">
       <div>
         <ion-card button (click)="cardClick('cardID')">
           <ion-skeleton-text animated></ion-skeleton-text>
