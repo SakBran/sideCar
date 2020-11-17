@@ -24,19 +24,6 @@ export class HomePageComponent implements OnInit {
     private CategoryService: CategoryService,
     public appSetting: appSetting
   ) {
-    if (this.plt.is("ios")) {
-      // This will only print when on iOS
-      this.appSetting.device = "12";
-    } else if (this.plt.is("android")) {
-      this.appSetting.device = "12";
-    } else if (this.plt.is("tablet")) {
-      this.appSetting.device = "2";
-    } else if (this.plt.is("ipad")) {
-      this.appSetting.device = "2";
-    } else {
-      this.appSetting.device = "2";
-    }
-
     this.resturantLoaddata();
   }
 

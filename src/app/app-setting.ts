@@ -30,8 +30,6 @@ export class appSetting {
   public adminTab3ID = "";
 
   public zone:String[]=[];
-
-  public device="";
   public customerSearch="";
   // public apiAddress = "http://localhost/sidecar";
   public apiAddress ='https://www.myanmatrishaw.asia';
