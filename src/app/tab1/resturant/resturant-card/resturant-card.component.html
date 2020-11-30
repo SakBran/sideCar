@@ -25,9 +25,7 @@
       <ion-text color="secondary">Processing</ion-text>
     </ng-container>
     <p>{{ this.foodDescription(orderDetail.itemID).resturant.toString() }}</p>
-    <p>{{ this.foodDescription(orderDetail.itemID).main.toString()  }}</p>
-    <p>{{ this.foodDescription(orderDetail.itemID).secondary.toString()  }}</p>
-
+    <p>{{ this.foodDescription(orderDetail.itemID).main.toString()  }} ({{ this.foodDescription(orderDetail.itemID).secondary.toString()}})</p>
     <p>Quantity:{{ orderDetail.itemQty }}</p>
     <p>Discount:{{ orderDetail.discount }}</p>
     <p>Price:{{ orderDetail.itemFinalPrice }}</p>
