@@ -81,7 +81,6 @@ comment:string="";
 
   //For Main Name
   foodDescription(id):resturantCardViewmodel{
-    console.log("This work");
     let res:resturantCardViewmodel=new resturantCardViewmodel();
     const temp=[...this.appSetting.foodDataList];
     const main=[...this.appSetting.constmainItemDataList];
