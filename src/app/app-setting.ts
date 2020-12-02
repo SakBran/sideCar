@@ -130,7 +130,7 @@ export class appSetting {
     Swal.fire("Error", JSON.stringify(msg), "error");
   }
   public showInvalid() {
-    Swal.fire("Invalid Data", "Please fill invalid data!", "info");
+    Swal.fire("Invalid Data", "Please fill valid data!", "info");
   }
 
   
