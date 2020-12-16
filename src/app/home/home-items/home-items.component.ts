@@ -59,9 +59,8 @@ export class HomeItemsComponent implements OnInit {
     this.itemDetail(cardID.toString());
   }
 
-  searchResturant = 0;
   Filter(e) {
-    this.searchResturant=e;
+    this.appSetting.searchResturant=e;
     const temp = [...this.appSetting.constmainItemDataList];
     let res: mainModel[] = [];
     temp.forEach((x) => {
@@ -115,18 +114,23 @@ export class HomeItemsComponent implements OnInit {
     a.click();
   }
   refresh() {
-    this.searchZone=null;
-    this.mainItemService.get().subscribe(
-      (x) => (this.appSetting.mainItemDataList = x),
-      (err) => this.appSetting.showError(err),
-      () => {
-        this.appSetting.constmainItemDataList = this.appSetting.mainItemDataList;
-      }
-    );
+    this.appSetting.searchResturant=0;
+    // this.searchZone=null;
+    // this.mainItemService.get().subscribe(
+    //   (x) => (this.appSetting.mainItemDataList = x),
+    //   (err) => this.appSetting.showError(err),
+    //   () => {
+    //     this.appSetting.constmainItemDataList = this.appSetting.mainItemDataList;
+    //   }
+    // );
+
   }
 
   
   onSearch(val) {
+    console.log(val.target.value);
+    //console.log(this.appSetting.customerSearch);
+    this.appSetting.customerSearch=val.target.value;
     const temp: mainModel[] = [...this.appSetting.constmainItemDataList];
     let z: mainModel[] = [];
     temp.forEach((x) => {

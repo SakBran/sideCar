@@ -16,6 +16,7 @@ export class appSetting {
    *
    */
   constructor() {}
+  public searchResturant=0;
   public loginType = "";
 
   public displaySetting = "pending";

@@ -1,4 +1,4 @@
-<ion-toolbar color="light">
+<ion-toolbar   color="light">
 
   <ion-chip
   outline
@@ -8,7 +8,7 @@
   interface="action-sheet"
 >
 <ion-icon name="earth-outline"></ion-icon>
-  <ion-label>Zones-{{searchZone}}</ion-label>
+  <ion-label>{{searchZone}}</ion-label>
   
 </ion-chip>
 <ion-select
@@ -57,7 +57,7 @@
       id="select"
       value="notifications"
       interface="action-sheet"
-      [(ngModel)]="searchResturant"
+      [(ngModel)]="this.appSetting.searchResturant"
       (ngModelChange)="Filter($event)"
     >
       <ion-select-option
@@ -86,22 +86,25 @@
         >{{ item.categoryName }}</ion-select-option
       >
     </ion-select>
-    <!------
-    <ion-chip slot="end" (click)="refresh()" outline color="tertiary">
-      <ion-icon name="refresh-outline"></ion-icon>
-    </ion-chip>
- ------>
+    
+    <!-- <ion-chip slot="end" (click)="refresh()" outline color="tertiary">
+      <ion-icon name="arrow-back"></ion-icon>
+      <ion-label>Back</ion-label>
+    </ion-chip> -->
+ 
 </ion-toolbar>
-<ion-toolbar color="light">
+<ion-toolbar class="searchBar" color="light">
   <ion-searchbar
     id='searchBar'
     [(ngModel)]="this.appSetting.customerSearch"
     autofocus="true"
-    (ngModelChange)="onSearch($event)"
+    (keyup)="onSearch($event)" 
+
+   
   ></ion-searchbar>
 </ion-toolbar>
-
-<ion-grid *ngIf="this.searchResturant!==0" >
+ <!-- (ngModelChange)="onSearch($event)" -->
+<ion-grid *ngIf="this.appSetting.searchResturant!==0 || this.appSetting.customerSearch!==''" >
   <ion-row *ngIf="this.appSetting.mainItemDataList.length !== 0">
     <ion-col
       *ngFor="let item of this.appSetting.mainItemDataList"
@@ -220,7 +223,7 @@
 </ion-grid>
 
 
-<ion-grid *ngIf="this.searchResturant===0" >
+<ion-grid *ngIf="this.appSetting.searchResturant===0 && this.appSetting.customerSearch===''" >
   <ion-row *ngIf="this.appSetting.resturandDataList.length !== 0">
     <ion-col
       *ngFor="let item of this.appSetting.resturandDataList"

@@ -17,6 +17,10 @@
       >
       <ion-icon class="title" name="basket-outline"></ion-icon>
     </ion-button>
+
+    <ion-button *ngIf="this.appSetting.searchResturant!==0"  (click)="this.appSetting.searchResturant=0">
+      <ion-icon  class="title" name="arrow-back"></ion-icon>
+    </ion-button>
   </ion-buttons>
   <ion-img
     slot="start"
