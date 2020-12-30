@@ -24,6 +24,7 @@
     "@auth0/angular-jwt": "^4.2.0",
     "@capacitor/android": "^2.3.0",
     "@capacitor/core": "2.3.0",
+    "@capacitor/ios": "^2.3.0",
     "@ionic-native/base64": "^5.27.0",
     "@ionic-native/core": "^5.0.7",
     "@ionic-native/in-app-browser": "^5.27.0",
@@ -33,6 +34,7 @@
     "animate.css": "^4.1.1",
     "com-badrit-base64": "^0.2.0",
     "cordova-android": "8.1.0",
+    "cordova-ios": "6.1.1",
     "cordova-plugin-geolocation": "^4.0.2",
     "cordova-plugin-inappbrowser": "^4.0.0",
     "ng2-file-upload": "^1.4.0",
@@ -90,7 +92,8 @@
       "com-badrit-base64": {}
     },
     "platforms": [
-      "android"
+      "android",
+      "ios"
     ]
   }
 }

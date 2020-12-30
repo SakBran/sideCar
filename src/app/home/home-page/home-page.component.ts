@@ -23,6 +23,7 @@ export class HomePageComponent implements OnInit {
     public modalController: ModalController,
     private CategoryService: CategoryService,
     public appSetting: appSetting
+    
   ) {
     this.resturantLoaddata();
   }

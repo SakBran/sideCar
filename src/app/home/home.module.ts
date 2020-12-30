@@ -1,3 +1,4 @@
+import { WelcomeComponent } from './welcome/welcome.component';
 import { ClientInvoiceComponent } from './client-invoice/client-invoice.component';
 import { HomeItemDetailComponent } from "./home-item-detail/home-item-detail.component";
 import { ClientShopcartComponent } from "./client-shopcart/client-shopcart.component";
@@ -17,7 +18,8 @@ const pages:any=[
   HomeItemsComponent,
   ClientInfoComponent,
   ClientShopcartComponent,
-  ClientInvoiceComponent
+  ClientInvoiceComponent,
+  WelcomeComponent
 ]
 @NgModule({
   declarations: pages,

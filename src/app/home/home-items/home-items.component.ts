@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { mainModel } from 'src/app/Models/mainModel';
 import { HomeItemDetailComponent } from "./../home-item-detail/home-item-detail.component";
 import { appSetting } from "src/app/app-setting";
@@ -6,6 +7,7 @@ import { ModalController } from "@ionic/angular";
 import { LocationService } from "src/app/Services/location/location.service";
 import { MainModelService } from 'src/app/Services/mainModel/main-model.service';
 import { ResturantModelService } from 'src/app/Services/resturantModel/resturant-model.service';
+
 
 @Component({
   selector: "app-home-items",
@@ -16,13 +18,14 @@ export class HomeItemsComponent implements OnInit {
   zoneList:number[]=[];
   searchZone:number;
     constructor(
-
     public appSetting: appSetting,
     private LocationService: LocationService,
     private mainItemService:MainModelService,
     public modalController: ModalController,
-    public ResturantModelService:ResturantModelService
+    public ResturantModelService:ResturantModelService,
+    private Router:Router
   ) {
+    
    
     this.mainItemService.get().subscribe(
       
@@ -31,13 +34,13 @@ export class HomeItemsComponent implements OnInit {
       () => {
         this.appSetting.constmainItemDataList = this.appSetting.mainItemDataList;
         if(this.appSetting.customerSearch!==""){
-        this.onSearch(this.appSetting.customerSearch);
-       
+        this.onSearch();
         }
       }
     );
     this.locationReload();
   }
+  customerSearch="";
 
   ngOnInit() {
     
@@ -69,6 +72,7 @@ export class HomeItemsComponent implements OnInit {
       }
     });
     this.appSetting.mainItemDataList = res;
+   
   }
 
   FilterZone(e) {
@@ -126,11 +130,9 @@ export class HomeItemsComponent implements OnInit {
 
   }
 
-  
-  onSearch(val) {
-    console.log(val.target.value);
-    //console.log(this.appSetting.customerSearch);
-    this.appSetting.customerSearch=val.target.value;
+ 
+  onSearch() {
+    this.appSetting.customerSearch=this.customerSearch;
     const temp: mainModel[] = [...this.appSetting.constmainItemDataList];
     let z: mainModel[] = [];
     temp.forEach((x) => {

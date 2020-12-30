@@ -95,13 +95,15 @@
 </ion-toolbar>
 <ion-toolbar class="searchBar" color="light">
   <ion-searchbar
+  
     id='searchBar'
-    [(ngModel)]="this.appSetting.customerSearch"
-    autofocus="true"
-    (keyup)="onSearch($event)" 
-
-   
-  ></ion-searchbar>
+    [(ngModel)]="this.customerSearch"
+    slot="secondary"
+    autofocus="true">
+  </ion-searchbar>
+  <ion-button slot="primary" (click)="onSearch()" expand="block" fill="" >
+    Search
+  </ion-button>
 </ion-toolbar>
  <!-- (ngModelChange)="onSearch($event)" -->
 <ion-grid *ngIf="this.appSetting.searchResturant!==0 || this.appSetting.customerSearch!==''" >
