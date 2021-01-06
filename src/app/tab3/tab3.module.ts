@@ -10,6 +10,7 @@ import { FormsModule } from "@angular/forms";
 import { Tab3Page } from "./tab3.page";
 import { ExploreContainerComponentModule } from "../explore-container/explore-container.module";
 
+import {NgxPaginationModule} from 'ngx-pagination';
 import { Tab3PageRoutingModule } from "./tab3-routing.module";
 import { ItemConfirmComponent } from "./admin/item-confirm/item-confirm.component";
 
@@ -34,6 +35,7 @@ import { OrderAcceptFormComponent } from './admin/report/order-accept-form/order
 @NgModule({
   imports: [
     IonicModule,
+    NgxPaginationModule,
     ImageCropperModule,
     FileUploadModule,
     CommonModule,

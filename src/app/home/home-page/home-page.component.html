@@ -17,16 +17,22 @@
       >
       <ion-icon class="title" name="basket-outline"></ion-icon>
     </ion-button>
+
+    <ion-button *ngIf="this.appSetting.searchResturant!==0"  (click)="this.appSetting.searchResturant=0">
+      <ion-icon  class="title" name="arrow-back"></ion-icon>
+    </ion-button>
   </ion-buttons>
   <ion-img
+    routerLink="/"
     slot="start"
     class="icon"
     src="/../assets/icon/favicon.png"
   ></ion-img>
-  <ion-title class="title"> Sidecar </ion-title>
+  <ion-title class="title" routerLink="/"> Sidecar </ion-title>
 </ion-toolbar>
 <ion-progress-bar  *ngIf="!this.appSetting.menuFoodDataList" type="indeterminate"></ion-progress-bar>
 
 <ion-content>
+  <ion-router-outlet></ion-router-outlet>
   <app-home-items *ngIf="this.appSetting.categoryList&&this.appSetting.menuFoodDataList&&this.appSetting.resturandDataList" ></app-home-items>
 </ion-content>

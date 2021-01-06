@@ -43,6 +43,7 @@ export class AddToInvoiceComponent implements OnInit {
   }
   loadData(id): foodModel {
     let result = new foodModel();
+    
     this.appSetting.constFoodDataList.forEach((x) => {
       if (x.id === id) {
         result = x;

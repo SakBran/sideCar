@@ -18,6 +18,7 @@ export class ClientInfoComponent implements OnInit {
     public appSetting: appSetting,
     private orderService: OrderService
   ) {
+    this.appSetting.zone=[];
     this.getDataFromLocalStorage();
   }
 
@@ -53,7 +54,7 @@ export class ClientInfoComponent implements OnInit {
 
   deliverChange(e) {
     this.locationSet=e;
-    
+    this.appSetting.zone=[];
     const temp: locationModel[] = [...this.appSetting.locationDataList];
     const orderData = [...this.appSetting.orderDetailViewList];
     const foodData = [...this.appSetting.menuFoodDataList];

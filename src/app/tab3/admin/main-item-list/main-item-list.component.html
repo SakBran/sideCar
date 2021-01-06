@@ -1,22 +1,20 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-grid fixed>
-      <ion-row>
-        <ion-col size="4">
-          <ion-chip (click)="back()">
-            <ion-icon name="chevron-back-circle-outline"></ion-icon>
-            <ion-label>Back</ion-label>
-          </ion-chip>
-        </ion-col>
-        <ion-col size="5"> </ion-col>
-        <ion-col size="3">
-          <ion-chip routerLink="/managmenet/tabs/tab3/mainItemCreate">
-            <ion-icon name="person-add-outline"></ion-icon>
-            <ion-label>New</ion-label>
-          </ion-chip>
-        </ion-col>
-      </ion-row>
-    </ion-grid>
+    <ion-buttons (click)="back()" slot="start">
+      <ion-icon slot="icon-only" name="chevron-back-circle-outline"></ion-icon>
+    </ion-buttons>
+    <ion-buttons slot="primary">
+      <ion-button routerLink="/managmenet/tabs/tab3/mainItemCreate">
+        <ion-icon slot="icon-only" name="person-add-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-select interface="action-sheet"  (ngModelChange)="modelChanged($event)"  [(ngModel)]="resturant">
+      <ion-select-option
+        *ngFor="let item of this.appSetting.resturandDataList"
+        [value]="item.id"
+        >{{ item.shopname }}</ion-select-option
+      >
+    </ion-select>
   </ion-toolbar>
 </ion-header>
 
@@ -24,7 +22,7 @@
   <ion-refresher slot="fixed" (ionRefresh)="refresh($event)">
     <ion-refresher-content></ion-refresher-content>
   </ion-refresher>
-  <ion-card *ngFor="let item of this.appSetting.mainItemDataList">
+  <ion-card *ngFor="let item of this.appSetting.mainItemDataList| paginate: { itemsPerPage: 10, currentPage: page }">
     <ion-card-content>
       <ion-item>
      
@@ -59,4 +57,10 @@
       </ion-item>
     </ion-card-content>
   </ion-card>
+
+  <ion-row>
+    <ion-col size="12">
+      <pagination-controls (pageChange)="page = $event"></pagination-controls>
+    </ion-col>
+  </ion-row>
 </ion-content>

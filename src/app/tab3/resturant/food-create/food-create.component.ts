@@ -52,9 +52,11 @@ export class FoodCreateComponent implements OnInit {
   dataChangeRes(e){
   let temp:mainModel[]=[...this.appSetting.mainItemDataList];
   this.menuMain=[...temp.filter(x=>x.resturant_id===e)];
+  this.foodData.resturant_id=e;
   }
   dataChange(e) {
     this.foodData.mainitem_id=e;
+    
     this.appSetting.mainItemDataList.forEach((x) => {
       if (x.id === e) {
         this.foodData.resturant_id = x.resturant_id;

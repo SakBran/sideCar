@@ -16,6 +16,7 @@ export class appSetting {
    *
    */
   constructor() {}
+  public searchResturant=0;
   public loginType = "";
 
   public displaySetting = "pending";
@@ -30,11 +31,9 @@ export class appSetting {
   public adminTab3ID = "";
 
   public zone:String[]=[];
-
-  public device="";
   public customerSearch="";
-  //public apiAddress = "http://localhost/sidecar";
-  public apiAddress ="https://www.myanmatrishaw.asia";
+  // public apiAddress = "http://localhost/sidecar";
+  public apiAddress ='https://www.myanmatrishaw.asia';
 
   public userTypeData: userTypeModel[] = [];
 
@@ -132,7 +131,7 @@ export class appSetting {
     Swal.fire("Error", JSON.stringify(msg), "error");
   }
   public showInvalid() {
-    Swal.fire("Invalid Data", "Please fill invalid data!", "info");
+    Swal.fire("Invalid Data", "Please fill valid data!", "info");
   }
 
   
@@ -159,7 +158,16 @@ export class appSetting {
     });
     return res;
   }
-
+  public mainItemName(id):string{
+    let result="";
+    const temp = [...this.constmainItemDataList];
+    temp.forEach((x) => {
+      if (x.id === +id) {
+        result= x.name;
+      }
+    });
+    return result;
+  }
   public resendBtn(orderNo): boolean {
     let result: boolean = true;
     const temp = [...this.resendListFromResturant];

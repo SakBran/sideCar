@@ -1,3 +1,4 @@
+import { mainModel } from 'src/app/Models/mainModel';
 import { OrderService } from 'src/app/Services/order/order.service';
 import { appSetting } from 'src/app/app-setting';
 
@@ -6,6 +7,7 @@ import { orderDetialModel } from 'src/app/Models/orderDetailModel';
 import { resendModel } from 'src/app/Models/resendModel';
 import Swal from 'sweetalert2';
 import { orderTransationModel } from 'src/app/Models/orderTransationModel';
+import { resturantCardViewmodel } from 'src/app/Models/rescturantCardViewmodel';
 
 @Component({
   selector: 'app-resturant-card',
@@ -19,7 +21,9 @@ comment:string="";
     
   }
   available:boolean=true;
-  ngOnInit() {}
+  ngOnInit() {
+    //console.log(this.appSetting.constmainItemDataList);
+  }
  
   resendListKeyPress(e){
     let data:resendModel={
@@ -61,17 +65,46 @@ comment:string="";
     }
     
   }
+  //For Food Descriptions
   foodName(id):string{
     let result="";
     const temp=[...this.appSetting.foodDataList];
     temp.forEach(x=>{
       
       if(x.id===id){
+       
         result=x.itemName;
       }
     });
     return result;
   }
+
+  //For Main Name
+  foodDescription(id):resturantCardViewmodel{
+    let res:resturantCardViewmodel=new resturantCardViewmodel();
+    const temp=[...this.appSetting.foodDataList];
+    const main=[...this.appSetting.constmainItemDataList];
+    //console.log(main);
+    temp.forEach(x=>{
+      if(x.id===id){
+        let mainData:mainModel=main.filter(r=>r.id===x.mainitem_id)[0];
+        if(mainData)
+        {
+          res.main=mainData.name;
+        }
+        else{
+          res.main="";
+        }
+        res.secondary=x.itemName;
+        res.resturant=this.appSetting.resName(x.resturant_id);
+        
+      }
+    });
+    //console.log(res);
+    return res;
+  }
+  //For Resturant Name
+
 
   onDelete(id){
     Swal.fire({

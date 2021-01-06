@@ -8,3 +8,10 @@ ion-select.none{
 div.center{
     text-align: center;
 }
+
+ion-toolbar.searchBar{
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+

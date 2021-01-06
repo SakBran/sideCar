@@ -6,6 +6,7 @@ import { Location } from "@angular/common";
 import { FoodService } from "src/app/Services/food/food.service";
 import { foodModel } from "src/app/Models/foodModel";
 import { MainModelService } from 'src/app/Services/mainModel/main-model.service';
+import { mainModel } from "src/app/Models/mainModel";
 
 @Component({
   selector: 'app-main-item-list',
@@ -13,24 +14,31 @@ import { MainModelService } from 'src/app/Services/mainModel/main-model.service'
   styleUrls: ['./main-item-list.component.scss'],
 })
 export class MainItemListComponent implements OnInit {
+  page: number = 1;
+  resturant:number=8;
+  dataList:mainModel[]=[];
   constructor(
     public location: Location,
     public appSetting: appSetting,
     public FoodService: MainModelService,
     private route: Router
-  ) {}
-  ngOnInit() {
+  ) {
     this.dataLoading();
+  }
+  ngOnInit() {
+    
   }
 
   back() {
     this.location.back();
   }
   dataLoading() {
+    this.appSetting.showLoading();
     this.FoodService.get().subscribe(
       (x) => {
-        this.appSetting.showLoading();
+        
         this.appSetting.mainItemDataList = x;
+        this.dataList=x;
       },
       (err) => this.appSetting.showError(err),
 
@@ -38,6 +46,13 @@ export class MainItemListComponent implements OnInit {
         this.appSetting.loadingClose();
       }
     );
+  }
+
+  modelChanged(e){
+    this.page=1;
+    const temp:mainModel[]=[...this.dataList];
+    let data:mainModel[]=[...temp.filter(x=>x.resturant_id===e)];
+    this.appSetting.mainItemDataList=data;
   }
 
   refresh(event) {
@@ -74,7 +89,6 @@ export class MainItemListComponent implements OnInit {
     }).then((result) => {
       if (result.value) {
         this.FoodService.delete(id);
-
         Swal.fire("Deleted!", "Your file has been deleted.", "success");
       }
     });

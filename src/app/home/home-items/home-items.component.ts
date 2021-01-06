@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { mainModel } from 'src/app/Models/mainModel';
 import { HomeItemDetailComponent } from "./../home-item-detail/home-item-detail.component";
 import { appSetting } from "src/app/app-setting";
@@ -7,6 +8,7 @@ import { LocationService } from "src/app/Services/location/location.service";
 import { MainModelService } from 'src/app/Services/mainModel/main-model.service';
 import { ResturantModelService } from 'src/app/Services/resturantModel/resturant-model.service';
 
+
 @Component({
   selector: "app-home-items",
   templateUrl: "./home-items.component.html",
@@ -15,14 +17,17 @@ import { ResturantModelService } from 'src/app/Services/resturantModel/resturant
 export class HomeItemsComponent implements OnInit {
   zoneList:number[]=[];
   searchZone:number;
+  page: number = 1;
+  pageResturant:number=1;
     constructor(
-
     public appSetting: appSetting,
     private LocationService: LocationService,
     private mainItemService:MainModelService,
     public modalController: ModalController,
-    public ResturantModelService:ResturantModelService
+    public ResturantModelService:ResturantModelService,
+    private Router:Router
   ) {
+    
    
     this.mainItemService.get().subscribe(
       
@@ -31,13 +36,13 @@ export class HomeItemsComponent implements OnInit {
       () => {
         this.appSetting.constmainItemDataList = this.appSetting.mainItemDataList;
         if(this.appSetting.customerSearch!==""){
-        this.onSearch(this.appSetting.customerSearch);
-       
+        this.onSearch();
         }
       }
     );
     this.locationReload();
   }
+  customerSearch="";
 
   ngOnInit() {
     
@@ -59,9 +64,8 @@ export class HomeItemsComponent implements OnInit {
     this.itemDetail(cardID.toString());
   }
 
-  searchResturant = 0;
   Filter(e) {
-    this.searchResturant=e;
+    this.appSetting.searchResturant=e;
     const temp = [...this.appSetting.constmainItemDataList];
     let res: mainModel[] = [];
     temp.forEach((x) => {
@@ -70,6 +74,7 @@ export class HomeItemsComponent implements OnInit {
       }
     });
     this.appSetting.mainItemDataList = res;
+   
   }
 
   FilterZone(e) {
@@ -115,18 +120,22 @@ export class HomeItemsComponent implements OnInit {
     a.click();
   }
   refresh() {
-    this.searchZone=null;
-    this.mainItemService.get().subscribe(
-      (x) => (this.appSetting.mainItemDataList = x),
-      (err) => this.appSetting.showError(err),
-      () => {
-        this.appSetting.constmainItemDataList = this.appSetting.mainItemDataList;
-      }
-    );
+    this.appSetting.searchResturant=0;
+    // this.searchZone=null;
+    // this.mainItemService.get().subscribe(
+    //   (x) => (this.appSetting.mainItemDataList = x),
+    //   (err) => this.appSetting.showError(err),
+    //   () => {
+    //     this.appSetting.constmainItemDataList = this.appSetting.mainItemDataList;
+    //   }
+    // );
+
   }
 
-  
-  onSearch(val) {
+ 
+  onSearch() {
+    this.page=1;
+    this.appSetting.customerSearch=this.customerSearch;
     const temp: mainModel[] = [...this.appSetting.constmainItemDataList];
     let z: mainModel[] = [];
     temp.forEach((x) => {
@@ -146,7 +155,7 @@ export class HomeItemsComponent implements OnInit {
     const modal = await this.modalController.create({
       component: HomeItemDetailComponent,
 
-      //,cssClass: 'my-custom-class'
+      //cssClass:"animate__animated animate__heartBeat"
     });
     return await modal.present();
   }

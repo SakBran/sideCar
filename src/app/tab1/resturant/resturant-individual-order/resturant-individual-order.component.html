@@ -101,19 +101,29 @@
           <ion-toolbar>
         
             <ion-item lines="none">
-              <ion-label>All Payment</ion-label>
-              <ion-checkbox  (click)="changeModel('All')" slot="end" *ngIf="this.selectedCard.toLocaleLowerCase()==='All'.toLocaleLowerCase() && 'all'===this.data.orderModel.riderTakeOption" checked="true" ></ion-checkbox>
-              <ion-checkbox  (click)="changeModel('All')" slot="end" *ngIf="this.selectedCard.toLocaleLowerCase()!=='All'.toLocaleLowerCase() && 'all'!==this.data.orderModel.riderTakeOption" ></ion-checkbox>
+              <ion-label>Cash</ion-label>
+              <ion-checkbox  (click)="changeModel('Cash')" slot="end" *ngIf="this.selectedCard.toLocaleLowerCase()==='cash'.toLocaleLowerCase() && 'cash'===this.data.orderModel.riderTakeOption" checked="true" ></ion-checkbox>
+              <ion-checkbox  (click)="changeModel('Cash')" slot="end" *ngIf="this.selectedCard.toLocaleLowerCase()!=='cash'.toLocaleLowerCase() && 'cash'!==this.data.orderModel.riderTakeOption" ></ion-checkbox>
             </ion-item>
             <ion-item lines="none">
-              <ion-label>Epayment</ion-label>
-              <ion-checkbox  (click)="changeModel('COD')"slot="end" *ngIf='this.selectedCard.toLocaleLowerCase()==="COD".toLocaleLowerCase() && "cod"===this.data.orderModel.riderTakeOption' checked="true" ></ion-checkbox>
-              <ion-checkbox  (click)="changeModel('COD')" slot="end" *ngIf='this.selectedCard.toLocaleLowerCase()!=="COD".toLocaleLowerCase() && "cod"!==this.data.orderModel.riderTakeOption'></ion-checkbox>
+              <ion-label>Bank</ion-label>
+              <ion-checkbox  (click)="changeModel('Bank')"slot="end" *ngIf='this.selectedCard.toLocaleLowerCase()==="bank".toLocaleLowerCase() && "bank"===this.data.orderModel.riderTakeOption' checked="true" ></ion-checkbox>
+              <ion-checkbox  (click)="changeModel('Bank')" slot="end" *ngIf='this.selectedCard.toLocaleLowerCase()!=="bank".toLocaleLowerCase() && "bank"!==this.data.orderModel.riderTakeOption'></ion-checkbox>
             </ion-item>
             <ion-item lines="none">
-              <ion-label>Delivery</ion-label>
-              <ion-checkbox  (click)="changeModel('Epayment')"slot="end" *ngIf='this.selectedCard.toLocaleLowerCase()==="Epayment".toLocaleLowerCase() && "epayment"===this.data.orderModel.riderTakeOption' checked="true" ></ion-checkbox>
-              <ion-checkbox  (click)="changeModel('Epayment')" slot="end" *ngIf='this.selectedCard.toLocaleLowerCase()!=="Epayment".toLocaleLowerCase() && "epayment"!==this.data.orderModel.riderTakeOption'  ></ion-checkbox>
+              <ion-label>Deli Cash</ion-label>
+              <ion-checkbox  (click)="changeModel('Deli Cash')"slot="end" *ngIf='this.selectedCard.toLocaleLowerCase()==="deli cash".toLocaleLowerCase() && "deli cash"===this.data.orderModel.riderTakeOption' checked="true" ></ion-checkbox>
+              <ion-checkbox  (click)="changeModel('Deli Cash')" slot="end" *ngIf='this.selectedCard.toLocaleLowerCase()!=="deli cash".toLocaleLowerCase() && "deli cash"!==this.data.orderModel.riderTakeOption'  ></ion-checkbox>
+            </ion-item>
+            <ion-item lines="none">
+              <ion-label>Deli Free</ion-label>
+              <ion-checkbox  (click)="changeModel('Deli Free')" slot="end" *ngIf="this.selectedCard.toLocaleLowerCase()==='deli free'.toLocaleLowerCase() && 'deli free'===this.data.orderModel.riderTakeOption" checked="true" ></ion-checkbox>
+              <ion-checkbox  (click)="changeModel('Deli Free')" slot="end" *ngIf="this.selectedCard.toLocaleLowerCase()!=='deli free'.toLocaleLowerCase() && 'deli free'!==this.data.orderModel.riderTakeOption" ></ion-checkbox>
+            </ion-item>
+            <ion-item lines="none">
+              <ion-label>FOC</ion-label>
+              <ion-checkbox  (click)="changeModel('FOC')" slot="end" *ngIf="this.selectedCard.toLocaleLowerCase()==='foc'.toLocaleLowerCase() && 'foc'===this.data.orderModel.riderTakeOption" checked="true" ></ion-checkbox>
+              <ion-checkbox  (click)="changeModel('FOC')" slot="end" *ngIf="this.selectedCard.toLocaleLowerCase()!=='foc'.toLocaleLowerCase() && 'foc'!==this.data.orderModel.riderTakeOption" ></ion-checkbox>
             </ion-item>
           </ion-toolbar>
 
