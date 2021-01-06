@@ -30,7 +30,10 @@
       
         <ion-label>
           <p>
-            <ion-icon name="fast-food-outline"></ion-icon> {{ item.itemName }}
+            <ion-icon name="pizza"></ion-icon> Base Item: {{this.appSetting.mainItemName(item.mainitem_id)}}
+          </p>
+          <p>
+            <ion-icon name="fast-food-outline"></ion-icon> Sub Item: {{ item.itemName }}
           </p>
           <p>
             <ion-icon name="card-outline"></ion-icon> Price {{ item.price }}

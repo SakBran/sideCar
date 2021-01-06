@@ -18,25 +18,27 @@ export class ResturantListComponent implements OnInit {
     public appSetting: appSetting,
     public ResturantModelService: ResturantModelService,
     private route: Router
-  ) { }
+  ) { 
+    this.dataLoading();
+  }
 
   ngOnInit() {
-    this.dataLoading();
+    
   }
   back() {
     this.location.back();
   }
   dataLoading() {
+    this.appSetting.showLoading();
     this.ResturantModelService.get().subscribe(
       (x) => {
-        this.appSetting.showLoading();
+        
         this.resDataList = x;
       },
       (err) => this.appSetting.showError(err),
 
       () => {
         this.appSetting.loadingClose();
-
       }
     );
   }

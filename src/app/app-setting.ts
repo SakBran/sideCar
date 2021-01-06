@@ -158,7 +158,16 @@ export class appSetting {
     });
     return res;
   }
-
+  public mainItemName(id):string{
+    let result="";
+    const temp = [...this.constmainItemDataList];
+    temp.forEach((x) => {
+      if (x.id === +id) {
+        result= x.name;
+      }
+    });
+    return result;
+  }
   public resendBtn(orderNo): boolean {
     let result: boolean = true;
     const temp = [...this.resendListFromResturant];
