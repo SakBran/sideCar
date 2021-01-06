@@ -6,6 +6,7 @@ import { Location } from "@angular/common";
 import { FoodService } from "src/app/Services/food/food.service";
 import { foodModel } from "src/app/Models/foodModel";
 import { MainModelService } from 'src/app/Services/mainModel/main-model.service';
+import { mainModel } from "src/app/Models/mainModel";
 
 @Component({
   selector: 'app-main-item-list',
@@ -14,6 +15,8 @@ import { MainModelService } from 'src/app/Services/mainModel/main-model.service'
 })
 export class MainItemListComponent implements OnInit {
   page: number = 1;
+  resturant:number=8;
+  dataList:mainModel[]=[];
   constructor(
     public location: Location,
     public appSetting: appSetting,
@@ -35,6 +38,7 @@ export class MainItemListComponent implements OnInit {
       (x) => {
         
         this.appSetting.mainItemDataList = x;
+        this.dataList=x;
       },
       (err) => this.appSetting.showError(err),
 
@@ -42,6 +46,13 @@ export class MainItemListComponent implements OnInit {
         this.appSetting.loadingClose();
       }
     );
+  }
+
+  modelChanged(e){
+    this.page=1;
+    const temp:mainModel[]=[...this.dataList];
+    let data:mainModel[]=[...temp.filter(x=>x.resturant_id===e)];
+    this.appSetting.mainItemDataList=data;
   }
 
   refresh(event) {
