@@ -12,25 +12,29 @@ import { foodModel } from "src/app/Models/foodModel";
   styleUrls: ["./food-list.component.scss"],
 })
 export class FoodListComponent implements OnInit {
+  page:number=1;
   constructor(
     public location: Location,
     public appSetting: appSetting,
     public FoodService: FoodService,
     private route: Router
-  ) {}
+  ) {
+    this.dataLoading();
+  }
 
   ngOnInit() {
-    this.dataLoading();
+   
   }
 
   back() {
     this.location.back();
   }
   dataLoading() {
+    this.appSetting.showLoading();
     if (this.appSetting.loginType === "resturant") {
       this.FoodService.get(this.appSetting.resturantID).subscribe(
         (x) => {
-          this.appSetting.showLoading();
+          
           this.appSetting.foodDataList = x;
         },
         (err) => this.appSetting.showError(err),
@@ -43,7 +47,7 @@ export class FoodListComponent implements OnInit {
     else if(this.appSetting.loginType==="admin"){
       this.FoodService.getActive().subscribe(
         (x) => {
-          this.appSetting.showLoading();
+         
           this.appSetting.foodDataList = x;
         },
         (err) => this.appSetting.showError(err),

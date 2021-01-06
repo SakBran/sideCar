@@ -13,23 +13,27 @@ import { MainModelService } from 'src/app/Services/mainModel/main-model.service'
   styleUrls: ['./main-item-list.component.scss'],
 })
 export class MainItemListComponent implements OnInit {
+  page: number = 1;
   constructor(
     public location: Location,
     public appSetting: appSetting,
     public FoodService: MainModelService,
     private route: Router
-  ) {}
-  ngOnInit() {
+  ) {
     this.dataLoading();
+  }
+  ngOnInit() {
+    
   }
 
   back() {
     this.location.back();
   }
   dataLoading() {
+    this.appSetting.showLoading();
     this.FoodService.get().subscribe(
       (x) => {
-        this.appSetting.showLoading();
+        
         this.appSetting.mainItemDataList = x;
       },
       (err) => this.appSetting.showError(err),
@@ -74,7 +78,6 @@ export class MainItemListComponent implements OnInit {
     }).then((result) => {
       if (result.value) {
         this.FoodService.delete(id);
-
         Swal.fire("Deleted!", "Your file has been deleted.", "success");
       }
     });

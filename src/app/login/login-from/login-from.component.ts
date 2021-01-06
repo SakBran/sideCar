@@ -54,7 +54,6 @@ export class LoginFromComponent implements OnInit {
   }
   onClick() {
     this.appSetting.showLoading();
-
     this.userService.getLogin(this.username, this.password).subscribe(
       (x) => {
         this.appSetting.sessionUserID = x.id;
@@ -81,12 +80,13 @@ export class LoginFromComponent implements OnInit {
                   this.locationUpdate();
                 }, 10000);
               }
-             
+              
               this.router.navigateByUrl("/managmenet");
+              this.appSetting.loadingClose();
             }
           );
         }
-        this.appSetting.loginSuccess();
+        
       }
     );
   }

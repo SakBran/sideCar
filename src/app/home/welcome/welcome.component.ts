@@ -17,7 +17,7 @@ export class WelcomeComponent implements OnInit {
     private appSetting: appSetting,
     private userTypeService: UserTypeService
   ) {
-    setTimeout(() => {this.toHomePage()}, 4000);
+    // setTimeout(() => {this.toHomePage()}, 4000);
   }
 
   ngOnInit() { }

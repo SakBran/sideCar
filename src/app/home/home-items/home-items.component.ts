@@ -17,6 +17,8 @@ import { ResturantModelService } from 'src/app/Services/resturantModel/resturant
 export class HomeItemsComponent implements OnInit {
   zoneList:number[]=[];
   searchZone:number;
+  page: number = 1;
+  pageResturant:number=1;
     constructor(
     public appSetting: appSetting,
     private LocationService: LocationService,
@@ -132,6 +134,7 @@ export class HomeItemsComponent implements OnInit {
 
  
   onSearch() {
+    this.page=1;
     this.appSetting.customerSearch=this.customerSearch;
     const temp: mainModel[] = [...this.appSetting.constmainItemDataList];
     let z: mainModel[] = [];
