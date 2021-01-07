@@ -65,6 +65,7 @@ export class HomeItemsComponent implements OnInit {
   }
 
   Filter(e) {
+    this.page=1;
     this.appSetting.searchResturant=e;
     const temp = [...this.appSetting.constmainItemDataList];
     let res: mainModel[] = [];
@@ -78,7 +79,7 @@ export class HomeItemsComponent implements OnInit {
   }
 
   FilterZone(e) {
- 
+    this.page=1;
     const x=[...this.appSetting.constantResturandDataList];
     const resList=[...x.filter(a=>a.locationID===e)];
     const temp = [...this.appSetting.constmainItemDataList];
@@ -108,14 +109,17 @@ export class HomeItemsComponent implements OnInit {
     this.appSetting.mainItemDataList = res;
   }
   resturantChoose() {
+    this.page=1;
     let a = document.getElementById("select");
     a.click();
   }
   zoneChoose(){
+    this.page=1;
     let a = document.getElementById("selectZone");
     a.click();
   }
   categoryChoose() {
+    this.page=1;
     let a = document.getElementById("selectCategory");
     a.click();
   }

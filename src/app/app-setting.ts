@@ -143,7 +143,7 @@ export class appSetting {
     let res = "null";
     this.resturandDataList.forEach((x) => {
       if (x.id === id) {
-        res = x.shopname;
+        res = x.shopname + ` [ Zone - ${x.locationID} ]`;
       }
     });
     return res;

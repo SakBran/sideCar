@@ -21,7 +21,7 @@
   </ion-chip>
   <ion-select class="none" id="select" value="notifications" interface="action-sheet"
     [(ngModel)]="this.appSetting.searchResturant" (ngModelChange)="Filter($event)">
-    <ion-select-option *ngFor="let item of this.appSetting.resturandDataList" [value]="item.id">{{ item.shopname }}
+    <ion-select-option *ngFor="let item of this.appSetting.resturandDataList" [value]="item.id">{{ item.shopname }} &nbsp; [ Zone - {{item.locationID}} ]
     </ion-select-option>
   </ion-select>
 
@@ -180,6 +180,7 @@
             }}" />
           <ion-card-header>
             <ion-card-subtitle>
+              Zone-{{item.locationID}}
               <!----- {{
                 item.phone
               }}---->

@@ -75,10 +75,12 @@ export class OrderService {
           dismissed: true,
         });
 
-        this.appSetting.showSuccess();
-        this.modalCtrl.dismiss({
-          dismissed: true,
+        Swal.fire(`Thank you ${data.orderModel.clientName}`, `We will call your phone ${data.orderModel.clitentPhone} to confirm order!`, "success").then(x=>{
+          this.modalCtrl.dismiss({
+            dismissed: true,
+          });
         });
+        
       },
       (err) => {
         this.appSetting.showError(err);
