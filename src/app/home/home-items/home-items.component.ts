@@ -98,7 +98,7 @@ export class HomeItemsComponent implements OnInit {
 
   searchCategory = 0;
   FilterCategory(e) {
-
+    this.appSetting.searchResturant=1;
     const temp = [...this.appSetting.constmainItemDataList];
     let res: mainModel[] = [];
     temp.forEach((x) => {
